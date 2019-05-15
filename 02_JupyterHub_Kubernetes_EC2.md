@@ -295,8 +295,15 @@ Now that we have a Kubernetes cluster and Helm setup, we can proceed by using He
            --values config.yaml
         ```
 - ```kubectl get pod --namespace jhub```
-- ```kubectl get service --namespace jhub```, ```kubectl describe service proxy-public --namespace jhub```
-
+- ```kubectl get service --namespace jhub```
+    ```
+    NAME           TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)        AGE
+    hub            ClusterIP      10.51.243.14    <none>          8081/TCP       1m
+    proxy-api      ClusterIP      10.51.247.198   <none>          8001/TCP       1m
+    proxy-public   LoadBalancer   10.51.248.230   104.196.41.97   80:31916/TCP   1m
+    ```
+- ```kubectl describe service proxy-public --namespace jhub```
+- access to jupyterhub by EXTERNAL-IP of proxy-publi, any id and pw is ok to login.
 
 
 
