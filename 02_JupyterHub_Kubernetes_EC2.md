@@ -5,3 +5,17 @@
     - Setting up Helm
     - Setting up JupyterHub
     - Tearing Everything Down
+
+# 0. Prerequisites 
+1. Redhat EC2 
+2. python，pip
+3. awscli
+
+# 1. Kubernetes cluster on AWS
+## 1.1 kubectl
+https://docs.aws.amazon.com/zh_cn/eks/latest/userguide/install-kubectl.html#install-kubectl-linux
+
+- ```curl -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.12.7/2019-03-27/bin/linux/amd64/kubectl```
+- ```chmod +x ./kubectl```
+- ```mkdir $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH```
+- ```kubectl version --short --client```
