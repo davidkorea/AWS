@@ -259,9 +259,44 @@ Helm has two parts: a client (helm) and a server (tiller). Tiller runs inside of
 ## 2.2 Setting up JupyterHub
 Now that we have a Kubernetes cluster and Helm setup, we can proceed by using Helm to install JupyterHub and related Kubernetes resources using a Helm chart.
 
+- Generate a random hex string representing 32 bytes to use as a security token
+    - ```openssl rand -hex 32```
+- Create and start editing a file called config.yaml
+    - ```nano config.yaml```
+        ```
+        proxy:
+          secretToken: "<RANDOM_HEX>"
+        ```
+        - paste the generated hex string 
+    - Save the config.yaml file by pressing CTRL+X or CMD+X 
+
+- Install JupyterHub
+    - ```helm repo add jupyterhub https://jupyterhub.github.io/helm-chart/```
+    - ```helm repo update```
+- install the chart configured by your config.yaml
+    - ```RELEASE=jhub```
+    - ```NAMESPACE=jhub```
+    - ```
+      helm upgrade --install $RELEASE jupyterhub/jupyterhub \
+          --namespace $NAMESPACE  \
+           --version=0.8.0 \
+          --values config.yaml
+      ```
+    - if error
+        ```
+        Release "jhub" does not exist. Installing it now.
+        Error: Chart requires kubernetesVersion: >=1.11.0-0 which is incompatible with Kubernetes v1.10.13
+        ```
+        - >> https://github.com/jupyterhub/helm-chart#versions-coupled-to-each-chart-release
+        ```
+        helm upgrade --install $RELEASE jupyterhub/jupyterhub \
+           --namespace $NAMESPACE  \
+           --version=0.7.0 \
+           --values config.yaml
+        ```
 
 
-    
+
 
 
 
