@@ -305,9 +305,25 @@ Now that we have a Kubernetes cluster and Helm setup, we can proceed by using He
 - ```kubectl describe service proxy-public --namespace jhub```
 - access to jupyterhub by EXTERNAL-IP of proxy-publi, any id and pw is ok to login.
 
+## 2.3 Tearing Everything Down
+Tearing down your JupyterHub entails:
 
+1. Deleting your Kubernetes namespace, which deletes all objects created and managed by Kubernetes in it.
+2. Deleting any cloud resources you’ve requested from the cloud provider.
+3. Running a final check to make sure there aren’t any lingering resources that haven’t been deleted (e.g., storage volumes in some cloud providers).
 
-
+- First, delete the Helm release. This deletes all resources that were created by Helm for your JupyterHub deployment.
+    - ```helm delete <YOUR-HELM-RELEASE-NAME> --purge```
+        - ```helm delete jhub --purge```
+- Next, delete the Kubernetes namespace the hub was installed in. This deletes any disks that may have been created to store user’s data, and any IP addresses that may have been provisioned.
+    - ```kubectl delete namespace <YOUR-NAMESPACE>```
+        - ```kubectl delete namespace jhub```
+        
+        
+        
+        
+        
+        
 
 
 
