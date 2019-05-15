@@ -22,10 +22,13 @@ https://docs.aws.amazon.com/zh_cn/eks/latest/userguide/install-kubectl.html#inst
 ## 1.2 kops
 ```https://kubernetes.io/docs/setup/custom-cloud/kops/```, ```https://github.com/kubernetes/kops#installing```
 
+> release version
+> - https://api.github.com/repos/kubernetes/kops/releases/latest
+> - find "tag_name": "1.11.1"
+> - ```curl -LO https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64```
+
 - ```wget https://github.com/kubernetes/kops/releases/download/1.10.0/kops-linux-amd64```
 - ```chmod +x kops-linux-amd64```
 - ```mv kops-linux-amd64 /usr/local/bin/kops```
 
-> release version
-> - https://api.github.com/repos/kubernetes/kops/releases/latest
-> - find "tag_name": "1.11.1",
+
