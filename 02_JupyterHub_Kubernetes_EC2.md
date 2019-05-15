@@ -40,10 +40,10 @@ kops helps you create, destroy, upgrade and maintain production-grade, highly av
 - ```kops version```
 
 ## 1.3 AWS IAM account
-- create on aws
+- create on aws, and download secret key as txt
     ![](https://i.loli.net/2019/05/15/5cdb846397d1647207.png)
 
-- ```aws configure```
+- ```aws configure```, as created above
     ```
     [root@server ~]# aws configure
     AWS Access Key ID [None]: aaaaaaaaaaaaaaaaaaaaaa
@@ -69,4 +69,20 @@ kops helps you create, destroy, upgrade and maintain production-grade, highly av
     aws iam create-user --user-name kops
     aws iam add-user-to-group --user-name kops --group-name kops
     ```
+    - 创建后，我们可以在 AWS 控制台的 UI 上看到用户
+    
+ - 为 kops 用户创建密钥, 接着通过 aws configure 更新 awscli的配置，让它使用新创建的 kops 用户的密钥
+    - ```aws iam create-access-key --user-name kops```
+        ```
+        [root@server ~]# aws iam create-access-key --user-name kops
+        {
+            "AccessKey": {
+                "UserName": "kops",
+                "Status": "Active",
+                "CreateDate": "2019-05-13T07:59:40Z",
+                "SecretAccessKey": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "AccessKeyId": "bbbbbbbbbbbbbbb"
+            }
+        }
+        ```
 
