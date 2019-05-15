@@ -204,5 +204,5 @@ kops helps you create, destroy, upgrade and maintain production-grade, highly av
 
         bbbbbbbbbbbbbbbbbbb
         ```
-    
+- ```kubectl config view``` 查看用户名和密码    
     
