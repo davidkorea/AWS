@@ -20,7 +20,11 @@ https://docs.aws.amazon.com/zh_cn/eks/latest/userguide/install-kubectl.html#inst
 - ```mkdir $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH```
 - ```kubectl version --short --client```
 ## 1.2 kops
-```https://kubernetes.io/docs/setup/custom-cloud/kops/```, ```https://github.com/kubernetes/kops#installing```
+https://kubernetes.io/docs/setup/custom-cloud/kops/ , https://github.com/kubernetes/kops#installing
+
+We like to think of it as kubectl for clusters.
+
+kops helps you create, destroy, upgrade and maintain production-grade, highly available, Kubernetes clusters from the command line. AWS (Amazon Web Services) is currently officially supported, with GCE in beta support , and VMware vSphere in alpha, and other platforms planned.
 
 > release version
 > - https://api.github.com/repos/kubernetes/kops/releases/latest
