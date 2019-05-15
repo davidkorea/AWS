@@ -85,4 +85,4 @@ kops helps you create, destroy, upgrade and maintain production-grade, highly av
             }
         }
         ```
-
+    - ```aws configure```, 配置kops用户秘钥
