@@ -3,7 +3,7 @@ References
 - [AWS EC2 上安装 Kubernetes 的示例](https://www.jianshu.com/p/7d448abae039)
 - [Zero to JupyterHub with Kubernetes](https://zero-to-jupyterhub.readthedocs.io/en/latest/index.html)
 - [Setting Up a Kubernetes Cluster on AWS in 5 Minutes](https://ramhiser.com/post/2018-05-20-setting-up-a-kubernetes-cluster-on-aws-in-5-minutes/)
-    
+- [JupyterHub with Kubernetes On Single Bare Metal Instance Tutorial](https://medium.com/@georgepaw/jupyterhub-with-kubernetes-on-single-bare-metal-instance-tutorial-67cbd5ec0b00)
     
 1. Setup a Kubernetes cluster on AWS
 2. Setup JupyterHub
