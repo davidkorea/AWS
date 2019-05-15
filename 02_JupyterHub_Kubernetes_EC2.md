@@ -33,5 +33,5 @@ https://docs.aws.amazon.com/zh_cn/eks/latest/userguide/install-kubectl.html#inst
 - ```wget https://github.com/kubernetes/kops/releases/download/1.11.1/kops-linux-amd64```
 - ```chmod +x kops-linux-amd64```
 - ```mv kops-linux-amd64 /usr/local/bin/kops```
-
+- ```kops version```
 
