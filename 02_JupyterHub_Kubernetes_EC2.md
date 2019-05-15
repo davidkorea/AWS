@@ -287,15 +287,15 @@ Now that we have a Kubernetes cluster and Helm setup, we can proceed by using He
         Release "jhub" does not exist. Installing it now.
         Error: Chart requires kubernetesVersion: >=1.11.0-0 which is incompatible with Kubernetes v1.10.13
         ```
-        - >> https://github.com/jupyterhub/helm-chart#versions-coupled-to-each-chart-release
+        - https://github.com/jupyterhub/helm-chart#versions-coupled-to-each-chart-release
         ```
         helm upgrade --install $RELEASE jupyterhub/jupyterhub \
            --namespace $NAMESPACE  \
            --version=0.7.0 \
            --values config.yaml
         ```
-
-
+- ```kubectl get pod --namespace jhub```
+- ```kubectl get service --namespace jhub```, ```kubectl describe service proxy-public --namespace jhub```
 
 
 
