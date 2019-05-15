@@ -319,7 +319,8 @@ Tearing down your JupyterHub entails:
     - ```kubectl delete namespace <YOUR-NAMESPACE>```
         - ```kubectl delete namespace jhub```
         
-        
+- Perform the steps in Delete the helm release. These cloud provider agnostic steps will delete the Helm release and the Kubernetes namespace. This must be done before proceeding.
+    - https://zero-to-jupyterhub.readthedocs.io/en/latest/turn-off.html#amazon-web-services-aws
         
         
         
