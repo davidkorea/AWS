@@ -187,7 +187,10 @@ kops helps you create, destroy, upgrade and maintain production-grade, highly av
     To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
     ```
     - https://api-kr-k8s-local-9n0gms-400446143.ap-northeast-2.elb.amazonaws.com 即为负载均衡
-    
+- 登录到master和node实力上面，查看相关信息
+    - ```ssh admin@3.16.188.170 (公有IP 或 公有DNS)```
+    - ``````
+
 ## 1.6 Kubernetes Dashboard
 - 获取 kube 和 admin 这两个账户的密码
     - ```kops get secrets kube --type secret -oplaintext```
