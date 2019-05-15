@@ -196,18 +196,17 @@ kops helps you create, destroy, upgrade and maintain production-grade, highly av
 ## 1.6 Kubernetes Dashboard
 https://github.com/kubernetes/dashboard
 
-- ```kubectl config view``` 查看用户名和密码    
-- ymal文件：https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
-    - ```kubectl apply -f  https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml```
-        ```
-        [root@redhat ~]# kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
-        secret "kubernetes-dashboard-certs" created
-        serviceaccount "kubernetes-dashboard" created
-        role.rbac.authorization.k8s.io "kubernetes-dashboard-minimal" created
-        rolebinding.rbac.authorization.k8s.io "kubernetes-dashboard-minimal" created
-        deployment.apps "kubernetes-dashboard" created
-        service "kubernetes-dashboard" created
-        ```
+
+- ```kubectl apply -f  https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml``` 部署dashboard
+    ```
+    [root@redhat ~]# kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
+    secret "kubernetes-dashboard-certs" created
+    serviceaccount "kubernetes-dashboard" created
+    role.rbac.authorization.k8s.io "kubernetes-dashboard-minimal" created
+    rolebinding.rbac.authorization.k8s.io "kubernetes-dashboard-minimal" created
+    deployment.apps "kubernetes-dashboard" created
+    service "kubernetes-dashboard" created
+    ```
         
 - 获取 kube 和 admin 这两个账户的密码
     - ```kops get secrets kube --type secret -oplaintext```
@@ -224,6 +223,8 @@ https://github.com/kubernetes/dashboard
 
         bbbbbbbbbbbbbbbbbbb
         ```
+    - ```kubectl config view``` 查看用户名和密码    
+    
 - 部署成功后，通过如下的网址访问 Dashboard：
     - https://<master-ip>:<apiserver-port>/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
         - <master-ip> 为 https://api-kr-k8s-local-9n0gms-400446143.ap-northeast-2.elb.amazonaws.com （通过 kubectl cluster-info 命令获得）
@@ -233,3 +234,37 @@ https://github.com/kubernetes/dashboard
     - id: admin, passwd: kube密码（kops get secrets kube --type secret -oplaintext）
     - token choice page will come out and  input admin密码（kops get secrets admin --type secret -oplaintext）
     
+# 2. Setup JupyterHub
+https://zero-to-jupyterhub.readthedocs.io/en/latest/index.html#setup-jupyterhub
+
+## 2.1 Setting up Helm
+Helm, the package manager for Kubernetes, is a useful tool for installing, upgrading and managing applications on a Kubernetes cluster. Helm packages are called charts. We will be installing and managing JupyterHub on our Kubernetes cluster using a Helm chart.
+
+Helm has two parts: a client (helm) and a server (tiller). Tiller runs inside of your Kubernetes cluster as a pod in the kube-system namespace. When you run helm commands, your local Helm client sends instructions to tiller in the cluster that in turn make the requested changes.
+
+- Installation ```curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash```
+
+- Initialization, After installing helm on your machine, initialize Helm on your Kubernetes cluster
+    - Set up a ServiceAccount for use by tiller
+        - ```kubectl --namespace kube-system create serviceaccount tiller```
+    - Give the ServiceAccount full permissions to manage the cluster
+        - ```kubectl create clusterrolebinding tiller --clusterrole cluster-admin --serviceaccount=kube-system:tiller```
+    - Initialize helm and tiller
+        - ```helm init --service-account tiller --wait```
+        - This command only needs to run once per Kubernetes cluster, it will create a tiller deployment in the kube-system namespace and setup your local helm client. This command installs and configures the tiller part of Helm (the whole project, not the CLI) on the remote kubernetes cluster. Later when you want to deploy changes with helm (the local CLI), it will talk to tiller and tell it what to do. tiller then executes these instructions from within the cluster.
+- Secure Helm, Ensure that tiller is secure from access inside the cluster:
+    - ```kubectl patch deployment tiller-deploy --namespace=kube-system --type=json --patch='[{"op": "add", "path": "/spec/template/spec/containers/0/command", "value": ["/tiller", "--listen=localhost:44134"]}]'```
+- Verify, You can verify that you have the correct version and that it installed properly by running:
+    - ```helm version```
+    
+
+
+    
+
+
+
+
+
+
+
+
