@@ -256,7 +256,9 @@ Helm has two parts: a client (helm) and a server (tiller). Tiller runs inside of
     - ```kubectl patch deployment tiller-deploy --namespace=kube-system --type=json --patch='[{"op": "add", "path": "/spec/template/spec/containers/0/command", "value": ["/tiller", "--listen=localhost:44134"]}]'```
 - Verify, You can verify that you have the correct version and that it installed properly by running:
     - ```helm version```
-    
+## 2.2 Setting up JupyterHub
+Now that we have a Kubernetes cluster and Helm setup, we can proceed by using Helm to install JupyterHub and related Kubernetes resources using a Helm chart.
+
 
 
     
