@@ -96,4 +96,87 @@ kops helps you create, destroy, upgrade and maintain production-grade, highly av
         
 - ```aws s3api create-bucket --bucket kr.k8s.local-state --create-bucket-configuration LocationConstraint=ap-northeast-2```
 - ```echo 'export KOPS_STATE_STORE=s3://kr.k8s.local-state' >> ~/.bashrc```
+创建后，可以在 AWS 控制台上看到S3 bucket
+
+
+
+## 1.5 创建Kubernetes集群
+- 生产ssh，生成的密钥位置 /home/ec2-user/.ssh/id_rsa.pub
+    - ```ssh-keygen```
+    
+- 创建集群的配置文件，**并不会真正地创建集群**
+    ```
+    kops create cluster \
+        --name=kr.k8s.local \
+        --zones=ap-northeast-2c  \
+        --master-size="t2.micro" \
+        --node-size="t2.micro"  \
+        --ssh-public-key="~/.ssh/id_rsa.pub"
+    ```
+    - 为了让kops创建基于gossip的集群，集群的命名需要使用 .k8s.local 作为后缀
+- 创建集群之前，检查集群的配置文件是否正确
+    - ```kops edit cluster kr.k8s.local```
+- 确认没问题，创建集群
+    - ```kops update cluster kr.k8s.local --yes```
+    
+- 创建集群之后，需要一段时间(5mins)等待集群的初始化，通过 kops validate cluster 来检查集群的创建状态：
+    - ```kops validate cluster```，第一次查看状态可能会报错，因为创建过程还没有完成。最终会显示创建成功
+    
+        ```        
+        [root@redhat ~]# kops validate cluster
+        Using cluster from kubectl context: kr.k8s.local
+
+        Validating cluster kr.k8s.local
+
+        unexpected error during validation: error listing nodes: Get https://api-kr-k8s-local-9n0gms-400446143.ap-northeast-2.elb.amazonaws.com/api/v1/nodes: EOF
+        [root@redhat ~]# kops validate cluster
+        Using cluster from kubectl context: kr.k8s.local
+        Validating cluster kr.k8s.local
+        unexpected error during validation: error listing nodes: Get https://api-kr-k8s-local-9n0gms-400446143.ap-northeast-2.elb.amazonaws.com/api/v1/nodes: EOF
         
+        
+        [root@redhat ~]# kops validate cluster
+        Using cluster from kubectl context: kr.k8s.local
+        Validating cluster kr.k8s.local
+        INSTANCE GROUPS
+        NAME                    ROLE    MACHINETYPE     MIN     MAX     SUBNETS
+        master-ap-northeast-2c  Master  t2.micro        1       1       ap-northeast-2c
+        nodes                   Node    t2.micro        2       2       ap-northeast-2c
+        NODE STATUS
+        NAME                                            ROLE    READY
+        ip-172-20-40-62.ap-northeast-2.compute.internal master  True
+        VALIDATION ERRORS
+        KIND    NAME                    MESSAGE
+        Machine i-01a3d120a426eaa4f     machine "i-01a3d120a426eaa4f" has not yet joined cluster
+        Machine i-0d9d50908d6abbca8     machine "i-0d9d50908d6abbca8" has not yet joined cluster
+        Validation Failed
+        
+        
+        [root@redhat ~]# kops validate cluster
+        Using cluster from kubectl context: kr.k8s.local
+
+        Validating cluster kr.k8s.local
+
+        INSTANCE GROUPS
+        NAME                    ROLE    MACHINETYPE     MIN     MAX     SUBNETS
+        master-ap-northeast-2c  Master  t2.micro        1       1       ap-northeast-2c
+        nodes                   Node    t2.micro        2       2       ap-northeast-2c
+
+        NODE STATUS
+        NAME                                            ROLE    READY
+        ip-172-20-36-26.ap-northeast-2.compute.internal node    True
+        ip-172-20-38-80.ap-northeast-2.compute.internal node    True
+        ip-172-20-40-62.ap-northeast-2.compute.internal master  True
+
+        Your cluster kr.k8s.local is ready
+        ```
+等待集群起来之后，可以在 AWS 控制台的 UI 上看到新创建的 EC2 实例
+    
+    
+    
+    
+    
+    
+    
+    
+    
