@@ -189,11 +189,26 @@ kops helps you create, destroy, upgrade and maintain production-grade, highly av
     To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
     ```
     - https://api-kr-k8s-local-9n0gms-400446143.ap-northeast-2.elb.amazonaws.com 即为负载均衡
-- 登录到master和node实力上面，查看相关信息
+- 登录到master和node实例上面，查看相关信息
     - ```ssh admin@3.16.188.170 (公有IP 或 公有DNS)```
     - ```kubectl version --short --client```
 
 ## 1.6 Kubernetes Dashboard
+https://github.com/kubernetes/dashboard
+
+- ```kubectl config view``` 查看用户名和密码    
+- ymal文件：https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
+    - ```kubectl apply -f  https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml```
+        ```
+        [root@redhat ~]# kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
+        secret "kubernetes-dashboard-certs" created
+        serviceaccount "kubernetes-dashboard" created
+        role.rbac.authorization.k8s.io "kubernetes-dashboard-minimal" created
+        rolebinding.rbac.authorization.k8s.io "kubernetes-dashboard-minimal" created
+        deployment.apps "kubernetes-dashboard" created
+        service "kubernetes-dashboard" created
+        ```
+        
 - 获取 kube 和 admin 这两个账户的密码
     - ```kops get secrets kube --type secret -oplaintext```
     - ```kops get secrets admin --type secret -oplaintext```
@@ -209,5 +224,12 @@ kops helps you create, destroy, upgrade and maintain production-grade, highly av
 
         bbbbbbbbbbbbbbbbbbb
         ```
-- ```kubectl config view``` 查看用户名和密码    
+- 部署成功后，通过如下的网址访问 Dashboard：
+    - https://<master-ip>:<apiserver-port>/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
+        - <master-ip> 为 https://api-kr-k8s-local-9n0gms-400446143.ap-northeast-2.elb.amazonaws.com （通过 kubectl cluster-info 命令获得）
+        - <apiserver-port> 为 443
+        - https://api-kr-k8s-local-9n0gms-400446143.ap-northeast-2.elb.amazonaws.com/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
+    - id: admin, passwd: kube密码（kops get secrets kube --type secret -oplaintext）
+    - id: admin, passwd: kube密码（kops get secrets kube --type secret -oplaintext）
+    - token choice page will come out and  input admin密码（kops get secrets admin --type secret -oplaintext）
     
