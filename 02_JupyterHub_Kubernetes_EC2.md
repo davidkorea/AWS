@@ -12,14 +12,14 @@
 3. awscli
 
 # 1. Kubernetes cluster on AWS
-## 1.1 kubectl
+## 1.1 安装kubectl
 https://docs.aws.amazon.com/zh_cn/eks/latest/userguide/install-kubectl.html#install-kubectl-linux
 
 - ```curl -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.12.7/2019-03-27/bin/linux/amd64/kubectl```
 - ```chmod +x ./kubectl```
 - ```mkdir $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH```
 - ```kubectl version --short --client```
-## 1.2 kops
+## 1.2 安装kops
 https://kubernetes.io/docs/setup/custom-cloud/kops/ , https://github.com/kubernetes/kops#installing
 
 We like to think of it as kubectl for clusters.
@@ -91,8 +91,9 @@ kops helps you create, destroy, upgrade and maintain production-grade, highly av
         - ```echo 'export AWS_SECRET_ACCESS_KEY=bbbbbbbbbbbbbb' >> ~/.bashrc```
         - ```echo 'export AWS_REGION=ap-northeast-2' >> ~/.bashrc```
         
+## 1.4 配置S3 Bucket
+需要创建一个 S3 bucket，用于存储集群的数据，S3 bucket 命名为 kr.k8s.local-state，同时写到到环境变量 KOPS_STATE_STORE。
         
-        
-        
-        
+- ```aws s3api create-bucket --bucket kr.k8s.local-state --create-bucket-configuration LocationConstraint=ap-northeast-2```
+- ```echo 'export KOPS_STATE_STORE=s3://kr.k8s.local-state' >> ~/.bashrc```
         
