@@ -193,7 +193,16 @@ kops helps you create, destroy, upgrade and maintain production-grade, highly av
     - ```kops get secrets kube --type secret -oplaintext```
     - ```kops get secrets admin --type secret -oplaintext```
         ```
-        
+        [root@redhat ~]# kops get secrets kube --type secret -oplaintext
+        Using cluster from kubectl context: kr.k8s.local
+
+        aaaaaaaaaaaaaaaaaaa
+        ```
+        ```
+        [root@redhat ~]# kops get secrets admin --type secret -oplaintext
+        Using cluster from kubectl context: kr.k8s.local
+
+        bbbbbbbbbbbbbbbbbbb
         ```
     
     
