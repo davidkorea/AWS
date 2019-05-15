@@ -71,7 +71,7 @@ kops helps you create, destroy, upgrade and maintain production-grade, highly av
     ```
     - 创建后，我们可以在 AWS 控制台的 UI 上看到用户
     
- - 为 kops 用户创建密钥, 接着通过 aws configure 更新 awscli的配置，让它使用新创建的 kops 用户的密钥
+ - 为 kops 用户创建密钥, 接着通过 aws configure 更新 awscli的配置，让它使用新创建的 kops 用户的密钥。并将秘钥导出至环境变量
     - ```aws iam create-access-key --user-name kops```
         ```
         [root@server ~]# aws iam create-access-key --user-name kops
@@ -86,3 +86,13 @@ kops helps you create, destroy, upgrade and maintain production-grade, highly av
         }
         ```
     - ```aws configure```, 配置kops用户秘钥
+    - 还需要将 kops 用户的密钥导出到命令行的环境变量，其实是写入 ~/.bashrc 文件
+        - ```echo 'export AWS_ACCESS_KEY_ID=.aaaaaaaaa' >> ~/.bashrc```
+        - ```echo 'export AWS_SECRET_ACCESS_KEY=bbbbbbbbbbbbbb' >> ~/.bashrc```
+        - ```echo 'export AWS_REGION=ap-northeast-2' >> ~/.bashrc```
+        
+        
+        
+        
+        
+        
