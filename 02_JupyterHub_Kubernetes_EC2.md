@@ -43,7 +43,30 @@ kops helps you create, destroy, upgrade and maintain production-grade, highly av
 - create on aws
     ![](https://i.loli.net/2019/05/15/5cdb846397d1647207.png)
 
+- ```aws configure```
+    ```
+    [root@server ~]# aws configure
+    AWS Access Key ID [None]: aaaaaaaaaaaaaaaaaaaaaa
+    AWS Secret Access Key [None]: bbbbbbbbbbbbbbbbbbbbbbbbb
+    Default region name [None]: ap-northeast-2
+    Default output format [None]: json
+    ```
 
+- 使用kops 署集群，需要为kops创建一个 IAM 用户kops，并分配相应的权限。包括：
+    - AmazonEC2FullAccess
+    - AmazonRoute53FullAccess
+    - AmazonS3FullAccess
+    - IAMFullAccess
+    - AmazonVPCFullAccess
 
-
+    ```
+    aws iam create-group --group-name kops
+    aws iam attach-group-policy --policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess --group-name kops
+    aws iam attach-group-policy --policy-arn arn:aws:iam::aws:policy/AmazonRoute53FullAccess --group-name kops
+    aws iam attach-group-policy --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess --group-name kops
+    aws iam attach-group-policy --policy-arn arn:aws:iam::aws:policy/IAMFullAccess --group-name kops
+    aws iam attach-group-policy --policy-arn arn:aws:iam::aws:policy/AmazonVPCFullAccess --group-name kops
+    aws iam create-user --user-name kops
+    aws iam add-user-to-group --user-name kops --group-name kops
+    ```
 
