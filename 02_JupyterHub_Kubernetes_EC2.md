@@ -113,6 +113,8 @@ kops helps you create, destroy, upgrade and maintain production-grade, highly av
         --ssh-public-key="~/.ssh/id_rsa.pub"
     ```
     - 为了让kops创建基于gossip的集群，集群的命名需要使用 .k8s.local 作为后缀
+    - 地区是ap-northeast-2c，和上面的ap-northeast-2不一样，否则会报错
+    
 - 创建集群之前，检查集群的配置文件是否正确
     - ```kops edit cluster kr.k8s.local```
 - 确认没问题，创建集群
@@ -189,7 +191,7 @@ kops helps you create, destroy, upgrade and maintain production-grade, highly av
     - https://api-kr-k8s-local-9n0gms-400446143.ap-northeast-2.elb.amazonaws.com 即为负载均衡
 - 登录到master和node实力上面，查看相关信息
     - ```ssh admin@3.16.188.170 (公有IP 或 公有DNS)```
-    - ``````
+    - ```kubectl version --short --client```
 
 ## 1.6 Kubernetes Dashboard
 - 获取 kube 和 admin 这两个账户的密码
