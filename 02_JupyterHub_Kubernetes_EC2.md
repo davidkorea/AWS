@@ -170,7 +170,7 @@ kops helps you create, destroy, upgrade and maintain production-grade, highly av
 
         Your cluster kr.k8s.local is ready
         ```
-等待集群起来之后，可以在 AWS 控制台的 UI 上看到新创建的 EC2 实例
+等待集群起来之后，可以在 AWS 控制台的 UI 上看到新创建的EC2实例。负载均衡里面也可以查到
     
     
     
