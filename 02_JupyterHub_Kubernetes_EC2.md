@@ -99,7 +99,6 @@ kops helps you create, destroy, upgrade and maintain production-grade, highly av
 创建后，可以在 AWS 控制台上看到S3 bucket
 
 
-
 ## 1.5 创建Kubernetes集群
 - 生产ssh，生成的密钥位置 /home/ec2-user/.ssh/id_rsa.pub
     - ```ssh-keygen```
@@ -172,11 +171,29 @@ kops helps you create, destroy, upgrade and maintain production-grade, highly av
         ```
 等待集群起来之后，可以在 AWS 控制台的 UI 上看到新创建的EC2实例。负载均衡里面也可以查到
     
+- ```kubectl get nodes``` 来查看节点信息 
+    ```
+    [root@redhat ~]# kubectl get nodes
+    NAME                                              STATUS   ROLES    AGE   VERSION
+    ip-172-20-36-26.ap-northeast-2.compute.internal   Ready    node     3m    v1.10.13
+    ip-172-20-38-80.ap-northeast-2.compute.internal   Ready    node     3m    v1.10.13
+    ip-172-20-40-62.ap-northeast-2.compute.internal   Ready    master   4m    v1.10.13
+    ```
+- ```kubectl cluster-info``` 来查看集群信息
+    ```
+    [root@redhat ~]# kubectl cluster-info
+    Kubernetes master is running at https://api-kr-k8s-local-9n0gms-400446143.ap-northeast-2.elb.amazonaws.com
+    KubeDNS is running at https://api-kr-k8s-local-9n0gms-400446143.ap-northeast-2.elb.amazonaws.com/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+    To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+    ```
+    - https://api-kr-k8s-local-9n0gms-400446143.ap-northeast-2.elb.amazonaws.com 即为负载均衡
     
-    
-    
-    
-    
-    
+## 1.6 Kubernetes Dashboard
+- 获取 kube 和 admin 这两个账户的密码
+    - ```kops get secrets kube --type secret -oplaintext```
+    - ```kops get secrets admin --type secret -oplaintext```
+        ```
+        
+        ```
     
     
