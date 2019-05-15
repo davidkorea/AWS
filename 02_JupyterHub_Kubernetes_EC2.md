@@ -26,6 +26,8 @@ https://docs.aws.amazon.com/zh_cn/eks/latest/userguide/install-kubectl.html#inst
 > - https://api.github.com/repos/kubernetes/kops/releases/latest
 > - find "tag_name": "1.11.1"
 > - ```curl -LO https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64```
+> 使用1.11.1版本，否则后面helm安装时会报错
+> - Error: Chart requires kubernetesVersion: >=1.11.0-0 which is incompatible with Kubernetes v1.10.13
 
 - ~~```wget https://github.com/kubernetes/kops/releases/download/1.10.0/kops-linux-amd64```~~
 - ```wget https://github.com/kubernetes/kops/releases/download/1.11.1/kops-linux-amd64```
