@@ -39,7 +39,7 @@ kops helps you create, destroy, upgrade and maintain production-grade, highly av
 - ```mv kops-linux-amd64 /usr/local/bin/kops```
 - ```kops version```
 
-## 1.3 AWS IAM account
+## 1.3 为kops创建IAM账号
 - create on aws, and download secret key as txt
     ![](https://i.loli.net/2019/05/15/5cdb846397d1647207.png)
 
