@@ -1,5 +1,6 @@
 # Install kops, kubectl, awscli
-error -bash: kops: command not found , 执行```export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin```
+- error -bash: kops: command not found, 
+    - 执行```export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin```
 # IAM
 - user
 - add user to group
