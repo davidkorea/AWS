@@ -23,9 +23,9 @@ References
 Official: [在 Linux 上安装 AWS CLI](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/install-linux.html#install-linux-pip)
 
 
-## 0.1. 安装Python3
+### 0.1. 安装Python3
 - ```yum install -y python3```
-## 0.2. 安装pip
+### 0.2. 安装pip
 - ```curl -O https://bootstrap.pypa.io/get-pip.py```
 - ```python3 get-pip.py --user```
 - 确保包含 pip 的文件夹是您的 PATH 变量的一部分
@@ -36,7 +36,7 @@ Official: [在 Linux 上安装 AWS CLI](https://docs.aws.amazon.com/zh_cn/cli/la
     - ```export PATH=~/.local/bin:$PATH```
     - ```source ~/.bash_profile```
     - ```pip3 --version```
-## 0.3. 通过 pip 安装 AWS CLI 
+### 0.3. 通过 pip 安装 AWS CLI 
 - ```pip3 install awscli --upgrade --user```
 - ```aws --version```
     ```
