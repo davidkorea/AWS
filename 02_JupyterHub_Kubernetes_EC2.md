@@ -3,7 +3,14 @@
 - add user to group
     - AmazonEC2FullAccess, AmazonRoute53FullAccess, AmazonS3FullAccess, IAMFullAccess, AmazonVPCFullAccess
 - get public and private credential key
-
+- ```aws configure```
+    ```
+    [root@seoul ~]# aws configure
+    AWS Access Key ID [None]: aaaaaaaaaaaaaaa
+    AWS Secret Access Key [None]: bbbbbbbbbbbbbbbbbbbbbb
+    Default region name [None]:
+    Default output format [None]:
+    ```
 # Configure DNS
 - ```yum install bind-utils -y```, install ```dig```
 - ```dig +short davidkorea.com ns```
