@@ -1,3 +1,28 @@
+# Configure DNS
+- ```yum install bind-utils -y```, install ```dig```
+- ```dig +short davidkorea.com ns```
+    ```    
+    [root@seoul ~]# dig +short davidkorea.com ns
+    ns-725.awsdns-26.net.
+    ns-1133.awsdns-13.org.
+    ns-1634.awsdns-12.co.uk.
+    ns-331.awsdns-41.com.
+    ```
+- ```dig +short davidkorea.com soa```
+    ```    
+    [root@seoul ~]# dig +short davidkorea.com soa
+    ns-331.awsdns-41.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
+    ```
+
+
+
+
+
+
+
+
+
+
 # JupyterHub with Kubernetes on EC2
 References
 - [AWS EC2 上安装 Kubernetes 的示例](https://www.jianshu.com/p/7d448abae039)
