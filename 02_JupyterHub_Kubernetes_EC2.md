@@ -24,7 +24,10 @@
     [root@seoul ~]# dig +short k8s.davidkorea.com soa
     ns-1817.awsdns-35.co.uk. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
     ```
-
+# S3
+- name: kops.k8s.davidkorea.com
+- region: seoul
+- the rest all by default
 
 
 
