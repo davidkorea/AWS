@@ -11,7 +11,7 @@
     Default region name [None]:
     Default output format [None]:
     ```
-# Configure DNS
+# Route53 (Configure DNS)
 - ```yum install bind-utils -y```, install ```dig```
 - ```dig +short davidkorea.com ns```
     ```    
