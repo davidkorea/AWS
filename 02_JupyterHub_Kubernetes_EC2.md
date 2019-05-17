@@ -6,6 +6,7 @@ References
 - [JupyterHub with Kubernetes On Single Bare Metal Instance Tutorial](https://medium.com/@georgepaw/jupyterhub-with-kubernetes-on-single-bare-metal-instance-tutorial-67cbd5ec0b00)
     
 1. Setup a Kubernetes cluster on AWS
+    - **先通过一台主机安装kops后，这个主机可以使EC2主机，也可以是本地的linux主机。通过这台主机的kops命令在AWS上创建k8s集群**
 2. Setup JupyterHub
     - Setting up Helm
     - Setting up JupyterHub
