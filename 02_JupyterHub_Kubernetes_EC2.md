@@ -2,6 +2,7 @@
 References
 - [AWS EC2 上安装 Kubernetes 的示例](https://www.jianshu.com/p/7d448abae039)
 - [kubernetes/kops/docs/aws.md](https://github.com/kubernetes/kops/blob/master/docs/aws.md#prepare-local-environment)
+- [kubernetes/kops/docs/Installing kops (Binaries)](https://github.com/kubernetes/kops/blob/master/docs/install.md)
 - [Setting Up a Kubernetes Cluster on AWS in 5 Minutes](https://ramhiser.com/post/2018-05-20-setting-up-a-kubernetes-cluster-on-aws-in-5-minutes/)
 - [JupyterHub with Kubernetes On Single Bare Metal Instance Tutorial](https://medium.com/@georgepaw/jupyterhub-with-kubernetes-on-single-bare-metal-instance-tutorial-67cbd5ec0b00)
 - [Zero to JupyterHub with Kubernetes](https://zero-to-jupyterhub.readthedocs.io/en/latest/index.html)
