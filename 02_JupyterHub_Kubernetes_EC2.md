@@ -107,7 +107,17 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 # SSH
 ```ssh-keygen```
 
-
+# kops create cluster
+```
+kops create cluster \
+--name=k8s.davidkorea.com \
+--state=s3://kops.k8s.davidkorea.com \
+--zones=ap-northeast-2c \
+--node-count=2 \
+--node-size=t2.medium \
+--master-size=t2.medium \
+--dns-zone=k8s.davidkorea.com
+```
 
 
 
