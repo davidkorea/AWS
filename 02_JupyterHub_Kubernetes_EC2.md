@@ -3,7 +3,7 @@
 - add user to group
     - AmazonEC2FullAccess, AmazonRoute53FullAccess, AmazonS3FullAccess, IAMFullAccess, AmazonVPCFullAccess
 - get public and private credential key
-- ```aws configure```
+- ```aws configure```, save in /root/.aws/credentials
     ```
     [root@seoul ~]# aws configure
     AWS Access Key ID [None]: aaaaaaaaaaaaaaa
