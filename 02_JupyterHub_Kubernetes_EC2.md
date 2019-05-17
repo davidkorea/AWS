@@ -14,7 +14,16 @@
     ns-331.awsdns-41.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
     ```
 
-
+- Hosted Zone + Record Set
+    ```    
+    [root@seoul ~]# dig +short k8s.davidkorea.com ns
+    ns-1393.awsdns-46.org.
+    ns-1817.awsdns-35.co.uk.
+    ns-261.awsdns-32.com.
+    ns-716.awsdns-25.net.
+    [root@seoul ~]# dig +short k8s.davidkorea.com soa
+    ns-1817.awsdns-35.co.uk. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
+    ```
 
 
 
