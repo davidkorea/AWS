@@ -1,3 +1,4 @@
+# Install kops, kubectl, awscli
 # IAM
 - user
 - add user to group
@@ -87,7 +88,8 @@
 - region: seoul
 - the rest all by default
 
-
+# SSH
+```ssh-keygen```
 
 
 
