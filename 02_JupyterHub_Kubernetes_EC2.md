@@ -1,3 +1,9 @@
+# IAM
+- user
+- add user to group
+    - AmazonEC2FullAccess, AmazonRoute53FullAccess, AmazonS3FullAccess, IAMFullAccess, AmazonVPCFullAccess
+- get public and private credential key
+
 # Configure DNS
 - ```yum install bind-utils -y```, install ```dig```
 - ```dig +short davidkorea.com ns```
