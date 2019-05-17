@@ -158,6 +158,8 @@ Official: [在 Linux 上安装 AWS CLI](https://docs.aws.amazon.com/zh_cn/cli/la
 - 方法1：https://docs.aws.amazon.com/zh_cn/eks/latest/userguide/install-kubectl.html#install-kubectl-linux
 
     - ```curl -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.12.7/2019-03-27/bin/linux/amd64/kubectl```
+    - ```curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/darwin/amd64/kubectl```，最新版本安装
+
     - ```chmod +x ./kubectl```
     - ```mkdir $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH```
     - ```kubectl version --short --client```
