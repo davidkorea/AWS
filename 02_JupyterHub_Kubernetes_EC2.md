@@ -187,6 +187,7 @@ We like to think of it as kubectl for clusters. kops helps you create, destroy, 
 - ```chmod +x kops-linux-amd64```
 - ```mv kops-linux-amd64 /usr/local/bin/kops```
 - ```kops version```
+    - error ```-bash: kops: command not found ```, 执行```export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin```
 
 ## 1.3 为kops创建IAM账号
 - create on aws, and download secret key as txt
