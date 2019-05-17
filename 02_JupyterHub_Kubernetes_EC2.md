@@ -8,7 +8,7 @@ References
 - [Zero to JupyterHub with Kubernetes](https://zero-to-jupyterhub.readthedocs.io/en/latest/index.html)
 
 1. Setup a Kubernetes cluster on AWS
-    - 先通过一台主机安装kops后，这个主机可以使EC2主机，也可以是本地的linux主机。通过这台主机的kops命令在AWS上创建k8s集群
+    - 先通过一台主机安装kops后，这个主机可以是EC2主机，也可以是本地的linux主机。通过这台主机的kops命令在AWS上创建k8s集群
 2. Setup JupyterHub
     - Setting up Helm
     - Setting up JupyterHub
@@ -53,21 +53,28 @@ Official: [在 Linux 上安装 AWS CLI](https://docs.aws.amazon.com/zh_cn/cli/la
 
 # 1. Kubernetes cluster on AWS
 
-> 先通过一台主机安装kops后，这个主机可以使EC2主机，也可以是本地的linux主机。通过这台主机的kops命令在AWS上创建k8s集群
+> 先通过一台主机安装kops后，这个主机可以是EC2主机，也可以是本地的linux主机。通过这台主机的kops命令在AWS上创建k8s集群
+
 
 ## 1.1 安装kubectl
-https://docs.aws.amazon.com/zh_cn/eks/latest/userguide/install-kubectl.html#install-kubectl-linux
 
-- ```curl -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.12.7/2019-03-27/bin/linux/amd64/kubectl```
-- ```chmod +x ./kubectl```
-- ```mkdir $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH```
-- ```kubectl version --short --client```
+- 方法1：https://docs.aws.amazon.com/zh_cn/eks/latest/userguide/install-kubectl.html#install-kubectl-linux
+
+    - ```curl -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.12.7/2019-03-27/bin/linux/amd64/kubectl```
+    - ```chmod +x ./kubectl```
+    - ```mkdir $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH```
+    - ```kubectl version --short --client```
+
+- 方法2：https://github.com/kubernetes/kops/blob/master/docs/install.md#kubectl
+    ```
+    curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+    chmod +x ./kubectl
+    sudo mv ./kubectl /usr/local/bin/kubectl
+    ```
 ## 1.2 安装kops
 https://kubernetes.io/docs/setup/custom-cloud/kops/ , https://github.com/kubernetes/kops#installing
 
-We like to think of it as kubectl for clusters.
-
-kops helps you create, destroy, upgrade and maintain production-grade, highly available, Kubernetes clusters from the command line. AWS (Amazon Web Services) is currently officially supported, with GCE in beta support , and VMware vSphere in alpha, and other platforms planned.
+We like to think of it as kubectl for clusters. kops helps you create, destroy, upgrade and maintain production-grade, highly available, Kubernetes clusters from the command line. AWS (Amazon Web Services) is currently officially supported, with GCE in beta support , and VMware vSphere in alpha, and other platforms planned.
 
 > release version
 > - https://api.github.com/repos/kubernetes/kops/releases/latest
