@@ -19,6 +19,17 @@ References
 2. python，pip
 3. awscli
 
+Official: [在 Linux 上安装 AWS CLI](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/install-linux.html#install-linux-pip)
+
+
+
+
+
+
+
+
+
+
 # 1. Kubernetes cluster on AWS
 ## 1.1 安装kubectl
 https://docs.aws.amazon.com/zh_cn/eks/latest/userguide/install-kubectl.html#install-kubectl-linux
