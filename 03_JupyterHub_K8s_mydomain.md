@@ -287,7 +287,7 @@ Run the below codes on the host that installed kops, NOT master node.
 2. [Setting up JupyterHub]()
 3. [Tearing Everything Down]()
 
-These codes still run on the host which installed kops.
+These codes still run on the host which installed kops. All settings followed by official manual.
 
 ## 3.1 Setting up Helm
 > Helm, the package manager for Kubernetes, is a useful tool for installing, upgrading and managing applications on a Kubernetes cluster. Helm packages are called charts. We will be installing and managing JupyterHub on our Kubernetes cluster using a Helm chart.
@@ -298,7 +298,7 @@ These codes still run on the host which installed kops.
 ### 1. Installation 
 - ```curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash```
     - 安装了Helm的客户端程序在安装了kops的本地主机
-### 2. Initialization, 
+### 2. Initialization
 After installing helm on your machine, initialize Helm on your Kubernetes cluster。在本机安装了helm的客户端命令后，再在远端的k8s集群中安装helm的服务端tiller
 - Set up a ServiceAccount for use by tiller
     - ```kubectl --namespace kube-system create serviceaccount tiller```
@@ -321,13 +321,12 @@ Now that we have a Kubernetes cluster and Helm setup, we can proceed by using He
 
 1. Generate a random hex string representing 32 bytes to use as a security token
     - ```openssl rand -hex 32```
-2. Create and start editing a file called config.yaml
+2. Create and start editing a file called config.yaml，paste the generated hex string 
     - ```nano config.yaml```
         ```
         proxy:
           secretToken: "<RANDOM_HEX>"
         ```
-        - paste the generated hex string 
     - Save the config.yaml file by pressing CTRL+X or CMD+X 
     - 此处用vim也完全可以
 3. Install JupyterHub
@@ -355,14 +354,13 @@ Now that we have a Kubernetes cluster and Helm setup, we can proceed by using He
 
 
 ### 2. 通过Master节点访问
-master域名：api.k8s.davidkorea.com
+master域名：api.k8s.davidkorea.com, 可以通过```kubectl cluster-info```查到
 ```
 [root@seoul ~]# kubectl get svc -n jhub
 NAME           TYPE           CLUSTER-IP       EXTERNAL-IP       PORT(S)          AGE
 hub            ClusterIP      100.65.118.182   <none>                                                                        8081/TCP                     25m
 proxy-api      ClusterIP      100.71.161.169   <none>                                                                        8001/TCP                     25m
 proxy-public   LoadBalancer   100.66.116.162   ab98a5e2c791011e994340ae990a9697-517512224.ap-northeast-2.elb.amazonaws.com   80:30031/TCP,443:31462/TCP   25m
-[root@seoul ~]# kubectl cluster-info
 ```
 - 可以看到上面proxy-public的端口转发
     - pod 80 -> master 30031
@@ -373,3 +371,22 @@ proxy-public   LoadBalancer   100.66.116.162   ab98a5e2c791011e994340ae990a9697-
     - https31462还不行, https://api.k8s.davidkorea.com:31462
 
 ![](https://i.loli.net/2019/05/18/5cdfb7c41d94886722.png)
+
+## 3.4 Tearing Everything Down
+https://zero-to-jupyterhub.readthedocs.io/en/latest/turn-off.html
+
+### 1. Delete the helm release
+- ```  helm delete <YOUR-HELM-RELEASE-NAME> --purge```
+    - ```helm delete jhub --purge```
+    - ```helm list```, the name is <YOUR-HELM-RELEASE-NAME>=jhub
+- ```kubectl delete namespace <YOUR-NAMESPACE>```
+    - ```kubectl delete namespace jhub```
+### 2. AWS
+
+- ```kops delete cluster <CLUSTER-NAME> --yes```
+    - ```<CLUSTER-NAME>``` is k8s.davidkorea.com
+    - whther needs ```--state```??
+- ```aws ec2 stop-instances --instance-ids <aws-instance id of CI host>```
+- ```aws ec2 terminate-instances --instance-ids <aws-instance id of CI host>```
+
+
