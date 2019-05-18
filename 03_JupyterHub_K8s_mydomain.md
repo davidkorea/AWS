@@ -6,11 +6,89 @@ STEPS:
 2. Deploy a Kubernetes cluster by kops with Dashboard
 3. Deploy JupyterHub on k8s
 
+# 1. Register a domain on Route53
+### 1. go to https://console.aws.amazon.com/route53
+### 2. select and buy a domain. domain will be available in 15 - 30 mins after the process of buying. 
+### 3. test domain 
+- ```yum install bind-utils -y```, install ```dig``` command
+- ```dig +short davidkorea.com ns```
+    ```    
+    [root@seoul ~]# dig +short davidkorea.com ns
+    ns-725.awsdns-26.net.
+    ns-1133.awsdns-13.org.
+    ns-1634.awsdns-12.co.uk.
+    ns-331.awsdns-41.com.
+    ```
+- ```dig +short davidkorea.com soa```
+    ```    
+    [root@seoul ~]# dig +short davidkorea.com soa
+    ns-331.awsdns-41.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
+    ```
+### 4. Create new hosted zone 创建托管区域   
+    
+    
+    
+    
+    
+    
 
+- full info
+    ```    
+    [root@seoul ~]# dig ns k8s.davidkorea.com
 
+    ; <<>> DiG 9.11.4-P2-RedHat-9.11.4-17.P2.el8_0 <<>> ns k8s.davidkorea.com
+    ;; global options: +cmd
+    ;; Got answer:
+    ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 50109
+    ;; flags: qr rd ra; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 1
 
+    ;; OPT PSEUDOSECTION:
+    ; EDNS: version: 0, flags:; udp: 4096
+    ;; QUESTION SECTION:
+    ;k8s.davidkorea.com.            IN      NS
 
+    ;; ANSWER SECTION:
+    k8s.davidkorea.com.     60      IN      NS      ns-261.awsdns-32.com.
+    k8s.davidkorea.com.     60      IN      NS      ns-716.awsdns-25.net.
+    k8s.davidkorea.com.     60      IN      NS      ns-1393.awsdns-46.org.
+    k8s.davidkorea.com.     60      IN      NS      ns-1817.awsdns-35.co.uk.
 
+    ;; Query time: 67 msec
+    ;; SERVER: 172.31.0.2#53(172.31.0.2)
+    ;; WHEN: Fri May 17 08:11:10 UTC 2019
+    ;; MSG SIZE  rcvd: 184
+
+    [root@seoul ~]# dig soa k8s.davidkorea.com
+
+    ; <<>> DiG 9.11.4-P2-RedHat-9.11.4-17.P2.el8_0 <<>> soa k8s.davidkorea.com
+    ;; global options: +cmd
+    ;; Got answer:
+    ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 40279
+    ;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+    ;; OPT PSEUDOSECTION:
+    ; EDNS: version: 0, flags:; udp: 4096
+    ;; QUESTION SECTION:
+    ;k8s.davidkorea.com.            IN      SOA
+
+    ;; ANSWER SECTION:
+    k8s.davidkorea.com.     60      IN      SOA     ns-1817.awsdns-35.co.uk. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
+
+    ;; Query time: 104 msec
+    ;; SERVER: 172.31.0.2#53(172.31.0.2)
+    ;; WHEN: Fri May 17 08:11:27 UTC 2019
+    ;; MSG SIZE  rcvd: 131
+    ```
+- Hosted Zone + Record Set
+    ```    
+    [root@seoul ~]# dig +short k8s.davidkorea.com ns
+    ns-1393.awsdns-46.org.
+    ns-1817.awsdns-35.co.uk.
+    ns-261.awsdns-32.com.
+    ns-716.awsdns-25.net.
+    [root@seoul ~]# dig +short k8s.davidkorea.com soa
+    ns-1817.awsdns-35.co.uk. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
+    ```
 
 
 
@@ -49,77 +127,7 @@ sudo mv ./kubectl /usr/local/bin/kubectl
     Default region name [None]:
     Default output format [None]:
     ```
-# Route53 (Configure DNS)
-- ```yum install bind-utils -y```, install ```dig```
-- ```dig +short davidkorea.com ns```
-    ```    
-    [root@seoul ~]# dig +short davidkorea.com ns
-    ns-725.awsdns-26.net.
-    ns-1133.awsdns-13.org.
-    ns-1634.awsdns-12.co.uk.
-    ns-331.awsdns-41.com.
-    ```
-- ```dig +short davidkorea.com soa```
-    ```    
-    [root@seoul ~]# dig +short davidkorea.com soa
-    ns-331.awsdns-41.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
-    ```
-    ```    
-    [root@seoul .aws]# dig ns k8s.davidkorea.com
-
-    ; <<>> DiG 9.11.4-P2-RedHat-9.11.4-17.P2.el8_0 <<>> ns k8s.davidkorea.com
-    ;; global options: +cmd
-    ;; Got answer:
-    ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 50109
-    ;; flags: qr rd ra; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 1
-
-    ;; OPT PSEUDOSECTION:
-    ; EDNS: version: 0, flags:; udp: 4096
-    ;; QUESTION SECTION:
-    ;k8s.davidkorea.com.            IN      NS
-
-    ;; ANSWER SECTION:
-    k8s.davidkorea.com.     60      IN      NS      ns-261.awsdns-32.com.
-    k8s.davidkorea.com.     60      IN      NS      ns-716.awsdns-25.net.
-    k8s.davidkorea.com.     60      IN      NS      ns-1393.awsdns-46.org.
-    k8s.davidkorea.com.     60      IN      NS      ns-1817.awsdns-35.co.uk.
-
-    ;; Query time: 67 msec
-    ;; SERVER: 172.31.0.2#53(172.31.0.2)
-    ;; WHEN: Fri May 17 08:11:10 UTC 2019
-    ;; MSG SIZE  rcvd: 184
-
-    [root@seoul .aws]# dig soa k8s.davidkorea.com
-
-    ; <<>> DiG 9.11.4-P2-RedHat-9.11.4-17.P2.el8_0 <<>> soa k8s.davidkorea.com
-    ;; global options: +cmd
-    ;; Got answer:
-    ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 40279
-    ;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
-
-    ;; OPT PSEUDOSECTION:
-    ; EDNS: version: 0, flags:; udp: 4096
-    ;; QUESTION SECTION:
-    ;k8s.davidkorea.com.            IN      SOA
-
-    ;; ANSWER SECTION:
-    k8s.davidkorea.com.     60      IN      SOA     ns-1817.awsdns-35.co.uk. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
-
-    ;; Query time: 104 msec
-    ;; SERVER: 172.31.0.2#53(172.31.0.2)
-    ;; WHEN: Fri May 17 08:11:27 UTC 2019
-    ;; MSG SIZE  rcvd: 131
-    ```
-- Hosted Zone + Record Set
-    ```    
-    [root@seoul ~]# dig +short k8s.davidkorea.com ns
-    ns-1393.awsdns-46.org.
-    ns-1817.awsdns-35.co.uk.
-    ns-261.awsdns-32.com.
-    ns-716.awsdns-25.net.
-    [root@seoul ~]# dig +short k8s.davidkorea.com soa
-    ns-1817.awsdns-35.co.uk. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
-    ```
+# Route53 (
 # S3
 - name: kops.k8s.davidkorea.com
 - region: seoul
