@@ -346,7 +346,12 @@ Now that we have a Kubernetes cluster and Helm setup, we can proceed by using He
 可以看到，helm创建了LoadBalancer类型的service。如果非云环境，Nodeport类型即可实现pod的外网访问。
 ### 1. 通过域名绑定负载均衡器来访问（推荐）
 虽然负载均衡器的EXTERNAL-IP可以直接访问，但是太丑了。域名都买了，一定要绑定自己的域名来使用。
-
+- Route53 - subdomain
+    - 在Subdomain：k8s.davidkorea.com 中添加一条记录，类型为IPv4地址
+    ![](https://i.loli.net/2019/05/18/5cdfb8865992030767.png)
+    
+- 访问 http://jupyter.k8s.davidkorea.com/ 即可
+    ![](https://i.loli.net/2019/05/18/5cdfb974c46e457356.png)
 
 
 ### 2. 通过Master节点访问
@@ -367,3 +372,4 @@ proxy-public   LoadBalancer   100.66.116.162   ab98a5e2c791011e994340ae990a9697-
     - 测试http30031成功，http://api.k8s.davidkorea.com:30031
     - https31462还不行, https://api.k8s.davidkorea.com:31462
 
+![](https://i.loli.net/2019/05/18/5cdfb7c41d94886722.png)
