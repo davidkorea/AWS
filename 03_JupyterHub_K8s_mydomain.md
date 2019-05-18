@@ -138,25 +138,9 @@ create a user and group named "kops" to give kops access to create VM on AWS. Ac
 - AmazonS3FullAccess
 - IAMFullAccess
 - AmazonVPCFullAccess
+![](https://i.loli.net/2019/05/18/5cdfa6a92f64b10289.png)
 
-
-
-
-    
-
-
-
-
-
-
-
-
-# IAM
-- user
-- add user to group
-    - AmazonEC2FullAccess, AmazonRoute53FullAccess, AmazonS3FullAccess, IAMFullAccess, AmazonVPCFullAccess
-- get public and private credential key
-- ```aws configure```, save in /root/.aws/credentials
+- ```aws configure```, fonfigure as the csv downloaded above and will save in /root/.aws/credentials
     ```
     [root@seoul ~]# aws configure
     AWS Access Key ID [None]: aaaaaaaaaaaaaaa
@@ -164,16 +148,19 @@ create a user and group named "kops" to give kops access to create VM on AWS. Ac
     Default region name [None]:
     Default output format [None]:
     ```
-# Route53 (
-# S3
-- name: kops.k8s.davidkorea.com
-- region: seoul
+### 2. S3
+- name: ```kops.k8s.davidkorea.com```
+- region: ```seoul```
 - the rest all by default
 
-# SSH
-```ssh-keygen```
+![](https://i.loli.net/2019/05/18/5cdfa793d819c72570.png)
 
-# kops create cluster
+### 3. Create Kubernetes by kops on AWS
+The below command will generate a cluster configuration, but not start building it. Make sure that you have generated SSH key pair before creating the cluster.
+1. SSH
+```ssh-keygen```, 此SSH key将用于远程连接 kops创建的AWS虚拟机
+
+2. kops create cluster，仅生成配置文件，并不会真正创建kubernetes集群
 ```
 kops create cluster \
 --name=k8s.davidkorea.com \
@@ -184,82 +171,88 @@ kops create cluster \
 --master-size=t2.medium \
 --dns-zone=k8s.davidkorea.com
 ```
-- ```kops update cluster k8s.davidkorea.com --state=s3://kops.k8s.davidkorea.com --yes```
-
-- delete
-    - ```kops delete cluster --name=k8s.davidkorea.com --state=s3://kops.k8s.davidkorea.com```
+- ```--name```，k8s集群名称
+- ```--state```，S3存储位置
+- ```--dns-zone```，子域名
     
-- validate, 一定要有state参数 ```kops validate cluster --state=s3://kops.k8s.davidkorea.com```
-    ```
-    [root@seoul ~]# kops validate cluster --state=s3://kops.k8s.davidkorea.com
-    Using cluster from kubectl context: k8s.davidkorea.com
+如配置不正确还可以修改配置文件
+```
+kops edit cluster k8s.davidkorea.com --state=s3://kops.k8s.davidkorea.com
+```
+其实际报错在 Amazon S3/kops.k8s.davidkorea.com/k8s.davidkorea.com/config
 
-    Validating cluster k8s.davidkorea.com
+3. 真正创建kubernetes集群
+    - ```kops update cluster k8s.davidkorea.com --state=s3://kops.k8s.davidkorea.com --yes```
+        - ```--state```参数必须要指定，因为这不是grossip方式
 
-    INSTANCE GROUPS
-    NAME			ROLE	MACHINETYPE	MIN	MAX	SUBNETS
-    master-ap-northeast-2c	Master	t2.medium	1	1	ap-northeast-2c
-    nodes			Node	t2.medium	2	2	ap-northeast-2c
+    - validate, 一定要有state参数 
+        - ```kops validate cluster --state=s3://kops.k8s.davidkorea.com```
+        ```
+        [root@seoul ~]# kops validate cluster --state=s3://kops.k8s.davidkorea.com
+        Using cluster from kubectl context: k8s.davidkorea.com
 
-    NODE STATUS
-    NAME							ROLE	READY
-    ip-172-20-36-35.ap-northeast-2.compute.internal		master	True
-    ip-172-20-41-77.ap-northeast-2.compute.internal		node	True
-    ip-172-20-48-127.ap-northeast-2.compute.internal	node	True
+        Validating cluster k8s.davidkorea.com
 
-    VALIDATION ERRORS
-    KIND	NAME					MESSAGE
-    Pod	kube-system/kube-dns-57dd96bb49-28p5q	kube-system pod "kube-dns-57dd96bb49-28p5q" is not ready (kubedns)
+        INSTANCE GROUPS
+        NAME			ROLE	MACHINETYPE	MIN	MAX	SUBNETS
+        master-ap-northeast-2c	Master	t2.medium	1	1	ap-northeast-2c
+        nodes			Node	t2.medium	2	2	ap-northeast-2c
 
-    Validation Failed
-    
-    -----
-    Your cluster k8s.davidkorea.com is ready    
-    ```
-    ```
-    [root@seoul ~]# kubectl get nodes
-    NAME                                               STATUS   ROLES    AGE     VERSION
-    ip-172-20-36-35.ap-northeast-2.compute.internal    Ready    master   5m52s   v1.12.7
-    ip-172-20-41-77.ap-northeast-2.compute.internal    Ready    node     4m51s   v1.12.7
-    ip-172-20-48-127.ap-northeast-2.compute.internal   Ready    node     4m49s   v1.12.7
-    ```
-    ```
-    [root@seoul ~]#  kubectl cluster-info
-    Kubernetes master is running at https://api.k8s.davidkorea.com # msater的域名
-    KubeDNS is running at https://api.k8s.davidkorea.com/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+        NODE STATUS
+        NAME							ROLE	READY
+        ip-172-20-36-35.ap-northeast-2.compute.internal		master	True
+        ip-172-20-41-77.ap-northeast-2.compute.internal		node	True
+        ip-172-20-48-127.ap-northeast-2.compute.internal	node	True
 
-    To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
-    ```
+        VALIDATION ERRORS
+        KIND	NAME					MESSAGE
+        Pod	kube-system/kube-dns-57dd96bb49-28p5q	kube-system pod "kube-dns-57dd96bb49-28p5q" is not ready (kubedns)
+
+        Validation Failed
+
+        -----
+        Your cluster k8s.davidkorea.com is ready    
+        ```
+4. 查看集群和各nodes状态
+```
+[root@seoul ~]# kubectl get nodes
+NAME                                               STATUS   ROLES    AGE     VERSION
+ip-172-20-36-35.ap-northeast-2.compute.internal    Ready    master   5m52s   v1.12.7
+ip-172-20-41-77.ap-northeast-2.compute.internal    Ready    node     4m51s   v1.12.7
+ip-172-20-48-127.ap-northeast-2.compute.internal   Ready    node     4m49s   v1.12.7
+```
+```
+[root@seoul ~]#  kubectl cluster-info
+Kubernetes master is running at https://api.k8s.davidkorea.com       # msater的域名
+KubeDNS is running at https://api.k8s.davidkorea.com/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+```
+5. EC2中增加了3个VM
+
 master: api.k8s.davidkorea.com
 ```
 公有 DNS (IPv4): ec2-13-209-22-79.ap-northeast-2.compute.amazonaws.com
-
 IPv4 公有 IP: 13.209.22.79
-
 私有 DNS: ip-172-20-36-35.ap-northeast-2.compute.internal
-
 私有 IP: 172.20.36.35
 ```
 nodes
 ```
 公有 DNS (IPv4): ec2-54-180-104-89.ap-northeast-2.compute.amazonaws.com
-
 IPv4 公有 IP: 54.180.104.89
-
 私有 DNS: ip-172-20-41-77.ap-northeast-2.compute.internal
-
 私有 IP: 172.20.41.77
 ```
 ```
 公有 DNS (IPv4): ec2-54-180-105-142.ap-northeast-2.compute.amazonaws.com
-
 IPv4 公有 IP: 54.180.105.142
-
 私有 DNS: ip-172-20-48-127.ap-northeast-2.compute.internal
-
 私有 IP: 172.20.48.127
 ```
-
+6. Delete 删除k8s集群部署
+    - ```kops delete cluster --name=k8s.davidkorea.com --state=s3://kops.k8s.davidkorea.com```
+    
 # Dashboard
 - run codes on the host that install kops, NOT master node
 - ```
