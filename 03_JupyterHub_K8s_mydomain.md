@@ -2,9 +2,9 @@
 ![](https://i.loli.net/2019/05/18/5cdf8f931931195319.png)
 
 STEPS:
-1. Register a domain on Route53
-2. Deploy a Kubernetes cluster by kops with Dashboard
-3. Deploy JupyterHub on k8s
+1. [Register a domain on Route53]()
+2. [Deploy a Kubernetes cluster by kops with Dashboard]()
+3. [Deploy JupyterHub on k8s]()
 
 # 1. Register a domain on Route53
 ### 1. go to Route53
@@ -55,9 +55,9 @@ Hosted Zone + Record Set
 - 使用一台linux或Mac主机，本地或者EC2均可。安装以下工具来部署AWS上的Kubernetes，因为kops只支持linux和mac。
 - 所有操作都是在该主机上面，通过kubectl命令来控制AWS上来Kubernetes进行部署
 
-1. Tools: python pip awscli, kubectl, kops 
-2. Build Kubernetes cluster
-3. Build Kubernetes Dashboard
+1. [Tools: python pip awscli, kubectl, kops]()
+2. [Build Kubernetes cluster]()
+3. [Build Kubernetes Dashboard]()
 
 **!!!!! AWARE !!!!!: ROOT权限 sudo -i, 环境变量 export env paras**
 
@@ -126,11 +126,18 @@ Export env
     Version 1.12.0 (git-a2b7b4a88)
     ```
 
+## 2.2 Deploy Kubernetes cluster on AWS
+1. [IAM for kops]()
+2. [S3]()
+3. [Create, update, delete Kubernetes by kops]()
 
-
-
-
-
+### 1. IAM
+create a user and group named "kops" to give kops access to create VM on AWS. Access includes:
+- AmazonEC2FullAccess
+- AmazonRoute53FullAccess
+- AmazonS3FullAccess
+- IAMFullAccess
+- AmazonVPCFullAccess
 
 
 
