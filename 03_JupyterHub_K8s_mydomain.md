@@ -59,7 +59,7 @@ Hosted Zone + Record Set
 2. Build Kubernetes cluster
 3. Build Kubernetes Dashboard
 
-> **!!!!!AWARE!!!!!: ROOT权限 sudo -i, 环境变量 export env paras**
+**!!!!! AWARE !!!!!: ROOT权限 sudo -i, 环境变量 export env paras**
 
 ## 2.1 Install awscli，kops, kubectl, Tools
 ### 1. awscli
@@ -85,23 +85,40 @@ Official： [在 Linux 上安装 AWS CLI](https://docs.aws.amazon.com/zh_cn/cli/
     [root@seoul ~]# aws --version
     aws-cli/1.16.160 Python/3.6.8 Linux/4.18.0-80.el8.x86_64 botocore/1.12.150
     ```
-
-
-
-```
-curl -Lo kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
-chmod +x ./kops
-sudo mv ./kops /usr/local/bin/
-kops version
-```
-- error -bash: kops: command not found, 
-    - 执行```export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin```
+### 2. kubectl
+Official:
+    - Kubernetes: https://github.com/kubernetes/kops/blob/master/docs/install.md#kubectl
+    - AWS：https://docs.aws.amazon.com/zh_cn/eks/latest/userguide/install-kubectl.html#install-kubectl-linux
     
-```
-curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
-chmod +x ./kubectl
-sudo mv ./kubectl /usr/local/bin/kubectl
-```
+- ```curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/darwin/amd64/kubectl```
+- ```chmod +x ./kubectl```
+- ```mkdir $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH```, 这一步kubernetes的官方文档没有提到，但是AWS的官方文档（[安装 kubectl](https://docs.aws.amazon.com/zh_cn/eks/latest/userguide/install-kubectl.html#install-kubectl-linux)）有提到。还是需要这一步，因为后面kops会有环境变量报错
+- ```sudo mv ./kubectl /usr/local/bin/kubectl```, Kubernetes文档没有使用上一步，而是使用了这一步。
+- ```kubectl version --short --client```
+    ```
+    [root@seoul ~]# kubectl version --short --client
+    Client Version: v1.14.2
+    ```
+
+### 3, kops
+Official: https://github.com/kubernetes/kops#installing
+
+
+- ```curl -Lo kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64```
+- ```chmod +x ./kops```
+- ```sudo mv ./kops /usr/local/bin/```
+- ```kops version```
+    ```
+    [root@seoul ~]# kops version
+    -bash: kops: command not found
+    ```
+    - 报错，执行```export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin```
+    ```
+    [root@seoul ~]# kops version
+    Version 1.12.0 (git-a2b7b4a88)
+    ```
+
+
 
 
 
