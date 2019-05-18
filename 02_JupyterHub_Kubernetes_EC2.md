@@ -1,4 +1,4 @@
-# sudo -i
+# Aware: sudo -i, export env paras
 
 # Install kops, kubectl, awscli
 
