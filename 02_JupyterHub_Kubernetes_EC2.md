@@ -205,7 +205,10 @@ IPv4 公有 IP: 54.180.105.142
 - ```kops get secrets admin --type secret -oplaintext --state=s3://kops.k8s.davidkorea.com```, 需要指定state
 
 - visit ```https://api.k8s.davidkorea.com/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/```
-
+    - 反正一开始也是登录不了，来来回回总是提示输入用户名和密码
+    - 中间来回试了下```https://api.k8s.davidkorea.com/ui```，这个地址输入用户名密码后直接会返回一个api的json页面，也是无法进入dashboard
+    - 然后再试回第一个url，再登陆时，用户名密码提示框下面就有dashboard的影子了
+    - 根据之前测试的，两次输入id=admin，passwd=kube-secret，然后token使用admin-secret，登陆成功
 
 
 
