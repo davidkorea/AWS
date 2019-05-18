@@ -126,9 +126,72 @@ kops create cluster \
 
 - delete
     - ```kops delete cluster --name=k8s.davidkorea.com --state=s3://kops.k8s.davidkorea.com```
+    
+- validate, 一定要有state参数 ```kops validate cluster --state=s3://kops.k8s.davidkorea.com````
+    ```
+    [root@seoul ~]# kops validate cluster --state=s3://kops.k8s.davidkorea.com
+    Using cluster from kubectl context: k8s.davidkorea.com
 
+    Validating cluster k8s.davidkorea.com
 
+    INSTANCE GROUPS
+    NAME			ROLE	MACHINETYPE	MIN	MAX	SUBNETS
+    master-ap-northeast-2c	Master	t2.medium	1	1	ap-northeast-2c
+    nodes			Node	t2.medium	2	2	ap-northeast-2c
 
+    NODE STATUS
+    NAME							ROLE	READY
+    ip-172-20-36-35.ap-northeast-2.compute.internal		master	True
+    ip-172-20-41-77.ap-northeast-2.compute.internal		node	True
+    ip-172-20-48-127.ap-northeast-2.compute.internal	node	True
+
+    VALIDATION ERRORS
+    KIND	NAME					MESSAGE
+    Pod	kube-system/kube-dns-57dd96bb49-28p5q	kube-system pod "kube-dns-57dd96bb49-28p5q" is not ready (kubedns)
+
+    Validation Failed
+    ```
+    
+    
+```
+公有 DNS (IPv4)
+ec2-13-209-22-79.ap-northeast-2.compute.amazonaws.com
+
+IPv4 公有 IP
+13.209.22.79
+
+私有 DNS
+ip-172-20-36-35.ap-northeast-2.compute.internal
+
+私有 IP
+172.20.36.35
+```
+```
+公有 DNS (IPv4)
+ec2-54-180-104-89.ap-northeast-2.compute.amazonaws.com
+
+IPv4 公有 IP
+54.180.104.89
+
+私有 DNS
+ip-172-20-41-77.ap-northeast-2.compute.internal
+
+私有 IP
+172.20.41.77
+```
+```
+公有 DNS (IPv4)
+ec2-54-180-105-142.ap-northeast-2.compute.amazonaws.com
+
+IPv4 公有 IP
+54.180.105.142
+
+私有 DNS
+ip-172-20-48-127.ap-northeast-2.compute.internal
+
+私有 IP
+172.20.48.127
+```
 
 
 
