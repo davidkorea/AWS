@@ -62,8 +62,16 @@ Hosted Zone + Record Set
 **!!!!! AWARE !!!!!: ROOT权限 sudo -i, 环境变量 export env paras**
 
 ## 2.1 Install awscli，kops, kubectl, Tools
+Test tools installed or not
+- ```kops version```
+- ```kubectl version --short --client```
+- ```aws --version```
+Export env
+- ```export PATH=~/.local/bin:$PATH```
+- ```export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin```
+
 ### 1. awscli
-Official： [在 Linux 上安装 AWS CLI](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/install-linux.html#install-linux-pip)
+> Official： [在 Linux 上安装 AWS CLI](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/install-linux.html#install-linux-pip)
 
 - Install python3
     - ```yum install -y python3```
@@ -86,9 +94,9 @@ Official： [在 Linux 上安装 AWS CLI](https://docs.aws.amazon.com/zh_cn/cli/
     aws-cli/1.16.160 Python/3.6.8 Linux/4.18.0-80.el8.x86_64 botocore/1.12.150
     ```
 ### 2. kubectl
-Official:
-    - Kubernetes: https://github.com/kubernetes/kops/blob/master/docs/install.md#kubectl
-    - AWS：https://docs.aws.amazon.com/zh_cn/eks/latest/userguide/install-kubectl.html#install-kubectl-linux
+> Official:
+> - Kubernetes: https://github.com/kubernetes/kops/blob/master/docs/install.md#kubectl
+> - AWS：https://docs.aws.amazon.com/zh_cn/eks/latest/userguide/install-kubectl.html#install-kubectl-linux
     
 - ```curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/darwin/amd64/kubectl```
 - ```chmod +x ./kubectl```
@@ -101,7 +109,7 @@ Official:
     ```
 
 ### 3, kops
-Official: https://github.com/kubernetes/kops#installing
+> Official: https://github.com/kubernetes/kops#installing
 
 
 - ```curl -Lo kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64```
@@ -132,10 +140,7 @@ Official: https://github.com/kubernetes/kops#installing
 
 
 
-# 
-- ```kops version```
-- ```kubectl version --short --client```
-- ```aws```
+
 
 
 
