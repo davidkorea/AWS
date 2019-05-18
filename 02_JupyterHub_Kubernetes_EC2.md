@@ -210,8 +210,21 @@ IPv4 公有 IP: 54.180.105.142
     - 然后再试回第一个url，再登陆时，用户名密码提示框下面就有dashboard的影子了
     - 根据之前测试的，两次输入id=admin，passwd=kube-secret，然后token使用admin-secret，登陆成功
 
+# hupyterhub
 
-
+- follow below steps
+- access jupyterhub url
+    ```
+    [root@seoul ~]# kubectl get svc -n jhub
+    NAME           TYPE           CLUSTER-IP       EXTERNAL-IP                                                                   PORT(S)                      AGE
+    hub            ClusterIP      100.65.118.182   <none>                                                                        8081/TCP                     25m
+    proxy-api      ClusterIP      100.71.161.169   <none>                                                                        8001/TCP                     25m
+    proxy-public   LoadBalancer   100.66.116.162   ab98a5e2c791011e994340ae990a9697-517512224.ap-northeast-2.elb.amazonaws.com   80:30031/TCP,443:31462/TCP   25m
+    [root@seoul ~]# kubectl cluster-info
+    ```
+    - proxy-public EXTERNAL-IP 可以直接访问
+    - 而我们肯定要使用自己的域名，买都买了
+        - 所以将上米啊的PORTS转发，添加到master节点的入站规则。30031和31462，测试http30031成功，https31462还不行
 
 
 
