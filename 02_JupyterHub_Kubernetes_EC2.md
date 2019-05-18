@@ -161,45 +161,39 @@ kops create cluster \
     ip-172-20-41-77.ap-northeast-2.compute.internal    Ready    node     4m51s   v1.12.7
     ip-172-20-48-127.ap-northeast-2.compute.internal   Ready    node     4m49s   v1.12.7
     ```
-    
+    ```
+    [root@seoul ~]#  kubectl cluster-info
+    Kubernetes master is running at https://api.k8s.davidkorea.com
+    KubeDNS is running at https://api.k8s.davidkorea.com/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+    To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+    ```
 ```
-公有 DNS (IPv4)
-ec2-13-209-22-79.ap-northeast-2.compute.amazonaws.com
+公有 DNS (IPv4): ec2-13-209-22-79.ap-northeast-2.compute.amazonaws.com
 
-IPv4 公有 IP
-13.209.22.79
+IPv4 公有 IP: 13.209.22.79
 
-私有 DNS
-ip-172-20-36-35.ap-northeast-2.compute.internal
+私有 DNS: ip-172-20-36-35.ap-northeast-2.compute.internal
 
-私有 IP
-172.20.36.35
-```
-```
-公有 DNS (IPv4)
-ec2-54-180-104-89.ap-northeast-2.compute.amazonaws.com
-
-IPv4 公有 IP
-54.180.104.89
-
-私有 DNS
-ip-172-20-41-77.ap-northeast-2.compute.internal
-
-私有 IP
-172.20.41.77
+私有 IP: 172.20.36.35
 ```
 ```
-公有 DNS (IPv4)
-ec2-54-180-105-142.ap-northeast-2.compute.amazonaws.com
+公有 DNS (IPv4): ec2-54-180-104-89.ap-northeast-2.compute.amazonaws.com
 
-IPv4 公有 IP
-54.180.105.142
+IPv4 公有 IP: 54.180.104.89
 
-私有 DNS
-ip-172-20-48-127.ap-northeast-2.compute.internal
+私有 DNS: ip-172-20-41-77.ap-northeast-2.compute.internal
 
-私有 IP
-172.20.48.127
+私有 IP: 172.20.41.77
+```
+```
+公有 DNS (IPv4): ec2-54-180-105-142.ap-northeast-2.compute.amazonaws.com
+
+IPv4 公有 IP: 54.180.105.142
+
+私有 DNS: ip-172-20-48-127.ap-northeast-2.compute.internal
+
+私有 IP: 172.20.48.127
 ```
 
 
