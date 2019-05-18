@@ -157,27 +157,27 @@ create a user and group named "kops" to give kops access to create VM on AWS. Ac
 ### 3. Create Kubernetes by kops on AWS
 The below command will generate a cluster configuration, but not start building it. Make sure that you have generated SSH key pair before creating the cluster.
 1. SSH
-```ssh-keygen```, 此SSH key将用于远程连接 kops创建的AWS虚拟机
+    ```ssh-keygen```, 此SSH key将用于远程连接 kops创建的AWS虚拟机
 
 2. kops create cluster，仅生成配置文件，并不会真正创建kubernetes集群
-```
-kops create cluster \
---name=k8s.davidkorea.com \
---state=s3://kops.k8s.davidkorea.com \
---zones=ap-northeast-2c \
---node-count=2 \
---node-size=t2.medium \
---master-size=t2.medium \
---dns-zone=k8s.davidkorea.com
-```
-- ```--name```，k8s集群名称
-- ```--state```，S3存储位置
-- ```--dns-zone```，子域名subdomain
-    
-如配置不正确还可以修改配置文件
-```
-kops edit cluster k8s.davidkorea.com --state=s3://kops.k8s.davidkorea.com
-```
+    ```
+    kops create cluster \
+    --name=k8s.davidkorea.com \
+    --state=s3://kops.k8s.davidkorea.com \
+    --zones=ap-northeast-2c \
+    --node-count=2 \
+    --node-size=t2.medium \
+    --master-size=t2.medium \
+    --dns-zone=k8s.davidkorea.com
+    ```
+    - ```--name```，k8s集群名称
+    - ```--state```，S3存储位置
+    - ```--dns-zone```，子域名subdomain
+
+    - 如配置不正确还可以修改配置文件
+        ```
+        kops edit cluster k8s.davidkorea.com --state=s3://kops.k8s.davidkorea.com
+        ```
 其实际报错在 Amazon S3/kops.k8s.davidkorea.com/k8s.davidkorea.com/config
 
 3. 真正创建kubernetes集群
@@ -213,42 +213,42 @@ kops edit cluster k8s.davidkorea.com --state=s3://kops.k8s.davidkorea.com
         Your cluster k8s.davidkorea.com is ready    
         ```
 4. 查看集群和各nodes状态
-```
-[root@seoul ~]# kubectl get nodes
-NAME                                               STATUS   ROLES    AGE     VERSION
-ip-172-20-36-35.ap-northeast-2.compute.internal    Ready    master   5m52s   v1.12.7
-ip-172-20-41-77.ap-northeast-2.compute.internal    Ready    node     4m51s   v1.12.7
-ip-172-20-48-127.ap-northeast-2.compute.internal   Ready    node     4m49s   v1.12.7
-```
-```
-[root@seoul ~]#  kubectl cluster-info
-Kubernetes master is running at https://api.k8s.davidkorea.com       # msater的域名
-KubeDNS is running at https://api.k8s.davidkorea.com/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+    ```
+    [root@seoul ~]# kubectl get nodes
+    NAME                                               STATUS   ROLES    AGE     VERSION
+    ip-172-20-36-35.ap-northeast-2.compute.internal    Ready    master   5m52s   v1.12.7
+    ip-172-20-41-77.ap-northeast-2.compute.internal    Ready    node     4m51s   v1.12.7
+    ip-172-20-48-127.ap-northeast-2.compute.internal   Ready    node     4m49s   v1.12.7
+    ```
+    ```
+    [root@seoul ~]#  kubectl cluster-info
+    Kubernetes master is running at https://api.k8s.davidkorea.com       # msater的域名
+    KubeDNS is running at https://api.k8s.davidkorea.com/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
-To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
-```
+    To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+    ```
 5. EC2中增加了3个VM
 
-master: api.k8s.davidkorea.com
-```
-公有 DNS (IPv4): ec2-13-209-22-79.ap-northeast-2.compute.amazonaws.com
-IPv4 公有 IP: 13.209.22.79
-私有 DNS: ip-172-20-36-35.ap-northeast-2.compute.internal
-私有 IP: 172.20.36.35
-```
-nodes
-```
-公有 DNS (IPv4): ec2-54-180-104-89.ap-northeast-2.compute.amazonaws.com
-IPv4 公有 IP: 54.180.104.89
-私有 DNS: ip-172-20-41-77.ap-northeast-2.compute.internal
-私有 IP: 172.20.41.77
-```
-```
-公有 DNS (IPv4): ec2-54-180-105-142.ap-northeast-2.compute.amazonaws.com
-IPv4 公有 IP: 54.180.105.142
-私有 DNS: ip-172-20-48-127.ap-northeast-2.compute.internal
-私有 IP: 172.20.48.127
-```
+    - master: api.k8s.davidkorea.com
+        ```
+        公有 DNS (IPv4): ec2-13-209-22-79.ap-northeast-2.compute.amazonaws.com
+        IPv4 公有 IP: 13.209.22.79
+        私有 DNS: ip-172-20-36-35.ap-northeast-2.compute.internal
+        私有 IP: 172.20.36.35
+        ```
+    - nodes
+        ```
+        公有 DNS (IPv4): ec2-54-180-104-89.ap-northeast-2.compute.amazonaws.com
+        IPv4 公有 IP: 54.180.104.89
+        私有 DNS: ip-172-20-41-77.ap-northeast-2.compute.internal
+        私有 IP: 172.20.41.77
+        ```
+        ```
+        公有 DNS (IPv4): ec2-54-180-105-142.ap-northeast-2.compute.amazonaws.com
+        IPv4 公有 IP: 54.180.105.142
+        私有 DNS: ip-172-20-48-127.ap-northeast-2.compute.internal
+        私有 IP: 172.20.48.127
+        ```
 6. Delete 删除k8s集群部署
     - ```kops delete cluster --name=k8s.davidkorea.com --state=s3://kops.k8s.davidkorea.com```
     
@@ -268,31 +268,102 @@ Run the below codes on the host that installed kops, NOT master node.
 
 3. 访问dashboard
 
-- visit "https://<master-ip>:<apiserver-port>/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/"
-    - “<master-ip>” can get by ```kubectl cluster-info```
-    - "<apiserver-port>" is 443
-- ```https://api.k8s.davidkorea.com:443/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/```
-    - 反正一开始也是登录不了，来来回回总是提示输入用户名和密码
-    - 中间来回试了下```https://api.k8s.davidkorea.com/ui```，这个地址输入用户名密码后直接会返回一个api的json页面，也是无法进入dashboard
-    - 然后再试回第一个url，再登陆时，用户名密码提示框下面就有dashboard的影子了
-    - 根据之前测试的，两次输入id=admin，passwd=kube-secret，然后token使用admin-secret，登陆成功
-
+    - visit "https://<master-ip>:<apiserver-port>/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/"
+        - “<master-ip>” can get by ```kubectl cluster-info```
+        - "<apiserver-port>" is 443
+    - ```https://api.k8s.davidkorea.com:443/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/```
+        - 反正一开始也是登录不了，来来回回总是提示输入用户名和密码
+        - 中间来回试了下```https://api.k8s.davidkorea.com/ui```，这个地址输入用户名密码后直接会返回一个api的json页面，也是无法进入dashboard
+        - 然后再试回第一个url，再登陆时，用户名密码提示框下面就有dashboard的影子了
+        - 根据之前测试的，两次输入id=admin，passwd=kube-secret，然后token使用admin-secret，登陆成功
+    ![](https://i.loli.net/2019/05/18/5cdfb14c181b985782.png)
 
 
 
 # 3. JupyterHub
+> Official: https://zero-to-jupyterhub.readthedocs.io/en/latest/index.html#setup-jupyterhub
 
-- follow below steps
-- access jupyterhub url
-    ```
-    [root@seoul ~]# kubectl get svc -n jhub
-    NAME           TYPE           CLUSTER-IP       EXTERNAL-IP                                                                   PORT(S)                      AGE
-    hub            ClusterIP      100.65.118.182   <none>                                                                        8081/TCP                     25m
-    proxy-api      ClusterIP      100.71.161.169   <none>                                                                        8001/TCP                     25m
-    proxy-public   LoadBalancer   100.66.116.162   ab98a5e2c791011e994340ae990a9697-517512224.ap-northeast-2.elb.amazonaws.com   80:30031/TCP,443:31462/TCP   25m
-    [root@seoul ~]# kubectl cluster-info
-    ```
-    - proxy-public EXTERNAL-IP 可以直接访问
-    - 而我们肯定要使用自己的域名，买都买了
-        - 所以将上米啊的PORTS转发，添加到master节点的入站规则。30031和31462，测试http30031成功，https31462还不行
+1. [Setting up Helm]()
+2. [Setting up JupyterHub]()
+3. [Tearing Everything Down]()
+
+These codes still run on the host which installed kops.
+
+## 3.1 Setting up Helm
+> Helm, the package manager for Kubernetes, is a useful tool for installing, upgrading and managing applications on a Kubernetes cluster. Helm packages are called charts. We will be installing and managing JupyterHub on our Kubernetes cluster using a Helm chart.
+> Helm has two parts: a client (helm) and a server (tiller). 
+>   - Tiller runs inside of your Kubernetes cluster as a pod in the kube-system namespace. 
+>   - When you run helm commands, your local Helm client sends instructions to tiller in the cluster that in turn make the requested changes.
+
+### 1. Installation 
+- ```curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash```
+    - 安装了Helm的客户端程序在安装了kops的本地主机
+### 2. Initialization, 
+After installing helm on your machine, initialize Helm on your Kubernetes cluster。在本机安装了helm的客户端命令后，再在远端的k8s集群中安装helm的服务端tiller
+- Set up a ServiceAccount for use by tiller
+    - ```kubectl --namespace kube-system create serviceaccount tiller```
+- Give the ServiceAccount full permissions to manage the cluster
+    - ```kubectl create clusterrolebinding tiller --clusterrole cluster-admin --serviceaccount=kube-system:tiller```
+- Initialize helm and tiller
+    - ```helm init --service-account tiller --wait```
+    - This command only needs to run once per Kubernetes cluster, it will create a tiller deployment in the kube-system namespace and setup your local helm client. 
+    - This command installs and configures the tiller part of Helm (the whole project, not the CLI) on the remote kubernetes cluster. 
+    - Later when you want to deploy changes with helm (the local CLI), it will talk to tiller and tell it what to do. tiller then executes these instructions from within the cluster.
+### 3. Secure Helm
+- Ensure that tiller is secure from access inside the cluster:
+    - ```kubectl patch deployment tiller-deploy --namespace=kube-system --type=json --patch='[{"op": "add", "path": "/spec/template/spec/containers/0/command", "value": ["/tiller", "--listen=localhost:44134"]}]'```
+### 4. Verify
+- You can verify that you have the correct version and that it installed properly by running:
+    - ```helm version```
+    
+## 3.2 Setting up JupyterHub
+Now that we have a Kubernetes cluster and Helm setup, we can proceed by using Helm to install JupyterHub and related Kubernetes resources using a Helm chart.
+
+1. Generate a random hex string representing 32 bytes to use as a security token
+    - ```openssl rand -hex 32```
+2. Create and start editing a file called config.yaml
+    - ```nano config.yaml```
+        ```
+        proxy:
+          secretToken: "<RANDOM_HEX>"
+        ```
+        - paste the generated hex string 
+    - Save the config.yaml file by pressing CTRL+X or CMD+X 
+    - 此处用vim也完全可以
+3. Install JupyterHub
+    - ```helm repo add jupyterhub https://jupyterhub.github.io/helm-chart/```
+    - ```helm repo update```
+4. install the chart configured by your config.yaml
+    - ```RELEASE=jhub```
+    - ```NAMESPACE=jhub```
+    - ```
+      helm upgrade --install $RELEASE jupyterhub/jupyterhub \
+          --namespace $NAMESPACE  \
+           --version=0.8.0 \
+          --values config.yaml
+      ```
+## 3.3 访问JupyterHub
+可以看到，helm创建了LoadBalancer类型的service。如果非云环境，Nodeport类型即可实现pod的外网访问。
+### 1. 通过域名绑定负载均衡器来访问（推荐）
+虽然负载均衡器的EXTERNAL-IP可以直接访问，但是太丑了。域名都买了，一定要绑定自己的域名来使用。
+
+
+
+### 2. 通过Master节点访问
+master域名：api.k8s.davidkorea.com
+```
+[root@seoul ~]# kubectl get svc -n jhub
+NAME           TYPE           CLUSTER-IP       EXTERNAL-IP       PORT(S)          AGE
+hub            ClusterIP      100.65.118.182   <none>                                                                        8081/TCP                     25m
+proxy-api      ClusterIP      100.71.161.169   <none>                                                                        8001/TCP                     25m
+proxy-public   LoadBalancer   100.66.116.162   ab98a5e2c791011e994340ae990a9697-517512224.ap-northeast-2.elb.amazonaws.com   80:30031/TCP,443:31462/TCP   25m
+[root@seoul ~]# kubectl cluster-info
+```
+- 可以看到上面proxy-public的端口转发
+    - pod 80 -> master 30031
+    - pod 443 -> master 31462
+
+- 开放 k8s master节点的inbound端口30031和31462
+    - 测试http30031成功，http://api.k8s.davidkorea.com:30031
+    - https31462还不行, https://api.k8s.davidkorea.com:31462
 
