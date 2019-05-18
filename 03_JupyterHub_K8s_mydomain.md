@@ -28,11 +28,21 @@ STEPS:
 1. 创建子域名
 ![](https://i.loli.net/2019/05/18/5cdf9570d62a972617.png)
 2. 关联子域名的名称服务器地址至父域名
+
 将子域名的名称服务器地址，复制后，在父域名中创建一条记录，并粘贴子域名的名称服务器地址
-![](https://i.loli.net/2019/05/18/5cdf96ac891d640630.png）
-![](https://i.loli.net/2019/05/18/5cdf96b4ad9fe74872.png）
-    
-    
+![](https://i.loli.net/2019/05/18/5cdf96ac891d640630.png)
+![](https://i.loli.net/2019/05/18/5cdf96b4ad9fe74872.png)
+测试连通性
+```
+[ec2-user@seoul ~]$ dig +short k8s.davidkorea.com ns
+ns-261.awsdns-32.com.
+ns-716.awsdns-25.net.
+ns-1393.awsdns-46.org.
+ns-1817.awsdns-35.co.uk.
+
+[ec2-user@seoul ~]$ dig +short k8s.davidkorea.com soa
+ns-1817.awsdns-35.co.uk. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
+```
     
     
 
