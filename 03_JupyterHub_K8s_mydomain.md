@@ -174,11 +174,10 @@ The below command will generate a cluster configuration, but not start building 
     - ```--state```，S3存储位置
     - ```--dns-zone```，子域名subdomain
 
-    - 如配置不正确还可以修改配置文件
+    - 如配置不正确还可以修改配置文件，文件保存在 Amazon S3/kops.k8s.davidkorea.com/k8s.davidkorea.com/config
         ```
         kops edit cluster k8s.davidkorea.com --state=s3://kops.k8s.davidkorea.com
         ```
-其实际报错在 Amazon S3/kops.k8s.davidkorea.com/k8s.davidkorea.com/config
 
 3. 真正创建kubernetes集群
     - ```kops update cluster k8s.davidkorea.com --state=s3://kops.k8s.davidkorea.com --yes```
@@ -209,7 +208,7 @@ The below command will generate a cluster configuration, but not start building 
 
         Validation Failed
 
-        -----
+        ================================ run again =====================================
         Your cluster k8s.davidkorea.com is ready    
         ```
 4. 查看集群和各nodes状态
@@ -341,6 +340,25 @@ Now that we have a Kubernetes cluster and Helm setup, we can proceed by using He
            --version=0.8.0 \
           --values config.yaml
       ```
+5. check deploy svc and pod
+    ```
+    [root@seoul ~]# kubectl get deploy -n jhub
+    NAME    DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+    hub     1         1         1            1           6h27m
+    proxy   1         1         1            1           6h27m
+    
+    [root@seoul ~]# kubectl get po -n jhub
+    NAME                     READY   STATUS    RESTARTS   AGE
+    hub-68847b5544-qnbtm     1/1     Running   0          6h27m
+    jupyter-admin            1/1     Running   0          39m
+    proxy-67cbd47dd9-dzghw   1/1     Running   0          6h27m
+    
+    [root@seoul ~]# kubectl get svc -n jhub
+    NAME           TYPE           CLUSTER-IP       EXTERNAL-IP      PORT(S)                        AGE
+    hub            ClusterIP      100.65.118.182   <none>           8081/TCP                       6h28m
+    proxy-api      ClusterIP      100.71.161.169   <none>           8001/TCP                       6h28m
+    proxy-public   LoadBalancer   100.66.116.162   ab98a5e2c791011e994340ae990a9697-517512224.ap-northeast-2.elb.amazonaws.com                                                                     80:30031/TCP,443:31462/TCP     6h28m
+    ```
 ## 3.3 访问JupyterHub
 可以看到，helm创建了LoadBalancer类型的service。如果非云环境，Nodeport类型即可实现pod的外网访问。
 ### 1. 通过域名绑定负载均衡器来访问（推荐）
