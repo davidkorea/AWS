@@ -154,7 +154,13 @@ kops create cluster \
     -----
     Your cluster k8s.davidkorea.com is ready    
     ```
-    
+    ```
+    [root@seoul ~]# kubectl get nodes
+    NAME                                               STATUS   ROLES    AGE     VERSION
+    ip-172-20-36-35.ap-northeast-2.compute.internal    Ready    master   5m52s   v1.12.7
+    ip-172-20-41-77.ap-northeast-2.compute.internal    Ready    node     4m51s   v1.12.7
+    ip-172-20-48-127.ap-northeast-2.compute.internal   Ready    node     4m49s   v1.12.7
+    ```
     
 ```
 公有 DNS (IPv4)
