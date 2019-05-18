@@ -202,9 +202,9 @@ IPv4 公有 IP: 54.180.105.142
 - run codes on the host that install kops, NOT master node
 - ```
 - ```kops get secrets kube --type secret -oplaintext --state=s3://kops.k8s.davidkorea.com```, 需要指定state
-
 - ```kops get secrets admin --type secret -oplaintext --state=s3://kops.k8s.davidkorea.com```, 需要指定state
 
+- visit ```https://api.k8s.davidkorea.com/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/```
 
 
 
