@@ -1,3 +1,18 @@
+# JupyterHub with Kubernetes on EC2 with my domain
+![](https://i.loli.net/2019/05/18/5cdf8f931931195319.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Aware: sudo -i, export env paras
 - ```kops version```
 - ```kubectl version --short --client```
