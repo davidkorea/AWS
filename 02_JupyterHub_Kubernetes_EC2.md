@@ -163,11 +163,12 @@ kops create cluster \
     ```
     ```
     [root@seoul ~]#  kubectl cluster-info
-    Kubernetes master is running at https://api.k8s.davidkorea.com
+    Kubernetes master is running at https://api.k8s.davidkorea.com # msater的域名
     KubeDNS is running at https://api.k8s.davidkorea.com/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
     To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
     ```
+master: api.k8s.davidkorea.com
 ```
 公有 DNS (IPv4): ec2-13-209-22-79.ap-northeast-2.compute.amazonaws.com
 
@@ -177,6 +178,7 @@ IPv4 公有 IP: 13.209.22.79
 
 私有 IP: 172.20.36.35
 ```
+nodes
 ```
 公有 DNS (IPv4): ec2-54-180-104-89.ap-northeast-2.compute.amazonaws.com
 
