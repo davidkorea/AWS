@@ -553,6 +553,92 @@ Now that we have a Kubernetes cluster and Helm setup, we can proceed by using He
            --version=0.8.0 \
           --values config.yaml
       ```
+      ```
+      [root@seoul ~]# helm upgrade --install $RELEASE jupyterhub/jupyterhub \
+        >     --namespace $NAMESPACE  \
+        >      --version=0.8.0 \
+        >     --values config.yaml
+        Release "jhub" does not exist. Installing it now.
+        NAME:   jhub
+        LAST DEPLOYED: Sat May 18 01:59:56 2019
+        NAMESPACE: jhub
+        STATUS: DEPLOYED
+
+        RESOURCES:
+        ==> v1/ConfigMap
+        NAME        DATA  AGE
+        hub-config  1     0s
+
+        ==> v1/Deployment
+        NAME   READY  UP-TO-DATE  AVAILABLE  AGE
+        hub    0/1    1           0          0s
+        proxy  0/1    1           0          0s
+
+        ==> v1/PersistentVolumeClaim
+        NAME        STATUS   VOLUME  CAPACITY  ACCESS MODES  STORAGECLASS  AGE
+        hub-db-dir  Pending  gp2     0s
+
+        ==> v1/Pod(related)
+        NAME                    READY  STATUS             RESTARTS  AGE
+        hub-68847b5544-qnbtm    0/1    Pending            0         0s
+        proxy-67cbd47dd9-dzghw  0/1    ContainerCreating  0         0s
+
+        ==> v1/Role
+        NAME  AGE
+        hub   0s
+
+        ==> v1/RoleBinding
+        NAME  AGE
+        hub   0s
+
+        ==> v1/Secret
+        NAME        TYPE    DATA  AGE
+        hub-secret  Opaque  2     0s
+
+        ==> v1/Service
+        NAME          TYPE          CLUSTER-IP      EXTERNAL-IP  PORT(S)                     AGE
+        hub           ClusterIP     100.65.118.182  <none>       8081/TCP                    0s
+        proxy-api     ClusterIP     100.71.161.169  <none>       8001/TCP                    0s
+        proxy-public  LoadBalancer  100.66.116.162  <pending>    80:30031/TCP,443:31462/TCP  0s
+
+        ==> v1/ServiceAccount
+        NAME  SECRETS  AGE
+        hub   1        0s
+
+        ==> v1/StatefulSet
+        NAME              READY  AGE
+        user-placeholder  0/0    0s
+
+        ==> v1beta1/PodDisruptionBudget
+        NAME              MIN AVAILABLE  MAX UNAVAILABLE  ALLOWED DISRUPTIONS  AGE
+        hub               1              N/A              0                    1s
+        proxy             1              N/A              0                    1s
+        user-placeholder  0              N/A              0                    1s
+        user-scheduler    1              N/A              0                    0s
+
+
+        NOTES:
+        Thank you for installing JupyterHub!
+
+        Your release is named jhub and installed into the namespace jhub.
+
+        You can find if the hub and proxy is ready by doing:
+
+         kubectl --namespace=jhub get pod
+
+        and watching for both those pods to be in status 'Ready'.
+
+        You can find the public IP of the JupyterHub by doing:
+
+         kubectl --namespace=jhub get svc proxy-public
+
+        It might take a few minutes for it to appear!
+
+        Note that this is still an alpha release! If you have questions, feel free to
+          1. Read the guide at https://z2jh.jupyter.org
+          2. Chat with us at https://gitter.im/jupyterhub/jupyterhub
+          3. File issues at https://github.com/jupyterhub/zero-to-jupyterhub-k8s/issues
+      ```
     - if error
         ```
         Release "jhub" does not exist. Installing it now.
