@@ -532,3 +532,4 @@ Deleted cluster: "k8s.davidkorea.com"
 ```
 - terminated k8s cluster EC2 instances
 - clear all data in S3
+- delete S3 bucket manually
