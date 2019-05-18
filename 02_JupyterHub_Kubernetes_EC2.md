@@ -198,7 +198,12 @@ IPv4 公有 IP: 54.180.105.142
 私有 IP: 172.20.48.127
 ```
 
+# Dashboard
+- run codes on the host that install kops, NOT master node
+- ```
+- ```kops get secrets kube --type secret -oplaintext --state=s3://kops.k8s.davidkorea.com```, 需要指定state
 
+- ```kops get secrets admin --type secret -oplaintext --state=s3://kops.k8s.davidkorea.com```, 需要指定state
 
 
 
