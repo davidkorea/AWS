@@ -127,7 +127,7 @@ kops create cluster \
 - delete
     - ```kops delete cluster --name=k8s.davidkorea.com --state=s3://kops.k8s.davidkorea.com```
     
-- validate, 一定要有state参数 ```kops validate cluster --state=s3://kops.k8s.davidkorea.com````
+- validate, 一定要有state参数 ```kops validate cluster --state=s3://kops.k8s.davidkorea.com```
     ```
     [root@seoul ~]# kops validate cluster --state=s3://kops.k8s.davidkorea.com
     Using cluster from kubectl context: k8s.davidkorea.com
@@ -150,6 +150,9 @@ kops create cluster \
     Pod	kube-system/kube-dns-57dd96bb49-28p5q	kube-system pod "kube-dns-57dd96bb49-28p5q" is not ready (kubedns)
 
     Validation Failed
+    
+    -----
+    Your cluster k8s.davidkorea.com is ready    
     ```
     
     
