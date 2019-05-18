@@ -7,8 +7,10 @@ STEPS:
 3. Deploy JupyterHub on k8s
 
 # 1. Register a domain on Route53
-### 1. go to https://console.aws.amazon.com/route53
-### 2. select and buy a domain. domain will be available in 15 - 30 mins after the process of buying. 
+### 1. go to Route53
+https://console.aws.amazon.com/route53
+### 2. select and buy a domain
+domain will be available in 15 - 30 mins after the process of buying. 
 ### 3. test domain 
 - ```yum install bind-utils -y```, install ```dig``` command
 - ```dig +short davidkorea.com ns```
@@ -25,93 +27,66 @@ STEPS:
     ns-331.awsdns-41.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
     ```
 ### 4. 创建托管区域并使用subdomain
+Hosted Zone + Record Set
 1. 创建子域名
-![](https://i.loli.net/2019/05/18/5cdf9570d62a972617.png)
+    ![](https://i.loli.net/2019/05/18/5cdf9570d62a972617.png)
 2. 关联子域名的名称服务器地址至父域名
 
-将子域名的名称服务器地址，复制后，在父域名中创建一条记录，并粘贴子域名的名称服务器地址
-![](https://i.loli.net/2019/05/18/5cdf96ac891d640630.png)
-![](https://i.loli.net/2019/05/18/5cdf96b4ad9fe74872.png)
-测试连通性
-```
-[ec2-user@seoul ~]$ dig +short k8s.davidkorea.com ns
-ns-261.awsdns-32.com.
-ns-716.awsdns-25.net.
-ns-1393.awsdns-46.org.
-ns-1817.awsdns-35.co.uk.
+    - 将子域名的名称服务器地址，复制后，在父域名中创建一条记录，并粘贴子域名的名称服务器地址
+        ![](https://i.loli.net/2019/05/18/5cdf96ac891d640630.png)
+        ![](https://i.loli.net/2019/05/18/5cdf96b4ad9fe74872.png)
+    - 测试连通性
+        ```
+        [ec2-user@seoul ~]$ dig +short k8s.davidkorea.com ns
+        ns-261.awsdns-32.com.
+        ns-716.awsdns-25.net.
+        ns-1393.awsdns-46.org.
+        ns-1817.awsdns-35.co.uk.
 
-[ec2-user@seoul ~]$ dig +short k8s.davidkorea.com soa
-ns-1817.awsdns-35.co.uk. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
-```
-    
-    
+        [ec2-user@seoul ~]$ dig +short k8s.davidkorea.com soa
+        ns-1817.awsdns-35.co.uk. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
+        ```
+        - ```dig ns k8s.davidkorea.com```, more detailed info
+        - ```dig soa k8s.davidkorea.com```, more detailed info
 
-- full info
-    ```    
-    [root@seoul ~]# dig ns k8s.davidkorea.com
 
-    ; <<>> DiG 9.11.4-P2-RedHat-9.11.4-17.P2.el8_0 <<>> ns k8s.davidkorea.com
-    ;; global options: +cmd
-    ;; Got answer:
-    ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 50109
-    ;; flags: qr rd ra; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 1
+# 2. Deploy a Kubernetes cluster on AWS
 
-    ;; OPT PSEUDOSECTION:
-    ; EDNS: version: 0, flags:; udp: 4096
-    ;; QUESTION SECTION:
-    ;k8s.davidkorea.com.            IN      NS
+- 使用一台linux或Mac主机，本地或者EC2均可。安装以下工具来部署AWS上的Kubernetes，因为kops只支持linux和mac。
+- 所有操作都是在该主机上面，通过kubectl命令来控制AWS上来Kubernetes进行部署
 
-    ;; ANSWER SECTION:
-    k8s.davidkorea.com.     60      IN      NS      ns-261.awsdns-32.com.
-    k8s.davidkorea.com.     60      IN      NS      ns-716.awsdns-25.net.
-    k8s.davidkorea.com.     60      IN      NS      ns-1393.awsdns-46.org.
-    k8s.davidkorea.com.     60      IN      NS      ns-1817.awsdns-35.co.uk.
+1. Tools: python pip awscli, kubectl, kops 
+2. Build Kubernetes cluster
+3. Build Kubernetes Dashboard
 
-    ;; Query time: 67 msec
-    ;; SERVER: 172.31.0.2#53(172.31.0.2)
-    ;; WHEN: Fri May 17 08:11:10 UTC 2019
-    ;; MSG SIZE  rcvd: 184
+> **!!!!!AWARE!!!!!: ROOT权限 sudo -i, 环境变量 export env paras**
 
-    [root@seoul ~]# dig soa k8s.davidkorea.com
+## 2.1 Install awscli，kops, kubectl, Tools
+### 1. awscli
+Official： [在 Linux 上安装 AWS CLI](https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/install-linux.html#install-linux-pip)
 
-    ; <<>> DiG 9.11.4-P2-RedHat-9.11.4-17.P2.el8_0 <<>> soa k8s.davidkorea.com
-    ;; global options: +cmd
-    ;; Got answer:
-    ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 40279
-    ;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
-
-    ;; OPT PSEUDOSECTION:
-    ; EDNS: version: 0, flags:; udp: 4096
-    ;; QUESTION SECTION:
-    ;k8s.davidkorea.com.            IN      SOA
-
-    ;; ANSWER SECTION:
-    k8s.davidkorea.com.     60      IN      SOA     ns-1817.awsdns-35.co.uk. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
-
-    ;; Query time: 104 msec
-    ;; SERVER: 172.31.0.2#53(172.31.0.2)
-    ;; WHEN: Fri May 17 08:11:27 UTC 2019
-    ;; MSG SIZE  rcvd: 131
+- Install python3
+    - ```yum install -y python3```
+- Install pip3
+    - ```curl -O https://bootstrap.pypa.io/get-pip.py```, 下载pip安装脚本
+    - ```python3 get-pip.py --user```, 使用python3运行脚本,下载安装最新版本的pip和依赖包
+    - ```export PATH=~/.local/bin:$PATH```, 不执行会报错"ImportError: cannot import name 'main'"
+    - ```source ~/.bash_profile```
+    - ```pip --version```
     ```
-- Hosted Zone + Record Set
-    ```    
-    [root@seoul ~]# dig +short k8s.davidkorea.com ns
-    ns-1393.awsdns-46.org.
-    ns-1817.awsdns-35.co.uk.
-    ns-261.awsdns-32.com.
-    ns-716.awsdns-25.net.
-    [root@seoul ~]# dig +short k8s.davidkorea.com soa
-    ns-1817.awsdns-35.co.uk. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
+    [root@seoul ~]# export PATH=~/.local/bin:$PATH
+    [root@seoul ~]# pip3 --version
+    pip 19.1.1 from /root/.local/lib/python3.6/site-packages/pip (python 3.6)
+    ```
+- Install AWS CLI by pip
+    - ```pip3 install awscli --upgrade --user```
+    - ```aws --version```
+    ```
+    [root@seoul ~]# aws --version
+    aws-cli/1.16.160 Python/3.6.8 Linux/4.18.0-80.el8.x86_64 botocore/1.12.150
     ```
 
 
-
-
-# Aware: sudo -i, export env paras
-- ```kops version```
-- ```kubectl version --short --client```
-- ```aws```
-# Install kops, kubectl, awscli
 
 ```
 curl -Lo kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
@@ -127,6 +102,25 @@ curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/$(cur
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 ```
+
+
+
+
+
+
+
+
+    
+
+
+
+
+# 
+- ```kops version```
+- ```kubectl version --short --client```
+- ```aws```
+
+
 
 # IAM
 - user
