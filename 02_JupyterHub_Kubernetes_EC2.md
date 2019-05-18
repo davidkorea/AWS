@@ -122,6 +122,21 @@ kops create cluster \
 --master-size=t2.medium \
 --dns-zone=k8s.davidkorea.com
 ```
+- ```kops update cluster k8s.davidkorea.com --state=s3://kops.k8s.davidkorea.com --yes```
+
+- delete
+    - ```kops delete cluster --name=k8s.davidkorea.com --state=s3://kops.k8s.davidkorea.com```
+
+
+
+
+
+
+
+
+
+
+
 
 
 
