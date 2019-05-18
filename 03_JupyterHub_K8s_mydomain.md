@@ -1,8 +1,10 @@
 # JupyterHub with Kubernetes on EC2 with my domain
 ![](https://i.loli.net/2019/05/18/5cdf8f931931195319.png)
 
-
-
+STEPS:
+1. Register a domain on Route53
+2. Deploy a Kubernetes cluster by kops with Dashboard
+3. Deploy JupyterHub on k8s
 
 
 
