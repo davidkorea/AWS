@@ -1,5 +1,7 @@
 # Aware: sudo -i, export env paras
-
+- ```kops version```
+- ```kubectl version --short --client```
+- ```aws```
 # Install kops, kubectl, awscli
 
 ```
