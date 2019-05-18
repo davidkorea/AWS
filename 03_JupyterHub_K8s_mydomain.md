@@ -399,12 +399,136 @@ https://zero-to-jupyterhub.readthedocs.io/en/latest/turn-off.html
     - ```helm list```, the name is <YOUR-HELM-RELEASE-NAME>=jhub
 - ```kubectl delete namespace <YOUR-NAMESPACE>```
     - ```kubectl delete namespace jhub```
+    
+    
+```
+[root@seoul ~]# helm delete jhub --purge
+release "jhub" deleted
+[root@seoul ~]# kubectl get deploy
+No resources found.
+[root@seoul ~]# kubectl get deploy -n jhub
+No resources found.
+[root@seoul ~]# kubectl get svc -n jhub
+No resources found.
+
+[root@seoul ~]# kubectl get ns
+NAME          STATUS   AGE
+default       Active   12h
+jhub          Active   11h
+kube-public   Active   12h
+kube-system   Active   12h
+
+[root@seoul ~]# kubectl delete namespace jhub
+namespace "jhub" deleted
+```
 ### 2. AWS
 
 - ```kops delete cluster <CLUSTER-NAME> --yes```
     - ```<CLUSTER-NAME>``` is k8s.davidkorea.com
-    - whther needs ```--state```??
+    - whther needs ```--state```?? !! 需要
 - ```aws ec2 stop-instances --instance-ids <aws-instance id of CI host>```
 - ```aws ec2 terminate-instances --instance-ids <aws-instance id of CI host>```
 
+```
+[root@seoul ~]# kops delete cluster k8s.davidkorea.com
 
+State Store: Required value: Please set the --state flag or export KOPS_STATE_STORE.
+For example, a valid value follows the format s3://<bucket>.
+You can find the supported stores in https://github.com/kubernetes/kops/blob/master/docs/state.md.
+
+[root@seoul ~]# kops delete cluster k8s.davidkorea.com --state=s3://kops.k8s.davidkorea.com --yes
+TYPE			NAME							ID
+autoscaling-config	master-ap-northeast-2c.masters.k8s.davidkorea.com-20190518004904		master-ap-northeast-2c.masters.k8s.davidkorea.com-20190518004904
+autoscaling-config	nodes.k8s.davidkorea.com-20190518004904			nodes.k8s.davidkorea.com-20190518004904
+autoscaling-group	master-ap-northeast-2c.masters.k8s.davidkorea.com	master-ap-northeast-2c.masters.k8s.davidkorea.com
+autoscaling-group	nodes.k8s.davidkorea.com				nodes.k8s.davidkorea.com
+dhcp-options		k8s.davidkorea.com					dopt-07a79a6aaf96e13d0
+iam-instance-profile	masters.k8s.davidkorea.com				masters.k8s.davidkorea.com
+iam-instance-profile	nodes.k8s.davidkorea.com				nodes.k8s.davidkorea.com
+iam-role		masters.k8s.davidkorea.com				masters.k8s.davidkorea.com
+iam-role		nodes.k8s.davidkorea.com				nodes.k8s.davidkorea.com
+instance		master-ap-northeast-2c.masters.k8s.davidkorea.com	i-0ce8c1735bd7e76be
+instance		nodes.k8s.davidkorea.com				i-0389713798a253329
+instance		nodes.k8s.davidkorea.com				i-0a782f9d8a191a97b
+internet-gateway	k8s.davidkorea.com					igw-0ed2a9d6cf7a829e6
+keypair			kubernetes.k8s.davidkorea.com-9c:9d:38:01:6b:e1:8a:ba:4f:fd:cc:e7:69:6d:44:a8	kubernetes.k8s.davidkorea.com-9c:9d:38:01:6b:e1:8a:ba:4f:fd:cc:e7:69:6d:44:a8
+route-table		k8s.davidkorea.com					rtb-05993fc55c5a91867
+route53-record		api.internal.k8s.davidkorea.com.			Z2JIXKMGDI8GAW/api.internal.k8s.davidkorea.com.
+route53-record		api.k8s.davidkorea.com.					Z2JIXKMGDI8GAW/api.k8s.davidkorea.com.
+security-group		masters.k8s.davidkorea.com				sg-096e936e32baefe2e
+security-group		nodes.k8s.davidkorea.com				sg-0124c339ae352da03
+subnet			ap-northeast-2c.k8s.davidkorea.com			subnet-0a4435540390e0d9d
+volume			c.etcd-events.k8s.davidkorea.com			vol-0b7f8a74dc64bc360
+volume			c.etcd-main.k8s.davidkorea.com				vol-0d52dea9995920d33
+vpc			k8s.davidkorea.com					vpc-02743af4de5ac4884
+
+keypair:kubernetes.k8s.davidkorea.com-9c:9d:38:01:6b:e1:8a:ba:4f:fd:cc:e7:69:6d:44:a8	ok
+autoscaling-group:nodes.k8s.davidkorea.com	ok
+autoscaling-group:master-ap-northeast-2c.masters.k8s.davidkorea.com	ok
+instance:i-0ce8c1735bd7e76be	ok
+instance:i-0389713798a253329	ok
+internet-gateway:igw-0ed2a9d6cf7a829e6	still has dependencies, will retry
+instance:i-0a782f9d8a191a97b	ok
+route53-record:Z2JIXKMGDI8GAW/api.internal.k8s.davidkorea.com.	ok
+iam-instance-profile:masters.k8s.davidkorea.com	ok
+iam-instance-profile:nodes.k8s.davidkorea.com	ok
+iam-role:masters.k8s.davidkorea.com	ok
+iam-role:nodes.k8s.davidkorea.com	ok
+subnet:subnet-0a4435540390e0d9d	still has dependencies, will retry
+autoscaling-config:nodes.k8s.davidkorea.com-20190518004904	ok
+autoscaling-config:master-ap-northeast-2c.masters.k8s.davidkorea.com-20190518004904	ok
+volume:vol-0d52dea9995920d33	still has dependencies, will retry
+volume:vol-0b7f8a74dc64bc360	still has dependencies, will retry
+security-group:sg-096e936e32baefe2e	still has dependencies, will retry
+security-group:sg-0124c339ae352da03	still has dependencies, will retry
+Not all resources deleted; waiting before reattempting deletion
+	security-group:sg-096e936e32baefe2e
+	subnet:subnet-0a4435540390e0d9d
+	volume:vol-0b7f8a74dc64bc360
+	vpc:vpc-02743af4de5ac4884
+	dhcp-options:dopt-07a79a6aaf96e13d0
+	route-table:rtb-05993fc55c5a91867
+	security-group:sg-0124c339ae352da03
+	internet-gateway:igw-0ed2a9d6cf7a829e6
+	volume:vol-0d52dea9995920d33
+subnet:subnet-0a4435540390e0d9d	still has dependencies, will retry
+volume:vol-0d52dea9995920d33	still has dependencies, will retry
+volume:vol-0b7f8a74dc64bc360	still has dependencies, will retry
+internet-gateway:igw-0ed2a9d6cf7a829e6	still has dependencies, will retry
+security-group:sg-096e936e32baefe2e	still has dependencies, will retry
+security-group:sg-0124c339ae352da03	still has dependencies, will retry
+Not all resources deleted; waiting before reattempting deletion
+	volume:vol-0d52dea9995920d33
+	dhcp-options:dopt-07a79a6aaf96e13d0
+	route-table:rtb-05993fc55c5a91867
+	security-group:sg-0124c339ae352da03
+	internet-gateway:igw-0ed2a9d6cf7a829e6
+	subnet:subnet-0a4435540390e0d9d
+	volume:vol-0b7f8a74dc64bc360
+	security-group:sg-096e936e32baefe2e
+	vpc:vpc-02743af4de5ac4884
+subnet:subnet-0a4435540390e0d9d	still has dependencies, will retry
+volume:vol-0b7f8a74dc64bc360	ok
+internet-gateway:igw-0ed2a9d6cf7a829e6	still has dependencies, will retry
+volume:vol-0d52dea9995920d33	ok
+security-group:sg-0124c339ae352da03	still has dependencies, will retry
+security-group:sg-096e936e32baefe2e	ok
+Not all resources deleted; waiting before reattempting deletion
+	vpc:vpc-02743af4de5ac4884
+	dhcp-options:dopt-07a79a6aaf96e13d0
+	route-table:rtb-05993fc55c5a91867
+	security-group:sg-0124c339ae352da03
+	internet-gateway:igw-0ed2a9d6cf7a829e6
+	subnet:subnet-0a4435540390e0d9d
+subnet:subnet-0a4435540390e0d9d	ok
+internet-gateway:igw-0ed2a9d6cf7a829e6	ok
+security-group:sg-0124c339ae352da03	ok
+route-table:rtb-05993fc55c5a91867	ok
+vpc:vpc-02743af4de5ac4884	ok
+dhcp-options:dopt-07a79a6aaf96e13d0	ok
+Deleted kubectl config for k8s.davidkorea.com
+
+Deleted cluster: "k8s.davidkorea.com"
+```
+- terminated k8s cluster EC2 instances
+- clear all data in S3
