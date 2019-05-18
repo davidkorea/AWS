@@ -24,13 +24,13 @@ STEPS:
     [root@seoul ~]# dig +short davidkorea.com soa
     ns-331.awsdns-41.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
     ```
-### 4. Create new hosted zone 创建托管区域并使用subdomain
+### 4. 创建托管区域并使用subdomain
 1. 创建子域名
 ![](https://i.loli.net/2019/05/18/5cdf9570d62a972617.png)
 2. 关联子域名的名称服务器地址至父域名
 将子域名的名称服务器地址，复制后，在父域名中创建一条记录，并粘贴子域名的名称服务器地址
-![](https://i.loli.net/2019/05/18/5cdf96ac891d640630.png]
-![](https://i.loli.net/2019/05/18/5cdf96b4ad9fe74872.png]
+![](https://i.loli.net/2019/05/18/5cdf96ac891d640630.png）
+![](https://i.loli.net/2019/05/18/5cdf96b4ad9fe74872.png）
     
     
     
