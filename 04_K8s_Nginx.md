@@ -1,0 +1,2 @@
+- 除了使用deplotment和service yaml文件
+- 还可以只使用deployment.yaml创建，再expose出service
