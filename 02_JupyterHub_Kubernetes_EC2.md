@@ -1,3 +1,5 @@
+# sudo -i
+
 # Install kops, kubectl, awscli
 
 ```
