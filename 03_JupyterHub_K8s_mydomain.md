@@ -530,6 +530,7 @@ Deleted kubectl config for k8s.davidkorea.com
 
 Deleted cluster: "k8s.davidkorea.com"
 ```
-- terminated k8s cluster EC2 instances
+- terminated k8s cluster 3 EC2 instances
 - clear all data in S3
 - delete S3 bucket manually
+![](https://i.loli.net/2019/05/18/5ce010406768f57410.png)
