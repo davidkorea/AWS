@@ -53,7 +53,7 @@ kubectl expose (-f FILENAME | TYPE NAME) [--port=port]
       --type='': Type for this service: ClusterIP, NodePort, LoadBalancer, or ExternalName. Default is 'ClusterIP'.
 ```
 - ClusterIP 服务是 Kubernetes 的默认服务。它给你一个集群内的服务，集群内的其它应用都可以访问该服务。集群外部无法访问它。
-- NodePort 服务是引导外部流量到你的服务的最原始方式。NodePort，正如这个名字所示，在所有节点（虚拟机）上开放一个特定端口，任何发送到该端口的流量都被转发到对应服务。如果你不指定这个端口，系统将选择一个随机端口。
+- NodePort 服务是引导外部流量到你的服务的最原始方式。NodePort 30000-32767可用，正如这个名字所示，在k8s的所有节点（虚拟机）上都开放一个特定端口，任何发送到该端口的流量都被转发到对应服务。如果你不指定这个端口，系统将选择一个随机端口。这样就导致了端口的浪费，因为我在这个node上起一个服务，使用一个端口，而这个端口会占用集群中所有node的这个端口。
 - LoadBalancer 服务是暴露服务到 internet 的标准方式。在 GKE 上，这种方式会启动一个 Network Load Balancer[2]，它将给你一个单独的 IP 地址，转发所有流量到你的服务。
 
 [Kubernetes的三种外部访问方式：NodePort、LoadBalancer和Ingress](https://www.cnblogs.com/devilwind/p/8891636.html)
