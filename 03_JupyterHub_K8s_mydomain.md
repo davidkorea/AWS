@@ -267,9 +267,9 @@ Run the below codes on the host that installed kops, NOT master node.
 
 3. 访问dashboard
 
-    - visit "https://<master-ip>:<apiserver-port>/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/"
-        - “<master-ip>” can get by ```kubectl cluster-info```
-        - "<apiserver-port>" is 443
+    - visit ```https://<master-ip>:<apiserver-port>/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/```
+        - ```master-ip>``` can get by ```kubectl cluster-info```
+        - ```<apiserver-port>``` is 443
     - ```https://api.k8s.davidkorea.com:443/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/```
         - 反正一开始也是登录不了，来来回回总是提示输入用户名和密码
         - 中间来回试了下```https://api.k8s.davidkorea.com/ui```，这个地址输入用户名密码后直接会返回一个api的json页面，也是无法进入dashboard
