@@ -24,14 +24,19 @@
             |-|-|-|-|
             |10.0.0.0/16	|local	|active|No	|
             |0.0.0.0/0|igw-09ff3e23ea474f1a1	|active|No|
+            - 所有VPC内部10.0.0.0/16 包含所有subnet可以通信
+            - 此subnet内的所有流量可以通过公网网关访问internet
         - 关联子网 ```subnet-02aecb6c4e9f890d0 | my-public-subnet```
     - Private Subnet
         - 创建只需指定名称和VPC
         - 创建后编辑路由，添加规则
+        
             |Destination|Target|Status|Propagated|
             |-|-|-|-|
             |10.0.0.0/16	|local	|active|No	|
             |0.0.0.0/0|nat-01a15ab52b03d1511	|active|No|
+            - 所有VPC内部10.0.0.0/16 包含所有subnet可以通信
+            - 此subnet内的所有流量可以通过NAT网关，将outboung流量转到public subnet，再通过igw转发至internet。但无法回访
         - 关联子网 ```subnet-0c97f8ef6342297eb | my-internal-subnet```
 6. Security Group
     - 绑定VPC
