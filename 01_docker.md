@@ -1,1 +1,47 @@
 
+
+1. EC2 -redhat
+2. elastic ip
+3. group poiicy
+  - anable icmp for ping
+  - enable tcp 80 for http
+4. docker install
+  - vim etc/yum.reop.d/redhat-rhui.repo
+    ```diff
+    [rhui-REGION-rhel-server-extras]
+
+    - enabled=0
+    + enabled=1
+    ```
+  - ```yum install docker -y```
+5. docker container
+  - ```docker pull docker.io/centos```
+  - ```docker run -it -p 80:80 centos /bin/bash```
+    ```
+    [root@f2cbaf0c8ab1 /]# yum install -y httpd
+    
+    [root@f2cbaf0c8ab1 /]# apachectl
+    AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 172.17.0.3. Set the 'ServerName' directive globally to suppress this message
+    
+    [root@f2cbaf0c8ab1 /]# ps -aux
+    USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+    root         1  0.0  0.1  11820  1940 ?        Ss   08:32   0:00 /bin/bash
+    root        88  0.0  0.3 224052  3460 ?        Ss   08:34   0:00 /usr/sbin/httpd
+    apache      89  0.0  0.2 224052  2948 ?        S    08:34   0:00 /usr/sbin/httpd
+    apache      90  0.0  0.2 224052  2948 ?        S    08:34   0:00 /usr/sbin/httpd
+    apache      91  0.0  0.2 224052  2948 ?        S    08:34   0:00 /usr/sbin/httpd
+    apache      92  0.0  0.2 224052  2948 ?        S    08:34   0:00 /usr/sbin/httpd
+    apache      93  0.0  0.2 224052  2948 ?        S    08:34   0:00 /usr/sbin/httpd
+    root        94  0.0  0.1  51740  1740 ?        R+   08:34   0:00 ps -aux
+    ```
+    - docker中启动httpd服务时，systemctl命令会报错。以下两个命令可以使用。[启动httpd服务](https://github.com/davidkorea/linux_study/blob/master/5_linux_virtualization/09_docker_net_registry.md#4-%E5%90%AF%E5%8A%A8httpd%E6%9C%8D%E5%8A%A1)
+      - ```httpd```，[systemctl start httpd 等同 httpd](https://github.com/davidkorea/linux_study/blob/master/5_linux_virtualization/09_docker_net_registry.md#0-systemctl-start-httpd-%E7%AD%89%E5%90%8C-httpd)
+      - ```apachectl```
+      
+    - 物理机可以查看到80端口
+    ```
+    [root@server ~]# netstat -anutp | grep 80
+    tcp6       0      0 :::80        :::*      LISTEN      7467/docker-proxy-c
+    ```
+    - visit EC2 elastic ip ok
+6. 创建docker时，不需要-d参数。直接-it进去设置。设置完成ctrl+p+q退出容器控制台，并后台继续运行
