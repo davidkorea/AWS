@@ -1,3 +1,4 @@
+https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/vpc-nat-gateway.html
 
 1. VPC
     - IPv4 CIDR block 10.0.0.0/16 
@@ -48,7 +49,8 @@
         |所有 ICMP - IPv4|全部|不适用|0.0.0.0/0|
     - Outbound Rules
     
-    
+ 
+![](https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/images/nat-gateway-diagram.png)
     
     
     
