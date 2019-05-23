@@ -57,6 +57,7 @@
 
         ```
         - 此时，test2可以同时访问两个网络
+        - ```$ docker network inspect my-docker-br``` 和默认网桥```$ docker network inspect bridge```均能查看到test2
 
 
 ## Basic
