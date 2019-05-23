@@ -2,7 +2,15 @@
 1. docker之间的网络类似于 netns，通过一个veth pair网卡
     - 一个在doucker内部，一个连接到ip为172.17.0.1的docker0桥上
     - docker0在通过NAT方式访问外网
-
+    ```
+    [root@ip-172-31-25-33 ~]# docker network ls
+    NETWORK ID          NAME                DRIVER              SCOPE
+    6ab20f7d456c        bridge              bridge              local
+    4045ea3034c2        host                host                local
+    a2f91aeb97da        none                null                local
+    ```
+    - ``` docker network inspect bridge``` 可以查看第一个桥接网络的详细信息
+    - 也可以自行创建一个桥接网络，
 2. 关联2个docker容器 --link，类似于DNS，意义在容器中ping对方的容器名
     - ```docker run -it --name test1 busybox /bin/sh```
     - ```docker run -it --name test2 --link test1 busybox /bin/sh```
@@ -10,7 +18,18 @@
     - ctrl + p + q 离开运行中的容器
     - 场景：数据库容器，一开始并不知道数据库容器的ip地址，而且容器停止后再启动ip也会变化，所以link容器名最方便
 
-
+3. 创建一个新桥接网络
+    - ```docker network create -d bridge my-docker-br```, -d driver = bridge，创建桥接网络的意思
+        ```
+        [root@ip-172-31-25-33 ~]# docker network create -d bridge my-docker-br
+        869d927e055418e86506a5bda7a05fb7ddb4e7c23a5451d0dcb9991d7dec5913
+        [root@ip-172-31-25-33 ~]# docker network ls
+        NETWORK ID          NAME                DRIVER              SCOPE
+        6ab20f7d456c        bridge              bridge              local
+        4045ea3034c2        host                host                local
+        869d927e0554        my-docker-br        bridge              local
+        a2f91aeb97da        none                null                local
+        ```
 
 
 
