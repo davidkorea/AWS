@@ -1,5 +1,9 @@
 # AWS
 
+1. AWS Lamda + AWS batch + AWS BeansTalk
+
+
+-----
 
 1. docker networking
 2. interview prapare
