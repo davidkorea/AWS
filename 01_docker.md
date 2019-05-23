@@ -1,5 +1,20 @@
+# Docker Networking
+1. docker之间的网络类似于 netns，通过一个veth pair网卡
+    - 一个在doucker内部，一个连接到ip为172.17.0.1的docker0桥上
+    - docker0在通过NAT方式访问外网
+
+2. 关联2个docker容器 --link，类似于DNS，意义在容器中ping对方的容器名
 
 
+
+
+
+
+
+
+
+
+## Basic
 1. EC2 -redhat
 2. elastic ip
 3. group poiicy
