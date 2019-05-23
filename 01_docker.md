@@ -15,6 +15,15 @@
 
 
 ## Basic
+
+EC2 redhat instance 会自动安装podman-docker，一部分命令兼容docker
+### 使用aliyun yum
+https://mirrors.aliyun.com/docker-ce/linux/centos/ 选择docker-ce.repo  
+- yum install docker-ce 需要忽略containerio最新版本
+
+
+
+### 之前的方法
 1. EC2 -redhat
 2. elastic ip
 3. group poiicy
@@ -22,6 +31,7 @@
   - enable tcp 80 for http
 4. docker install
   - vim etc/yum.reop.d/redhat-rhui.repo
+    > 现在的redhat-rhui.repo文件中已经没有[rhui-REGION-rhel-server-extras]这一项，需要完全手动添加。即使添加后默认安装yum install docker也是安装podman-docker
     ```diff
     [rhui-REGION-rhel-server-extras]
 
