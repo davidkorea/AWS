@@ -7,8 +7,8 @@
 - 而不同节点之间如何保证ip互不冲突？ etcd存储
 
 EC2 Redhat:
-- node1: eth0 172.31.25.33
-- node2: eto0 172.31.29.85
+- node1: eth0 172.31.27.35
+- node2: eto0 172.31.25.135
 - enable all tcp ports inbound, or ./etcdctl cluster-health refused
 
 ### 所有节点下载安装etcd
