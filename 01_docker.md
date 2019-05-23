@@ -43,8 +43,20 @@
                   inet addr:172.19.0.2  Bcast:172.19.255.255  Mask:255.255.0.0
         ```
         - ```brctl show```和 ```docker network inspect my-docker-br```均能查看到test3已经连接带新网桥
+    - 将已有正在运行的容器添加到新建网络```docker network connect [OPTIONS] NETWORK CONTAINER```
+        ```
+        $ docker network connect my-docker-br test2
+        
+        $ docker exec -it test2 /bin/sh
+        / # ifconfig
+        eth0      Link encap:Ethernet  HWaddr 02:42:AC:11:00:03
+                  inet addr:172.17.0.3  Bcast:172.17.255.255  Mask:255.255.0.0
 
+        eth1      Link encap:Ethernet  HWaddr 02:42:AC:13:00:03
+                  inet addr:172.19.0.3  Bcast:172.19.255.255  Mask:255.255.0.0
 
+        ```
+        - 此时，
 
 
 ## Basic
