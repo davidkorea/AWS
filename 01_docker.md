@@ -21,14 +21,19 @@
 3. 创建一个新桥接网络
     - ```docker network create -d bridge my-docker-br```, -d driver = bridge，创建桥接网络的意思
         ```
-        [root@ip-172-31-25-33 ~]# docker network create -d bridge my-docker-br
-        869d927e055418e86506a5bda7a05fb7ddb4e7c23a5451d0dcb9991d7dec5913
-        [root@ip-172-31-25-33 ~]# docker network ls
+        $ brctl show
+        bridge name     bridge id               STP enabled     interfaces
+        docker0         8000.02422d8639ac       no              veth999db3b
+                                                                veth35621dc
+        br-b58348f29924         8000.024230b65dfc       no
+        [node1] (local) root@192.168.0.8 ~
+
+        $ docker network ls
         NETWORK ID          NAME                DRIVER              SCOPE
-        6ab20f7d456c        bridge              bridge              local
-        4045ea3034c2        host                host                local
-        869d927e0554        my-docker-br        bridge              local
-        a2f91aeb97da        none                null                local
+        3057b4a878ae        bridge              bridge              local
+        918873e920c4        host                host                local
+        b58348f29924        my-docker-br        bridge              local
+        ab4435db5e07        none                null                local
         ```
 
 
