@@ -4,7 +4,9 @@
     - docker0在通过NAT方式访问外网
 
 2. 关联2个docker容器 --link，类似于DNS，意义在容器中ping对方的容器名
-
+    - ```docker run -it --name test1 busybox /bin/sh```
+    - ```docker run -it --name test2 --link test1 busybox /bin/sh```
+    - ctrl + p + q 离开运行中的容器
 
 
 
