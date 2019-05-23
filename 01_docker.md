@@ -1,5 +1,5 @@
 # Docker Networking
-## Multi-Nodes Overlay
+## 2. Multi-Nodes Overlay
 - 每个node上的docker0桥都是172.17.0.0/24
 - 若要不同主机上的docker容器通信，IP地址一定不能一样
 - 而不同节点之间如何保证ip互不冲突？ etcd存储
@@ -7,8 +7,9 @@
 EC2 Redhat:
 - node1: eth0 172.31.25.33
 - node2: eto0 172.31.29.85
+- enable all tcp ports inbound, or ./etcdctl cluster-health refused
 
-2nodes下载安装etcd
+### 所有节点下载安装etcd
 ```
 wget https://github.com/coreos/etcd/releases/download/v3.3.13/etcd-v3.3.13-linux-amd64.tar.gz
 tar zxvf etcd-v3.3.13-linux-amd64.tar.gz
@@ -42,18 +43,65 @@ tar zxvf etcd-v3.3.13-linux-amd64.tar.gz
 ```
 
 ```
-[node1] (local) root@192.168.0.8 ~/etcd-v3.3.13-linux-amd64
-$ ./etcdctl cluster-health
-member 208dd0fbcefb149c is healthy: got healthy result from http://192.168.0.8:2379
-member a48134f48b185ad9 is healthy: got healthy result from http://192.168.0.7:2379
+[root@node1 etcd-v3.3.13-linux-amd64]# ./etcdctl cluster-health
+member 181a4637330a1c96 is healthy: got healthy result from http://172.31.29.85:2379
+member ceb57aa75f03a66c is healthy: got healthy result from http://172.31.25.33:2379
 cluster is healthy
 ```
+### 重启docker服务
+
+
+在docker-node1上
+
+```
+[root@node1 ~]# service docker stop
+[root@node1 ~]# /usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=etcd://172.31.25.33:2379 --cluster-advertise=172.31.25.33:2375&
+```
+
+在docker-node2上
+
+```
+[root@node2 ~]# service docker stop
+[root@node2 ~]# /usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=etcd://172.31.29.85:2379 --cluster-advertise=172.31.29.85:2375&
+```
+### 创建overlay network
+
+在docker-node1上创建一个demo的overlay network
+
+```
+[root@node1 ~]# docker network create -d overlay demo
+aff0321d7cba010d1adb8b0cafb2ec72b301fea9649bd773e7e0d1701c4c6c76
+[root@node1 ~]# docker network ls
+NETWORK ID          NAME                DRIVER              SCOPE
+7f69f31c58c4        bridge              bridge              local
+aff0321d7cba        demo                overlay             global
+4045ea3034c2        host                host                local
+a2f91aeb97da        none                null                local
+
+[root@node1 ~]# docker network inspect demo      # more detailed network info
+```
+在node2上，这个demo的overlay network会被同步创建
+```
+[root@node2 ~]#
+[root@node2 ~]# docker network ls
+NETWORK ID          NAME                DRIVER              SCOPE
+0c9248ebca38        bridge              bridge              local
+aff0321d7cba        demo                overlay             global
+bb12f294362b        host                host                local
+fe9e0c36fe87        none                null                local
+```
+### 创建连接demo网络的容器
+
+在docker-node1上
 
 
 
 
 
-## One Node
+
+
+
+## 1. One Node
 1. docker之间的网络类似于 netns，通过一个veth pair网卡
     - 一个在doucker内部，一个连接到ip为172.17.0.1的docker0桥上
     - docker0在通过NAT方式访问外网
