@@ -65,6 +65,25 @@
         - ```$ docker network inspect my-docker-br``` 和默认网桥```$ docker network inspect bridge```均能查看到test2
 4. port map ```-p 80:80```
 
+
+
+
+
+## 环境变量 -e
+
+```
+$ docker run -it --name test4 -e DAVID=david busybox /bin/sh
+/ # env
+HOSTNAME=793d280bc10f
+DAVID=david
+SHLVL=1
+HOME=/root
+TERM=xterm
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+PWD=/
+```
+
+
 ## Basic
 
 EC2 redhat instance 会自动安装podman-docker，一部分命令兼容docker
