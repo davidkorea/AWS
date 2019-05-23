@@ -20,12 +20,12 @@ tar zxvf etcd-v3.3.13-linux-amd64.tar.gz
 
 ```
 [root@node1 etcd-v3.3.13-linux-amd64]#
-[root@node1 etcd-v3.3.13-linux-amd64]# nohup ./etcd --name node1 --initial-advertise-peer-urls http://172.31.25.33:2380 \
- --listen-peer-urls http://172.31.25.33:2380 \
- --listen-client-urls http://172.31.25.33:2379,http://127.0.0.1:2379 \
- --advertise-client-urls http://172.31.25.33:2379 \
+[root@node1 etcd-v3.3.13-linux-amd64]# nohup ./etcd --name node1 --initial-advertise-peer-urls http://172.31.27.35:2380 \
+ --listen-peer-urls http://172.31.27.35:2380 \
+ --listen-client-urls http://172.31.27.35:2379,http://127.0.0.1:2379 \
+ --advertise-client-urls http://172.31.27.35:2379 \
  --initial-cluster-token etcd-cluster \
- --initial-cluster node1=http://172.31.25.33:2380,node2=http://172.31.29.85:2380 \
+ --initial-cluster node1=http://172.31.27.35:2380,node2=http://172.31.25.135:2380 \
  --initial-cluster-state new&
 [1] 6337
 [root@node1 etcd-v3.3.13-linux-amd64]# nohup: ignoring input and appending output to 'nohup.out'
@@ -33,12 +33,12 @@ tar zxvf etcd-v3.3.13-linux-amd64.tar.gz
 在docker-node2上
 
 ```
-[root@node2 etcd-v3.3.13-linux-amd64]# nohup ./etcd --name node2 --initial-advertise-peer-urls http://172.31.29.85:2380 \
- --listen-peer-urls http://172.31.29.85:2380 \
- --listen-client-urls http://172.31.29.85:2379,http://127.0.0.1:2379 \
- --advertise-client-urls http://172.31.29.85:2379 \
+[root@node2 etcd-v3.3.13-linux-amd64]# nohup ./etcd --name node2 --initial-advertise-peer-urls http://172.31.25.135:2380 \
+ --listen-peer-urls http://172.31.25.135:2380 \
+ --listen-client-urls http://172.31.25.135:2379,http://127.0.0.1:2379 \
+ --advertise-client-urls http://172.31.25.135:2379 \
  --initial-cluster-token etcd-cluster \
- --initial-cluster node1=http://172.31.25.33:2380,node2=http://172.31.29.85:2380 \
+ --initial-cluster node1=http://172.31.27.35:2380,node2=http://172.31.25.135:2380 \
  --initial-cluster-state new&
 [1] 15239
 [root@node2 etcd-v3.3.13-linux-amd64]# nohup: ignoring input and appending output to 'nohup.out'
@@ -57,14 +57,14 @@ cluster is healthy
 
 ```
 [root@node1 ~]# service docker stop
-[root@node1 ~]# /usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=etcd://172.31.25.33:2379 --cluster-advertise=172.31.25.33:2375&
+[root@node1 ~]# /usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=etcd://172.31.27.35:2379 --cluster-advertise=172.31.27.35:2375&
 ```
 
 在docker-node2上
 
 ```
 [root@node2 ~]# service docker stop
-[root@node2 ~]# /usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=etcd://172.31.29.85:2379 --cluster-advertise=172.31.29.85:2375&
+[root@node2 ~]# /usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=etcd://172.31.25.135:2379 --cluster-advertise=172.31.25.135:2375&
 ```
 ### 创建overlay network
 
