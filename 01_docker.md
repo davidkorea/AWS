@@ -6,6 +6,7 @@
 2. 关联2个docker容器 --link，类似于DNS，意义在容器中ping对方的容器名
     - ```docker run -it --name test1 busybox /bin/sh```
     - ```docker run -it --name test2 --link test1 busybox /bin/sh```
+    - link 只是单方向的，test2只可以ping test1，反之不可
     - ctrl + p + q 离开运行中的容器
     - 场景：数据库容器，一开始并不知道数据库容器的ip地址，而且容器停止后再启动ip也会变化，所以link容器名最方便
 
