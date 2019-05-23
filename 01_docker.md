@@ -1,4 +1,51 @@
 # Docker Networking
+## Multi-Nodes Overlay
+- 每个node上的docker0桥都是172.17.0.0/24
+- 若要不同主机上的docker容器通信，IP地址一定不能一样
+- 而不同节点之间如何保证ip互不冲突？ etcd存储
+
+下载安装etcd
+```
+vagrant@node1:~$ wget https://github.com/coreos/etcd/releases/download/v3.3.13/etcd-v3.3.13-linux-amd64.tar.gz
+vagrant@node1:~$ tar zxvf etcd-v3.3.13-linux-amd64.tar.gz
+```
+在docker-node1上
+
+```
+vagrant@node1:~$ cd etcd-v3.3.13-linux-amd64
+vagrant@node1:~$ nohup ./etcd --name node1 --initial-advertise-peer-urls http://192.168.0.8:2380 \
+--listen-peer-urls http://192.168.0.8:2380 \
+--listen-client-urls http://192.168.0.8:2379,http://127.0.0.1:2379 \
+--advertise-client-urls http://192.168.0.8:2379 \
+--initial-cluster-token etcd-cluster \
+--initial-cluster node1=http://192.168.0.8:2380,node2=http://192.168.0.7:2380 \
+--initial-cluster-state new&
+```
+在docker-node2上
+
+```
+vagrant@node1:~$ cd etcd-v3.3.13-linux-amd64
+vagrant@node2:~$ nohup ./etcd --name node2 --initial-advertise-peer-urls http://192.168.0.7:2380 \
+--listen-peer-urls http://192.168.0.7:2380 \
+--listen-client-urls http://192.168.0.7:2379,http://127.0.0.1:2379 \
+--advertise-client-urls http://192.168.0.7:2379 \
+--initial-cluster-token etcd-cluster \
+--initial-cluster node1=http://192.168.0.8:2380,node2=http://192.168.0.7:2380 \
+--initial-cluster-state new&
+```
+```
+[node1] (local) root@192.168.0.8 ~/etcd-v3.3.13-linux-amd64
+$ ./etcdctl cluster-health
+member 208dd0fbcefb149c is healthy: got healthy result from http://192.168.0.8:2379
+member a48134f48b185ad9 is healthy: got healthy result from http://192.168.0.7:2379
+cluster is healthy
+```
+
+
+
+
+
+## One Node
 1. docker之间的网络类似于 netns，通过一个veth pair网卡
     - 一个在doucker内部，一个连接到ip为172.17.0.1的docker0桥上
     - docker0在通过NAT方式访问外网
