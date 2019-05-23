@@ -4,35 +4,43 @@
 - 若要不同主机上的docker容器通信，IP地址一定不能一样
 - 而不同节点之间如何保证ip互不冲突？ etcd存储
 
-下载安装etcd
+EC2 Redhat:
+- node1: eth0 172.31.25.33
+- node2: eto0 172.31.29.85
+
+2nodes下载安装etcd
 ```
-vagrant@node1:~$ wget https://github.com/coreos/etcd/releases/download/v3.3.13/etcd-v3.3.13-linux-amd64.tar.gz
-vagrant@node1:~$ tar zxvf etcd-v3.3.13-linux-amd64.tar.gz
+wget https://github.com/coreos/etcd/releases/download/v3.3.13/etcd-v3.3.13-linux-amd64.tar.gz
+tar zxvf etcd-v3.3.13-linux-amd64.tar.gz
 ```
 在docker-node1上
 
 ```
-vagrant@node1:~$ cd etcd-v3.3.13-linux-amd64
-vagrant@node1:~$ nohup ./etcd --name node1 --initial-advertise-peer-urls http://192.168.0.8:2380 \
---listen-peer-urls http://192.168.0.8:2380 \
---listen-client-urls http://192.168.0.8:2379,http://127.0.0.1:2379 \
---advertise-client-urls http://192.168.0.8:2379 \
---initial-cluster-token etcd-cluster \
---initial-cluster node1=http://192.168.0.8:2380,node2=http://192.168.0.7:2380 \
---initial-cluster-state new&
+[root@node1 etcd-v3.3.13-linux-amd64]#
+[root@node1 etcd-v3.3.13-linux-amd64]# nohup ./etcd --name node1 --initial-advertise-peer-urls http://172.31.25.33:2380 \
+ --listen-peer-urls http://172.31.25.33:2380 \
+ --listen-client-urls http://172.31.25.33:2379,http://127.0.0.1:2379 \
+ --advertise-client-urls http://172.31.25.33:2379 \
+ --initial-cluster-token etcd-cluster \
+ --initial-cluster node1=http://172.31.25.33:2380,node2=http://172.31.29.85:2380 \
+ --initial-cluster-state new&
+[1] 6337
+[root@node1 etcd-v3.3.13-linux-amd64]# nohup: ignoring input and appending output to 'nohup.out'
 ```
 在docker-node2上
 
 ```
-vagrant@node1:~$ cd etcd-v3.3.13-linux-amd64
-vagrant@node2:~$ nohup ./etcd --name node2 --initial-advertise-peer-urls http://192.168.0.7:2380 \
---listen-peer-urls http://192.168.0.7:2380 \
---listen-client-urls http://192.168.0.7:2379,http://127.0.0.1:2379 \
---advertise-client-urls http://192.168.0.7:2379 \
---initial-cluster-token etcd-cluster \
---initial-cluster node1=http://192.168.0.8:2380,node2=http://192.168.0.7:2380 \
---initial-cluster-state new&
+[root@node2 etcd-v3.3.13-linux-amd64]# nohup ./etcd --name node2 --initial-advertise-peer-urls http://172.31.29.85:2380 \
+ --listen-peer-urls http://172.31.29.85:2380 \
+ --listen-client-urls http://172.31.29.85:2379,http://127.0.0.1:2379 \
+ --advertise-client-urls http://172.31.29.85:2379 \
+ --initial-cluster-token etcd-cluster \
+ --initial-cluster node1=http://172.31.25.33:2380,node2=http://172.31.29.85:2380 \
+ --initial-cluster-state new&
+[1] 15239
+[root@node2 etcd-v3.3.13-linux-amd64]# nohup: ignoring input and appending output to 'nohup.out'
 ```
+
 ```
 [node1] (local) root@192.168.0.8 ~/etcd-v3.3.13-linux-amd64
 $ ./etcdctl cluster-health
