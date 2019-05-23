@@ -9,8 +9,13 @@
     4045ea3034c2        host                host                local
     a2f91aeb97da        none                null                local
     ```
-    - ``` docker network inspect bridge``` 可以查看第一个桥接网络的详细信息
-    - 也可以自行创建一个桥接网络，
+    - brige
+        - ``` docker network inspect bridge``` 可以查看第一个桥接网络的详细信息
+        - 也可以自行创建一个桥接网络
+    - host
+        - 与host主机共用网络命名空间，容器内部ip a查看到到信息和宿主机一摸一样。缺点是port容易冲突
+    - none
+        - 容器只有lo网卡，没有额外网卡
 2. 关联2个docker容器 --link，类似于DNS，意义在容器中ping对方的容器名
     - ```docker run -it --name test1 busybox /bin/sh```
     - ```docker run -it --name test2 --link test1 busybox /bin/sh```
