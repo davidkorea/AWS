@@ -2,6 +2,9 @@
 ## 2. Multi-Nodes Overlay 
 [Mutil-host networking with etcd](https://github.com/davidkorea/AWS/blob/master/DOCS/docker-overlay-network.md)
 
+> 反正就是容器互相ping不通，etcd cluster 正常，能够同时生成overlay网络。测试了三四遍，都不行，EC2 不支持吗？？？？？
+
+
 - 每个node上的docker0桥都是172.17.0.0/24
 - 若要不同主机上的docker容器通信，IP地址一定不能一样
 - 而不同节点之间如何保证ip互不冲突？ etcd存储
