@@ -35,8 +35,14 @@
         b58348f29924        my-docker-br        bridge              local
         ab4435db5e07        none                null                local
         ```
-
-
+    - 新建网络中创建容器test3
+        ```
+        $ docker run -it --name test3 --network my-docker-br busybox /bin/sh
+        / # ifconfig
+        eth0      Link encap:Ethernet  HWaddr 02:42:AC:13:00:02
+                  inet addr:172.19.0.2  Bcast:172.19.255.255  Mask:255.255.0.0
+        ```
+        - ```brctl show```和 ```docker network inspect my-docker-br```均能查看到test3已经连接带新网桥
 
 
 
