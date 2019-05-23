@@ -1,5 +1,5 @@
 # Docker Networking
-## 2. Multi-Nodes Overlay
+## 2. Multi-Nodes Overlay [Mutil-host networking with etcd](https://github.com/davidkorea/AWS/blob/master/DOCS/docker-overlay-network.md)
 - 每个node上的docker0桥都是172.17.0.0/24
 - 若要不同主机上的docker容器通信，IP地址一定不能一样
 - 而不同节点之间如何保证ip互不冲突？ etcd存储
