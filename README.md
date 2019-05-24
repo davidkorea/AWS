@@ -3,6 +3,7 @@
 1. AWS Lamda + AWS batch + AWS BeansTalk
     - lambda spider
 2. blog
+    - s3 website + cloudfront + Certifacate manager + route53
 
 -----
 
