@@ -2,7 +2,7 @@
 https://www.youtube.com/watch?v=D6qB7MEFOe0
 
 1. S3 bucket, public access, website
-2. 
+2. CloudFront
 
 
 # 1. S3
@@ -32,6 +32,11 @@ https://www.youtube.com/watch?v=D6qB7MEFOe0
 ## 1.3 静态网站托管属性
 - 指定已上传的静态网页名称
 - 测试终端节点： http://www.....com.s3-website-us-east-1.amazonaws.com 
+
+# 2. CloudFront
+
+
+
 
 
 
