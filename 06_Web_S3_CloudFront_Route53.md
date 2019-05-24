@@ -13,10 +13,21 @@ https://www.youtube.com/watch?v=D6qB7MEFOe0
 ## 1.2 权限
 - 取消禁用public访问
 - 存储桶策略
+  ```json
+  {
+    "Version":"2012-10-17",
+    "Statement":[{
+    "Sid":"PublicReadGetObject",
+          "Effect":"Allow",
+      "Principal": "*",
+        "Action":["s3:GetObject"],
+        "Resource":["arn:aws:s3:::example-bucket/*"
+        ]
+      }
+    ]
+  }
   ```
-  
-  ```
-
+  - 官方模版：[网站访问所需的权限](https://docs.aws.amazon.com/zh_cn/AmazonS3/latest/dev/WebsiteAccessPermissionsReqd.html)
 
 
 
