@@ -31,7 +31,7 @@ https://www.youtube.com/watch?v=D6qB7MEFOe0
   - 官方模版：[网站访问所需的权限](https://docs.aws.amazon.com/zh_cn/AmazonS3/latest/dev/WebsiteAccessPermissionsReqd.html)
 ## 1.3 静态网站托管属性
 - 指定已上传的静态网页名称
-
+- 测试终端节点： http://www.....com.s3-website-us-east-1.amazonaws.com 
 
 
 
