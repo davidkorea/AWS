@@ -39,6 +39,7 @@ https://www.youtube.com/watch?v=D6qB7MEFOe0
 # 2. CloudFront
 ## 2.1 创建CloudFront
 如图，不能直接选择下拉菜单的url，需要手动复制S3静态网站的地址，其他选项默认即可完成创建
+- 先选择下拉菜单里面的源域名，会自动生成源ID，再手动更改源域名。否则源ID无法自动生成
 ![](https://i.loli.net/2019/05/24/5ce7a302ce53685732.png)
 ## 2.2 使用私有域名绑定S3网站
 - 点击CloudFront条目的ID，进入常规选项卡，添加编辑
