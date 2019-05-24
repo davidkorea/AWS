@@ -48,8 +48,10 @@ https://www.youtube.com/watch?v=D6qB7MEFOe0
   - 点击按钮【在Route53中创建记录】将证书记录添加至Route53，完成认证 
 - 完成自动一域名后，还需等待CloudFront完成部署
 
-
-
+# 3. Route53
+![](https://i.loli.net/2019/05/24/5ce7a7dbd02e918185.png)
+- 关联CloudFront 的域名至私有域名，类型为IPv4
+- 当CloudFront显示部署完成时，即可访问私有域名
 
 
 # Issues
