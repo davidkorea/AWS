@@ -34,8 +34,17 @@ https://www.youtube.com/watch?v=D6qB7MEFOe0
 - 测试终端节点： http://www.....com.s3-website-us-east-1.amazonaws.com 
 
 # 2. CloudFront
-
-
+## 2.1 创建CloudFront
+如图，选中S3的地址，其他选项默认即可完成创建
+![](https://i.loli.net/2019/05/24/5ce79850df44d59848.png)
+## 2.2 使用私有域名绑定S3网站
+- 点击CloudFront条目的ID，进入常规选项卡，添加编辑
+- 添加备用域名，【使用 ACM 请求或导入证书】
+  - **！！！！！弗吉尼亚地区！！！！！**
+  - 自定义ssl认证是灰色的，不可点击，需要在弗吉尼亚地区注册ssl证书，过10mins左右，可以点选
+  ![]()
+  - 将证书记录添加至Route53，完成认证 
+- 完成自动一域名后，还需等待CloudFront完成部署
 
 
 
