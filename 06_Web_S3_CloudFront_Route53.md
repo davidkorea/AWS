@@ -1,6 +1,9 @@
 # Deploy a static web on S3 
 
 
+> Unable to select Custom SSL Certificate 
+
+https://stackoverflow.com/questions/28609262/unable-to-select-custom-ssl-certificate-stored-in-aws-iam
 
 It took a whole day to AWS to propagate the new certificate to all of its nodes. 
 Next day when I logged in to my AWS console, the certificate appeared in the dropdown and was enabled as well and I could configure distribution successfully.
