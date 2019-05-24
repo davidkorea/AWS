@@ -37,8 +37,8 @@ https://www.youtube.com/watch?v=D6qB7MEFOe0
 
 # 2. CloudFront
 ## 2.1 创建CloudFront
-如图，选中S3的地址，其他选项默认即可完成创建
-![](https://i.loli.net/2019/05/24/5ce79850df44d59848.png)
+如图，不能直接选择下拉菜单的url，需要手动复制S3静态网站的地址，其他选项默认即可完成创建
+![](https://i.loli.net/2019/05/24/5ce7a302ce53685732.png)
 ## 2.2 使用私有域名绑定S3网站
 - 点击CloudFront条目的ID，进入常规选项卡，添加编辑
 - 添加备用域名，【使用 ACM 请求或导入证书】
