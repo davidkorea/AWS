@@ -2,7 +2,8 @@
 https://www.youtube.com/watch?v=D6qB7MEFOe0
 
 1. S3 bucket, public access, website
-2. CloudFront
+2. CloudFront， Certificate Manager
+3. Route53
 
 
 # 1. S3
