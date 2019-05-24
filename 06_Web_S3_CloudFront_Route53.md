@@ -44,7 +44,7 @@ https://www.youtube.com/watch?v=D6qB7MEFOe0
 - 添加备用域名，【使用 ACM 请求或导入证书】
   - **！！！！！弗吉尼亚地区！！！！！**
   - 自定义ssl认证是灰色的，不可点击，需要在弗吉尼亚地区注册ssl证书，过10mins左右，可以点选
-  ![]()
+  ![](https://i.loli.net/2019/05/24/5ce7a6d79bfb538186.png)
   - 点击按钮【在Route53中创建记录】将证书记录添加至Route53，完成认证 
 - 完成自动一域名后，还需等待CloudFront完成部署
 
