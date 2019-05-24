@@ -1,7 +1,7 @@
 # Deploy a static web on S3 
+https://www.youtube.com/watch?v=D6qB7MEFOe0
 
-
-> Unable to select Custom SSL Certificate 
+> ## Unable to select Custom SSL Certificate 
 
 https://stackoverflow.com/questions/28609262/unable-to-select-custom-ssl-certificate-stored-in-aws-iam
 
