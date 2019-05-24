@@ -9,6 +9,7 @@ https://www.youtube.com/watch?v=D6qB7MEFOe0
 ## 1.1 创建S3 bucket
 - 名称：可以写域名，可以以写别的
 - Region：弗吉尼亚，或者首尔，但是申请ssl证书时要手动改为弗吉尼亚
+- 创建完成后，上传本地静态网页至S3 bucket
 
 ## 1.2 权限
 - 取消禁用public访问
@@ -28,7 +29,8 @@ https://www.youtube.com/watch?v=D6qB7MEFOe0
   }
   ```
   - 官方模版：[网站访问所需的权限](https://docs.aws.amazon.com/zh_cn/AmazonS3/latest/dev/WebsiteAccessPermissionsReqd.html)
-
+## 1.3 静态网站托管属性
+- 指定已上传的静态网页名称
 
 
 
