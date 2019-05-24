@@ -63,3 +63,13 @@ Also, be sure to select us-east-1 (N. Virginia) when you make the certificate re
 
 #### 2. 指定备用CNAME后，自定义ssl证书，还需要等待CloudFront Pending，才能访问
 ![](https://i.loli.net/2019/05/24/5ce794e7d214343217.png)
+#### 3. 打开自定义域名后，显示xml页面
+```xml
+<Error>
+    <Code>AccessDenied</Code>
+    <Message>Access Denied</Message>
+    <RequestId>89F25EB47DDA64D5</RequestId>
+    <HostId>Z2xAduhEswbdBqTB/cgCggm/jVG24dPZjy1GScs9ak0w95rF4I0SnDnJrUKHHQC</HostId>
+</Error>
+```
+CloudFront的源需要手动复制S3的静态网站url，不能在下啦菜单中选择
