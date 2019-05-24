@@ -1,6 +1,28 @@
 # Deploy a static web on S3 
 https://www.youtube.com/watch?v=D6qB7MEFOe0
 
+1. S3 bucket, public access, website
+2. 
+
+
+# 1. S3
+## 1.1 创建S3 bucket
+- 名称：可以写域名，可以以写别的
+- Region：弗吉尼亚，或者首尔，但是申请ssl证书时要手动改为弗吉尼亚
+
+## 1.2 权限
+- 取消禁用public访问
+- 存储桶策略
+  ```
+  
+  ```
+
+
+
+
+
+
+
 # Issues
 #### 1. Unable to select Custom SSL Certificate 
 
