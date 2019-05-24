@@ -33,6 +33,8 @@ https://www.youtube.com/watch?v=D6qB7MEFOe0
 - 指定已上传的静态网页名称
 - 测试终端节点： http://www.....com.s3-website-us-east-1.amazonaws.com 
 
+![](https://i.loli.net/2019/05/24/5ce7a22481cae57232.png)
+
 # 2. CloudFront
 ## 2.1 创建CloudFront
 如图，选中S3的地址，其他选项默认即可完成创建
