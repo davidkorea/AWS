@@ -39,7 +39,7 @@ https://www.youtube.com/watch?v=D6qB7MEFOe0
 # 2. CloudFront
 ## 2.1 创建CloudFront
 如图，不能直接选择下拉菜单的url，需要手动复制S3静态网站的地址，其他选项默认即可完成创建
-- 先选择下拉菜单里面的源域名，会自动生成源ID，再手动更改源域名。否则源ID无法自动生成
+- 先选择下拉菜单里面的源域名，会自动生成源ID，再手动更改源域名。否则源ID无法自动生成。当然这个ID也可以手动更改成其他的
 ![](https://i.loli.net/2019/05/24/5ce7a302ce53685732.png)
 ## 2.2 使用私有域名绑定S3网站
 - 点击CloudFront条目的ID，进入常规选项卡，添加编辑
@@ -49,6 +49,10 @@ https://www.youtube.com/watch?v=D6qB7MEFOe0
   ![](https://i.loli.net/2019/05/24/5ce7a6d79bfb538186.png)
   - 点击按钮【在Route53中创建记录】将证书记录添加至Route53，完成认证 
 - 完成自动一域名后，还需等待CloudFront完成部署
+
+## 2.3 配置缓存失效，一遍内容快速更新
+因为CDN会复制内容至全球各个节点，这个内容是静态的，如果变动了之后，这些节点依然保存着之前的内容。导致访问时无法得到最新版本
+
 
 # 3. Route53
 ![](https://i.loli.net/2019/05/24/5ce7a7dbd02e918185.png)
