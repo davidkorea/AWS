@@ -52,6 +52,7 @@ https://www.youtube.com/watch?v=D6qB7MEFOe0
 
 ## 2.3 配置缓存失效，一遍内容快速更新
 因为CDN会复制内容至全球各个节点，这个内容是静态的，如果变动了之后，这些节点依然保存着之前的内容。导致访问时无法得到最新版本
+- 每次更新都需要创建一个invalidation，一个月免费1000个
 ![](https://i.loli.net/2019/05/26/5cea23aeb7aec45591.png)
 
 # 3. Route53
