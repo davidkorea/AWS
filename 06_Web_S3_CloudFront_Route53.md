@@ -11,7 +11,7 @@ https://www.youtube.com/watch?v=D6qB7MEFOe0
 - 名称：可以写域名，可以以写别的
 - Region：弗吉尼亚，或者首尔，但是申请ssl证书时要手动改为弗吉尼亚
 - 创建完成后，上传本地静态网页至S3 bucket
-
+- 可以打开版本控制选项
 ## 1.2 权限
 - 取消禁用public访问
 - 存储桶策略
@@ -52,7 +52,7 @@ https://www.youtube.com/watch?v=D6qB7MEFOe0
 
 ## 2.3 配置缓存失效，一遍内容快速更新
 因为CDN会复制内容至全球各个节点，这个内容是静态的，如果变动了之后，这些节点依然保存着之前的内容。导致访问时无法得到最新版本
-
+![](https://i.loli.net/2019/05/26/5cea23aeb7aec45591.png)
 
 # 3. Route53
 ![](https://i.loli.net/2019/05/24/5ce7a7dbd02e918185.png)
