@@ -1,5 +1,8 @@
 # AWS
 
+1. hadoop MapReduce hive spark
+-----
+
 1. redis
 
 -----
