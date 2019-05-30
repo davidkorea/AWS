@@ -1,6 +1,6 @@
 # AWS
 
-1. fighting!!!!!!
+1. fighting!!!!!!ㅋㅠ    
 -----
 
 1. hadoop MapReduce hive spark
