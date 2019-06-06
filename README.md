@@ -1,6 +1,6 @@
 # AWS
 
-django + wxapp
+django + wxapp + aws beanstalk
 
 -----
 
