@@ -27,10 +27,22 @@ EFS的一些特性：
     - Using the Amazon EC2 console, associate your EC2 instance with a VPC security group that enables access to your mount target. For example, if you assigned the "default" security group to your mount target, you should assign the "default" security group to your EC2 instance.
     - 挂载您的文件系统
     ```
-    # 在 EC2 实例上创建新目录，如“efs”。
+    sudo yum install -y amazon-efs-utils
     sudo mkdir efs
     sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-27c34546.efs.ap-northeast-2.amazonaws.com:/ efs
     ```
 2. Amazon EC2 挂载说明 (跨 VPC 对等连接)
 3. 本地挂载说明
     - 使用AWS Direct Connect连接或基于AWS的VPN连接在本地服务器上挂载EFS文件系统
+
+# mount.nfs4: Connection timed out
+```
+[ec2-user@ip-172-31-12-86 ~]$ sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-9bce48fa.efs.ap-northeast-2.amazonaws.com:/ efs
+mount.nfs4: Connection timed out
+```
+-> [Unable to mount EFS on EC2 instance](https://stackoverflow.com/questions/49762840/unable-to-mount-efs-on-ec2-instance) In that Security Group, allow type NFS TCP port 2049 and source public or internal IP.
+
+1. create a new security group and open TCP 2049 for all
+2. add this security group to EFS and all EC2s
+3. exec command
+
