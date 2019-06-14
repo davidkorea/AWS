@@ -17,3 +17,5 @@
   [root@ip-172-31-26-251 ~]# http://169.254.169.254/latest/user-data
   -bash: http://169.254.169.254/latest/user-data: No such file or directory
   ```
+
+**URL地址的IP固定，只能在EC2中访问**
