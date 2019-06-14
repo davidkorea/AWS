@@ -7,7 +7,12 @@ Placement Group的特点
   - 分布模式（Spread）是将实例分布到不同的底层硬件，可以在不同的可用区内。你最多可以在每一个置放群组的每一个可用区内创建7个实例
 - Placement Group提供了低延迟，高速率的网络，可提供高达10 Gbps的速度
 - EC2 Placement Group的命名需要在你的AWS账户内唯一，不能有命名重复
-- 只有**特定的EC2实例类型可以放在配置Placement Group内（某些计算优化型、GPU、内存优化型和存储优化型的实例）**
+- 只有**特定的EC2实例类型可以放在配置Placement Group内（某些计算优化型、GPU、内存优化型和存储优化型的实例）**，所以在创建t2.micro实例时，无法选择cluster策略
+  - 通用型：A1、M4、M5、M5a、M5ad 和 M5d
+  - 计算优化型：C3、C4、C5、C5d、C5n 和 cc2.8xlarge
+  - 内存优化型：cr1.8xlarge、R3、R4、R5、R5a、R5ad、R5d、X1、X1e 和 z1d
+  - 存储优化型：D2、H1、hs1.8xlarge、I2、I3 和 I3en
+  - 加速计算型：F1、G2、G3、P2 和 P3
 - AWS建议在一个Placement Group内的所有EC2实例是一模一样的，否则会有短板效应
 - **不可以合并多个EC2 Placement Group**
 - **不可以将一个正在运行的EC2实例放到一个EC2 Placement Group中；只能为这个EC2实例创建一个AMI，然后基于AMI创建一个新的实例并且加入到Placement Group内**
