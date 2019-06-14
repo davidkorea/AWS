@@ -57,9 +57,31 @@ Connection Draining的可设置时间限制范围是1~3600秒（默认为300秒�
 
 # 2. 应用程序负载均衡器（Application Load Balancer）
 
+应用程序负载均衡器（Application Load Balancer）工作在**第7层（应用层）**，因此也被称为7层的ELB。
+
+在应用程序负载均衡器中，引入了规则这个概念。ELB在收到请求之后，会按照优先顺序评估侦听器的规则，然后根据定义的规则将流量转发到特定的目标组中。如下图所示，你可以配置不同的侦听器规则，然后根据流量的内容或者URL路径来将不同的请求转发到不同的目标组内，而一个目标组又包含了若干的目标（EC2实例)。
+
 ![](https://docs.aws.amazon.com/zh_cn/elasticloadbalancing/latest/application/images/component_architecture.png)
 
+应用程序负载均衡器在其他方面和上文讲的传统负载均衡器非常类似，那他们有什么大的区别呢？
 
+- Application Load Balancer可以进行基于路径的路由。即可以根据用户请求中的URL字段不同来将请求发送到不同的目标组中。比方可以定义ELB，将访问https://iteablue.com/posts/*文章的流量转发到目标组1中，然后将访问https://iteablue.com/pages/*页面的流量转发到目标组2中，那么就可以把原本的一个网页应用程序分解成更小的服务单元
+- ALB可以侦听HTTP数据包头部的信息，根据此字段来定义规则
+- ALB支持通过IP地址进行目标注册，包括位于VPC之外的目标。即可以在一个ALB中定义4个AWS中的EC2实例，同时定义2个来自公司内网的物理服务器
+- 支持容器化的应用程序
+
+扩展阅读：[什么是应用程序负载均衡器？](https://docs.aws.amazon.com/zh_cn/elasticloadbalancing/latest/application/introduction.html)
+
+# 3. 网络负载均衡器（Network Load Balancer）
+网络负载均衡器（Network Load Balancer）工作在**第4层（传输层）**，因此也被称为4层的ELB。
+
+- NLB可以基于协议、源 IP 地址、源端口、目标 IP 地址、目标端口和 TCP 序列号，使用流式哈希算法选择目标。
+- NLB可以每秒处理数百万个请求
+- 支持静态IP地址用于负载均衡器
+- 同ALB一样，NLB支持通过IP地址进行目标注册，包括位于VPC之外的目标
+- 支持容器化的应用程序
+
+扩展阅读：[什么是Network Load Balancer？](https://docs.aws.amazon.com/zh_cn/elasticloadbalancing/latest/network/introduction.html)
 
 
 
