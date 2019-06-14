@@ -6,7 +6,7 @@
 
 需要注意的是，在以前，角色是只能在EC2实例创建的时候赋予的，一旦赋予不能改变；而在近年的更新中，角色已经可以在EC2运行的时候再赋予或者更改了。
 
-# aAdd a Role to a running EC2
+# Add a Role to a running EC2
 ![](https://i.loli.net/2019/06/14/5d031a51beafd25271.png)
 
 ```sh
