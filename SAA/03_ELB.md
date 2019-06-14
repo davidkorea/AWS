@@ -14,6 +14,8 @@ AWS中ELB的存在，很好地替代了传统数据中心中F5负载均衡器的
 3. 网络负载均衡器（Network Load Balancer）
 
 # 1. 传统负载均衡器（Classic Load Balancer）
+![](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/images/load_balancer.png)
+
 - Class Load Balancer可以将入向流量自动分布到多个健康的EC2实例上
 - ELB是最终用户的唯一接触点
 - ELB本身就是一个绝对高可用，永不宕机的分布式软件，用户不需要考虑ELB的高可用性，不需要为其设计高可用的架构设计。而且ELB不是单点故障
@@ -55,7 +57,7 @@ Connection Draining的可设置时间限制范围是1~3600秒（默认为300秒�
 
 # 2. 应用程序负载均衡器（Application Load Balancer）
 
-
+![](https://docs.aws.amazon.com/zh_cn/elasticloadbalancing/latest/application/images/component_architecture.png)
 
 
 
