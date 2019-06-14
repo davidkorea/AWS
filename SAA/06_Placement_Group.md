@@ -11,7 +11,10 @@ Placement Group的特点
 - AWS建议在一个Placement Group内的所有EC2实例是一模一样的，否则会有短板效应
 - **不可以合并多个EC2 Placement Group**
 - **不可以将一个正在运行的EC2实例放到一个EC2 Placement Group中；只能为这个EC2实例创建一个AMI，然后基于AMI创建一个新的实例并且加入到Placement Group内**
-- Placement Grou**p可以跨越peerd VPC，但要保证在同一个可用区内**
+  - 用CLI命令行可以改（[将实例移至置放群组（命令行）](https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/placement-groups.html?shortFooter=true#change-instance-placement-group)），但目前console不可以改，console只有在创建的时候可以选择，一旦创建好了，是没办法改的
+    ![](https://i.loli.net/2019/06/14/5d03449d5798328318.png)
+    
+- Placement Group**可以跨越peerd VPC，但要保证在同一个可用区内**
 - 如果在Placement Group中创建实例的时候出现“capacity error”的错误，可以停止再启动组中的所有实例，再重新创建刚才的实例
   - 停止再启动组中的所有实例可以改变这些实例所在的底层物理设备，从而带来更多的性能和空间启动新的实例
 - Placement Group的创建会告诉AWS将组里的实例安置在物理上接近的AWS设备内
