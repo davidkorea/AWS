@@ -20,3 +20,11 @@ EFS的一些特性：
 - EFS的数据会存储在一个AWS区域的多个可用区内
 - Read After Write Consistency
 - Amazon EFS在Windows实例上不受支持
+
+# EFS挂载方式
+1. Amazon EC2 挂载说明 (从本地 VPC)
+    - 使用 Amazon EC2 控制台，将您的 EC2 实例与支持访问您的挂载目标的 VPC 安全组关联。例如，如果您向您的挂载目标(EFS)分配了“默认”安全组，则应将“默认”安全组分配到您的 EC2 实例。
+    - Using the Amazon EC2 console, associate your EC2 instance with a VPC security group that enables access to your mount target. For example, if you assigned the "default" security group to your mount target, you should assign the "default" security group to your EC2 instance.
+2. Amazon EC2 挂载说明 (跨 VPC 对等连接)
+3. 本地挂载说明
+    - 使用AWS Direct Connect连接或基于AWS的VPN连接在本地服务器上挂载EFS文件系统
