@@ -9,7 +9,11 @@ AWS中ELB的存在，很好地替代了传统数据中心中F5负载均衡器的
 
 而在2018年出版的新版本考试中，会涉及到传统负载均衡器（Classic Load Balancer），应用程序负载均衡器（Application Load Balancer）和网络负载均衡器（Network Load Balancer）三种不同的负载均衡器，其中应用程序负载均衡器占比比较多。
 
-# 传统负载均衡器（Classic Load Balancer）
+1. 传统负载均衡器（Classic Load Balancer）
+2. 应用程序负载均衡器（Application Load Balancer）
+3. 网络负载均衡器（Network Load Balancer）
+
+# 1. 传统负载均衡器（Classic Load Balancer）
 - Class Load Balancer可以将入向流量自动分布到多个健康的EC2实例上
 - ELB是最终用户的唯一接触点
 - ELB本身就是一个绝对高可用，永不宕机的分布式软件，用户不需要考虑ELB的高可用性，不需要为其设计高可用的架构设计。而且ELB不是单点故障
@@ -25,26 +29,35 @@ AWS中ELB的存在，很好地替代了传统数据中心中F5负载均衡器的
 - 基于ELB在所处应用架构中的位置不同，可以分两个类型ELB
   - Internet Load Balancer – 是面向公网的负载均衡器，能接受来自Internet用户的连接请求
   - Internal Load Balancer – 是面向AWS私有网段的负载均衡器，一般仅服务于AWS内部的资源。典型的使用案例是放置在前端服务器和后端服务器之间
-# DNS解析
+## DNS解析
 - ELB会以DNS (Domain Name System)的形式显示在AWS管理控制台，并且会动态解析不同公网IP地址，我们在使用ELB时要尽量用DNS来对它进行访问，而不是IP地址
 - 在ELB进行弹性扩容的时候，它的DNS记录会被更新，DNS会解析到新的IP地址上（因此这也是上面所说的我们要尽量用DNS名来访问ELB）
 - DNS记录的TTL时间是60秒
 - 建议客户端（程序）每60秒更新DNS查找记录，以获取最新的ELB地址和最好的ELB性能
-# 健康检查（Health Check)
+## 1.1 健康检查（Health Check)
 ELB在每一个**健康检查间隔（HealthCheck Interval）**都会向所有已注册的实例发送基于**Ping、端口或者（网页）路径**的检查数据包，并且在**响应超时（Response Timeout）** 这个时间内等待实例的回复。如果连续 **没有** 得到回复的次数超过定义的**不健康阈值（Unhealthy Threshold）**，那么这个实例会被标记为**OutofService**。如果在连续得到实例回复的次数超过了**健康阈值（Healthy Threshold）**的话，那么这个实例会被重新标记为**Inservice**状态。
 
 - ELB会对所有注册到这个ELB上的EC2实例进行健康检查，无论目前的健康状态如何
 - ELB的监控状态分别为InService（表示健康）或者OutofService（表示不健康）
-# 监听器（Listeners）
+## 1.2 监听器（Listeners）
 - Listeners可以用来监听用户对ELB发起的请求，以及ELB和后台EC2实例之间的请求
 - Listeners可以定义监听的协议和端口
 - Listeners支持**HTTP, HTTPS, SSL, TCP协议**
-# 连接耗尽（Connection Draining）
+## 1.3 连接耗尽（Connection Draining）
 默认情况下，一个已注册在ELB的EC2实例取消了注册或者进入OutofService状态，那么ELB会马上切断这个实例正在进行的连接。
 
 为了保证Classic Load Balancer中当有实例变成不健康的状态（OutofService）或者正在取消注册，而**该实例上已经建立的连接不受影响**， 请启用Connection Draining功能。它能**保证该不健康的实例在处理完所有已有的连接请求之后，才真正地从ELB内去除，接着ELB不会再转发请求给这个实例**。
 
 Connection Draining的可设置时间限制范围是1~3600秒（默认为300秒）。当达到这个最大时限时，不管当前实例是否处理完请求，ELB都会强制关闭与这个实例的连接。
 
-# 粘性会话/会话关联（Sticky Sessions/Session Affinity）
+## 1.4 粘性会话/会话关联（Sticky Sessions/Session Affinity）
 默认情况下，Classic Load Balancer会将每一个用户请求转发到负载最小的已注册实例上。但是如果启用Sticky Sessions /Session Affinity，则在**会话期间ELB会将来自某个用户的所有请求都转发到同一个实例上**。
+
+# 2. 应用程序负载均衡器（Application Load Balancer）
+
+
+
+
+
+
+
