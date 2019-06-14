@@ -1,4 +1,7 @@
 # 弹性伸缩（Auto Scaling）
+
+详细设置步骤： [Amazon EC2 Auto Scaling 入门](https://docs.aws.amazon.com/zh_cn/autoscaling/ec2/userguide/GettingStartedTutorial.html#gs-create-lt)
+
 亚马逊弹性伸缩（Auto Scaling）能自动地增加/减少EC2实例的数量，从而让你的应用程序一直能保持可用的状态。
 
 你可以预定义Auto Scaling，使其在需求高峰期自动增加EC2实例，而在需求低谷自动减少EC2实例。这样不仅能让你的应用程序一直保持健康的状态，而且也节省了你为EC2实例所付出的费用。
