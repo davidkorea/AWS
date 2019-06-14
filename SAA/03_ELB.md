@@ -67,7 +67,8 @@ Connection Draining的可设置时间限制范围是1~3600秒（默认为300秒�
 
 - Application Load Balancer可以进行基于路径的路由。即可以根据用户请求中的URL字段不同来将请求发送到不同的目标组中。比方可以定义ELB，将访问https://iteablue.com/posts/*文章的流量转发到目标组1中，然后将访问https://iteablue.com/pages/*页面的流量转发到目标组2中，那么就可以把原本的一个网页应用程序分解成更小的服务单元
 - ALB可以侦听HTTP数据包头部的信息，根据此字段来定义规则
-- ALB支持通过IP地址进行目标注册，包括位于VPC之外的目标。即可以在一个ALB中定义4个AWS中的EC2实例，同时定义2个来自公司内网的物理服务器
+- ALB支持通过IP地址进行目标注册，包括位于VPC之外的目标。即可以在一个ALB中定义4个AWS中的EC2实例，同时定义2个来自公司内网的物理服务器。
+  - 负载均衡器背后的服务器不仅可以是AWS中的EC2实例，也可以是其他地方的服务器。让负载均衡器将负载分配给来自不同地方的服务器。
 - 支持容器化的应用程序
 
 扩展阅读：[什么是应用程序负载均衡器？](https://docs.aws.amazon.com/zh_cn/elasticloadbalancing/latest/application/introduction.html)
