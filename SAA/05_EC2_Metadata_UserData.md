@@ -17,5 +17,6 @@
   [root@ip-172-31-26-251 ~]# http://169.254.169.254/latest/user-data
   -bash: http://169.254.169.254/latest/user-data: No such file or directory
   ```
-
+  ![](https://cdnstatic.iteablue.com/iteablue-production-data/wp-content/uploads/2018/04/ec2-user-data.jpg)
+  
 **URL地址的IP固定，只能在EC2中访问**
