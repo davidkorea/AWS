@@ -15,6 +15,8 @@ Placement Group的特点
     ![](https://i.loli.net/2019/06/14/5d03449d5798328318.png)
     
 - Placement Group**可以跨越peerd VPC，但要保证在同一个可用区内**
+  - VPC Peering的功能，让不同VPC之间能够通信。Placement Group能够跨越不同的VPC，哪怕是自己的账号与其他人的账号
+  - 意思就是可用跨VPC，但是其他VPC中的实例所在的AZ可用区要一致？？
 - 如果在Placement Group中创建实例的时候出现“capacity error”的错误，可以停止再启动组中的所有实例，再重新创建刚才的实例
   - 停止再启动组中的所有实例可以改变这些实例所在的底层物理设备，从而带来更多的性能和空间启动新的实例
 - Placement Group的创建会告诉AWS将组里的实例安置在物理上接近的AWS设备内
