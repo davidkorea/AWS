@@ -81,7 +81,7 @@ Connection Draining的可设置时间限制范围是1~3600秒（默认为300秒�
 - 同ALB一样，NLB支持通过IP地址进行目标注册，包括位于VPC之外的目标
 - 支持容器化的应用程序
 
-扩展阅读：[什么是Network Load Balancer？](https://docs.aws.amazon.com/zh_cn/elasticloadbalancing/latest/network/introduction.html)
+扩展阅读：[什么是网络负载均衡器？](https://docs.aws.amazon.com/zh_cn/elasticloadbalancing/latest/network/introduction.html)
 
 
 
