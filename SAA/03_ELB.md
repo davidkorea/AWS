@@ -31,7 +31,7 @@ AWS中ELB的存在，很好地替代了传统数据中心中F5负载均衡器的
 - DNS记录的TTL时间是60秒
 - 建议客户端（程序）每60秒更新DNS查找记录，以获取最新的ELB地址和最好的ELB性能
 # 健康检查（Health Check)
-ELB在每一个**健康检查间隔（HealthCheck Interval）**都会向所有已注册的实例发送基于**Ping、端口或者（网页）路径**的检查数据包，并且在**响应超时（Response Timeout）**这个时间内等待实例的回复。如果连续**没有**得到回复的次数超过定义的**不健康阈值（Unhealthy Threshold）**，那么这个实例会被标记为**OutofService**。如果在连续得到实例回复的次数超过了**健康阈值（Healthy Threshold）**的话，那么这个实例会被重新标记为**Inservice**状态。
+ELB在每一个**健康检查间隔（HealthCheck Interval）**都会向所有已注册的实例发送基于**Ping、端口或者（网页）路径**的检查数据包，并且在**响应超时（Response Timeout）** 这个时间内等待实例的回复。如果连续 **没有** 得到回复的次数超过定义的**不健康阈值（Unhealthy Threshold）**，那么这个实例会被标记为**OutofService**。如果在连续得到实例回复的次数超过了**健康阈值（Healthy Threshold）**的话，那么这个实例会被重新标记为**Inservice**状态。
 
 - ELB会对所有注册到这个ELB上的EC2实例进行健康检查，无论目前的健康状态如何
 - ELB的监控状态分别为InService（表示健康）或者OutofService（表示不健康）
