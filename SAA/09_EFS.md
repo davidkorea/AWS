@@ -25,6 +25,12 @@ EFS的一些特性：
 1. Amazon EC2 挂载说明 (从本地 VPC)
     - 使用 Amazon EC2 控制台，将您的 EC2 实例与支持访问您的挂载目标的 VPC 安全组关联。例如，如果您向您的挂载目标(EFS)分配了“默认”安全组，则应将“默认”安全组分配到您的 EC2 实例。
     - Using the Amazon EC2 console, associate your EC2 instance with a VPC security group that enables access to your mount target. For example, if you assigned the "default" security group to your mount target, you should assign the "default" security group to your EC2 instance.
+    - 挂载您的文件系统
+    ```
+    # 在 EC2 实例上创建新目录，如“efs”。
+    sudo mkdir efs
+    sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-27c34546.efs.ap-northeast-2.amazonaws.com:/ efs
+    ```
 2. Amazon EC2 挂载说明 (跨 VPC 对等连接)
 3. 本地挂载说明
     - 使用AWS Direct Connect连接或基于AWS的VPN连接在本地服务器上挂载EFS文件系统
