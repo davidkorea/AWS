@@ -46,3 +46,5 @@ mount.nfs4: Connection timed out
 2. add this security group to EFS and all EC2s
 3. exec command
 
+![](https://i.loli.net/2019/06/14/5d036f6e4796264081.png)
+![](https://i.loli.net/2019/06/14/5d036f6e6ad9f29933.png)
