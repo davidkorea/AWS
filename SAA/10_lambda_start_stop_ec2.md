@@ -1,6 +1,7 @@
 # 使用Lambda定时关闭和启动EC2实例
 
-https://github.com/davidkorea/AWS/blob/master/SAA/DOCS/lambda_start_stop_ec2.pptx
+- 201906 full steps by capture images.
+  https://github.com/davidkorea/AWS/blob/master/SAA/DOCS/lambda_start_stop_ec2.pptx
 
 - [如何使用 Lambda 按固定间隔停止和启动 Amazon EC2 实例](https://aws.amazon.com/cn/premiumsupport/knowledge-center/start-stop-lambda-cloudwatch/)
   - IAM Role
