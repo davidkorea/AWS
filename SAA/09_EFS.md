@@ -1,6 +1,6 @@
 # EFS (Elastic File System)
 
-多个EC2实例上使用Amazon EFS进行数据共享。
+多个EC2实例上使用Amazon EFS进行数据共享。**如果要保证下次启动自动挂载EFS，需要修改/etc/fstab文件**
 
 Amazon EFS提供了可扩展的文件系统，可以用在EC2实例上。EFS使用起来非常简单，你很容易地就可以在EFS上创建和配置一个文件系统。
 
