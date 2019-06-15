@@ -13,14 +13,16 @@
   ![](https://i.loli.net/2019/06/15/5d04f8484932581418.png)
 
 8. 测试CPU
-```sh
-[ec2-user@ip-172-31-28-183 ~]$ sudo -i
-[root@ip-172-31-28-183 ~]# while true; do echo "hi"; done
+  ```python
+  [ec2-user@ip-172-31-28-183 ~]$ sudo -i
+  [root@ip-172-31-28-183 ~]# while true; do echo "hi"; done
+  hi
+  hi
+  hi
+  ```
+  ![](https://i.loli.net/2019/06/15/5d04fc717e6c870321.png)
+  ![](https://i.loli.net/2019/06/15/5d04fc7648f9e84727.png)
 
-hi
-hi
-hi
-```
-
-
+# Exam Tips
 ![](https://i.loli.net/2019/06/15/5d04f1dc56b9d41582.png)
+![](https://i.loli.net/2019/06/15/5d04fbd6dc8fb46372.png)
