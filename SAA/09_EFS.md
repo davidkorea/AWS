@@ -53,3 +53,8 @@ mount.nfs4: Connection timed out
 qwiklabs:
 - Each EC2 instance that mounts the file system must have a security group that allows outbound access to the mount target on TCP port 2049. The EC2 instance launched when you started the lab has a security group that satisfies this requirements. Remember, security groups are stateful so responses to allowed inbound traffic are allowed to flow outbound regardless of outbound rules, and vice versa.
 - The security group you associate with a mount target must allow inbound access for the TCP protocol on port 2049 for NFS from all EC2 instances on which you want to mount the file system. This is the security group you will create and configure now, and attach it to your EFS mount targets.
+
+# Exam Tips
+![](https://i.loli.net/2019/06/16/5d0518cfa29eb36640.png)
+
+
