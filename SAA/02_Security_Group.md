@@ -1,6 +1,6 @@
 # 安全组（Security Group）基础
 
-- **如果允许HTTP inbound，即使关闭所有outbound，依然可以访问网页。因为只有inbound允许后，默认也会对其开放outbound**
+- **如果允许HTTP inbound，即使关闭所有outbound，依然可以访问网页。因为只有inbound允许后，默认也会对其开放outbound**。因此Security Group是有状态的stateful，而ACL是stateless无状态的，需要手动开启outboung
 
 
 -----
