@@ -29,3 +29,8 @@ Placement Group的特点
 - 组内使用一样类型的EC2实例
 - 在同一时间启动组内所有EC2实例，这样可以减少出现“capacity error”错误的概率
 - 可以通过更改最大传输单元（MTU），从默认的1500改成9001来进一步增加Placement Group内实例之间的传输速度
+
+# Exam Tips
+![](https://i.loli.net/2019/06/16/5d0518d5cf96839208.png)
+
+
