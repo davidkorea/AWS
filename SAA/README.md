@@ -1,5 +1,16 @@
 # AWS
 
+??????
+
+Do you need to shutdown your EC2 instance when you create a snapshot of EBS volumes that serve as root devices?
+ No, you only need to shutdown an instance before deleting it.
+ Yes 
+ No, the snapshot would turn off your instance automatically.
+ No[o]
+解析： Yes, to create a snapshot for Amazon EBS volumes that serve as root devices, you should stop the instance before taking the snapshot. Reference: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html
+
+
+-----
 
 **Which of the following strategies can be used to control access to your Amazon EC2 instances?**
 - a. DB security groups
@@ -11,6 +22,7 @@
 
 > Answer: [d]
 
+-----
 
 **Which of the following statements is true of creating a launch configuration using an EC2 instance?**
 - a. The launch configuration can be created only using the Query APIs.
