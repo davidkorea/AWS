@@ -3,9 +3,10 @@
 - **如果允许HTTP inbound，即使关闭所有outbound，依然可以访问网页。因为只有inbound允许后，默认也会对其开放outbound**。因此Security Group是有状态的stateful，而ACL是stateless无状态的，需要手动开启outboung
 - Security Group不能当作黑名单来限制某一IP地址，而ACL可以
 
+![](https://i.loli.net/2019/06/15/5d049e3c5b1ec36698.png)
+
 ![](https://i.loli.net/2019/06/15/5d049e3d1edf034414.png)
 
-![](https://i.loli.net/2019/06/15/5d049e3c5b1ec36698.png)
 
 -----
 
