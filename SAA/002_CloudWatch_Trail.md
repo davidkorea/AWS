@@ -13,7 +13,7 @@
   ![](https://i.loli.net/2019/06/15/5d04f8484932581418.png)
 
 8. 测试CPU
-  ```python
+  ```
   [ec2-user@ip-172-31-28-183 ~]$ sudo -i
   [root@ip-172-31-28-183 ~]# while true; do echo "hi"; done
   hi
