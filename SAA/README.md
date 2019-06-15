@@ -1,6 +1,17 @@
 # AWS
 
 
+**Which of the following strategies can be used to control access to your Amazon EC2 instances?**
+- a. DB security groups
+- b. IAM policies
+- c. None of these
+- d. EC2 security groups 
+
+解析： IAM policies allow you to specify what actions your IAM users are allowed to perform against your EC2 Instances. However, when it comes to access control, security groups are what you need in order to define and control the way you want your instances to be accessed, and whether or not certain kind of communications are allowed or not. Reference: http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/UsingIAM.html
+
+> Answer: [d]
+
+
 **Which of the following statements is true of creating a launch configuration using an EC2 instance?**
 - a. The launch configuration can be created only using the Query APIs.
 - b. Auto Scaling automatically creates a launch configuration directly from an EC2 instance. 
