@@ -15,3 +15,5 @@ Unable to locate credentials. You can configure credentials by running "aws conf
 [ec2-user@ip-172-31-26-251 ~]$ aws s3 ls
 2019-05-24 06:21:17 www.david.com
 ```
+# Exam Tips
+![](https://i.loli.net/2019/06/15/5d04ffda5a2e237382.png)
