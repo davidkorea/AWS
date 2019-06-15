@@ -52,4 +52,10 @@
         print('started your instances: ' + str(instances))
 
     ```
+  - ERROR
+    ```js
+    ”errorMessage”: “2019-06-12T11:03:27.906Z 7fb8341d-e73f-4934-9caa-9a4b70b51eea Task timed out after 3.00 seconds”} 
+    ```
+    ![](https://i.loli.net/2019/06/15/5d047ad78178547766.png)
+    
 - [规则的计划表达式](https://docs.aws.amazon.com/zh_cn/AmazonCloudWatch/latest/events/ScheduledEvents.html)
