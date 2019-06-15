@@ -10,7 +10,18 @@
     [root@ip-172-31-26-251 ~]#
     ```
 # 2. User Data
-- User data可以用来在EC2实例启动的时候作为启动脚本的内容（详细可以看上一节内容Bootstrap开机脚本）
+- User data可以用来在EC2实例启动的时候作为启动脚本的内容（Bootstrap开机脚本）
+  ```
+  #!/bin/bash
+  yum update -y
+  yum install httpd -y
+  service httpd start
+  chkconfig httpd on
+  cd /var/www/html
+  echo "<html><h1>Hello Cloud Gurus Welcome To My Webpage</h1></html>" > index.html
+  aws s3 mb s3://YOURBUCKETNAMEHERE
+  aws s3 cp index.html s3://YOURBUCKETNAMEHERE
+  ```
 - User data也可以在实例启动之后用于执行一些批量/自动化的脚本
 - 可以通过http://169.254.169.254/latest/user-data 即可以获得实例的user data
   ```sh
