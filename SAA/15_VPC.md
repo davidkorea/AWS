@@ -106,9 +106,17 @@ VPC Peering可是两个VPC之间的网络连接，通过此连接，你可以使
 - 创建在VPC中的EC2没有自动分配公网IP
   - 子网 - 修改自动分配 IP 设置
   ![](https://i.loli.net/2019/06/16/5d064a067a00481964.png)
+- Internet Gateway
+  - 创建一张路由表my_route_igw
+  - 规则
+    
+  - 显式关联关联VPC中的名为public的2个子网，使得两个子网分可以直接访问Internet
+  ![](https://i.loli.net/2019/06/16/5d0650c879db580131.png)
+- NAT Gateway
+
+  ![](https://i.loli.net/2019/06/16/5d0650cdb004622721.png)
   
-
-
+  
 # 3. 网络ACL（NACL）
 网络访问控制列表（NACL）与安全组（Security Group）类似，它能在子网的层面控制所有入站和出站的流量，为VPC提供更加安全的保障。
 - **安全组 - instance实例级别**
