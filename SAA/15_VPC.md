@@ -1,4 +1,4 @@
-# VPC简介
+# 1. VPC简介
 
 - **“全部”意味着，只有同属于这个安全组的EC2，全部类型流量/协议/端口可以相互通信，“全部”并不代表可以访问互联网**
   - **EFS设置时，选择的default没有任何规则，徐阿哟额外打开EFS Port**
@@ -35,7 +35,7 @@ VPC有如下特点：
 - VPC可以通过Virtual Private Gateway (VGW) 来与企业本地的数据中心相连
 - VPC可以通过AWS PrivateLink访问其他AWS账户托管的服务（VPC终端节点服务）
 
-# 默认VPC
+## 1.1 默认VPC
 - 在每一个区域（Region），AWS都有一个默认的VPC
 - 在这个VPC里面所有子网都绑定了一个路由表，其中有默认路由（目的地址 0.0.0.0/0）到互联网
 - 所有在默认VPC内启动的EC2实例都可以直接访问互联网
@@ -50,7 +50,7 @@ VPC有如下特点：
 
 ![](https://cdnstatic.iteablue.com/iteablue-production-data/wp-content/uploads/2018/06/default-vpc-diagram.png)
 
-# RFC1918私有地址范围
+## 1.2 RFC1918私有地址范围
 IETF RFC1918定义了私有网络的地址范围，这些私有网络一般仅用于企业和集团内部，并且这些地址在因特网上是不能路由的。
 
 在我们进行VPC的网络设置以及子网的设置时，都必须使用这些私有网络地址。
@@ -71,7 +71,7 @@ IETF RFC1918定义了私有网络的地址范围，这些私有网络一般仅�
 
 
 
-# EC2-Classic
+## 1.3 EC2-Classic
 在2013年12月4日之前，AWS提供了一种叫做EC2-Classic的网络，可以算是EC2-VPC的前身。
 
 在EC2-Classic内，你所运行的EC2实例会和其他客户的EC2实例共享同一个扁平的网络，而不是隔离的虚拟网络。
@@ -80,7 +80,7 @@ IETF RFC1918定义了私有网络的地址范围，这些私有网络一般仅�
 
 这一部分大概了解即可，如果需要更详细的信息，可以查看EC2-Classic与 EC2-VPC 的区别。
 
-# VPC Peering
+## 1.4 VPC Peering
 VPC Peering可是两个VPC之间的网络连接，通过此连接，你可以使用IPv4地址在两个VPC之间传输流量。这两个VPC内的实例会和如果在同一个网络一样彼此通信。
 
 - 可以通过AWS内网将一个VPC与另一个VPC相连
@@ -95,9 +95,35 @@ VPC Peering可是两个VPC之间的网络连接，通过此连接，你可以使
 
 ![](https://cdnstatic.iteablue.com/iteablue-production-data/wp-content/uploads/2018/06/peering-intro-diagram.png)
 
-# 弹性 IP （Elastic IP）
+## 1.5v弹性 IP （Elastic IP）
 弹性IP是专门用来分配AWS服务的IPv4地址，通过申请弹性IP地址，你可以将一个固定的公网IP分配给一个EC2实例。在这个实例无论重启，关闭，甚至终止之后，你都可以回收这个弹性IP地址并且在需要的时候分配给一个新的EC2实例。
 
 默认情况下，AWS分配的公网IP地址都是浮动的，这意味着如果你关闭再启动你的EC2实例，这个地址也会被释放并且重新分配。但是弹性IP地址是和你的AWS账号绑定的，除非你手动释放掉这个地址，否则这个地址可以一直被你拥有。
 
 值得注意的是，弹性IP地址在绑定了running状态的EC2实例才是免费的；但是如果已经申请了的弹性IP地址没有关联任何运行的EC2实例，则AWS会对这个空闲的弹性IP收费，这是为了避免资源的浪费。
+
+
+
+# 网络ACL（NACL）
+网络访问控制列表（NACL）与安全组（Security Group）类似，它能在子网的层面控制所有入站和出站的流量，为VPC提供更加安全的保障。
+
+知识点
+- 在你的默认VPC内会有一个默认的网络ACL（NACL），它会允许所有入向和出向的流量
+  ![](https://i.loli.net/2019/06/16/5d0643b107e0a26085.png)
+  
+- 你可以创建一个自定义的网络ACL，在创建之初所有的入向和出向的流量都会被拒绝，除非进行手动更改
+- 对于所有VPC内的子网，每一个子网都需要关联一个网络ACL。如果没有关联任何网络ACL，那么子网会关联默认的网络ACL
+- 一个网络ACL可以关联多个子网，但一个子网只能关联一个网络ACL
+- 网络ACL包含了一系列（允许或拒绝）的规则，网络ACL会按顺序执行，一旦匹配就结束，不会再继续往下匹配
+- 网络ACL有入向和出向的规则，每一条规则都可以配置允许或者拒绝
+- 网络ACL是无状态的（安全组是有状态的）
+  - 被允许的入向流量的响应流量必须被精准的出向规则所允许（反之亦然）
+  - 一般至少需要允许临时端口（TCP 1024-65535）
+  - 关于临时端口的知识，参考 [网络 ACL - 临时端口](https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/vpc-network-acls.html#nacl-ephemeral-ports)
+  ![](https://i.loli.net/2019/06/16/5d064693d18a377958.png)
+  - 以网站访问为例
+    - client： 随机端口5000（1024～65535） 访问服务器80端口
+    - server： 80端口 响应 客户端的端口5000
+    
+  
+  
