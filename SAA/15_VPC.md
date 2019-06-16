@@ -107,14 +107,38 @@ VPC Peering可是两个VPC之间的网络连接，通过此连接，你可以使
   - 子网 - 修改自动分配 IP 设置
   ![](https://i.loli.net/2019/06/16/5d064a067a00481964.png)
 - Internet Gateway
+  - 创建internet网关igw
   - 创建一张路由表my_route_igw
   - 规则
+  
+    |Destination|Target|Status|Propagated|
+    |-|-|-|-|
+    |10.0.0.0/16	|local	|active|No	|
+    |0.0.0.0/0|igw-09ff3e23ea474f1a1	|active|No|
     
   - 显式关联关联VPC中的名为public的2个子网，使得两个子网分可以直接访问Internet
   ![](https://i.loli.net/2019/06/16/5d0650c879db580131.png)
 - NAT Gateway
-
+  - 在public subnet中，创建NAT网关
+  - 创建一张路由表my_route_nat
+  - 规则
+   
+    |Destination|Target|Status|Propagated|
+    |-|-|-|-|
+    |10.0.0.0/16	|local	|active|No	|
+    |0.0.0.0/0|nat-01a15ab52b03d1511	|active|No|
+  - 显式关联关联VPC中private subnet
   ![](https://i.loli.net/2019/06/16/5d0650cdb004622721.png)
+  
+
+
+  
+  
+  
+  
+  
+  
+  
   
   
 # 3. 网络ACL（NACL）
