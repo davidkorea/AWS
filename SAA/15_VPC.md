@@ -5,6 +5,8 @@
 - **安全组 - instance实例级别**
 - **ACL - subnet子网级别**
 - **NAT网关可以跨AZ，因为本身公有子网和私有子网就是在不同的AZ，所以NAT GW放在一个AZ的公有子网，将另一个AZ的私有子网流量转发至NAT GW**
+- **一个VPC可以创建多个NAT网关，但只能创建一个Internet网关**
+
 
 # 1. VPC简介
 
@@ -107,8 +109,11 @@ VPC Peering可是两个VPC之间的网络连接，通过此连接，你可以使
   - 子网 - 修改自动分配 IP 设置
   ![](https://i.loli.net/2019/06/16/5d064a067a00481964.png)
 ## 2.3 Internet Gateway
+
+> - **一个VPC只能创建一个Internet网关，将所有公有子网绑定至该IGW**
+
 - 创建internet网关igw
-- 创建一张路由表my_route_igw
+- 创建一张路由表my_route_igw，**不使用创建子网时自动创建的默认的路由表**
 - 规则
 
   |Destination|Target|Status|Propagated|
@@ -118,11 +123,13 @@ VPC Peering可是两个VPC之间的网络连接，通过此连接，你可以使
 
 - 显式关联关联VPC中的名为public的2个子网，使得两个子网分可以直接访问Internet
 ![](https://i.loli.net/2019/06/16/5d0650c879db580131.png)
+
 ## 2.4 NAT Gateway
 > - **NAT网关可以跨AZ，因为本身公有子网和私有子网就是在不同的AZ，所以NAT GW放在一个AZ的公有子网，将另一个AZ的私有子网流量转发至NAT GW**
+> - **一个VPC可以创建多个NAT网关**，同一个AZ中的公有，私有子网进行NAT转发，而不用跨AZ进行NAT转发
 
 - 在public subnet中，创建NAT网关
-- 创建一张路由表my_route_nat
+- 创建一张路由表my_route_nat，**不使用创建子网时自动创建的默认的路由表**
 - 规则
 
   |Destination|Target|Status|Propagated|
