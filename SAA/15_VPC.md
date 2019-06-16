@@ -6,7 +6,7 @@
 - **ACL - subnet子网级别**
 - **NAT网关可以跨AZ，因为本身公有子网和私有子网就是在不同的AZ，所以NAT GW放在一个AZ的公有子网，将另一个AZ的私有子网流量转发至NAT GW**
 - **一个VPC可以创建多个NAT网关，但只能创建一个Internet网关**
-
+- **NAT网关不支持DNAT，但NAT实例可配置DNAT**
 
 # 1. VPC简介
 
