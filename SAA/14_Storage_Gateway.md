@@ -14,4 +14,7 @@ AWS Storage Gateway 是一种具有无缝本地集成和优化数据传输的混
   - Cached Volumes：所有的数据都会保存到S3，但是会将最经常访问的数据缓存到本地
 - Tape Gateway：用来取代传统的磁带备份，通过 Tape Gateway 可以使用NetBackup，Backup Exec或Veeam 等备份软件将文件备份到 Amazon S3 或者 Amazon Glacier 上
 - AWS Storage Gateway 支持三种存储接口：文件、卷和磁带
+
 备注：参加旧版本考试的朋友，可能会遇到关于 Storage Gateway 的问题，但其中会使用旧的名称。Stored Volumes 旧名称是 Gateway Stored Volumes；Cached Volumes 旧名称是 Gateway Cached Volumes, Tape Gateway 旧名称是 Gateway Virtual Tape Library (VTL)。
+
+![](https://i.loli.net/2019/06/16/5d0604fc49f9f96817.png)
