@@ -104,10 +104,12 @@ VPC Peering可是两个VPC之间的网络连接，通过此连接，你可以使
 # 2. 创建VPC
 ## 2.1 创建在VPC中的EC2没有公有DNS
   - VPC - Edit DNS hostnames
-  ![](https://i.loli.net/2019/06/16/5d0649ffd50c489776.png)
+  
+![](https://i.loli.net/2019/06/16/5d0649ffd50c489776.png)
 ## 2.2 创建在VPC中的EC2没有自动分配公网IP
   - 子网 - 修改自动分配 IP 设置
-  ![](https://i.loli.net/2019/06/16/5d064a067a00481964.png)
+  
+![](https://i.loli.net/2019/06/16/5d064a067a00481964.png)
 ## 2.3 Internet Gateway
 
 > - **一个VPC只能创建一个Internet网关，将所有公有子网绑定至该IGW**
@@ -122,6 +124,7 @@ VPC Peering可是两个VPC之间的网络连接，通过此连接，你可以使
   |0.0.0.0/0|igw-09ff3e23ea474f1a1	|active|No|
 
 - 显式关联关联VPC中的名为public的2个子网，使得两个子网分可以直接访问Internet
+
 ![](https://i.loli.net/2019/06/16/5d0650c879db580131.png)
 
 ## 2.4 NAT Gateway
@@ -137,17 +140,34 @@ VPC Peering可是两个VPC之间的网络连接，通过此连接，你可以使
   |10.0.0.0/16	|local	|active|No	|
   |0.0.0.0/0|nat-01a15ab52b03d1511	|active|No|
 - 显式关联关联VPC中private subnet
+
 ![](https://i.loli.net/2019/06/16/5d0650cdb004622721.png)
 
 
 
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   
 # 3. 网络ACL（NACL）
