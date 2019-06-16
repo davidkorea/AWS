@@ -1,5 +1,3 @@
-# 1. VPC简介
-
 - **“全部”意味着，只有同属于这个安全组的EC2，全部类型流量/协议/端口可以相互通信，“全部”并不代表可以访问互联网**
   - **EFS设置时，选择的default没有任何规则，徐阿哟额外打开EFS Port**
   ![](https://i.loli.net/2019/06/16/5d063954dde0389700.png)
@@ -8,8 +6,7 @@
 - **ACL - subnet子网级别**
 
 
-
-
+# 1. VPC简介
 
 Amazon Virtual Private Cloud (Amazon VPC)允许你在已定义的虚拟网络内启动AWS资源。这个虚拟网络与你在数据中心中运行的传统网络极其相似，并会为你提供使用AWS的可扩展基础设施的优势。
 
@@ -102,11 +99,20 @@ VPC Peering可是两个VPC之间的网络连接，通过此连接，你可以使
 
 值得注意的是，弹性IP地址在绑定了running状态的EC2实例才是免费的；但是如果已经申请了的弹性IP地址没有关联任何运行的EC2实例，则AWS会对这个空闲的弹性IP收费，这是为了避免资源的浪费。
 
+# 2. 创建VPC
+- 创建在VPC中的EC2没有公有DNS
+  - VPC - Edit DNS hostnames
+  ![](https://i.loli.net/2019/06/16/5d0649ffd50c489776.png)
+- 创建在VPC中的EC2没有自动分配公网IP
+  - 子网 - 修改自动分配 IP 设置
+  ![](https://i.loli.net/2019/06/16/5d064a067a00481964.png)
+  
 
 
-# 网络ACL（NACL）
+# 3. 网络ACL（NACL）
 网络访问控制列表（NACL）与安全组（Security Group）类似，它能在子网的层面控制所有入站和出站的流量，为VPC提供更加安全的保障。
-
+- **安全组 - instance实例级别**
+- **ACL - subnet子网级别**
 知识点
 - 在你的默认VPC内会有一个默认的网络ACL（NACL），它会允许所有入向和出向的流量
   ![](https://i.loli.net/2019/06/16/5d0643b107e0a26085.png)
