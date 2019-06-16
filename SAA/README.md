@@ -1,6 +1,13 @@
 # AWS
+**You have some very sensitive data stored on AWS S3 and want to try every possible alternative to keeping it secure in regards to access control. What are the mechanisms available for access control on AWS S3?**
+- a. (IAM) policies, Access Control Lists (ACLs), bucket policies, and query string authentication.
+- b. (IAM) policies, Access Control Lists (ACLs) and bucket policies.
+- c. Access Control Lists (ACLs), bucket policies, and query string authentication
+- d. (IAM) policies, Access Control Lists (ACLs), bucket policies, query string authentication and encryption.
 
+解析： Amazon S3 supports several mechanisms that give you flexibility to control who can access your data as well as how, when, and where they can access it. Amazon S3 provides four different access control mechanisms: AWS Identity and Access Management (IAM) policies, Access Control Lists (ACLs), bucket policies, and query string authentication. IAM enables organizations to create and manage multiple users under a single AWS account. With IAM policies, you can grant IAM users fine-grained control to your Amazon S3 bucket or objects. You can use ACLs to selectively add (grant) certain permissions on individual objects. Amazon S3 bucket policies can be used to add or deny permissions across some or all of the objects within a single bucket. With Query string authentication, you have the ability to share Amazon S3 objects through URLs that are valid for a specified period of time.
 
+> Answer: [a], d X
 
 
 -----
