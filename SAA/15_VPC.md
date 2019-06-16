@@ -145,12 +145,25 @@ VPC Peering可是两个VPC之间的网络连接，通过此连接，你可以使
 
 
 
+# 3. 终端节点
+
+使得VPC中的实例不用通过IGW或者NAT访问到公网，再访问S3的公网url，直接使用AWS的私有地址访问自己的S3
+
+- 为S3服务创建终端节点 
+- 关联私有子网的路由表
+- 私有子网的路由表中会自动添加一条到该终端节点的路由规则
+
+测试
+- 给私有子网的EC2实例赋予S3FullAccess IAM Role
+- 取消私有子网关联NAT网关，确保私有子网的实例无法公网访问
+- 通过公有子网的EC2，SSH到私有子网的EC2实例
+- 执行`aws s3 ls`，若成功，则表示S3终端节点有效
 
 
-
-
-
-
+# 4. 创建终端节点服务
+- 您可以使用 PrivateLink 技术， 使您的VPC中的服务 可用于 其他AWS账户和服务
+- PrivateLink 是一种高可用性的可扩展技术，用来实现对服务的私有访问
+- 其他账户和服务可以创建接口终端节点来访问您的终端节点服务。了解更多[VPC 终端节点服务 (AWS PrivateLink)](https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/endpoint-service.html)
 
 
 
@@ -170,7 +183,7 @@ VPC Peering可是两个VPC之间的网络连接，通过此连接，你可以使
 
   
   
-# 3. 网络ACL（NACL）
+# 5. 网络ACL（NACL）
 网络访问控制列表（NACL）与安全组（Security Group）类似，它能在子网的层面控制所有入站和出站的流量，为VPC提供更加安全的保障。
 - **安全组 - instance实例级别**
 - **ACL - subnet子网级别**
