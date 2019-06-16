@@ -7,6 +7,9 @@
 - **NAT网关可以跨AZ，因为本身公有子网和私有子网就是在不同的AZ，所以NAT GW放在一个AZ的公有子网，将另一个AZ的私有子网流量转发至NAT GW**
 - **一个VPC可以创建多个NAT网关，但只能创建一个Internet网关**
 - **NAT网关不支持DNAT，但NAT实例可配置DNAT**
+- **终端节点创建后，公网实例会优先通过终端节点访问S3吗？？？？？？？？？？**
+
+
 
 # 1. VPC简介
 
@@ -146,18 +149,45 @@ VPC Peering可是两个VPC之间的网络连接，通过此连接，你可以使
 
 
 # 3. 终端节点
+VPC终端节点能建立VPC和一些AWS服务之间的高速、私密的“专线”。这个专线叫做PrivateLink，使用了这个技术，你无需再使用Internet网关、NAT网关、VPN或AWS Direct Connect连接就可以访问到一些AWS资源！
 
+终端节点（Endpoints）是虚拟设备，它是以能够自动水平扩展、高度冗余、高度可用的VPC组件设计而成，你也不需要为它的带宽限制和故障而有任何担忧。
+
+AWS PrivateLink是专为客户设计用于特定用途的AWS内网，它采用了高度可用并且可扩展的架构（意味着你无需再为PrivateLink的性能和高可用性做任何额外架构设计）。
+
+VPC终端有两种类型：接口和网关
+- 网关类型支持以下服务（需要记住）：
+  - Amazon S3
+  - DynamoDB
+
+- 接口类型支持以下服务（了解即可）：
+  - Amazon CloudWatch Logs
+  - AWS CodeBuild
+  - Amazon EC2 API
+  - Elastic Load Balancing API
+  - AWS Key Management Service
+  - Amazon Kinesis Data Streams
+  - AWS Service Catalog
+  - Amazon SNS
+  - AWS Systems Manager
+  - 其他 AWS 账户托管的终端节点服务
+  - 支持的 AWS Marketplace 合作伙伴服务
+
+
+## 3.1 创建终端节点
 使得VPC中的实例不用通过IGW或者NAT访问到公网，再访问S3的公网url，直接使用AWS的私有地址访问自己的S3
 
 - 为S3服务创建终端节点 
 - 关联私有子网的路由表
 - 私有子网的路由表中会自动添加一条到该终端节点的路由规则
 
-测试
+## 3.2 测试终端节点
 - 给私有子网的EC2实例赋予S3FullAccess IAM Role
 - 取消私有子网关联NAT网关，确保私有子网的实例无法公网访问
 - 通过公有子网的EC2，SSH到私有子网的EC2实例
 - 执行`aws s3 ls`，若成功，则表示S3终端节点有效
+
+
 
 
 # 4. 创建终端节点服务
