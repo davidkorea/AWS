@@ -217,19 +217,6 @@ VPC Peering不是传统意义上的网关或者VPN连接，它并不依赖于任
   - VPC A是不能与VPC C进行直接通信的，必须再建立VPC A和VPC C的对等连接才可以
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-  
   
 # 6. 网络ACL（NACL）
 网络访问控制列表（NACL）与安全组（Security Group）类似，它能在子网的层面控制所有入站和出站的流量，为VPC提供更加安全的保障。
@@ -254,4 +241,19 @@ VPC Peering不是传统意义上的网关或者VPN连接，它并不依赖于任
     - server： 80端口 响应 客户端的端口5000
     
   
-  
+# 7. Direct Connect线路
+AWS Direct Connect线路可以让你通过以太网光纤线路连接你的内部网络与AWS Direct Connect Location，可以打通你的内部网络与AWS的网络，从而拥有高速率、低延迟，安全、可靠的专线网络。
+
+一般来说，我们要搭建一条Direct Connect线路，需要先通过本地的网络服务提供商将我们内部网络接到一个同城市的Direct Connect Location （这个Location可以是Equinix, CoreSite, Digital Reality的数据中心，全球有几十个这样的地理位置）上。然后需要向AWS申请Cross Connect，将服务提供商的路由器直接连接到同一个机房不同机柜的AWS设备上。
+
+通过这样的连接，我们可以端到端地利用专线的稳定性和高吞吐量访问我们位于AWS内的所有资源。
+
+![](https://cdnstatic.iteablue.com/iteablue-production-data/wp-content/uploads/2018/08/direct_connect_overview.png)
+
+## Direct Connect的特点
+- AWS提供的Direct Connect的带宽是1Gbps或者是10Gbps
+- 少于1Gbps速率的Direct Connect线路可以向AWS Direct Connect合作伙伴申请，可以申请50Mbps到500Mbps的线路
+- Direct Connect的数据包使用802.1Q协议进行封装（Q-in-Q tagging）
+## VPN连接和Direct Connect的区别
+- VPN连接可以在数分钟之内就搭建成功。如果有紧急的业务需求，可以使用VPN连接。VPN连接是基于互联网线路的，因此带宽不高，稳定性也不好，但价格便宜
+- AWS Direct Connect使用的是专线，你的数据不会跑在互联网上，是私有的、安全的网络
