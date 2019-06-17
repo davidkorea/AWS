@@ -120,6 +120,21 @@ NAT网关（NAT Gateway）
 - 自动分配一个公网IP地址（EIP）
 - 私有子网需要创建一条默认路由（0.0.0.0/0）到NAT网关
 - 不需要更改源/目标检查（Source/Destination Check）
+## 1.7 VPC Flow Log
+- 对于Peer VPC不能开启Flow Logs功能，除非这个VPC也在你的账户内
+- 不能给Flow Logs打标签
+- Flow Logs创建后不能更改其配置
+
+VPC Flow Logs并不捕获所有经过VPC的流量，以下流量将不会被捕获：
+- 实例访问Amazon DNS服务器（即.2地址）的流量
+- Windows进行Windows许可证激活的流量
+- 访问实例Metadata的流量（即去往169.254.169.254的流量）
+- DHCP流量
+- 访问VPC路由器的流量（即.1地址）
+
+
+
+
 
 # 2. 创建VPC
 ## 2.1 创建在VPC中的EC2没有公有DNS
