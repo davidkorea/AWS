@@ -1,5 +1,5 @@
 - **“全部”意味着，只有同属于这个安全组的EC2，全部类型流量/协议/端口可以相互通信，“全部”并不代表可以访问互联网**
-  - **EFS设置时，选择的default没有任何规则，徐阿哟额外打开EFS Port**
+  - **EFS设置时，因为选择的default没有任何规则，所以额外打开EFS Port**
   ![](https://i.loli.net/2019/06/16/5d063954dde0389700.png)
 
 - **安全组 - instance实例级别**
@@ -196,7 +196,25 @@ VPC终端有两种类型：接口和网关
 - 其他账户和服务可以创建接口终端节点来访问您的终端节点服务。了解更多[VPC 终端节点服务 (AWS PrivateLink)](https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/endpoint-service.html)
 
 
+# 5. VPC对等连接（VPC Peering）
+VPC对等连接（VPC Peering）是两个VPC之间的连接，通过VPC Peering，你可以使用私有地址让两个VPC之间相互通信，就像它们在同一个VPC内一样。
 
+你可以在自己的两个VPC之间建立对等连接，也可以在自己的VPC与其他AWS账号的VPC之间建立对等连接，还可以在位于不同区域的VPC之间建立对等连接（在2017年11月之前VPC Peering还不支持跨区域的连接呢）。
+
+如下图所示，VPC A和VPC B之间建立了对等连接，那么VPC A中网段10.0.0.0/16内的实例就可以和VPC B中网段172.31.0.0/16内的实例进行互相通信，仿佛它们是处于同一个内网一样。
+
+![](https://cdnstatic.iteablue.com/iteablue-production-data/wp-content/uploads/2018/08/peering-intro-diagram.png)
+
+VPC Peering不是传统意义上的网关或者VPN连接，它并不依赖于任何物理的设备，它也不会出现单点故障或者网络瓶颈。
+
+知识点
+- 如果两个VPC出现了地址覆盖/重复，那么这两个VPC不能做Peering
+- 例如10.0.0.0/16的VPC与10.0.0.0/24的VPC是不能做对等连接的
+- 参与VPC Peering的两个VPC可以来自不同的区域（这个功能以前是没有的）
+- VPC Peering不支持Transitive Peering
+  - 即如果VPC A与VPC B进行了对等连接
+  - VPC B与VPC C进行了对等连接
+  - VPC A是不能与VPC C进行直接通信的，必须再建立VPC A和VPC C的对等连接才可以
 
 
 
@@ -213,7 +231,7 @@ VPC终端有两种类型：接口和网关
 
   
   
-# 5. 网络ACL（NACL）
+# 6. 网络ACL（NACL）
 网络访问控制列表（NACL）与安全组（Security Group）类似，它能在子网的层面控制所有入站和出站的流量，为VPC提供更加安全的保障。
 - **安全组 - instance实例级别**
 - **ACL - subnet子网级别**
