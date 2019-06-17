@@ -97,12 +97,29 @@ VPC Peering可是两个VPC之间的网络连接，通过此连接，你可以使
 
 ![](https://cdnstatic.iteablue.com/iteablue-production-data/wp-content/uploads/2018/06/peering-intro-diagram.png)
 
-## 1.5v弹性 IP （Elastic IP）
+## 1.5 弹性 IP （Elastic IP）
 弹性IP是专门用来分配AWS服务的IPv4地址，通过申请弹性IP地址，你可以将一个固定的公网IP分配给一个EC2实例。在这个实例无论重启，关闭，甚至终止之后，你都可以回收这个弹性IP地址并且在需要的时候分配给一个新的EC2实例。
 
 默认情况下，AWS分配的公网IP地址都是浮动的，这意味着如果你关闭再启动你的EC2实例，这个地址也会被释放并且重新分配。但是弹性IP地址是和你的AWS账号绑定的，除非你手动释放掉这个地址，否则这个地址可以一直被你拥有。
 
 值得注意的是，弹性IP地址在绑定了running状态的EC2实例才是免费的；但是如果已经申请了的弹性IP地址没有关联任何运行的EC2实例，则AWS会对这个空闲的弹性IP收费，这是为了避免资源的浪费。
+
+## 1.6 NAT Instance & NAT Gateway
+NAT实例（NAT Instance）
+- 创建NAT实例之后，一定要关闭源/目标检查（Source/Destination Check）
+- NAT实例需要创建在公有子网内
+- 私有子网需要创建一条默认路由（0.0.0.0/0），指到NAT实例
+- NAT实例的瓶颈在于实例的大小，如果遇到了网络吞吐瓶颈，你可以加大实例类型
+- 需要自己创建弹性伸缩组（Auto Scaling Group），自定义脚本来达到NAT实例的高可用（比如部署在多个可用区）
+- 需要关联一个安全组（Security Group）
+
+NAT网关（NAT Gateway）
+- 网络吞吐可以达到10Gbps
+- 不需要为NAT的操作系统和程序打补丁
+- 不需要关联安全组
+- 自动分配一个公网IP地址（EIP）
+- 私有子网需要创建一条默认路由（0.0.0.0/0）到NAT网关
+- 不需要更改源/目标检查（Source/Destination Check）
 
 # 2. 创建VPC
 ## 2.1 创建在VPC中的EC2没有公有DNS
