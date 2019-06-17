@@ -279,6 +279,8 @@ VPC Peering不是传统意义上的网关或者VPN连接，它并不依赖于任
   - 一般至少需要允许临时端口（TCP 1024-65535）
   - 关于临时端口的知识，参考 [网络 ACL - 临时端口](https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/vpc-network-acls.html#nacl-ephemeral-ports)
   ![](https://i.loli.net/2019/06/16/5d064693d18a377958.png)
+  ![](https://i.loli.net/2019/06/17/5d0722abe10bb84619.png)
+  
   - 以网站访问为例
     - client： 随机端口5000（1024～65535） 访问服务器80端口
     - server： 80端口 响应 客户端的端口5000
