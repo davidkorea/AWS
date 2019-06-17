@@ -1,5 +1,16 @@
 # AWS
 
+**Which of the following statements are rue about Amazon Route 53 resource records? Choose 2 answers**
+
+- a. An Alias record can map one DNS name to another Amazon Route 53 DNS name.  
+- b. A CNAME record can be created for your zone apex.
+- c. An Amazon Route 53 CNAME record can point to any DNS record hosted anywhere. 
+- d. TTL can be set for an Alias record in Amazon Route 53.
+- e. An Amazon Route 53 Alias record can point to any DNS record hosted anywhere.
+
+> Answer: [a], [c], d X
+
+-----
 
 **You are designing Internet connectivity for your VPC. The Web servers must be available on the Internet. The application must have a highly available architecture. Which alternatives should you consider? (Choose 2 answers)**
  
