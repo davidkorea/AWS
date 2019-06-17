@@ -1,7 +1,16 @@
 # AWS
 
 
+**You are designing Internet connectivity for your VPC. The Web servers must be available on the Internet. The application must have a highly available architecture. Which alternatives should you consider? (Choose 2 answers)**
+ 
 
+- a. Configure a NAT instance in your VPC. Create a default route via the NAT instance and associate it with all subnets. Configure a DNS A record that points to the NAT instance public IP address.
+- b. Configure a CloudFront distribution and configure the origin to point to the private IP addresses of your Web servers. Configure a Route53 CNAME record to your CloudFront distribution.
+- c. Place all your web servers behind ELB. Configure a Route53 CNAME to point to the ELB DNS name. 
+- d. Assign EIPs to all web servers. Configure a Route53 record set with all EIPs with health checks and DNS failover. 
+- e. Configure ELB with an EIP. Place all your Web servers behind ELB. Configure a Route53 A record that points to the EIP.
+
+> Answer: [c], [d], b X
 
 -----
 
