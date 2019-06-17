@@ -178,7 +178,8 @@ VPC Flow Logs并不捕获所有经过VPC的流量，以下流量将不会被捕�
 
 ![](https://i.loli.net/2019/06/16/5d0650cdb004622721.png)
 
-
+- NAT网关收费 `$0.059 per NAT Gateway Hour`
+  ![](https://i.loli.net/2019/06/17/5d06f6711c57f80686.png)
 
 # 3. 终端节点
 VPC终端节点能建立VPC和一些AWS服务之间的高速、私密的“专线”。这个专线叫做PrivateLink，使用了这个技术，你无需再使用Internet网关、NAT网关、VPN或AWS Direct Connect连接就可以访问到一些AWS资源！
