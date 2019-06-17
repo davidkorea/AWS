@@ -301,7 +301,7 @@ AWS Direct Connect线路可以让你通过以太网光纤线路连接你的内�
 通过这样的连接，我们可以端到端地利用专线的稳定性和高吞吐量访问我们位于AWS内的所有资源。
 
 ![](https://cdnstatic.iteablue.com/iteablue-production-data/wp-content/uploads/2018/08/direct_connect_overview.png)
-
+![](https://i.loli.net/2019/06/17/5d073463b3b6133652.png)
 ## Direct Connect的特点
 - AWS提供的Direct Connect的带宽是1Gbps或者是10Gbps
 - 少于1Gbps速率的Direct Connect线路可以向AWS Direct Connect合作伙伴申请，可以申请50Mbps到500Mbps的线路
