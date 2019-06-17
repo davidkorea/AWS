@@ -227,7 +227,7 @@ VPC终端有两种类型：接口和网关
 - PrivateLink 是一种高可用性的可扩展技术，用来实现对服务的私有访问
 - 其他账户和服务可以创建接口终端节点来访问您的终端节点服务。了解更多[VPC 终端节点服务 (AWS PrivateLink)](https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/endpoint-service.html)
 
-AWS PrivateLink 是一项具有高可用性的可扩展技术，使您能够将您的 VPC 私密地连接到支持的**AWS 服务**、由**其他 AWS 账户托管的服务（VPC终端节点服务）**以及支持的 **AWS Marketplace 合作伙伴服务**。您无需 Internet 网关、NAT 设备、公有 IP 地址、AWS Direct Connect 连接或 VPN 连接来与服务通信。
+AWS PrivateLink 是一项具有高可用性的可扩展技术，使您能够将您的 VPC 私密地连接到支持的**AWS 服务**、由**其他AWS账户托管的服务（VPC终端节点服务）**以及支持的 **AWS Marketplace 合作伙伴服务**。您无需 Internet 网关、NAT 设备、公有 IP 地址、AWS Direct Connect 连接或 VPN 连接来与服务通信。
 您的 VPC 和 服务之间的流量不会脱离 Amazon 网络。
 
 # 5. VPC对等连接（VPC Peering）
