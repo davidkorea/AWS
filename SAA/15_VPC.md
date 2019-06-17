@@ -107,21 +107,23 @@ VPC Peering可是两个VPC之间的网络连接，通过此连接，你可以使
 值得注意的是，弹性IP地址在绑定了running状态的EC2实例才是免费的；但是如果已经申请了的弹性IP地址没有关联任何运行的EC2实例，则AWS会对这个空闲的弹性IP收费，这是为了避免资源的浪费。
 
 ## 1.6 NAT Instance & NAT Gateway
-NAT实例（NAT Instance）
+### NAT实例（NAT Instance）
 - 创建NAT实例之后，一定要关闭源/目标检查（Source/Destination Check）
 - NAT实例需要创建在公有子网内
 - 私有子网需要创建一条默认路由（0.0.0.0/0），指到NAT实例
 - NAT实例的瓶颈在于实例的大小，如果遇到了网络吞吐瓶颈，你可以加大实例类型
 - 需要自己创建弹性伸缩组（Auto Scaling Group），自定义脚本来达到NAT实例的高可用（比如部署在多个可用区）
 - 需要关联一个安全组（Security Group）
-
-NAT网关（NAT Gateway）
+  ![](https://i.loli.net/2019/06/17/5d070ad0f1d4455776.png)
+  
+### NAT网关（NAT Gateway）
 - 网络吞吐可以达到10Gbps
 - 不需要为NAT的操作系统和程序打补丁
 - 不需要关联安全组
 - 自动分配一个公网IP地址（EIP）
 - 私有子网需要创建一条默认路由（0.0.0.0/0）到NAT网关
 - 不需要更改源/目标检查（Source/Destination Check）
+
 ## 1.7 VPC Flow Log
 - 对于Peer VPC不能开启Flow Logs功能，除非这个VPC也在你的账户内
 - 不能给Flow Logs打标签
