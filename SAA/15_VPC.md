@@ -209,8 +209,8 @@ VPC Peering不是传统意义上的网关或者VPN连接，它并不依赖于任
 
 知识点
 - 如果两个VPC出现了地址覆盖/重复，那么这两个VPC不能做Peering
-- 例如10.0.0.0/16的VPC与10.0.0.0/24的VPC是不能做对等连接的
-- 参与VPC Peering的两个VPC可以来自不同的区域（这个功能以前是没有的）
+  - 例如10.0.0.0/16的VPC与10.0.0.0/24的VPC是不能做对等连接的
+- 参与VPC Peering的两个VPC可以来自不同的区域（以前不支持）
 - VPC Peering不支持Transitive Peering
   - 即如果VPC A与VPC B进行了对等连接
   - VPC B与VPC C进行了对等连接
