@@ -2,8 +2,8 @@
   - **EFS设置时，因为选择的default没有任何规则，所以额外打开EFS Port**
   ![](https://i.loli.net/2019/06/16/5d063954dde0389700.png)
 
-- **安全组 - instance实例级别**
-- **ACL - subnet子网级别**
+- **安全组 - instance实例级别**，第一层防护
+- **ACL - subnet子网级别**， 第二层防护
 - **NAT网关可以跨AZ，因为本身公有子网和私有子网就是在不同的AZ，所以NAT GW放在一个AZ的公有子网，将另一个AZ的私有子网流量转发至NAT GW**
 - **一个VPC可以创建多个NAT网关，但只能创建一个Internet网关**
 - **NAT网关不支持DNAT，但NAT实例可配置DNAT**
