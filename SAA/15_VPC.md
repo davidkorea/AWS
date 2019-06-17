@@ -6,6 +6,7 @@
 - **ACL - subnet子网级别**， 第二层防护
 - **NAT网关可以跨AZ，因为本身公有子网和私有子网就是在不同的AZ，所以NAT GW放在一个AZ的公有子网，将另一个AZ的私有子网流量转发至NAT GW**
 - **一个VPC可以创建多个NAT网关，但只能创建一个Internet网关**
+- **NAT网关创建于一个AZ中的一个共有子网中。如果该AZ挂掉，则所有通过此NAT网关的私有子网都将失去Internet连接。处于高可用考虑，每个AZ设置一个共有子网，并在其内设置NAT网关**
 - **NAT网关不支持DNAT，但NAT实例可配置DNAT**
 - **终端节点创建后，公网实例会优先通过终端节点访问S3吗？？？？？？？？？？**
 - **虽然10.0.0.0 - 10.255.255.255 （10/8）网段可用，但是只能是`10.255/16` 才被允许创建，`10/8不被允许 `**
@@ -123,7 +124,10 @@ VPC Peering可是两个VPC之间的网络连接，通过此连接，你可以使
 - 自动分配一个公网IP地址（EIP）
 - 私有子网需要创建一条默认路由（0.0.0.0/0）到NAT网关
 - 不需要更改源/目标检查（Source/Destination Check）
-
+- **处于高可用考虑，每个AZ创建一个公有子网，每个公有子网中创建一个NAT网关。以免某个AZ挂掉，所有私有子网无法联网**
+  - if you have resources in multiple Availability Zones and they share one NAT gateway in the event that the Nat gateways availability zone is down then your resources in the availability zones and the other Availability Zones are going to lose Internet access.
+  - create a NAT gateway in each availability zone and configure your routing to ensure that resources use the NAT gateway in the same availability zone that they're in. 
+  
 ## 1.7 VPC Flow Log
 - 对于Peer VPC不能开启Flow Logs功能，除非这个VPC也在你的账户内
 - 不能给Flow Logs打标签
