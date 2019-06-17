@@ -1,4 +1,31 @@
 # AWS
+
+
+
+
+
+
+
+
+
+
+-----
+
+**Having set up a website to automatically be redirected to a backup website if it fails, you realize that there are different types of failovers that are possible. You need all your resources to be available the majority of the time. Using Amazon Route 53 which configuration would best suit this requirement?****
+- a. Active-active failover. 
+- b. None. Route 53 can't failover.
+- c. Active-passive failover.
+- d. Active-active-passive and other mixed configurations
+
+解析： You can set up a variety of failover configurations using Amazon Route 53 alias: weighted, latency, geolocation routing, and failover resource record sets.
+Active-active failover: Use this failover configuration when you want all of your resources to be available the majority of the time. When a resource becomes unavailable, Amazon Route 53 can detect that it's unhealthy and stop including it when responding to queries.
+Active-passive failover: Use this failover configuration when you want a primary group of resources to be available the majority of the time and you want a secondary group of resources to be on standby in case all of the primary resources become unavailable. When responding to queries, Amazon Route 53 includes only the healthy primary resources. If all of the primary resources are unhealthy, Amazon Route 53 begins to include only the healthy secondary resources in response to DNS queries.
+Active-active-passive and other mixed configurations: You can combine alias and non-alias resource record sets to produce a variety of Amazon Route 53 behaviors.
+
+> Answer: [a], c X
+
+-----
+
 **You have some very sensitive data stored on AWS S3 and want to try every possible alternative to keeping it secure in regards to access control. What are the mechanisms available for access control on AWS S3?**
 - a. (IAM) policies, Access Control Lists (ACLs), bucket policies, and query string authentication.
 - b. (IAM) policies, Access Control Lists (ACLs) and bucket policies.
