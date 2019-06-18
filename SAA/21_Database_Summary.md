@@ -25,6 +25,10 @@
 因此，我们可以将应用程序的数据库读取功能转移到Read Replicas上，来减轻源数据库的负载。
 - 需要源RDS实例开启了自动备份的功能
 - 所有类型RDS都可以有Aurora和mysql两种类型read replica？？？
+  - NO, ONLY Aurora has 2 types of read replicas
+  - Mysql RDS 只能创建Aurora Read Replica
+    ![](https://i.loli.net/2019/06/18/5d08a1bd403ff49770.png)
+    
 ![](https://i.loli.net/2019/06/18/5d089fa6a087546547.png)
 
 # Aurora
@@ -33,6 +37,7 @@
   - Aurora Replicas（最多支持15个）
   - MySQL Replica（最多支持5个）
   - 两者的区别是Aurora主数据库出现故障的时候，Aurora Replicas可以自动变成主数据库，而MySQL Replica不可以
+  
 ![](https://i.loli.net/2019/06/18/5d08a04b5251083057.png)
 
 
@@ -61,6 +66,7 @@ Elasticache通过在内存中缓存数据来减少对象读取数据库的次数
   - Memcached是一套高性能、分布式内存对象缓存系统，是一款开源的，非常流行的缓存系统
   - 使用AWS Elasticache可以和Memcached无缝地兼容
 - Redis
+
 ![](https://i.loli.net/2019/06/18/5d08a0a3bd2b514741.png)
 
 
