@@ -17,7 +17,7 @@ OLAP是数据仓库（Data Warehousing）系统的主要应用，支持复杂的
 
 数据仓库有更好地读取速度和更加便利的分析和查询方式。
 
-# RDS的备份，Multi-AZ高可用和Read Replicas
+# 1. RDS的备份，Multi-AZ高可用和Read Replicas
 本章节主要讲解RDS数据库的备份，高可用（Multi-AZ）和只读副本（Read Replicas）的特性以及他们的区别。
 
 ## RDS备份
@@ -93,3 +93,20 @@ Read Replicas还有如下的特点：
 - PostgreSQL
 - MySQL
 - MariaDB
+
+
+# 2. 非关系数据库DynamoDB
+DynamoDB是一种非关系数据库（NoSQL），可在任何规模提供可靠的性能。DynamoDB能在任何规模下实现不到10毫秒级的一致相应，并且它的存储空间无限。
+
+DynamoDB的特点：
+
+使用SSD存储
+数据分散在3个不同地理位置的数据中心（并不是3个可用区）
+最终一致性读取（Eventual Consistent Reads）
+默认的设置，即如果写入数据到DynamoDB之后马上读取该数据，可能会读取到旧的信息
+DynamoDB需要时间（一秒内）把写入的数据同步到3个不同地理位置的数据中心
+强一致性读取（Strongly Consistent Reads）
+在写入数据到DynamoDB之后马上读取该数据，会等所有写入操作以及数据同步全部完成后再回馈结果
+即强一致性读取一定会读到最新的数据结果
+如果我们需要增加DynamoDB的规格，我们可以直接在AWS管理控制台上进行更改，并且不会有任何系统downtime
+除非您指定其他读取方式，否则 DynamoDB 将使用最终一致性读取。读取操作 (例如 GetItem，Query 和 Scan) 提供了一个 ConsistentRead 参数。如果您将此参数设置为 true，DynamoDB 将在操作过程中使用强一致性读取。
