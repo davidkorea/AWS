@@ -14,22 +14,25 @@
 ![](https://i.loli.net/2019/06/18/5d089f761f36486298.png)
 
 # Multi-AZ高可用
-使用Multi-AZ部署模式，RDS会在不同的可用区内配置和维护一个主数据库和一个备用数据库，主数据库的数据会自动复制到备用数据库中。
+- Used for DR（Disaster Recovery）
+- 使用Multi-AZ部署模式，RDS会在不同的可用区内配置和维护一个主数据库和一个备用数据库，主数据库的数据会自动复制到备用数据库中。
+- 在开启Multi-AZ的情况下，这个URL Endpoints会根据主/备数据库的健康状态自动解析到IP地址。对于应用程序来说，我们只需要连接这个URL地址即可。
+- 高可用的设置只是用来解决灾备的问题，并不能解决读取性能的问题；要提升数据库读取性能，我们需要用到Read Replicas。
 
-在开启Multi-AZ的情况下，这个URL Endpoints会根据主/备数据库的健康状态自动解析到IP地址。对于应用程序来说，我们只需要连接这个URL地址即可。
-
-高可用的设置只是用来解决灾备的问题，并不能解决读取性能的问题；要提升数据库读取性能，我们需要用到Read Replicas。
+![](https://i.loli.net/2019/06/18/5d08a6b270c3631547.png)
 
 # 只读副本（Read Replicas）
 我们可以在源数据库实例的基础上，复制一种新类型的数据库实例，称之为只读副本（Read Replicas）。我们对源数据库的任何更新，都会异步更新到只读副本中。
 因此，我们可以将应用程序的数据库读取功能转移到Read Replicas上，来减轻源数据库的负载。
 - 需要源RDS实例开启了自动备份的功能
 - 所有类型RDS都可以有Aurora和mysql两种类型read replica？？？
-  - NO, ONLY Aurora has 2 types of read replicas
-  - Mysql RDS 只能创建Aurora Read Replica
-    - 这也是Mysql migrate to Aurora的最佳方式
+  - ~~NO, ONLY Aurora has 2 types of read replicas
+  - ~~Mysql RDS 只能创建Aurora Read Replica
+  - 这也是Mysql migrate to Aurora的最佳方式
     ![](https://i.loli.net/2019/06/18/5d08a1bd403ff49770.png)
-    
+    ![](https://i.loli.net/2019/06/18/5d08a7990dbf755996.png)
+    ![](https://i.loli.net/2019/06/18/5d08a79c3138c67127.png)
+    ![](https://i.loli.net/2019/06/18/5d08a7a071fdb45049.png)
 ![](https://i.loli.net/2019/06/18/5d089fa6a087546547.png)
 
 # Aurora
