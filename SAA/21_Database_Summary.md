@@ -33,7 +33,9 @@
   - Aurora Replicas（最多支持15个）
   - MySQL Replica（最多支持5个）
   - 两者的区别是Aurora主数据库出现故障的时候，Aurora Replicas可以自动变成主数据库，而MySQL Replica不可以
-  
+![](https://i.loli.net/2019/06/18/5d08a04b5251083057.png)
+
+
 # DynamoDB
 - 使用SSD存储
 - 数据分散在3个不同地理位置的数据中心（并不是3个可用区）
