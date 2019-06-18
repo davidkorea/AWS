@@ -4,10 +4,10 @@ OLTP是传统的关系数据库的主要应用，是基本的日常事务处理�
 
 OLTP包括了以上所说的关系数据库SQL Server，Oracle，MySQL Server，PostgreSQL，Aurora，MariaDB等。
 
-联机分析处理OLAP（Online Analytics Processing）
+### 联机分析处理OLAP（Online Analytics Processing）
 OLAP是数据仓库（Data Warehousing）系统的主要应用，支持复杂的分析操作，侧重决策支持，并且能提供直观易懂的查询结果。OLAP是用来做商业智能（Business Intelligence）方面的分析的。
 
-### OLAP常用的流行工具是AWS Redshift, Greenplum, Hive等
+OLAP常用的流行工具是AWS Redshift, Greenplum, Hive等
 
 说了这么多可能大家的理解都还是比较模糊，下面来举一个通俗一点的例子。
 
