@@ -1,5 +1,18 @@
 # AWS
 
+
+**A user has deployed an application on his private cloud. The user is using his own monitoring tool. He wants to configure it so that whenever there is an error, the monitoring tool will notify him via SMS. Which of the below mentioned AWS services will help in this scenario?**
+- a. AWS SES
+- b. AWS SNS 
+- c. None because the user infrastructure is in the private cloud
+- d. AWS SMS
+
+解析： Amazon Simple Notification Service (Amazon SNS) is a fast, flexible, and fully managed push messaging service. Amazon SNS can be used to make push notifications to mobile devices. Amazon SNS can deliver notifications by SMS text message or email to the Amazon Simple Queue Service (SQS) queues or to any HTTP endpoint. In this case user can use the SNS apis to send SMS. Reference: http://aws.amazon.com/sns/
+
+> Answer: [b], c X
+
+-----
+
 **You have just set up a large site for a client which involved a huge database which you set up with Amazon RDS to run as a Multi-AZ deployment. You now start to worry about what will happen if the database instance fails. Which statement best describes how this database will function if there is a database failure?**
 - a. Updates to your DB Instance are synchronously replicated across Availability Zones to the standby in order to keep both in sync and protect your latest database updates against DB Instance failure. 
 - b. Your database will not resume operation without manual administrative intervention.
