@@ -61,6 +61,9 @@ Elasticache通过在内存中缓存数据来减少对象读取数据库的次数
   - Memcached是一套高性能、分布式内存对象缓存系统，是一款开源的，非常流行的缓存系统
   - 使用AWS Elasticache可以和Memcached无缝地兼容
 - Redis
+![](https://i.loli.net/2019/06/18/5d08a0a3bd2b514741.png)
+
+
 # 官方FAQ
 强烈建议研读官方FAQ，可以对AWS RDS的概念和实际使用场景有更深入的了解
 https://aws.amazon.com/cn/rds/faqs/
