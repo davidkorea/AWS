@@ -20,7 +20,7 @@ Redshift的一些特点：
 - Columnar Data Storage
 - Advanced Compression
 - Massively Parallel Processing (MPP)
-- 目前Redshift只能部署在一个可用区内，不能跨可用区或者用类似RDS的高可用配置
+- 目前Redshift**只能部署在一个可用区内**，不能跨可用区或者用类似RDS的高可用配置
   - Redshift是用来产生报告和做商业分析的，并不需要像生产环境一样对可用性有高保证
 - 我们可以对Redshift做快照，并且在需要的时候恢复这个快照到另一个可用区
 
