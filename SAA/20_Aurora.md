@@ -15,8 +15,8 @@ Aurora和其他RDS服务类似，AWS会负责各种管理任务，例如硬件�
 - 3份及以下的数据备份丢失，不影响Aurora的读取功能
 - Aurora有自动修复的功能，AWS会自动检查磁盘错误和数据块问题并且自动进行修复
 - 有两种数据库只读副本
-- Aurora Replicas（最多支持15个）
-- MySQL Replica（最多支持5个）
+  - Aurora Replicas（最多支持15个）
+  - MySQL Replica（最多支持5个）
   - 两者的区别是Aurora主数据库出现故障的时候，Aurora Replicas可以自动变成主数据库，而MySQL Replica不可以
 
 在助理级别的AWS考试中，不会对Aurora的内容做太深入的考察，我们只需要大致了解即可。
