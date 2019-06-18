@@ -22,8 +22,9 @@
 
 # 只读副本（Read Replicas）
 我们可以在源数据库实例的基础上，复制一种新类型的数据库实例，称之为只读副本（Read Replicas）。我们对源数据库的任何更新，都会异步更新到只读副本中。
-
 因此，我们可以将应用程序的数据库读取功能转移到Read Replicas上，来减轻源数据库的负载。
+- 需要源RDS实例开启了自动备份的功能
+- 所有类型RDS都可以有Aurora和mysql两种类型read replica？？？
 ![](https://i.loli.net/2019/06/18/5d089fa6a087546547.png)
 
 # Aurora
