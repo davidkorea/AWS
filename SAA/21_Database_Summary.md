@@ -29,6 +29,11 @@
   - ~~NO, ONLY Aurora has 2 types of read replicas~~
   - ~~Mysql RDS 只能创建Aurora Read Replica~~
   - 这也是Mysql migrate to Aurora的最佳方式
+    ![](https://i.loli.net/2019/06/18/5d08aee84b03d70561.png)
+    ![](https://i.loli.net/2019/06/18/5d08aeed2652d80521.png)
+    
+    -----
+    
     ![](https://i.loli.net/2019/06/18/5d08a7990dbf755996.png)
     ![](https://i.loli.net/2019/06/18/5d08a79c3138c67127.png)
 ![](https://i.loli.net/2019/06/18/5d089fa6a087546547.png)
