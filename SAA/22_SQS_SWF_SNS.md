@@ -8,7 +8,7 @@ Amazon Simple Queue Service (SQS)是一种完全托管的消息队列服务，�
 
 这个时候每一个流程都是一个瓶颈，一旦某一个地方达到了瓶颈或者出现故障，又或者用户下单的时间比程序处理订单的时间还要久的情况下，都会让用户得不到成功下单的结果，或者得到结果的时间非常长，导致用户体验不好。
 
-这个时候，我们就要考虑到应用程序的解耦（decouple）。
+这个时候，我们就要考虑到应用程序的**解耦（decouple）**
 
 我们可以引入消息队列，让不同的应用程序之间打断强连接的关系，互不干扰。
 
@@ -40,21 +40,21 @@ SQS有两种不同类型的队列，它们分别是：
 ![](https://cdnstatic.iteablue.com/iteablue-production-data/wp-content/uploads/2018/08/sqs-what-is-sqs-fifo-queue-diagram.png)
 
 
-更多关于标准队列和FIFO队列的区别，可以查看[我需要哪种类型的队列？](https://docs.aws.amazon.com/zh_cn/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html#sqs-queue-types)
+### 更多关于标准队列和FIFO队列的区别，可以查看[我需要哪种类型的队列？](https://docs.aws.amazon.com/zh_cn/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html#sqs-queue-types)
 ![](https://i.loli.net/2019/06/19/5d09913ad4b2766995.png)
 
-SQS的其他特点
-SQS是靠应用程序去拉取的，而不能主动推送给应用程序，推送服务我们使用SNS（Simple Notification Service）
-消息会以256 KB的大小存放
-消息会在队列中保存1分钟~14天，默认时间是4天
-可见性超时（Visibility Timeout）
-即当SQS队列收到新的消息并且被拉取走进行处理时，会触发Visibility Timeout的时间。这个消息不会被删除，而是会被设置为不可见，用来防止该消息在处理的过程中再一次被拉取
-当这个消息被处理完成后，这个消息会在SQS中被删除，表示这个任务已经处理完毕
-如果这个消息在Visibility Timeout时间结束之后还没有被处理完，则这个消息会设置为可见状态，等待另一个程序来进行处理
-因此同一个消息可能会被处理两次（或以上）
-这个超时时间最大可以设置为12小时
-标准SQS队列保证了每一个在队列内的消息都至少会被处理一次
-长轮询（Long Polling）
-默认情况下，Amazon SQS使用短轮训（Short Polling），即应用程序每次去查询SQS队列，SQS都会做回应（哪怕队列一直是空的）
-使用了长轮训，应用程序每次去查询SQS队列，SQS队列不会马上做回应。而是等到队列里有消息可处理时，或者等到设定的超时时间再做出回应。
-长轮询可以一定程度减少SQS的花销
+# SQS的其他特点
+- SQS是靠应用程序去拉取的，而不能主动推送给应用程序，推送服务我们使用SNS（Simple Notification Service）
+- 消息会以256 KB的大小存放
+- 消息会在队列中保存1分钟~14天，默认时间是4天
+- **可见性超时（Visibility Timeout）**
+  - 即当SQS队列收到新的消息并且被拉取走进行处理时，会触发Visibility Timeout的时间。这个消息不会被删除，而是会被设置为不可见，用来防止该消息在处理的过程中再一次被拉取
+  - 当这个消息被处理完成后，这个消息会在SQS中被删除，表示这个任务已经处理完毕
+  - 如果这个**消息在Visibility Timeout时间结束之后还没有被处理完，则这个消息会设置为可见状态，等待另一个程序来进行处理**
+  - 因此同一个消息可能会被处理两次（或以上）
+  - 这个超时时间最大可以设置为12小时
+  - 标准SQS队列保证了每一个在队列内的消息都至少会被处理一次
+- 长轮询（Long Polling）
+  - 默认情况下，Amazon SQS使用短轮训（Short Polling），即应用程序每次去查询SQS队列，SQS都会做回应（哪怕队列一直是空的）
+  - 使用了长轮训，应用程序每次去查询SQS队列，SQS队列不会马上做回应。而是等到队列里有消息可处理时，或者等到设定的超时时间再做出回应。
+  - **长轮询可以一定程度减少SQS的花销**
