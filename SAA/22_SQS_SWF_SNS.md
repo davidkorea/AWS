@@ -1,7 +1,7 @@
-# SQS (Simple Queue Service)简介
+# 1. SQS (Simple Queue Service)简介
 Amazon Simple Queue Service (SQS)是一种完全托管的消息队列服务，可以让你分离和扩展微服务、分布式系统和无服务应用程序。
 
-# 消息队列
+## 1.1消息队列
 还是举一个电商的例子，一个用户在电商网站下单后付款后，应用服务器马上查询/更新数据库，连接支付网关并查询支付状态，通知短信/邮件网关发送相关短信/邮件，更新库存系统，更新物流系统……最后返回信息给用户，“您的下单已成功”。
 
 但是如果网站的访问数很大，或者正值促销活动（比如淘宝双11，京东618）呢？
@@ -22,28 +22,27 @@ Amazon Simple Queue Service (SQS)是一种完全托管的消息队列服务，�
 
 Amazon SQS相当于提供了一个分布式、高可用、高性能的消息队列服务。
 
-# SQS特点
+## 1.2 SQS特点
 SQS有两种不同类型的队列，它们分别是：
 
 1. 标准队列（Standard Queue）
 2. FIFO队列（先进先出队列）
-### 标准队列
+### 1.2.1 标准队列
 标准队列拥有无限的吞吐量，所有消息都会至少传递一次，并且它会尽最大努力进行排序。标准队列是默认的队列类型。
 ![](https://cdnstatic.iteablue.com/iteablue-production-data/wp-content/uploads/2018/08/sqs-what-is-sqs-standard-queue-diagram.png)
 
 
-### FIFO队列
+### 1.2.2 FIFO队列
 - FIFO (First-in-first-out)队列在不使用批处理的情况下，最多支持300TPS（每秒300个发送、接受或删除操作）。
 - 在队列中的消息都只会不多不少地被处理一次。
 - FIFO队列严格保持消息的发送和接收顺序。
 
 ![](https://cdnstatic.iteablue.com/iteablue-production-data/wp-content/uploads/2018/08/sqs-what-is-sqs-fifo-queue-diagram.png)
 
-
-### 更多关于标准队列和FIFO队列的区别，可以查看[我需要哪种类型的队列？](https://docs.aws.amazon.com/zh_cn/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html#sqs-queue-types)
+### 1.2.3 更多关于标准队列和FIFO队列的区别，可以查看[我需要哪种类型的队列？](https://docs.aws.amazon.com/zh_cn/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html#sqs-queue-types)
 ![](https://i.loli.net/2019/06/19/5d09913ad4b2766995.png)
 
-# SQS的其他特点
+## 1.3 SQS的其他特点
 - SQS是靠应用程序去拉取的，而不能主动推送给应用程序，推送服务我们使用SNS（Simple Notification Service）
 - 消息会以256 KB的大小存放
 - 消息会在队列中保存1分钟~14天，默认时间是4天
@@ -59,3 +58,32 @@ SQS有两种不同类型的队列，它们分别是：
   - 默认情况下，Amazon SQS使用短轮训（Short Polling），即应用程序每次去查询SQS队列，SQS都会做回应（哪怕队列一直是空的）
   - 使用了长轮训，应用程序每次去查询SQS队列，SQS队列不会马上做回应。而是等到队列里有消息可处理时，或者等到设定的超时时间再做出回应。
   - **长轮询可以一定程度减少SQS的花销**
+
+
+# 2. SNS (Simple Notification Service)简介
+SNS (Simple Notification Service) 是一种完全托管的发布/订阅消息收发和移动通知服务，用于协调向订阅终端节点和客户端的消息分发。
+
+和SQS (Simple Queue Service)一样，SNS也可以轻松分离和扩展微服务，分布式系统和无服务应用程序，对程序进行解耦。
+
+我们可以使用SNS将消息推送到SQS消息队列中、AWS Lambda函数或者HTTP终端节点上。
+
+SNS通知还可以发送推送通知到IOS，安卓，Windows和基于百度的设备，也可以通过电子邮箱或者SMS短信的形式发送到各种不同类型的设备上。
+![](https://cdnstatic.iteablue.com/iteablue-production-data/wp-content/uploads/2018/08/sns-how-works.png)
+
+## 2.1 SNS的一些特点
+- SNS是实时的推送服务（Push），有别于SQS的拉取服务（Pull/Poll）
+- 拥有简单的API，可以和其他应用程序兼容
+- 可以通过多种不同的传输协议进行集成
+- 便宜、用多少付费多少的服务模型
+- 在AWS管理控制台上就可以进行简单的操作
+## 2.2 SNS能推送的目标
+- HTTP
+- HTTPS
+- Email
+- Email-JSON
+- SQS
+- Application
+- Lambda
+
+
+
