@@ -57,11 +57,16 @@ ELB在每一个**健康检查间隔（HealthCheck Interval）**都会向所有�
 Connection Draining的可设置时间限制范围是1~3600秒（默认为300秒）。当达到这个最大时限时，不管当前实例是否处理完请求，ELB都会强制关闭与这个实例的连接。
 
 ## 1.5 粘性会话/会话关联（Sticky Sessions/Session Affinity）
-默认情况下，Classic Load Balancer会将每一个用户请求转发到负载最小的已注册实例上。但是如果启用Sticky Sessions /Session Affinity，则在**会话期间ELB会将来自某个用户的所有请求都转发到同一个实例上**。
-- **Application Load Balancer同样适用**
-  ![](https://i.loli.net/2019/06/20/5d0b2c62eaf2584622.png)
-  ![](https://i.loli.net/2019/06/20/5d0b2c673ff8116691.png)
-  
+- 默认情况下，Classic Load Balancer会将每一个用户请求转发到负载最小的已注册实例上。
+  - 但是如果启用Sticky Sessions /Session Affinity，则在**会话期间ELB会将来自某个用户的所有请求都转发到同一个实例上**。
+  - **Application Load Balancer同样适用**
+    ![](https://i.loli.net/2019/06/20/5d0b2c62eaf2584622.png)
+    ![](https://i.loli.net/2019/06/20/5d0b2c673ff8116691.png)
+
+## 1.6 Cross Zone Load balancing
+![](https://i.loli.net/2019/06/20/5d0b2db99a5b849911.png)
+
+
 # 2. 应用程序负载均衡器（Application Load Balancer）
 
 应用程序负载均衡器（Application Load Balancer）工作在**第7层（应用层）**，因此也被称为7层的ELB。
@@ -72,7 +77,9 @@ Connection Draining的可设置时间限制范围是1~3600秒（默认为300秒�
 
 应用程序负载均衡器在其他方面和上文讲的传统负载均衡器非常类似，那他们有什么大的区别呢？
 
-- Application Load Balancer可以进行基于路径的路由。即可以根据用户请求中的URL字段不同来将请求发送到不同的目标组中。比方可以定义ELB，将访问https://iteablue.com/posts/*文章的流量转发到目标组1中，然后将访问https://iteablue.com/pages/*页面的流量转发到目标组2中，那么就可以把原本的一个网页应用程序分解成更小的服务单元
+- Application Load Balancer可以进行基于路径的路由（Path Patterns）。即可以根据用户请求中的URL字段不同来将请求发送到不同的目标组中。比方可以定义ELB，将访问https://iteablue.com/posts/*文章的流量转发到目标组1中，然后将访问https://iteablue.com/pages/*页面的流量转发到目标组2中，那么就可以把原本的一个网页应用程序分解成更小的服务单元
+  ![](https://i.loli.net/2019/06/20/5d0b2e13028a254794.png)
+
 - ALB可以侦听HTTP数据包头部的信息，根据此字段来定义规则
 - ALB支持通过IP地址进行目标注册，包括位于VPC之外的目标。即可以在一个ALB中定义4个AWS中的EC2实例，同时定义2个来自公司内网的物理服务器。
   - 负载均衡器背后的服务器不仅可以是AWS中的EC2实例，也可以是其他地方的服务器。让负载均衡器将负载分配给来自不同地方的服务器。
