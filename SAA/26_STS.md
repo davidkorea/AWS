@@ -8,7 +8,7 @@
 
 STS的临时凭证可以由以下几种方式产生：
 - 企业联合身份验证（Federation）
-  - 使用了基于**Security Assertion Markup Language (SAML) **的标准
+  - 使用了基于**Security Assertion Markup Language (SAML)** 的标准
   - 可以使用微软Active Directory的用户来获取临时权限，不需要创建IAM用户
   - 支持**单点登录（Single Sign On, SSO）**
 - Web联合身份验证（Federation with Mobile Apps）
