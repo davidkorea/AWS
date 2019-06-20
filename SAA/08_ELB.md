@@ -58,7 +58,10 @@ Connection Draining的可设置时间限制范围是1~3600秒（默认为300秒�
 
 ## 1.5 粘性会话/会话关联（Sticky Sessions/Session Affinity）
 默认情况下，Classic Load Balancer会将每一个用户请求转发到负载最小的已注册实例上。但是如果启用Sticky Sessions /Session Affinity，则在**会话期间ELB会将来自某个用户的所有请求都转发到同一个实例上**。
-
+- **Application Load Balancer同样适用**
+  ![](https://i.loli.net/2019/06/20/5d0b2c62eaf2584622.png)
+  ![](https://i.loli.net/2019/06/20/5d0b2c673ff8116691.png)
+  
 # 2. 应用程序负载均衡器（Application Load Balancer）
 
 应用程序负载均衡器（Application Load Balancer）工作在**第7层（应用层）**，因此也被称为7层的ELB。
