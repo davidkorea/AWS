@@ -1,6 +1,10 @@
 # AWS
 
+**You have created a new subdomain for your popular website, and you need this subdomain to point to an Elastic Load Balancer using Route53. Which DNS record set should you create?**
+- A
+- **CNAME**
 
+> # top domain use A? subdomain use CNAME??????
 
 
 
