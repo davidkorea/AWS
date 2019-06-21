@@ -1,6 +1,27 @@
 # AWS
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----
+
+-----
+
+-----
+
 **A user has deployed an application on his private cloud. The user is using his own monitoring tool. He wants to configure it so that whenever there is an error, the monitoring tool will notify him via SMS. Which of the below mentioned AWS services will help in this scenario?**
 - a. AWS SES
 - b. AWS SNS 
