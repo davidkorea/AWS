@@ -61,6 +61,8 @@ Connection Draining的可设置时间限制范围是1~3600秒（默认为300秒�
   - 但是如果启用Sticky Sessions /Session Affinity，则在**会话期间ELB会将来自某个用户的所有请求都转发到同一个实例上**。
   - **Application Load Balancer同样适用**
     ![](https://i.loli.net/2019/06/20/5d0b2c62eaf2584622.png)
+    - **can be useful when you are storing infomation locally to that instance**
+    
     ![](https://i.loli.net/2019/06/20/5d0b2c673ff8116691.png)
 
 ## 1.6 Cross Zone Load balancing
