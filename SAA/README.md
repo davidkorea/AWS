@@ -1,10 +1,18 @@
 # AWS
 
+
+**Your company hosts 10 web servers all serving the same web content in AWS. They want Route 53 to serve traffic to random web servers. Which routing policy will meet this requirement, and provide the best resiliency?** Multivalue ROuting.
+
+Multivalue answer routing lets you configure Amazon Route 53 to return multiple values, such as IP addresses for your web servers, in response to DNS queries. Route 53 responds to DNS queries with up to eight healthy records and gives different answers to different DNS resolvers. The choice of which to use is left to the requesting service effectively creating a form or randomisation.
+
+
+-----
+
 **You have created a new subdomain for your popular website, and you need this subdomain to point to an Elastic Load Balancer using Route53. Which DNS record set should you create?**
 - A
 - **CNAME**
 
-> # top domain use A? subdomain use CNAME??????
+> ### top domain use A? subdomain use CNAME??????
 
 
 
