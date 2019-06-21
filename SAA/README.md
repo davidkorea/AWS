@@ -4,6 +4,12 @@
 
 -----
 
+**Until recently customers were not permitted to conduct Penetration Testing without AWS engagement. However that has changed. There are still conditions however.** yes
+
+In a custom VPC with new subnets in each AZ, there is a Route that supports communication across all subnets/AZs. Plus a Default SG with an allow rule 'All traffic, All protocols, All ports, from anything using this Default SG'.
+
+-----
+
 **Are you permitted to conduct your own vulnerability scans on your own VPC without alerting AWS first?** yes
 
 Until recently customers were not permitted to conduct Penetration Testing without AWS engagement. However that has changed. There are still conditions however.
