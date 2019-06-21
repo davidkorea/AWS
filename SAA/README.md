@@ -1,6 +1,9 @@
 # AWS
 
+**You have a web site with three distinct services each hosted by different web server autoscaling groups. Which AWS service should you use.** ALB
 
+
+The ALB has functionality to distinguish traffic for different targets (mysite.co/accounts vs. mysite.co/sales vs. mysite.co/support) and distribute traffic based on rules for; target group, condition, and priority.
 
 -----
 
