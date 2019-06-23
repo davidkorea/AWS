@@ -1,6 +1,13 @@
 # AWS
 
 
+
+- 可以对整个存储桶设置 默认加密属性。已上传对未加密文件，可以被自动加密吗？？？？？
+
+
+
+-----
+
 **You manage a high performance site that collects scientific data using a bespoke protocol over TCP port 1414. The data comes in at high speed and is distributed to an autoscaling group of EC2 compute services spread over three AZs. Which type of AWS Load Balancer would best meet this requirement.** NLB
 
 the Network Load Balancer is specifically designed for high performance traffic that is not conventional Web traffic. The Classic LB might also do the job, but would not offer the same performance.
