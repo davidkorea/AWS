@@ -2,6 +2,25 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**Can I delete a snapshot of an EBS Volume that is used as the root device of a registered AMI?**
+- NO
+
+-----
+
 **Is it possible to perform actions on an existing Amazon EBS Snapshot?**
 - yes，cli, console, apis. create ami, copy, add tag, modify permission
 
