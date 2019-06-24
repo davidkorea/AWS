@@ -5,6 +5,7 @@
   - 按需实例（On Demand Instance）- 用多少时间付费多少，费用精确到秒，不用则可以随时关闭/终止并停止费用的产生
   - 竞价实例（Spot Instance）- 以低于按需实例的价格竞得实例，但价格高于设定得价格后会自动被终止
   - 保留实例（Reserved Instance） – 相当于买断一个实例1年/3年，期间不管实例开不开都需要付总得费用，但平均下来费用会比按需实例便宜
+    - **是否可以更改RI的region？？ you can You can modify the AZ, scope, network platform, or instance size (within the same instance type). But not Region**
   - 专用主机实例（Dedicated Hosts）- 涉及到软件许可证的时候，会考虑使用专用主机实例
 - **终止一个竞价实例，Amazon给你停了，免费；自己停了，仍然收费**
   - 如果主动终止一个竞价实例，需要为当前这个完整小时付费
