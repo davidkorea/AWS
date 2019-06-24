@@ -4,6 +4,83 @@
 
 
 
+There is a requirement to get the IP addresses for resources accessed in a private subnet.
+Which of the following can be used to fulfill this purpose?
+ Trusted Advisor
+ VPC Flow Logs
+ Use CloudWatch metrics
+ Use CloudTrail
+ 
+ -----
+ 
+A company is developing a web application to be hosted in AWS.
+This application needs a data store for session data. As an AWS Solution Architect, which of the following would you recommend as an ideal option to store session data? Choose 2 answers from the options given below.
+ CloudWatch
+ DynamoDB
+ Elastic Load Balancing
+ ElastiCache
+ Storage Gateway
+ 
+ -----
+ 
+A Solutions Architect is designing a shared service for hosting containers from several customers on Amazon ECS.
+These containers will use several AWS services. A container from one customer should not be able access data from another customer.
+Which of the below solutions should the architect use to meet these requirements?
+ IAM roles for tasks
+ IAM roles for EC2 Instances
+ IAM Instance profile for EC2 Instances
+ Security Group rules
+ 
+-----
+
+An organization hosts a multi-language website on AWS, which is served using CloudFront.
+Language is specified in the HTTP request as shown below:
+http://d11111f8.cloudfront.net/main.html?language=de
+http://d11111f8.cloudfront.net/main.html?language=en
+http://d11111f8.cloudfront.net/main.html?language=es
+How should AWS CloudFront be configured to delivered cache data in the correct language?
+ Forward cookies to the origin
+ Based on query string parameters
+ Cache objects at the origin
+ Serve dynamic content
+ 
+-----
+
+A Solutions Architect designing a solution to store and archive corporate documents, has determined Amazon Glacier as the right choice of solution.
+An important requirement is that the data must be delivered within 10 minutes of a retrieval request. Which feature in Amazon Glacier can help meet this requirement?
+ Vault Lock
+ Expedited retrieval
+ Bulk retrieval
+ Standard retrieval
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 -----
 
