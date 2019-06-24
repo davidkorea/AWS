@@ -3,8 +3,8 @@
 - **persistent block storage automatically replicated within its AZ to protect from component failure**，同一个AZ内有备份
 - magnetic adj.	像磁铁的; 有磁性的
 
-> - root volume snapshot canbe deleted when instance is runing??
-> - create AMI, create disk from a volume snapshot?
+> - root volume snapshot canbe deleted when instance is runing?? 根卷的快照是公共快照，不能删除，也无需删除
+
 -----
 
 ![](https://i.loli.net/2019/06/15/5d049f6d89bc291836.png)
@@ -20,6 +20,7 @@
 
 - 可以在EC2运行时，无需关机，直接修改root volume的EBS类型，大小
   - **更改容量后，EC2中需要re-partioning，重新分区，否则新增部分无法使用**
+  - **卷容量只能增加，不能减少**
   ![](https://i.loli.net/2019/06/15/5d04a54f5d01227514.png)
   ![](https://i.loli.net/2019/06/15/5d04a6557abbf10969.png)
   ![](https://i.loli.net/2019/06/15/5d04a65a3cdbb46427.png)
