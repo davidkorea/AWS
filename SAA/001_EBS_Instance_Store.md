@@ -7,7 +7,7 @@
 - magnetic adj.	像磁铁的; 有磁性的
 
 > - root volume snapshot canbe deleted when instance is runing?? 根卷的快照是公共快照，不能删除，也无需删除
-
+> - **讲义错误**，AMI只能通过快照创建，直接在volume上找不到创建AMI选项
 -----
 
 ![](https://i.loli.net/2019/06/15/5d049f6d89bc291836.png)
