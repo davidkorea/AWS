@@ -1,5 +1,8 @@
 # CloudWatch 101
 
+- **CloudTrail monitors API calls in the AWSplatform**，因为任何一个账号创建EC2或是S3等资源时，都会想AWS发送一个API call
+
+
 1. CLoudWatch menu
 2. 创建警报
 3. 选择指标
@@ -25,4 +28,6 @@
 
 # Exam Tips
 ![](https://i.loli.net/2019/06/15/5d04f1dc56b9d41582.png)
+- **CloudTrail monitors API calls in the AWSplatform**，因为任何一个账号创建EC2或是S3等资源时，都会想AWS发送一个API call
+
 ![](https://i.loli.net/2019/06/15/5d04fbd6dc8fb46372.png)
