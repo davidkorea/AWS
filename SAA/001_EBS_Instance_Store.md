@@ -1,6 +1,7 @@
 # 1. EBS 101
 
-- **persistent block storage automatically replicated within its AZ to protect from component failure**，同一个AZ内有备份
+- **EBS is a persistent block storage automatically replicated within its AZ to protect from component failure**，同一个AZ内有备份
+- **EBS is virtual disk, and volumes run on it.**，EBS是一个硬盘，里面包含root和其他卷分区volume
 - magnetic adj.	像磁铁的; 有磁性的
 
 > - root volume snapshot canbe deleted when instance is runing?? 根卷的快照是公共快照，不能删除，也无需删除
