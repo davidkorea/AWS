@@ -11,12 +11,13 @@
 - EBS is always in the same AZ as your EC2 created
 - EC2创建时，root volume只有3中EBS类型，且~~默认不能加密~~**好像可以选择加密 AWS Linux**，默认跟随EC2删除时自动删除
   ![](https://i.loli.net/2019/06/15/5d04a26a46d6658295.png)
-
   ![](https://i.loli.net/2019/06/15/5d04a2e2b002e32022.png)
-- EC2创建时，增加EBS时，可以选择5种内省，且可以选择加密
+  
+- EC2创建时，增加EBS时，可以选择5种类型，且可以选择加密
   ![](https://i.loli.net/2019/06/15/5d04a26a5199917336.png)
 
 - 可以在EC2运行时，无需关机，直接修改root volume的EBS类型，大小
+  - **更改容量后，EC2中需要re-partioning，重新分区，否则新增部分无法使用**
   ![](https://i.loli.net/2019/06/15/5d04a54f5d01227514.png)
   ![](https://i.loli.net/2019/06/15/5d04a6557abbf10969.png)
   ![](https://i.loli.net/2019/06/15/5d04a65a3cdbb46427.png)
