@@ -12,6 +12,7 @@
 - **讲义错误**，AMI只能通过快照创建，直接在volume上找不到创建AMI选项。但是可以直接在EC2上面直接创建AMI，而无需snapshot
 - **用于创建AMI的快照，不能被删除**，Can I delete a snapshot of an EBS Volume that is used as the root device of a registered AMI? NO.
   ![]()
+- **可以强制拆除非root EBS volume，但是root volume不能再实例运行中强制拆除**
 -----
 
 ![](https://i.loli.net/2019/06/15/5d049f6d89bc291836.png)
