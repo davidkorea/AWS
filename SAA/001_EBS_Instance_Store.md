@@ -35,6 +35,7 @@
 1. create snapshot of current EC2's root volume
 2. make a AMI by the root volume snapshot created above
     - **AMI can only be created by a snapshot of the volume rather that the EBS disk volume itself**
+    - **虽然不能直接在volume上创建AMI，但是可以在EC2上直接创建AMI，运行或停止状态都可以**
 3. lanuch a new EC2 by the AMI, select the another AZ in steps within the VPC
 
   ![](https://i.loli.net/2019/06/15/5d04a8746e38e79790.png)
