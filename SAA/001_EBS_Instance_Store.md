@@ -1,4 +1,9 @@
-# 1. EBS 101
+to# 1. EBS 101
+
+- **persistent block storage automatically replicated within its AZ to protect from component failure**，同一个AZ内有备份
+
+
+-----
 
 ![](https://i.loli.net/2019/06/15/5d049f6d89bc291836.png)
 
