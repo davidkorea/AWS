@@ -2,9 +2,13 @@
 
 
 
+**Is it possible to perform actions on an existing Amazon EBS Snapshot?**
+- yes，cli, console, apis. create ami, copy, add tag, modify permission
+
+
+-----
+
 - 可以对整个存储桶设置 默认加密属性。已上传对未加密文件，可以被自动加密吗？？？？？
-
-
 
 -----
 
