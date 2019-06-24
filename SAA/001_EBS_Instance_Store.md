@@ -49,6 +49,7 @@
 
 - 创建实例存储，无法在EC2 - Elastic Block Volume菜单中看到root volume
 - 实例存储的EC2，不可以STOP，只能Reboot和Terminate，**重启不会删除文件**
+- **添加root之外的实例存储，只能在创建EC2时添加。创建好实例后，不能添加实例存储，只能添加EBS**
 
   ![](https://i.loli.net/2019/06/15/5d04b165e61ca85313.png)
   ![](https://i.loli.net/2019/06/15/5d04b16b7f7fa15880.png)
