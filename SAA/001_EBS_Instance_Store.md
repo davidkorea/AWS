@@ -33,7 +33,7 @@
 ## 2.1 Migrate from a AZ to another AZ
 1. create snapshot of current EC2's root volume
 2. make a AMI by the root volume snapshot created above
-    - **AMI can only be created by a snapshot of the volume rather that the EBS disk**
+    - **AMI can only be created by a snapshot of the volume rather that the EBS disk volume itself**
 3. lanuch a new EC2 by the AMI, select the another AZ in steps within the VPC
 
   ![](https://i.loli.net/2019/06/15/5d04a8746e38e79790.png)
