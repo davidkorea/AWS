@@ -21,6 +21,7 @@
 - 可以在EC2运行时，无需关机，直接修改root volume的EBS类型，大小
   - **更改容量后，EC2中需要re-partioning，重新分区，否则新增部分无法使用**
   - **卷容量只能增加，不能减少**
+  ![](https://i.loli.net/2019/06/24/5d104043e384370675.png)
   ![](https://i.loli.net/2019/06/15/5d04a54f5d01227514.png)
   ![](https://i.loli.net/2019/06/15/5d04a6557abbf10969.png)
   ![](https://i.loli.net/2019/06/15/5d04a65a3cdbb46427.png)
