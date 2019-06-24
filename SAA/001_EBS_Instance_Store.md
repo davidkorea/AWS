@@ -5,6 +5,7 @@
 - **snapshot of EBS volume is stored in S3, but not visible in your account S3, in AWS's S3**
 - **take a snapshot of root volume, should shutdown instance, although it can be on fly. non-root volume can snapshot on fly**
 - magnetic adj.	像磁铁的; 有磁性的
+- ephemeral adj. 短暂的 （Instance Store）
 
 > - root volume snapshot canbe deleted when instance is runing?? 根卷的快照是公共快照，不能删除，也无需删除
 > - **讲义错误**，AMI只能通过快照创建，直接在volume上找不到创建AMI选项
