@@ -1,7 +1,7 @@
-to# 1. EBS 101
+# 1. EBS 101
 
 - **persistent block storage automatically replicated within its AZ to protect from component failure**，同一个AZ内有备份
-
+- magnetic adj.	像磁铁的; 有磁性的
 
 -----
 
