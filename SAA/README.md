@@ -5,16 +5,21 @@
 
 
 
+-----
 
+**When creating an RDS instance you can select which availability zone in which to deploy your instance.**
+- True
 
+**You can select a specific Availability Zone in which to place your DynamoDB Table**
+- False
+  ![](https://i.loli.net/2019/06/24/5d108934862a262540.png)
 
+-----
 
+**Amazon RDS does not currently support increasing storage on a ____ Db instance**
+- SQL Server
 
-
-
-
-
-
+-----
 
 **Can I delete a snapshot of an EBS Volume that is used as the root device of a registered AMI?**
 - NO
