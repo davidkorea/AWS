@@ -38,6 +38,13 @@
     ![](https://i.loli.net/2019/06/18/5d08a79c3138c67127.png)
 ![](https://i.loli.net/2019/06/18/5d089fa6a087546547.png)
 
+- **Promote Aurora read replica**
+  ![](https://i.loli.net/2019/06/25/5d11bc09160ec47003.png)
+  
+  
+  
+  
+  
 # Aurora
 - Aurora会将你的数据复制2份到每一个可用区内，并且复制到最少3个可用区，因此你会有6份数据库备份
 - 有两种数据库只读副本
