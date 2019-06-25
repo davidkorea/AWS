@@ -32,3 +32,5 @@ Redshift的一些特点：
   - 或者使用AWS Key Management Service (KMS)来管理秘钥
   
 对于助理级的AWS考试来说，Amazon Redshift并不需要了解得特别深入，我们只需要知道它能用来做什么，以及它与RDS的区别就可以了。
+
+# Exam Tips
