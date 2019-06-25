@@ -34,3 +34,17 @@ Redshift的一些特点：
 对于助理级的AWS考试来说，Amazon Redshift并不需要了解得特别深入，我们只需要知道它能用来做什么，以及它与RDS的区别就可以了。
 
 # Exam Tips
+
+
+![](https://i.loli.net/2019/06/25/5d11ba6725e6285280.png)
+![](https://i.loli.net/2019/06/25/5d11ba6a5aae298704.png)
+![](https://i.loli.net/2019/06/25/5d11ba6e0e71b65904.png)
+![](https://i.loli.net/2019/06/25/5d11ba7619c4d61919.png)
+![](https://i.loli.net/2019/06/25/5d11ba78e073b85093.png)
+
+
+
+
+
+
+
