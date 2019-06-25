@@ -13,3 +13,12 @@
 - 故障转移路由策略（Failover Routing Policy）：配置主动/被动（Active/Passive）的故障转移策略，保证DNS解析的容灾
 
 AWS Route53是所有AWS考试的基础，因此熟知这个服务的内容对于使用AWS服务以及通过AWS认证都是非常重要的。
+
+
+![](https://i.loli.net/2019/06/25/5d11caee6d5bb64927.png)
+![](https://i.loli.net/2019/06/25/5d11caf1208c454663.png)
+![](https://i.loli.net/2019/06/25/5d11caf3f173253442.png)
+![](https://i.loli.net/2019/06/25/5d11caf62dabf88172.png)
+![](https://i.loli.net/2019/06/25/5d11caf94602639641.png)
+![](https://i.loli.net/2019/06/25/5d11cafc194e163718.png)
+![](https://i.loli.net/2019/06/25/5d11cafe8635f10590.png)
