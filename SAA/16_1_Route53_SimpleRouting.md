@@ -1,4 +1,4 @@
-# Route53_SimpleRouting
+# Route53_Simple_Multivalue_Routing
 
 - 一个A记录可以包含多可web server的ip地址
 - 使用简单路由规则，会随机分配给A记录中的某一个ip
@@ -30,3 +30,8 @@
 
 ## 2. Sinple Routing Policy
 ![](https://i.loli.net/2019/07/09/5d240c3ba261440137.png)
+
+## 3. Multivalue Routing Policy
+
+- **Sinple + Health Check = Multivalue**
+![](https://i.loli.net/2019/07/09/5d243abe9ab3871263.png)
