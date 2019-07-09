@@ -36,3 +36,5 @@
 ## 3. Multivalue Routing Policy
 
 - **Sinple + Health Check = Multivalue**
+
+![](https://i.loli.net/2019/07/09/5d243bbf7f4c375842.png)
