@@ -10,3 +10,4 @@
 
 ## 3. Weighted Routing Policy
 ![](https://i.loli.net/2019/07/09/5d242583328e661321.png)
+![](https://i.loli.net/2019/07/09/5d2425f7d7ab724500.png)
