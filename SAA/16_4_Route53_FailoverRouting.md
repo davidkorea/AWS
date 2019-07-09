@@ -5,3 +5,4 @@
 
 ### 2. 关闭Primary web server
 需等待5-10mins，DNS会自动Failover
+![](https://i.loli.net/2019/07/09/5d242fd057a8752445.png)
