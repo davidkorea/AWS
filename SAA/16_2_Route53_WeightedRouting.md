@@ -7,6 +7,7 @@
 ![](https://i.loli.net/2019/07/09/5d240fde0e10297080.png)
 ![](https://i.loli.net/2019/07/09/5d240fe14ce3093105.png)
 ![](https://i.loli.net/2019/07/09/5d241093cea9c35405.png)
+![](https://i.loli.net/2019/07/09/5d2427529b42b53377.png)
 
 ## 3. Weighted Routing Policy
 ![](https://i.loli.net/2019/07/09/5d242583328e661321.png)
