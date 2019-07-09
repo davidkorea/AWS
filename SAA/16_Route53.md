@@ -1,5 +1,19 @@
 # Route53总结
 - With Route 53, there is a default limit of 50 domain names. However, this limit can be increased by contacting AWS support.
+- Your company hosts 10 web servers all serving the same web content in AWS. They want Route 53 to serve traffic to random web servers. Which routing policy will meet this requirement, and provide the best resiliency?
+  - simple
+  - weighted
+  - **multivalue**, random 选择，需要高可靠性。因为multivalue可以健康检查，而simple不可以
+  - latency
+
+
+
+
+
+
+
+
+
 - 弹性负载均衡器（ELB）没有固定的IPv4地址，在使用ELB的时候永远使用它的DNS名字。很多场景下我们需要绑定DNS记录到ELB的endpoint地址，而不绑定任何IP
 - 需要熟记Alias记录和CNAME的区别，也可以参考一下在别名和非别名记录之间做出选择
 - 考试中，如果出现选择Alias记录和CNAME记录的选择，95%的情况都要选择Alias记录
