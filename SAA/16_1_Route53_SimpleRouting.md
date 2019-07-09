@@ -2,8 +2,10 @@
 
 - 一个A记录可以包含多可web server的ip地址
 - 使用简单路由规则，会随机分配给A记录中的某一个ip
-
+- Sinple Routing Policy
   ![](https://i.loli.net/2019/07/09/5d2405eaaab4789670.png)
+- Multivalue Routing Policy
+  ![](https://i.loli.net/2019/07/09/5d243abe9ab3871263.png)
 
 ## 1. create 2 EC2 in different Region
 
@@ -34,4 +36,3 @@
 ## 3. Multivalue Routing Policy
 
 - **Sinple + Health Check = Multivalue**
-![](https://i.loli.net/2019/07/09/5d243abe9ab3871263.png)
