@@ -11,4 +11,8 @@
 ![](https://i.loli.net/2019/07/09/5d2432b3a5b5757547.png)
 
 # 3. Geoproximity Routing Policy (Traffic Flow Only)
+
+![](https://i.loli.net/2019/07/09/5d2439861b79d46838.png)
+![](https://i.loli.net/2019/07/09/5d243989323ff85269.png)
+
 ![](https://i.loli.net/2019/07/09/5d2438e8c9e7d15430.png)
