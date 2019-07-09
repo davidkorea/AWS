@@ -28,4 +28,5 @@
   echo "<html><h1>This is the web server from USA</h1></html>" > index.html
   ```
 
+## 2. Sinple Routing Policy
 ![](https://i.loli.net/2019/07/09/5d240c3ba261440137.png)
