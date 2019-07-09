@@ -22,3 +22,5 @@ AWS Route53是所有AWS考试的基础，因此熟知这个服务的内容对于
 ![](https://i.loli.net/2019/06/25/5d11caf94602639641.png)
 ![](https://i.loli.net/2019/06/25/5d11cafc194e163718.png)
 ![](https://i.loli.net/2019/06/25/5d11cafe8635f10590.png)
+
+![](https://i.loli.net/2019/07/09/5d2404548d73369798.png)
