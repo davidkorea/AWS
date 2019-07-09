@@ -1,8 +1,8 @@
 # Route53_FailoverRouting
 
-### 1. Failover Routing policy
+## 1. Failover Routing policy
 ![](https://i.loli.net/2019/07/09/5d242e3e421f690469.png)
-
-### 2. 关闭Primary web server
+![](https://i.loli.net/2019/07/09/5d2430534a50667570.png)
+## 2. 关闭Primary web server
 需等待5-10mins，DNS会自动Failover
 ![](https://i.loli.net/2019/07/09/5d242fd057a8752445.png)
