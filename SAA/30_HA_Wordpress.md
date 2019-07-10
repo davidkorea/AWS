@@ -206,7 +206,7 @@ upload: wp-content/uploads/2019/07/image1.png to s3://wp-image-davidkorea/2019/0
       ]
   }
   ```
-  
+now，access http://13.125.224.163/wp-content/uploads/2019/07/image1.png  
   
   
   
