@@ -38,8 +38,14 @@ leave all settings by default.
 - DB instance identifier
   - wpdb
   - root，11111111
-  
-  
+- Public accessibility： No
+- Create new VPC security group
+- Database name：wpdb
+
+# 4. VPC Security Group
+- 将创建RDS时生成的安全组，添加一条规则。把WebDMZ加入到RDS安全组中
+  ![](https://i.loli.net/2019/07/10/5d25b2c1be1c485517.png)
+  ![](https://i.loli.net/2019/07/10/5d25b2c1cfffb33967.png)
   
   
   
