@@ -71,6 +71,49 @@ EC2_S3_FULLACCESS
   chkconfig httpd on
   service httpd start
   ```
+- ssh, start httpd
+  ```
+  [root@ip-172-31-28-229 ~]# cd /var/www/html/
+  [root@ip-172-31-28-229 html]# ls
+  healthy.html     wp-admin              wp-cron.php        wp-mail.php
+  index.php        wp-blog-header.php    wp-includes        wp-settings.php
+  license.txt      wp-comments-post.php  wp-links-opml.php  wp-signup.php
+  readme.html      wp-config-sample.php  wp-load.php        wp-trackback.php
+  wp-activate.php  wp-content            wp-login.php       xmlrpc.php
+  [root@ip-172-31-28-229 html]# cat .htaccess
+  Options +FollowSymlinks
+  RewriteEngine on
+  rewriterule ^wp-content/uploads/(.*)$ http://d2jmrva8tfzxcq.cloudfront.net/$1 [r=301,nc]
 
+  # BEGIN WordPress
+
+  # END WordPress[root@ip-172-31-28-229 html]#
   
+  [root@ip-172-31-28-229 html]# systemctl start httpd
+  [root@ip-172-31-28-229 html]# systemctl status httpd
+  ```
+- 13.125.224.163 set wordpress
+
+- post content
+  ```
+  [root@ip-172-31-28-229 html]# ls
+  healthy.html     wp-blog-header.php    wp-includes        wp-signup.php
+  index.php        wp-comments-post.php  wp-links-opml.php  wp-trackback.php
+  license.txt      wp-config-sample.php  wp-load.php        xmlrpc.php
+  readme.html      wp-config.php         wp-login.php
+  wp-activate.php  wp-content            wp-mail.php
+  wp-admin         wp-cron.php           wp-settings.php
+  [root@ip-172-31-28-229 html]# cd wp-content/
+  [root@ip-172-31-28-229 wp-content]# ls
+  index.php  plugins  themes  uploads
+  [root@ip-172-31-28-229 wp-content]# cd uploads/
+  [root@ip-172-31-28-229 uploads]# ls
+  2019
+  [root@ip-172-31-28-229 uploads]# cd 2019/
+  [root@ip-172-31-28-229 2019]# ls
+  07
+  [root@ip-172-31-28-229 2019]# cd 07/
+  [root@ip-172-31-28-229 07]# ls
+  image1.png
+  ```
   
