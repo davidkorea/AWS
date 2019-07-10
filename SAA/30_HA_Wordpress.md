@@ -210,7 +210,7 @@ now，access http://13.125.224.163/wp-content/uploads/2019/07/image1.png
   
   
   
-  
+POST image url will change to cloudfront url in 1-2hours
   
   
   
