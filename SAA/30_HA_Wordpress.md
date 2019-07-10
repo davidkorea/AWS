@@ -184,9 +184,11 @@ upload: wp-content/uploads/2019/07/image1.png to s3://wp-image-davidkorea/2019/0
     149     #   Options FileInfo AuthConfig Limit
     150     #
   - 151     AllowOverride None
-  + 151     AllowOverride None
+  + 151     AllowOverride All
   ```
-  
+  ```
+  [root@ip-172-31-28-229 conf]# systemctl restart httpd
+  ```
   
   
   
