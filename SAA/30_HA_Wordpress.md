@@ -13,3 +13,11 @@
   - Security Group
     - WebDMZ
     - MYSQL: open to WebDMZ group
+5.IAM
+  - EC2 with S3fullaccess
+6.EC2
+  - IAM role
+  - bootsttap code(user data)
+  - security group
+  
+# 1. S3
