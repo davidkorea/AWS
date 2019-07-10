@@ -21,3 +21,12 @@
   - security group
   
 # 1. S3
+leave all settings by default.
+
+- wp-code-davidkorea
+- wp-image-davidkorea
+
+# 2. CloudFront
+leave all settings by default.
+
+- Origin Domain Name: wp-image-davidkorea.s3.amazonaws.com
