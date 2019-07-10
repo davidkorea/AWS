@@ -24,3 +24,6 @@
 ![](https://i.loli.net/2019/07/10/5d2599f5caaad44553.png)
 ![](https://i.loli.net/2019/07/10/5d2599fa9cda924323.png)
 ![](https://i.loli.net/2019/07/10/5d259bce14ed332368.png)
+
+- 当ASG中的实例被删除后，会自动在创建新的实例来满足desired最小数量
+  ![](https://i.loli.net/2019/07/10/5d259de9575b267751.png)
