@@ -20,3 +20,12 @@
 ![](https://i.loli.net/2019/07/10/5d257fc8186c435664.png)
 
 ## 3. ALB
+### 3.1 Target Groups
+
+you can have a target group for EU users, you can have another target group for Asian users due to langauge settings.
+
+- **Target Type**: 
+  - Instance: web server on AWS
+  - IP: web servers are not in AWS but have public IP
+  - Lambda Function
+    
