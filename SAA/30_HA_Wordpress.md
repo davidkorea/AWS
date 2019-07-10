@@ -117,3 +117,12 @@ EC2_S3_FULLACCESS
   image1.png
   ```
   
+  
+> So what we want to do is we want to make it so that every time somebody uploads a file to our WordPress site that that file is **also stored in S3 for redundancy** and eventuall what we're going to do is we're going to force **cloudfront to serve those files**, ather than using the images on our EC2 instance. Because then the site will load a bit faster.
+  
+  
+  
+  
+  
+  
+  
