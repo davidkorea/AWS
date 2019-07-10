@@ -189,7 +189,23 @@ upload: wp-content/uploads/2019/07/image1.png to s3://wp-image-davidkorea/2019/0
   ```
   [root@ip-172-31-28-229 conf]# systemctl restart httpd
   ```
-  
+## 6.4 make image S3 public
+1. 阻止公共访问权限[关闭]
+2. policy
+  ```json
+   {
+      "Version": "2012-10-17",
+      "Statement": [
+          {
+              "Sid": "PublicReadGetObject",
+              "Effect": "Allow",
+              "Principal": "*",
+              "Action": "s3:GetObject",
+              "Resource": "arn:aws:s3:::wp-image-davidkorea/*"
+          }
+      ]
+  }
+  ```
   
   
   
