@@ -116,24 +116,49 @@ EC2_S3_FULLACCESS
   [root@ip-172-31-28-229 07]# ls
   image1.png
   ```
-  
+## 6.2 image content -> s3
   
 > So what we want to do is we want to make it so that every time somebody uploads a file to our WordPress site that that file is **also stored in S3 for redundancy** and eventuall what we're going to do is we're going to force **cloudfront to serve those files**, ather than using the images on our EC2 instance. Because then the site will load a bit faster.
 
 ```
 [root@ip-172-31-28-229 html]# aws s3 cp --recursive /var/www/html/wp-content/uploads/ s3://wp-image-davidkorea
 
-warning: Skipping file '\xe5\xb1\x8f\xe5\xb9\x95\xe5\xbf\xab\xe7\x85\xa7-2019-07-10-\xe4\xb8\x8b\xe5\x8d\x8811.47.53.png'. There was an error trying to decode the the file '\xe5\xb1\x8f\xe5\xb9\x95\xe5\xbf\xab\xe7\x85\xa7-2019-07-10-\xe4\xb8\x8b\xe5\x8d\x8811.47.53.png' in directory "/var/www/html/wp-content/uploads/2019/07/".
-Please check your locale settings.  The filename was decoded as: ANSI_X3.4-1968
-On posix platforms, check the LC_CTYPE environment variable.
 upload: wp-content/uploads/2019/07/image1.png to s3://wp-image-davidkorea/2019/07/image1.png
 ```  
   
   
   
+## 6.3 full wp code -> s3
   
-  
-> So next thing we want to do is add a bit of redundancy. we could lose this EC2 instance at any time. So what we want is a full copy of our website in our S3 bucket. if we lose our EC2 instance we can have an auto scaling group. As soon as they boot they pull down the code from the S3 bucket.
-  
+> The next thing we want to do is add a bit of redundancy. we could lose this EC2 instance at any time. So what we want is a full copy of our website in our S3 bucket. if we lose our EC2 instance we can have an auto scaling group. As soon as they boot they pull down the code from the S3 bucket.
+
+```
+[root@ip-172-31-28-229 html]# aws s3 cp --recursive /var/www/html  s3://wp-code-davidkorea
+```
+```
+[root@ip-172-31-28-229 html]# aws s3 ls s3://wp-code-davidkorea
+                           PRE wp-admin/
+                           PRE wp-content/
+                           PRE wp-includes/
+2019-07-10 15:16:09        165 .htaccess
+2019-07-10 15:16:09          8 healthy.html
+2019-07-10 15:16:09        420 index.php
+2019-07-10 15:16:09      19935 license.txt
+2019-07-10 15:16:09       7425 readme.html
+2019-07-10 15:16:09       6919 wp-activate.php
+2019-07-10 15:16:12        369 wp-blog-header.php
+2019-07-10 15:16:12       2283 wp-comments-post.php
+2019-07-10 15:16:12       2898 wp-config-sample.php
+2019-07-10 15:16:12       3121 wp-config.php
+2019-07-10 15:16:13       3847 wp-cron.php
+2019-07-10 15:16:18       2502 wp-links-opml.php
+2019-07-10 15:16:18       3306 wp-load.php
+2019-07-10 15:16:18      38883 wp-login.php
+2019-07-10 15:16:18       8403 wp-mail.php
+2019-07-10 15:16:18      17947 wp-settings.php
+2019-07-10 15:16:18      31085 wp-signup.php
+2019-07-10 15:16:18       4764 wp-trackback.php
+2019-07-10 15:16:18       3068 xmlrpc.php
+```
   
   
