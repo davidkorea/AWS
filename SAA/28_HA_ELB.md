@@ -6,7 +6,7 @@
   - high performance
 - Classic LB
   - cost efficiency
-  - `X_Forwarded_For` header, 记录发起请求的client的ip地址
+  - if need you end user ip addr, look for the `X_Forwarded_For` header, 通过X_Forwarded_For header来查看发起请求的client的ip地址
 
 
 
