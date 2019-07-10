@@ -6,6 +6,7 @@
 - 伸缩组用来创建EC2实例的模板
 - 已经创建不可更改
 - 若伸缩组需要更改内部实例类型师，需要创建新的Launch Configuration，并关联至伸缩组
+- 1个伸缩组只能关联一个Launch Configuration，但一个Launch Configuration可以被多个伸缩组关联
   ![](https://i.loli.net/2019/07/10/5d2597f40689d18392.png)
 ## ASG
 
