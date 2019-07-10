@@ -1,5 +1,16 @@
 # Load Balancers
 
+- Application LB
+  - intelligent routing
+- Network LB
+  - high performance
+- Classic LB
+  - cost efficiency
+  - x_forward header, 记录发起请求的client的ip地址
+
+
+
+
 ## 1. EC2 Instances
 - ap-northeast-2a
   - 13.125.177.84
