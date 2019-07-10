@@ -119,10 +119,21 @@ EC2_S3_FULLACCESS
   
   
 > So what we want to do is we want to make it so that every time somebody uploads a file to our WordPress site that that file is **also stored in S3 for redundancy** and eventuall what we're going to do is we're going to force **cloudfront to serve those files**, ather than using the images on our EC2 instance. Because then the site will load a bit faster.
+
+```
+[root@ip-172-31-28-229 html]# aws s3 cp --recursive /var/www/html/wp-content/uploads/ s3://wp-image-davidkorea
+
+warning: Skipping file '\xe5\xb1\x8f\xe5\xb9\x95\xe5\xbf\xab\xe7\x85\xa7-2019-07-10-\xe4\xb8\x8b\xe5\x8d\x8811.47.53.png'. There was an error trying to decode the the file '\xe5\xb1\x8f\xe5\xb9\x95\xe5\xbf\xab\xe7\x85\xa7-2019-07-10-\xe4\xb8\x8b\xe5\x8d\x8811.47.53.png' in directory "/var/www/html/wp-content/uploads/2019/07/".
+Please check your locale settings.  The filename was decoded as: ANSI_X3.4-1968
+On posix platforms, check the LC_CTYPE environment variable.
+upload: wp-content/uploads/2019/07/image1.png to s3://wp-image-davidkorea/2019/07/image1.png
+```  
   
   
   
   
+  
+> So next thing we want to do is add a bit of redundancy. we could lose this EC2 instance at any time. So what we want is a full copy of our website in our S3 bucket. if we lose our EC2 instance we can have an auto scaling group. As soon as they boot they pull down the code from the S3 bucket.
   
   
   
