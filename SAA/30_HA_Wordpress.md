@@ -160,5 +160,16 @@ upload: wp-content/uploads/2019/07/image1.png to s3://wp-image-davidkorea/2019/0
 2019-07-10 15:16:18       4764 wp-trackback.php
 2019-07-10 15:16:18       3068 xmlrpc.php
 ```
-  
-  
+## 6.3 re-writer url -> cloudfront
+```
+[root@ip-172-31-28-229 html]# cat .htaccess
+Options +FollowSymlinks
+RewriteEngine on
+rewriterule ^wp-content/uploads/(.*)$ http://d6b0b5wvk29ki.cloudfront.net/$1 [r=301,nc]
+```
+change the url `^wp-content/uploads/(.*)$` to `http://d6b0b5wvk29ki.cloudfront.net/$1`
+
+
+
+
+
