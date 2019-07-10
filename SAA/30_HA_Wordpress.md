@@ -176,8 +176,15 @@ upload: wp-content/uploads/2019/07/image1.png to s3://wp-image-davidkorea/2019/0
   Completed 165 Bytes/~165 Bytes (3.9 KiB/s) with ~0 file(s) remaining (calculatin
   ```
 - allow httpd to override
-  ```
-  
+  - /etc/httpd/conf/httpd.conf
+  ```diff
+    146     #
+    147     # AllowOverride controls what directives may be placed in .htaccess files.
+    148     # It can be "All", "None", or any combination of the keywords:
+    149     #   Options FileInfo AuthConfig Limit
+    150     #
+  - 151     AllowOverride None
+  + 151     AllowOverride None
   ```
   
   
