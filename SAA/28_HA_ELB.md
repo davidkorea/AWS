@@ -33,3 +33,8 @@ Your load balancer routes requests to the targets(EC2) in a target group using t
     
 ![](https://i.loli.net/2019/07/10/5d2581eed959d89622.png)
 ![](https://i.loli.net/2019/07/10/5d2581f0b763a70142.png)
+
+- add Targets to Target Groups
+
+![](https://i.loli.net/2019/07/10/5d2582c0ab88515244.png)
+![](https://i.loli.net/2019/07/10/5d2582c2bea5468380.png)
