@@ -11,7 +11,9 @@
 
 - Group size: Start with `2` instances
   - The number of instances the group should have at any time, also called desired capacity
-
+- Target value: `80`
+  - The policy maintains the metric at the target value by adding or removing instances as required.
+  - CPU平均使用率超过80%
 - Instances need: `300` seconds to warm up after scaling
   - This is the amount of time that your instances need to warm up. During this time, instances that have been launched will not contribute to the Auto Scaling group metrics. To learn more, visit our documentation.
 
