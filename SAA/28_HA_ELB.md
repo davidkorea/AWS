@@ -8,11 +8,15 @@
   - 54.180.105.66
 
 ## 2. Classic Load Balance
-- NO Target Group for classicLB
+- NO **Target Group** for classicLB
 
 ![](https://i.loli.net/2019/07/10/5d257e7e7edfb39674.png)
 ![](https://i.loli.net/2019/07/10/5d257e8128ebc54915.png)
 ![](https://i.loli.net/2019/07/10/5d257e846b5f790285.png)
 ![](https://i.loli.net/2019/07/10/5d257e86cb5f645553.png)
+
+- when one EC2 down, health check will find that and will not route traffic to the instance
+
+![](https://i.loli.net/2019/07/10/5d257fc8186c435664.png)
 
 ## 3. ALB
