@@ -9,13 +9,15 @@
   ![](https://i.loli.net/2019/07/10/5d2597f40689d18392.png)
 ## ASG
 
-- Group size: Start with `2` instances
+- **Group size**: Start with `2` instances
   - The number of instances the group should have at any time, also called desired capacity
-- Target value: `80`
+  - 最少实例数量
+- **Target value**: `80`
   - The policy maintains the metric at the target value by adding or removing instances as required.
   - CPU平均使用率超过80%
-- Instances need: `300` seconds to warm up after scaling
+- **Instances need**: `300` seconds to warm up after scaling
   - This is the amount of time that your instances need to warm up. During this time, instances that have been launched will not contribute to the Auto Scaling group metrics. To learn more, visit our documentation.
+  - 需要多长时间才能真正在ASG中使用
 
 ![](https://i.loli.net/2019/07/10/5d2599eae6bda12878.png)
 ![](https://i.loli.net/2019/07/10/5d2599f5caaad44553.png)
