@@ -169,12 +169,28 @@ upload: wp-content/uploads/2019/07/image1.png to s3://wp-image-davidkorea/2019/0
   RewriteEngine on
   rewriterule ^wp-content/uploads/(.*)$ http://d6b0b5wvk29ki.cloudfront.net/$1 [r=301,nc]
   ```
-- 
+- sync the modified file to s3
   ```
   [root@ip-172-31-28-229 html]# aws s3 sync /var/www/html s3://wp-code-davidkorea
   Completed 165 Bytes/~165 Bytes (3.9 KiB/s) with ~1 file(s) remaining (calculatinupload: ./.htaccess to s3://wp-code-davidkorea/.htaccess
   Completed 165 Bytes/~165 Bytes (3.9 KiB/s) with ~0 file(s) remaining (calculatin
   ```
-
+- allow httpd to override
+  ```
+  
+  ```
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 
