@@ -250,6 +250,18 @@ make the AMI on the exsiting EC2
 
 
 - `service crond restart`, 立即生效crontab
-- 本地创建一个test.txt文档，上传至S3，执行重启crond服务，查看/var/www/html目录可以同步到该文件
+    - 本地创建一个test.txt文档，上传至S3，执行重启crond服务，查看/var/www/html目录可以同步到该文件
+- Create AMI from EC2
+    - 此时远程SSH连接的EC2会掉线
+        ![](https://i.loli.net/2019/07/11/5d26a4248f81946774.png)
+        
+### 3.3.2 Create AMI for Writer Node
+
+- change crontab command for writer node
+    ```
+    */1 * * * * root aws s3 sync --delete /var/www/html  s3://wp-code-davidkorea
+    */1 * * * * root aws s3 sync --delete /var/www/html/wp-content/uploads S3://wp-image-davidkorea
+    ```
+        
 
 
