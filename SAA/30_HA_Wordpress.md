@@ -228,7 +228,8 @@ now，access http://13.125.224.163/wp-content/uploads/2019/07/image1.png
 - Register Targets: add exsited EC2
 
 ## 3.2 Route53
-  
+A - alias - elb
+![](https://i.loli.net/2019/07/11/5d269e8db048c55503.png)
   
   
   
