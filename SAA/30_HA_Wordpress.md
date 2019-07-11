@@ -286,7 +286,8 @@ make the AMI on the exsiting EC2
     ![](https://i.loli.net/2019/07/11/5d26b18c05c0781145.png)
     ![](https://i.loli.net/2019/07/11/5d26b2ab4d4da34456.png)
     
-
+- when create a new post, the image url will be redirect to cloudfront, and this may last 10mins
+    ![](https://i.loli.net/2019/07/11/5d26c3e1e2ece28660.png)
 
 
 
