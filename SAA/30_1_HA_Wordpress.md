@@ -10,10 +10,9 @@
 2. IAM
     - EC2_S3_FULLACCESS
 3. RDS mysql
-    > if cannot create multi-AZ due to no 2+ AZ in the VPC, but your VPC did have 2+ subnet in different AZ. delete you VPC and re-create
+    > if cannot create multi-AZ due to no 2+ AZ subnets in the VPC, but your VPC did have 2+ subnet in different AZ. delete you VPC and re-create it. also re-create Security Group
 
-    - Production - MySQL
-        - Use Multi-AZ Deployment and Provisioned IOPS Storage as defaults for high availability and fast, consistent performance.
+    - Dev/Test - MySQL
     - db.t2.micro — 1 vCPU, 1 GiB RAM
     - Multi-AZ deployment, Create replica in different zone
     - Storage type: General Purpose(SSD)
@@ -23,3 +22,5 @@
     - Choose existing VPC security groups: mysql_myVPC
     - wpdb
 4. EFS
+    - VPC: my_vpc
+    - Security Groups: webDMZ_myvpc
