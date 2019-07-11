@@ -42,7 +42,9 @@ leave all settings by default.
 - Public accessibility： No
 - Create new VPC security group
 - Database name：wpdb
-
+- Backup: 0days
+    - A backup retention period of zero days will disable automated backups for this DB Instance.
+- Disable all other options
 ### 1.4. VPC Security Group
 - 将创建RDS时生成的安全组，添加一条规则。把WebDMZ加入到RDS安全组中
   ![](https://i.loli.net/2019/07/10/5d25b2c1be1c485517.png)
