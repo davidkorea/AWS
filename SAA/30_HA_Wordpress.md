@@ -190,9 +190,8 @@ EC2_S3_FULLACCESS
   - 151     AllowOverride None
   + 151     AllowOverride All
   ```
-  ```
-  [root@ip-172-31-28-229 conf]# systemctl restart httpd
-  ```
+- `systemctl restart httpd`, 一定要重启httpd
+
 ## 2.4 Make image S3 public
 1. 阻止公共访问权限[关闭]
 2. policy
