@@ -48,3 +48,73 @@ tmpfs                                           493M     0  493M   0% /dev/shm
 fs-e6e16987.efs.ap-northeast-2.amazonaws.com:/  8.0E     0  8.0E   0% /var/www/html
 ```
 ![](https://i.loli.net/2019/07/11/5d26f34e469f148742.png)
+3. create phpinfo.php
+```
+
+[root@ip-10-0-11-167 ~]# cd /var/www/html/
+[root@ip-10-0-11-167 html]# echo "<?php phpinfo(); ?>" > phpinfo.php
+[root@ip-10-0-11-167 html]# ls
+phpinfo.php
+```
+4. start httpd
+```
+[root@ip-10-0-11-167 html]# service httpd start
+Starting httpd:                                            [  OK  ]
+
+[root@ip-10-0-11-167 html]# netstat -anutp | grep 80
+tcp        0      0 :::80                       :::*      LISTEN      8514/httpd
+udp        0      0 fe80::8:e2ff:fe6c:2eae:546  :::*                  2227/dhclient
+```
+- get access to 13.125.29.184 and 13.125.29.184/phpinfo.php success
+
+5. download wordpress
+- `wget https://wordpress.org/latest.zip`, download to /var/www/html 
+- `unzip latest.zip`
+- `mv /var/www/html/wordpress/* /var/www/html/`, let httpd recognize the wordpress codes `mv wordpress/* ./`
+- `rm -rf wordpress/ latest.zip`, delete downloaded and unziped files
+- `sudo chown -R apache:apache /var/www/html/*`, let apach own the /var/www/html/*
+- `chmod -R 775 /var/www/html`, owner(apache user) rwx, group(apache) r-x, others r-x
+
+get access to ec2-13-125-29-184.ap-northeast-2.compute.amazonaws.com with error **Your server is running PHP version 5.5.38 but WordPress 5.2.2 requires at least 5.6.20.**, get access to public ip with http error 500
+```diff
+/var/www/html/wp-includes/version.php
+
+ - 37 #$required_php_version = '5.6.20';
+ + 37 $required_php_version = '5.2.0';
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
