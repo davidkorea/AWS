@@ -237,9 +237,15 @@ A - alias - elb
 - reader node ---pull---> S3, /etc/crontab
 - Route53 ---> ELB(reader nodes)
 
+### 3.3.1 Create AMI for Reader Node
 
+make the AMI on the exsiting EC2
+- sync from S3 every 1min
+    ```
+    vim /etc/crontab
 
-
+    */1 * * * * root aws s3 sync --delete s3://wp-code-davidkorea /var/www/html
+    ```
 
 
 
