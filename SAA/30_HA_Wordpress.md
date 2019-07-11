@@ -299,10 +299,15 @@ Failover will last 1-2mins down.
 
 
 
+# 4. Conclusion
 
+**Bad Architecture**
 
+- when restart writer node(the original EC2 we created), WP will down
+- because the full WP code that the **Reader Nodes** copied that contains the ip belongs to the **writer node**
+- when writer node down or restart, the ip will be changed and all reader node cannot serve the dynamic content(only raw static content with no css webpage) due to that its code contains the original writer node ip and network settings
 
-
+![](https://i.loli.net/2019/07/11/5d26cbe494f9391472.png)
 
 
 
