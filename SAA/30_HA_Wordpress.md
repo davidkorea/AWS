@@ -231,8 +231,19 @@ now，access http://13.125.224.163/wp-content/uploads/2019/07/image1.png
 A - alias - elb
 ![](https://i.loli.net/2019/07/11/5d269e8db048c55503.png)
   
+## 3.3 Write/Read De-couple
   
-  
-  
+- writer node ---push---> S3, /etc/crontab
+- reader node ---pull---> S3, /etc/crontab
+- Route53 ---> ELB(reader nodes)
+
+
+
+
+
+
+
+
+
 
 
