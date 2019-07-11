@@ -9,10 +9,9 @@
   
 3. RDS mysql
 
-4. VPC
-    - Security Group
-      - WebDMZ
-      - MYSQL: open to WebDMZ group
+4. VPC Security Group
+  - WebDMZ：HTTP
+  - MYSQL: open to WebDMZ group
 5. IAM
     - EC2 with S3fullaccess
 6. EC2
@@ -20,17 +19,18 @@
     - bootsttap code(user data)
     - security group
   
-# 1. S3
+# 1. Architect
+# 1.1 S3
 leave all settings by default.
 
 - wp-code-davidkorea
 - wp-image-davidkorea
 
-# 2. CloudFront
+# 1.2. CloudFront
 leave all settings by default.
 
 - Origin Domain Name: wp-image-davidkorea.s3.amazonaws.com
-# 3. 3.RDS mysql
+# 1.3. 3.RDS mysql
 - Dev/Test - MySQL
 - Multi-AZ deployment
   - Creates a replica in a different Availability Zone (AZ) to provide data redundancy, eliminate I/O freezes, and minimize latency spikes during system backups.
@@ -42,15 +42,15 @@ leave all settings by default.
 - Create new VPC security group
 - Database name：wpdb
 
-# 4. VPC Security Group
+# 1.4. VPC Security Group
 - 将创建RDS时生成的安全组，添加一条规则。把WebDMZ加入到RDS安全组中
   ![](https://i.loli.net/2019/07/10/5d25b2c1be1c485517.png)
   ![](https://i.loli.net/2019/07/10/5d25b2c1cfffb33967.png)
   
-# 5. IAM
+# 1.5. IAM
 EC2_S3_FULLACCESS
 
-# 6. EC2
+# 1.6. EC2
 - IAM
 - boosstrap
   ```shell
@@ -92,6 +92,8 @@ EC2_S3_FULLACCESS
   [root@ip-172-31-28-229 html]# systemctl start httpd
   [root@ip-172-31-28-229 html]# systemctl status httpd
   ```
+# 2. WP Settings
+## 2.1 Create a Post
 - 13.125.224.163 set wordpress
 
 - post content
@@ -103,64 +105,59 @@ EC2_S3_FULLACCESS
   readme.html      wp-config.php         wp-login.php
   wp-activate.php  wp-content            wp-mail.php
   wp-admin         wp-cron.php           wp-settings.php
-  [root@ip-172-31-28-229 html]# cd wp-content/
-  [root@ip-172-31-28-229 wp-content]# ls
-  index.php  plugins  themes  uploads
-  [root@ip-172-31-28-229 wp-content]# cd uploads/
-  [root@ip-172-31-28-229 uploads]# ls
-  2019
-  [root@ip-172-31-28-229 uploads]# cd 2019/
-  [root@ip-172-31-28-229 2019]# ls
-  07
-  [root@ip-172-31-28-229 2019]# cd 07/
+  
+  [root@ip-172-31-28-229 html]# cd wp-content/uploads/2019/07/
   [root@ip-172-31-28-229 07]# ls
   image1.png
   ```
-## 6.2 image content -> s3
+## 2.2 Backup image content -> s3
   
 > So what we want to do is we want to make it so that every time somebody uploads a file to our WordPress site that that file is **also stored in S3 for redundancy** and eventuall what we're going to do is we're going to force **cloudfront to serve those files**, ather than using the images on our EC2 instance. Because then the site will load a bit faster.
 
-```
-[root@ip-172-31-28-229 html]# aws s3 cp --recursive /var/www/html/wp-content/uploads/ s3://wp-image-davidkorea
+- `aws s3 cp --recursive /var/www/html/wp-content/uploads/ s3://wp-image-davidkorea`
+    ```
+    [root@ip-172-31-28-229 html]# aws s3 cp --recursive /var/www/html/wp-content/uploads/ s3://wp-image-davidkorea
 
-upload: wp-content/uploads/2019/07/image1.png to s3://wp-image-davidkorea/2019/07/image1.png
-```  
+    upload: wp-content/uploads/2019/07/image1.png to s3://wp-image-davidkorea/2019/07/image1.png
+    ```  
   
   
-  
-## 6.3 full wp code -> s3
+## 2.3 Backup full WP code -> s3
   
 > The next thing we want to do is add a bit of redundancy. we could lose this EC2 instance at any time. So what we want is a full copy of our website in our S3 bucket. if we lose our EC2 instance we can have an auto scaling group. As soon as they boot they pull down the code from the S3 bucket.
 
-```
-[root@ip-172-31-28-229 html]# aws s3 cp --recursive /var/www/html  s3://wp-code-davidkorea
-```
-```
-[root@ip-172-31-28-229 html]# aws s3 ls s3://wp-code-davidkorea
-                           PRE wp-admin/
-                           PRE wp-content/
-                           PRE wp-includes/
-2019-07-10 15:16:09        165 .htaccess
-2019-07-10 15:16:09          8 healthy.html
-2019-07-10 15:16:09        420 index.php
-2019-07-10 15:16:09      19935 license.txt
-2019-07-10 15:16:09       7425 readme.html
-2019-07-10 15:16:09       6919 wp-activate.php
-2019-07-10 15:16:12        369 wp-blog-header.php
-2019-07-10 15:16:12       2283 wp-comments-post.php
-2019-07-10 15:16:12       2898 wp-config-sample.php
-2019-07-10 15:16:12       3121 wp-config.php
-2019-07-10 15:16:13       3847 wp-cron.php
-2019-07-10 15:16:18       2502 wp-links-opml.php
-2019-07-10 15:16:18       3306 wp-load.php
-2019-07-10 15:16:18      38883 wp-login.php
-2019-07-10 15:16:18       8403 wp-mail.php
-2019-07-10 15:16:18      17947 wp-settings.php
-2019-07-10 15:16:18      31085 wp-signup.php
-2019-07-10 15:16:18       4764 wp-trackback.php
-2019-07-10 15:16:18       3068 xmlrpc.php
-```
-## 6.3 re-writer url -> cloudfront
+- `aws s3 cp --recursive /var/www/html  s3://wp-code-davidkorea`
+    ```
+    [root@ip-172-31-28-229 html]# aws s3 cp --recursive /var/www/html  s3://wp-code-davidkorea
+    ```
+    ```
+    [root@ip-172-31-28-229 html]# aws s3 ls s3://wp-code-davidkorea
+                               PRE wp-admin/
+                               PRE wp-content/
+                               PRE wp-includes/
+    2019-07-10 15:16:09        165 .htaccess
+    2019-07-10 15:16:09          8 healthy.html
+    2019-07-10 15:16:09        420 index.php
+    2019-07-10 15:16:09      19935 license.txt
+    2019-07-10 15:16:09       7425 readme.html
+    2019-07-10 15:16:09       6919 wp-activate.php
+    2019-07-10 15:16:12        369 wp-blog-header.php
+    2019-07-10 15:16:12       2283 wp-comments-post.php
+    2019-07-10 15:16:12       2898 wp-config-sample.php
+    2019-07-10 15:16:12       3121 wp-config.php
+    2019-07-10 15:16:13       3847 wp-cron.php
+    2019-07-10 15:16:18       2502 wp-links-opml.php
+    2019-07-10 15:16:18       3306 wp-load.php
+    2019-07-10 15:16:18      38883 wp-login.php
+    2019-07-10 15:16:18       8403 wp-mail.php
+    2019-07-10 15:16:18      17947 wp-settings.php
+    2019-07-10 15:16:18      31085 wp-signup.php
+    2019-07-10 15:16:18       4764 wp-trackback.php
+    2019-07-10 15:16:18       3068 xmlrpc.php
+    ```
+## 2.3 re-writer url -> cloudfront
+> POST image url will change to cloudfront url in 10mins or 1-2hours
+
 - change the url `^wp-content/uploads/(.*)$` to `http://d6b0b5wvk29ki.cloudfront.net/$1`
 
   ```
@@ -189,7 +186,7 @@ upload: wp-content/uploads/2019/07/image1.png to s3://wp-image-davidkorea/2019/0
   ```
   [root@ip-172-31-28-229 conf]# systemctl restart httpd
   ```
-## 6.4 make image S3 public
+## 2.4 Make image S3 public
 1. 阻止公共访问权限[关闭]
 2. policy
   ```json
@@ -210,7 +207,7 @@ now，access http://13.125.224.163/wp-content/uploads/2019/07/image1.png
   
   
   
-POST image url will change to cloudfront url in 1-2hours
+
   
   
   
