@@ -20,3 +20,4 @@
     - Availability zone: No Preference
     - Choose existing VPC security groups: mysql_myVPC
     - wpdb
+4. EFS
