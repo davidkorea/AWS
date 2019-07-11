@@ -284,8 +284,8 @@ make the AMI on the exsiting EC2
 
 - 将之前的EC2从LB中移除，将刚创建的ReaderNode ASG加入
     ![](https://i.loli.net/2019/07/11/5d26b18c05c0781145.png)
-
-
+    ![](https://i.loli.net/2019/07/11/5d26b2ab4d4da34456.png)
+    
 
 
 
