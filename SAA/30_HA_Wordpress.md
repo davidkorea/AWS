@@ -291,7 +291,11 @@ make the AMI on the exsiting EC2
 
 
 
+## 3.5 RDS Failover
+Failover will last 1-2mins down.
 
+![](https://i.loli.net/2019/07/11/5d26c56aa531b67457.png)
+![](https://i.loli.net/2019/07/11/5d26c56d1195952401.png)
 
 
 
