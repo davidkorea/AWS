@@ -255,13 +255,48 @@ make the AMI on the exsiting EC2
     - 此时远程SSH连接的EC2会掉线
         ![](https://i.loli.net/2019/07/11/5d26a4248f81946774.png)
         
-### 3.3.2 Create AMI for Writer Node
+### 3.3.2 Single EC2 for Writer Node
 
 - change crontab command for writer node
     ```
     */1 * * * * root aws s3 sync --delete /var/www/html  s3://wp-code-davidkorea
     */1 * * * * root aws s3 sync --delete /var/www/html/wp-content/uploads S3://wp-image-davidkorea
     ```
-        
+- go to /var/www/html create test1.txt and `service crond restart`
+
+## 3.4 Auto Scaling Group
+- My AMIs: myWPreadernode - ami-0e721768b15812854
+- Create Launch Configuration
+    - myWPLC
+    - IAM role: EC2_S3_FULLACCESS
+    - Advanced Details
+        ```
+        #!/bin/bash
+        yum -y update
+        aws s3 sync --delete s3://wp-code-davidkorea /var/www/html
+        ```
+- Security Group: WebDMZ
+- Create Auto Scaling Group
+    ![](https://i.loli.net/2019/07/11/5d26af6181bce17236.png)
+    ![](https://i.loli.net/2019/07/11/5d26af64844b719307.png)    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
