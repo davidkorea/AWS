@@ -212,10 +212,23 @@ EC2_S3_FULLACCESS
   ```
 now，access http://13.125.224.163/wp-content/uploads/2019/07/image1.png  
   
-  
-  
+# 3. HA
+## 3.1 Load Balancer
+- myWPALBA
+- All AZs
+- Select an existing security group： WebDMZ
+- Target group
+    - myWPTG
+- Health checks
+    - Path: /healthy.html
+- Advanced health check settings
+    - Healthy threshold: 2
+    - Unhealthy threshold: 3
+    - Timeout: 5 seconds
+    - Interval: 6 seconds
+- Register Targets: add exsited EC2
 
-  
+## 3.2 Route53
   
   
   
