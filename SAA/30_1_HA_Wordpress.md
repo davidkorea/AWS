@@ -20,4 +20,5 @@
     - Availability zone: No Preference
     - Choose existing VPC security groups: mysql_myVPC
     - wpdb
+    > if cannot create multi-AZ due to no 2+ AZ in the VPC, but you r VPC did have 2+ subnet in different AZ. delete you VPC and re-create
 4. EFS
