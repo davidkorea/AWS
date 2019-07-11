@@ -28,8 +28,8 @@ leave all settings by default.
 
 ### 1.2. CloudFront
 leave all settings by default.
-
 - Origin Domain Name: wp-image-davidkorea.s3.amazonaws.com
+
 ### 1.3. 3.RDS mysql
 - Dev/Test - MySQL
 - **db.t2.small — 1 vCPU, 2 GiB RAM**
@@ -98,20 +98,12 @@ EC2_S3_FULLACCESS
 # 2. WP Settings
 ## 2.1 Create a Post
 - 13.125.224.163 set wordpress
-    - `vim wp-config.php` and copy code to this file under `/var/www/html`
-
-    ![](https://i.loli.net/2019/07/11/5d2695a526fdf25785.png)
-    
+- `vim wp-config.php` and copy code to this file under `/var/www/html`
+    ![](https://i.loli.net/2019/07/11/5d2695a526fdf25785.png)    
     ![](https://i.loli.net/2019/07/11/5d2695a90f04c63764.png)
     ![](https://i.loli.net/2019/07/11/5d2695ab9060532275.png)
-
-
-
-
-
-
-
-- post content
+- Create a new Post
+- Check post content
   ```
   [root@ip-172-31-28-229 html]# ls
   healthy.html     wp-blog-header.php    wp-includes        wp-signup.php
@@ -135,7 +127,7 @@ EC2_S3_FULLACCESS
 
     upload: wp-content/uploads/2019/07/image1.png to s3://wp-image-davidkorea/2019/07/image1.png
     ```  
-  
+  - **若未开启S3 versioning，同名文件会被覆盖**
   
 ## 2.3 Backup full WP code -> s3
   
