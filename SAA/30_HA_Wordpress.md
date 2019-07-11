@@ -98,6 +98,18 @@ EC2_S3_FULLACCESS
 # 2. WP Settings
 ## 2.1 Create a Post
 - 13.125.224.163 set wordpress
+    - `vim wp-config.php` and copy code to this file under `/var/www/html`
+
+    ![](https://i.loli.net/2019/07/11/5d2695a526fdf25785.png)
+    
+    ![](https://i.loli.net/2019/07/11/5d2695a90f04c63764.png)
+    ![](https://i.loli.net/2019/07/11/5d2695ab9060532275.png)
+
+
+
+
+
+
 
 - post content
   ```
