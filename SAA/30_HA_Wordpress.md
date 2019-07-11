@@ -246,10 +246,10 @@ make the AMI on the exsiting EC2
 
     */1 * * * * root aws s3 sync --delete s3://wp-code-davidkorea /var/www/html
     ```
+    - `--delete` full copy with s3, if no --delete, only new item on S3 will be cp to EC2. but deleted items will not be delete on EC2
 
 
-
-
-
+- `service crond restart`, 立即生效crontab
+- 本地创建一个test.txt文档，上传至S3，执行重启crond服务，查看/var/www/html目录可以同步到该文件
 
 
