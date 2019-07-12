@@ -209,10 +209,22 @@ get access to 13.125.29.184 and 13.125.29.184/phpinfo.php success
 
 
 ## 4.3 AutoScaling
+### 4.3.1 Create WP AMI
+- EC2 instamce -> make AMI
+- 创建AMI时，EC2会临时挂掉。SSH掉线，网站502错误。持续1min左右
+    ![](https://i.loli.net/2019/07/12/5d282b0016fe351451.png)
+### 4.3.2 Lanuch Config
+- use the AMI create above 
+    ![](https://i.loli.net/2019/07/12/5d282ed23c86086733.png)
+    ![](https://i.loli.net/2019/07/12/5d282ed59aadb71746.png)
+### 4.3.3 Auto Scaling Group
+    ![](https://i.loli.net/2019/07/12/5d282ed8429a743218.png)
+    
+#### 4.3.4 Test
+- Test new EC2 that created by ASG ok
+    ![](https://i.loli.net/2019/07/12/5d282edb293cc86226.png)
 
-
-
-
+- shutdown the origin EC2, get access to domain name ok
 
 
 
