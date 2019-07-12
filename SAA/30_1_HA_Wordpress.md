@@ -76,14 +76,15 @@ udp        0      0 fe80::8:e2ff:fe6c:2eae:546  :::*                  2227/dhcli
 - `chmod -R 775 /var/www/html`, owner(apache user) rwx, group(apache) r-x, others r-x
 
 > get access to ec2-13-125-29-184.ap-northeast-2.compute.amazonaws.com with error **Your server is running PHP version 5.5.38 but WordPress 5.2.2 requires at least 5.6.20.**, get access to public ip with http error 500
-                    ```diff
-                    /var/www/html/wp-includes/version.php
 
-                     - 37 #$required_php_version = '5.6.20';
-                     + 37 $required_php_version = '5.2.0';
-                    ```
+            ```diff
+            /var/www/html/wp-includes/version.php
 
-> ## 升级php版本 [Linux 升级PHP版本](https://blog.csdn.net/weixin_34824012/article/details/81056157)
+             - 37 #$required_php_version = '5.6.20';
+             + 37 $required_php_version = '5.2.0';
+            ```
+
+> ### 升级php版本 [Linux 升级PHP版本](https://blog.csdn.net/weixin_34824012/article/details/81056157)
 - 查看当前ph版本
     ```
     [root@ip-10-0-11-28 html]# php -v
