@@ -235,4 +235,12 @@ get access to 13.125.29.184 and 13.125.29.184/phpinfo.php success
 - shutdown the origin EC2, get access to domain name ok
 
 
+# 5. Failover
+## 5.1 EC2
+- 删除ASg中的一个实例，网站访问正常，有一定延迟。因为ASG中的健康检查需要一定的时间
+
+## 5.2 RDS 
+- 强制重启mysql，选择failover选项。数据库会中断一定时间，网站也会随之中断
+- 可以启用 Read Replica，虽然主（写入）数据库挂掉，但只读数据库正常，网站不会中断
+
 
