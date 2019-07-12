@@ -4,6 +4,12 @@
 
 
 
+
+**Can I "force" a failover for any RDS instance that has Multi-AZ configured? -- YES**
+
+
+-----
+
 There is a requirement to get the IP addresses for resources accessed in a private subnet.
 Which of the following can be used to fulfill this purpose?
  Trusted Advisor
