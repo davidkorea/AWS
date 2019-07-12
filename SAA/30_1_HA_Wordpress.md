@@ -110,11 +110,20 @@ get access to ec2-13-125-29-184.ap-northeast-2.compute.amazonaws.com with error 
         Updating / installing...
            1:webtatic-release-7-3             ################################# [100%]
         ```
+- 删除php
+    - `yum remove php-common`
 
+- 安装php 5.6版本（php56w-devel这个不是必需的）
+    - `yum install -y php56w php56w-opcache php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-MySQL php56w-intl php56w-mbstring`
 
-
-
-
+- 查看版本
+    ```    
+    [root@ip-10-0-11-28 html]# php -v
+    PHP 5.6.40 (cli) (built: Jan 12 2019 13:11:15)
+    Copyright (c) 1997-2016 The PHP Group
+    Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies
+        with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
+    ```
 
 
 
