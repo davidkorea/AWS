@@ -1,6 +1,6 @@
 # HA_Wordpress
 
-## 1. Archetcting
+# 1. Archetcting
 1. Create VPC
     - Subnets
       - 2 public subnets
@@ -29,17 +29,18 @@
     - myVPC
     - public subnet
     - IAM
-## 2. Install Wordpress on EC2
-1. install httpd php
+# 2. Install Wordpress on EC2
+## 2.1. install httpd php
 
 - `yum update -y`
-- `yum install httpd24 -y`
+- ~~`yum install httpd24 -y`~~
+- `yum install httpd -y`
 - `chkconfig httpd on`
 - ~~`yum -y install php55 php55-bcmath php55-devel php55-common php55-cli php55-pecl-apc php55-pdo php55-mysql php55-xml php55-gd php55-mbstring php-pear php55-mysqlnd php55-mcrypt`~~
 - `yum install -y php56w php56w-opcache php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-mysql php56w-intl php56w-mbstring`
 
 
-2. mount EFS
+## 2.2. mount EFS
 - `sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-e6e16987.efs.ap-northeast-2.amazonaws.com:/ /var/www/html/`
 ```
 [root@ip-10-0-11-167 ~]# df -h
@@ -50,7 +51,7 @@ tmpfs                                           493M     0  493M   0% /dev/shm
 fs-e6e16987.efs.ap-northeast-2.amazonaws.com:/  8.0E     0  8.0E   0% /var/www/html
 ```
 ![](https://i.loli.net/2019/07/11/5d26f34e469f148742.png)
-3. create phpinfo.php
+## 2.3. create phpinfo.php
 ```
 
 [root@ip-10-0-11-167 ~]# cd /var/www/html/
@@ -58,7 +59,7 @@ fs-e6e16987.efs.ap-northeast-2.amazonaws.com:/  8.0E     0  8.0E   0% /var/www/h
 [root@ip-10-0-11-167 html]# ls
 phpinfo.php
 ```
-4. start httpd
+## 2.4. start httpd
 ```
 [root@ip-10-0-11-167 html]# service httpd start
 Starting httpd:                                            [  OK  ]
@@ -69,7 +70,7 @@ udp        0      0 fe80::8:e2ff:fe6c:2eae:546  :::*                  2227/dhcli
 ```
 - get access to 13.125.29.184 and 13.125.29.184/phpinfo.php success
 
-5. download wordpress
+## 2.5. download wordpress
 - `wget https://wordpress.org/latest.zip`, download to /var/www/html 
 - `unzip latest.zip`
 - `mv /var/www/html/wordpress/* /var/www/html/`, let httpd recognize the wordpress codes `mv wordpress/* ./`
@@ -155,20 +156,32 @@ udp        0      0 fe80::8:e2ff:fe6c:2eae:546  :::*                  2227/dhcli
     ![](https://i.loli.net/2019/07/12/5d2803472488e51305.png)
 
 ## 3.3 URL重写，将本地多媒体文件的URL重写为S3的URL
-![](https://i.loli.net/2019/07/12/5d2803548d81939446.png)
-![](https://i.loli.net/2019/07/12/5d2803d053fb630906.png)
-![](https://i.loli.net/2019/07/12/5d2803decf76626311.png)
-![](https://i.loli.net/2019/07/12/5d2803e560d6f63893.png)
-- 上传的图片，建材多尺寸保存
-![](https://i.loli.net/2019/07/12/5d2803f219b5022044.png)
+- setting
+    ![](https://i.loli.net/2019/07/12/5d2803548d81939446.png)
+    ![](https://i.loli.net/2019/07/12/5d2803d053fb630906.png)
+    ![](https://i.loli.net/2019/07/12/5d2803decf76626311.png)
+    ![](https://i.loli.net/2019/07/12/5d2803e560d6f63893.png)
+- 上传的图片，剪裁多尺寸保存
+    ![](https://i.loli.net/2019/07/12/5d2803f219b5022044.png)
 
 ## 3.4 URL重写，将本地多媒体文件的URL重写为Cloudfront的URL
+- setting
+    ![](https://i.loli.net/2019/07/12/5d28044a1819c58297.png)
+    ![](https://i.loli.net/2019/07/12/5d281135cddd589729.png)
+    
+    
+# 4. 使用AutoScaling，Elastic Load Balancer和Route 53
+- 创建Application Load Balancer
+- 创建Route 53并使用Alias记录解析ELB
+- 创建AMI镜像
+- 创建启动配置（Launch Configuration）
+- 创建Auto Scaling组
 
-![](https://i.loli.net/2019/07/12/5d28044a1819c58297.png)
-![](https://i.loli.net/2019/07/12/5d281135cddd589729.png)
+## 4.1 ALB
 
+## 4.2 Route53
 
-
+## 4.3 AutoScaling
 
 
 
