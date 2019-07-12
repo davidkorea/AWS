@@ -10,7 +10,7 @@
       - Mysql: 3306 to ONLY WebDMZ
 2. IAM
     - EC2_S3_FULLACCESS
-3. RDS mysql
+3. RDS mysql **(Free Tier)**
     > if cannot create multi-AZ due to no 2+ AZ subnets in the VPC, but your VPC did have 2+ subnet in different AZ. delete you VPC and re-create it. also re-create Security Group
 
     - Dev/Test - MySQL
