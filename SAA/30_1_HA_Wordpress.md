@@ -76,17 +76,40 @@ udp        0      0 fe80::8:e2ff:fe6c:2eae:546  :::*                  2227/dhcli
 - `chmod -R 775 /var/www/html`, owner(apache user) rwx, group(apache) r-x, others r-x
 
 get access to ec2-13-125-29-184.ap-northeast-2.compute.amazonaws.com with error **Your server is running PHP version 5.5.38 but WordPress 5.2.2 requires at least 5.6.20.**, get access to public ip with http error 500
-```diff
-/var/www/html/wp-includes/version.php
+                    ```diff
+                    /var/www/html/wp-includes/version.php
 
- - 37 #$required_php_version = '5.6.20';
- + 37 $required_php_version = '5.2.0';
-```
+                     - 37 #$required_php_version = '5.6.20';
+                     + 37 $required_php_version = '5.2.0';
+                    ```
 
+升级php版本
+- 查看当前ph版本
+    ```
+    [root@ip-10-0-11-28 html]# php -v
+    PHP 5.4.16 (cli) (built: Sep  1 2018 05:47:37)
+    Copyright (c) 1997-2013 The PHP Group
+    Zend Engine v2.4.0, Copyright (c) 1998-2013 Zend Technologies
+    ```
+- 执行下面的命令升级软件仓库
+    - `rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm`
+    - `rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm`
 
+        ```
+        [root@ip-10-0-11-28 html]# rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm
+        Retrieving https://mirror.webtatic.com/yum/el7/epel-release.rpm
+        warning: /var/tmp/rpm-tmp.t9DlBK: Header V4 RSA/SHA1 Signature, key ID 62e74ca5: NOKEY
+        Preparing...                          ################################# [100%]
+        Updating / installing...
+           1:epel-release-7-5                 ################################# [100%]
 
-
-
+        [root@ip-10-0-11-28 html]# rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+        Retrieving https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+        warning: /var/tmp/rpm-tmp.biDiiI: Header V4 RSA/SHA1 Signature, key ID 62e74ca5: NOKEY
+        Preparing...                          ################################# [100%]
+        Updating / installing...
+           1:webtatic-release-7-3             ################################# [100%]
+        ```
 
 
 
