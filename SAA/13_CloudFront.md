@@ -1,4 +1,14 @@
 - **CNAME 是将xxx.cloudfrontet的域名更改成自定义的域名。因为网站上的映泰内容打开后会显示cloudfront.net/image1.png ，而使用自己的域名，会让网站的url更同意更完整**
+  ![](https://i.loli.net/2019/07/12/5d2802028a69b83575.png)
+
+
+
+
+-----
+
+-----
+
+-----
 
 
 知识点
