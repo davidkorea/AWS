@@ -221,9 +221,13 @@ get access to 13.125.29.184 and 13.125.29.184/phpinfo.php success
 - my VPC, public subnets
 - 高级详细信息：**将自动伸缩组中目标组里面的EC2实例，关联至负载均衡ALB**
     - 负载平衡，允许关联至ALB
-    - 目标组，**将此处ASG中的实例，注册到ALB的目标组中。使得ASG中的实例来接收负载均衡的流量**
+    - 目标组，**将此处ASG中的实例，注册到ALB的目标组中，使得ASG中的实例来接收负载均衡的流量**
     ![](https://i.loli.net/2019/07/12/5d282ed8429a743218.png)
-    
+
+- **将此处ASG中的实例，注册到ALB的目标组中，使得ASG中的实例来接收负载均衡的流量**
+    ![](https://i.loli.net/2019/07/12/5d2831795cc3890207.png)
+    ![](https://i.loli.net/2019/07/12/5d28317c048bd31568.png)
+
 #### 4.3.4 Test
 - Test new EC2 that created by ASG ok
     ![](https://i.loli.net/2019/07/12/5d282edb293cc86226.png)
