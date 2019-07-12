@@ -8,16 +8,19 @@
   - cost efficiency
   - if need you end user ip addr, look for the `X_Forwarded_For` header, 通过X_Forwarded_For header来查看发起请求的client的ip地址
 
-## 0. Advanced Load Balancer theory
+## 0. Advanced Load Balancer theory （Classic LB ONLY??????????）
 ### 0.1. Sticky Sessions
 - 如果所有流量都到了同一个EC2，而没有到另一个EC2，可能需要disable Sticky Sessions
   ![](https://i.loli.net/2019/06/20/5d0b2c673ff8116691.png)
+  ![](https://i.loli.net/2019/07/12/5d2845cf2b71f53371.png)
+  
 ### 0.2. Cross Zone Load balancing
 - 用户通过Route53，50%到AZ1的LB（4 EC2），50%到AZ2的LB（1EC2），但AZ1的流量占比为12.5，并非100/5EC2=20.
 - 需打开跨区域负载均衡，使得AZ1的LB可以将流量发送给AZ2中的实例
 - 每一个AZ中的LB都可以将流量发送给其他AZ下LB的实例
   ![](https://i.loli.net/2019/06/20/5d0b2db99a5b849911.png)
-
+  ![](https://i.loli.net/2019/07/12/5d2845cd00be871477.png)
+  
 ### 0.3. Path Patterns
 - 根据URL路径来分配流量
   ![](https://i.loli.net/2019/06/20/5d0b2e13028a254794.png)
