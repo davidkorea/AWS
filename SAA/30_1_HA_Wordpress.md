@@ -25,7 +25,7 @@
 4. EFS
     - VPC: my_vpc
     - Security Groups: webDMZ_myvpc（NFS allowed for 10.0.0.0/16）
-5. EC2： Amazon Linux AMI 2018.03.0 (HVM), SSD Volume Type
+5. EC2： Amazon Linux AMI 2
     - myVPC
     - public subnet
     - IAM
@@ -165,7 +165,7 @@ udp        0      0 fe80::8:e2ff:fe6c:2eae:546  :::*                  2227/dhcli
 ## 3.4 URL重写，将本地多媒体文件的URL重写为Cloudfront的URL
 
 ![](https://i.loli.net/2019/07/12/5d28044a1819c58297.png)
-![](https://i.loli.net/2019/07/12/5d28044cc945187270.png)
+![](https://i.loli.net/2019/07/12/5d281135cddd589729.png)
 
 
 
