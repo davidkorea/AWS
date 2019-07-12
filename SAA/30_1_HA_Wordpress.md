@@ -162,6 +162,9 @@ get access to 13.125.29.184 and 13.125.29.184/phpinfo.php success
     ![](https://i.loli.net/2019/07/12/5d2803472488e51305.png)
 
 ## 3.3 URL重写，将本地多媒体文件的URL重写为S3的URL
+
+> 网站服务器挂掉了，上传的post内容依然存在S3中
+
 - setting
     ![](https://i.loli.net/2019/07/12/5d2803548d81939446.png)
     ![](https://i.loli.net/2019/07/12/5d2803d053fb630906.png)
@@ -171,6 +174,9 @@ get access to 13.125.29.184 and 13.125.29.184/phpinfo.php success
     ![](https://i.loli.net/2019/07/12/5d2803f219b5022044.png)
 
 ## 3.4 URL重写，将本地多媒体文件的URL重写为Cloudfront的URL
+
+> 各地用户可以快速访问静态媒体文件
+
 - setting
     ![](https://i.loli.net/2019/07/12/5d28044a1819c58297.png)
     ![](https://i.loli.net/2019/07/12/5d281135cddd589729.png)
