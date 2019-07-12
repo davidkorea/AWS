@@ -130,7 +130,20 @@ udp        0      0 fe80::8:e2ff:fe6c:2eae:546  :::*                  2227/dhcli
 
 
 # 3. 使用CloudFront进行内容分发服务
+- 创建S3存储桶
+- 创建CloudFront，源为S3存储桶
+- 安装Wordpress创建WP Offload S3 Lite
+- WordPress多媒体文件自动上传到S3
+- URL重写，将本地多媒体文件的URL重写为S3的URL
+- URL重写，将本地多媒体文件的URL重写为Cloudfront的URL
 ## 3.1 Create CloudFront Distribution
+
+![](https://i.loli.net/2019/07/12/5d28023452ce282181.png)
+
+- 源域名：S3
+- 源路径：S3中的某个文件夹目录
+- 限制存储桶访问：用户只能通过cloudfront的url来访问S3的内容，而非S3 url
+- 源访问身份：创建新的IAM
 
 ## 3.2 Add Plugin to WP - WP Offload Media Lite
 
