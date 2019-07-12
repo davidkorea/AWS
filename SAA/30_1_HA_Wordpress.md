@@ -159,15 +159,13 @@ udp        0      0 fe80::8:e2ff:fe6c:2eae:546  :::*                  2227/dhcli
 ![](https://i.loli.net/2019/07/12/5d2803d053fb630906.png)
 ![](https://i.loli.net/2019/07/12/5d2803decf76626311.png)
 ![](https://i.loli.net/2019/07/12/5d2803e560d6f63893.png)
+- 上传的图片，建材多尺寸保存
 ![](https://i.loli.net/2019/07/12/5d2803f219b5022044.png)
 
 ## 3.4 URL重写，将本地多媒体文件的URL重写为Cloudfront的URL
 
-
-
-
-
-
+![](https://i.loli.net/2019/07/12/5d28044a1819c58297.png)
+![](https://i.loli.net/2019/07/12/5d28044cc945187270.png)
 
 
 
