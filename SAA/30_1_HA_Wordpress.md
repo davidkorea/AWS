@@ -190,8 +190,23 @@ get access to 13.125.29.184 and 13.125.29.184/phpinfo.php success
 - 创建Auto Scaling组
 
 ## 4.1 ALB
+> 可以根据网站url的不同路径，来分发流量，给到ALB后端不同的目标组 ？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？？
+
+- select public subnets
+    ![](https://i.loli.net/2019/07/12/5d2828cd41ef539966.png)
+    ![](https://i.loli.net/2019/07/12/5d2828d6afa1913545.png)
+- Target group and healthy check all by default
+    ![](https://i.loli.net/2019/07/12/5d2828da28f6729201.png)
 
 ## 4.2 Route53
+
+- A - alias - ALB
+    ![](https://i.loli.net/2019/07/12/5d28296b7208c81100.png)
+- change all url in wordpress site, or else only index page is our domain, but other urls are still EC2 url
+    ![](https://i.loli.net/2019/07/12/5d28298a9479789942.png)
+    ![](https://i.loli.net/2019/07/12/5d28298d2fc6496980.png)
+    ![](https://i.loli.net/2019/07/12/5d28298fc6f0264698.png)
+
 
 ## 4.3 AutoScaling
 
