@@ -35,7 +35,9 @@
 - `yum update -y`
 - `yum install httpd24 -y`
 - `chkconfig httpd on`
-- `yum -y install php55 php55-bcmath php55-devel php55-common php55-cli php55-pecl-apc php55-pdo php55-mysql php55-xml php55-gd php55-mbstring php-pear php55-mysqlnd php55-mcrypt`
+- ~~`yum -y install php55 php55-bcmath php55-devel php55-common php55-cli php55-pecl-apc php55-pdo php55-mysql php55-xml php55-gd php55-mbstring php-pear php55-mysqlnd php55-mcrypt`~~
+- `yum install -y php56w php56w-opcache php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-mysql php56w-intl php56w-mbstring`
+
 
 2. mount EFS
 - `sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-e6e16987.efs.ap-northeast-2.amazonaws.com:/ /var/www/html/`
@@ -115,7 +117,7 @@ udp        0      0 fe80::8:e2ff:fe6c:2eae:546  :::*                  2227/dhcli
     - `yum remove php-common`
 
 - 安装php 5.6版本（php56w-devel这个不是必需的）
-    - `yum install -y php56w php56w-opcache php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-MySQL php56w-intl php56w-mbstring`
+    - `yum install -y php56w php56w-opcache php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-mysql php56w-intl php56w-mbstring`
 
 - 查看版本
     ```    
