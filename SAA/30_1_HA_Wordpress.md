@@ -210,6 +210,7 @@ get access to 13.125.29.184 and 13.125.29.184/phpinfo.php success
 
 ## 4.3 AutoScaling
 ### 4.3.1 Create WP AMI
+- **一定要在源EC2中配置好，开机自动挂载EFS**
 - EC2 instamce -> make AMI
 - 创建AMI时，EC2会临时挂掉。SSH掉线，网站502错误。持续1min左右
     ![](https://i.loli.net/2019/07/12/5d282b0016fe351451.png)
