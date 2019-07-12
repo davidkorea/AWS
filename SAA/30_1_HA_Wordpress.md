@@ -45,18 +45,19 @@
 
 ## 2.2. mount EFS
 - `sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-e6e16987.efs.ap-northeast-2.amazonaws.com:/ /var/www/html/`
-```
-[root@ip-10-0-11-167 ~]# df -h
-Filesystem                                      Size  Used Avail Use% Mounted on
-devtmpfs                                        483M   64K  483M   1% /dev
-tmpfs                                           493M     0  493M   0% /dev/shm
-/dev/xvda1                                      7.9G  1.3G  6.5G  16% /
-fs-e6e16987.efs.ap-northeast-2.amazonaws.com:/  8.0E     0  8.0E   0% /var/www/html
-```
-![](https://i.loli.net/2019/07/11/5d26f34e469f148742.png)
+- 挂载之后，需要重新再进入一下/var/www/html/ 目录，否则写入很慢，且写入不成功
+    ```
+    [root@ip-10-0-11-167 ~]# df -h
+    Filesystem                                      Size  Used Avail Use% Mounted on
+    devtmpfs                                        483M   64K  483M   1% /dev
+    tmpfs                                           493M     0  493M   0% /dev/shm
+    /dev/xvda1                                      7.9G  1.3G  6.5G  16% /
+    fs-e6e16987.efs.ap-northeast-2.amazonaws.com:/  8.0E     0  8.0E   0% /var/www/html
+    ```
+    ![](https://i.loli.net/2019/07/11/5d26f34e469f148742.png)
+    
 ## 2.3. create phpinfo.php
 ```
-
 [root@ip-10-0-11-167 ~]# cd /var/www/html/
 [root@ip-10-0-11-167 html]# echo "<?php phpinfo(); ?>" > phpinfo.php
 [root@ip-10-0-11-167 html]# ls
@@ -71,7 +72,7 @@ Starting httpd:                                            [  OK  ]
 tcp        0      0 :::80                       :::*      LISTEN      8514/httpd
 udp        0      0 fe80::8:e2ff:fe6c:2eae:546  :::*                  2227/dhclient
 ```
-- get access to 13.125.29.184 and 13.125.29.184/phpinfo.php success
+get access to 13.125.29.184 and 13.125.29.184/phpinfo.php success
 
 ## 2.5. download wordpress
 - `wget https://wordpress.org/latest.zip`, download to /var/www/html 
