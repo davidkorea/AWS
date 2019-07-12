@@ -37,7 +37,10 @@
 - `yum install httpd -y`
 - `chkconfig httpd on`
 - ~~`yum -y install php55 php55-bcmath php55-devel php55-common php55-cli php55-pecl-apc php55-pdo php55-mysql php55-xml php55-gd php55-mbstring php-pear php55-mysqlnd php55-mcrypt`~~
-- `yum install -y php56w php56w-opcache php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-mysql php56w-intl php56w-mbstring`
+- install php5.6.20
+    - `rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm`
+    - `rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm`   
+    - `yum install -y php56w php56w-opcache php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-mysql php56w-intl php56w-mbstring`
 
 
 ## 2.2. mount EFS
