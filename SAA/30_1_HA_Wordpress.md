@@ -55,7 +55,9 @@
     fs-e6e16987.efs.ap-northeast-2.amazonaws.com:/  8.0E     0  8.0E   0% /var/www/html
     ```
     ![](https://i.loli.net/2019/07/11/5d26f34e469f148742.png)
-    
+- 开机自动挂载
+    - `echo "fs-6f4ac20e.efs.ap-northeast-2.amazonaws.com:/ /var/www/html nfs4 nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,_netdev,noresvport 0 0" >> /etc/fstab`
+
 ## 2.3. create phpinfo.php
 ```
 [root@ip-10-0-11-167 ~]# cd /var/www/html/
