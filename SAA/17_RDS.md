@@ -1,4 +1,8 @@
 
+**Can I "force" a failover for any RDS instance that has Multi-AZ configured? -- YES**
+
+
+
 ### 联机事务处理OLTP（Online Transaction Processing）
 OLTP是传统的关系数据库的主要应用，是基本的日常事务处理，例如银行交易等。
 
