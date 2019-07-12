@@ -146,9 +146,13 @@ udp        0      0 fe80::8:e2ff:fe6c:2eae:546  :::*                  2227/dhcli
 - 源访问身份：创建新的IAM
 
 ## 3.2 Add Plugin to WP - WP Offload Media Lite
-
-
-
+- 安装
+    ![](https://i.loli.net/2019/07/12/5d2802faafe5776959.png)
+    ![](https://i.loli.net/2019/07/12/5d2802fe2fde581131.png)
+- 更改IAM访问，选择S3存储桶
+    ![](https://i.loli.net/2019/07/12/5d280300ea0cb13997.png)
+    ![](https://i.loli.net/2019/07/12/5d280343b719e86439.png)
+    ![](https://i.loli.net/2019/07/12/5d2803472488e51305.png)
 
 
 
