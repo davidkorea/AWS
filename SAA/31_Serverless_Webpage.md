@@ -40,3 +40,12 @@
 ![](https://i.loli.net/2019/07/15/5d2c38102002516448.png)
 ![](https://i.loli.net/2019/07/15/5d2c381493cf515281.png)
 ![](https://i.loli.net/2019/07/15/5d2c3816e305455755.png)
+
+
+## 4. Tips
+
+![](https://i.loli.net/2019/07/15/5d2c43c69229013232.png)
+![](https://i.loli.net/2019/07/15/5d2c43caa33f764949.png)
+
+
+
