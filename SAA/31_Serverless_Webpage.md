@@ -6,7 +6,7 @@
   ![](https://i.loli.net/2019/07/15/5d2c367a820dc75620.png)
 
 ## 2. Lambda code
-![](https://i.loli.net/2019/07/15/5d2c37f95e5dd24252.png)
+![](https://i.loli.net/2019/07/15/5d2c3ad2ad1f278741.png)
 
 ## 3. API Gateway
 
