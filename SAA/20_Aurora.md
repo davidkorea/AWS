@@ -19,4 +19,6 @@ Aurora和其他RDS服务类似，AWS会负责各种管理任务，例如硬件�
   - MySQL Replica（最多支持5个）
   - 两者的区别是Aurora主数据库出现故障的时候，Aurora Replicas可以自动变成主数据库，而MySQL Replica不可以
 
+- 可以将Aurora的快照分享给其他AWS账户
+
 在助理级别的AWS考试中，不会对Aurora的内容做太深入的考察，我们只需要大致了解即可。
