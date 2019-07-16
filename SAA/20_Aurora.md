@@ -36,6 +36,8 @@ Aurora和其他RDS服务类似，AWS会负责各种管理任务，例如硬件�
 ## 1.1 Reader Replica
 
 ![](https://i.loli.net/2019/07/16/5d2d5edd7d78d47989.png)
+![](https://i.loli.net/2019/07/16/5d2d5f7b6143567800.png)
+
 
 ## 1.2 Cross-Region Reader Replica
 
