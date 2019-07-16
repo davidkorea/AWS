@@ -134,6 +134,9 @@ DynamoDB的特点：
 - 如果我们需要增加DynamoDB的规格，我们可以直接在AWS管理控制台上进行更改，并且不会有任何系统downtime
 - 除非您指定其他读取方式，否则 DynamoDB 将使用最终一致性读取。读取操作 (例如 GetItem，Query 和 Scan) 提供了一个 ConsistentRead 参数。如果您将此参数设置为 true，DynamoDB 将在操作过程中使用强一致性读取。
 
+
+![](https://i.loli.net/2019/07/16/5d2d7bbf13fe755625.png)
+
 ![](https://i.loli.net/2019/07/16/5d2d392847f2f31125.png)
 
 ![](https://i.loli.net/2019/07/16/5d2d392819b1356150.png)
