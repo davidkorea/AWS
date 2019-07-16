@@ -29,10 +29,17 @@ Aurora和其他RDS服务类似，AWS会负责各种管理任务，例如硬件�
 
 
 
-# Aurora
+# 1.Aurora
 ![](https://i.loli.net/2019/07/16/5d2d5d4e2cb4329078.png)
 ![](https://i.loli.net/2019/07/16/5d2d5d5082bc448453.png)
 ![](https://i.loli.net/2019/07/16/5d2d5d52aedeb68139.png)
+## 1.1 Reader Replica
+
+![](https://i.loli.net/2019/07/16/5d2d5edd7d78d47989.png)
+
+## 1.2 Cross-Region Reader Replica
+
+![](https://i.loli.net/2019/07/16/5d2d5eeb11c6853671.png)
 
 # Aurora Serverless
 ![](https://i.loli.net/2019/07/16/5d2d5c29d255035342.png)
