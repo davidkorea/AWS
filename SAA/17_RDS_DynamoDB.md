@@ -41,6 +41,9 @@ AWS RDS提供了两种不同的备份方式，分别是自动备份（Automated 
 - RDS的快照需要手动进行
 - 在你删除数据库的时候，快照不会被删除，不像自动备份那样
 - 在创建快照的过程中，数据库存储的I/O可能会暂停（通常不到几秒），数据库性能会降低，但部署了Multi-AZ的数据库不受影响
+  - **What happens to the I/O operations of a single-AZ RDS instance during a database snapshot or backup?**
+    - I/O may be briefly suspended while the backup process initializes (typically under a few seconds), and you may experience a brief period of elevated latency.
+
 ## 数据库加密
 现在AWS RDS的**所有6种关系数据库都**支持加密。一旦启用了加密的功能，所有数据的存储都将会被加密，包括数据库本身、自动备份、快照和只读副本（read replicas）。
 
