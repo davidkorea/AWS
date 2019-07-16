@@ -21,7 +21,7 @@ OLAP常用的流行工具是AWS Redshift, Greenplum, Hive等
 
 数据仓库有更好地读取速度和更加便利的分析和查询方式。
 
-# 1. RDS的备份，Multi-AZ高可用和Read Replicas
+# 1. RDS的备份
 本章节主要讲解RDS数据库的备份，高可用（Multi-AZ）和只读副本（Read Replicas）的特性以及他们的区别。
 
 AWS RDS提供了两种不同的备份方式，分别是自动备份（Automated Backups）和快照（Snapshots）。
