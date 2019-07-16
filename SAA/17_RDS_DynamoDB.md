@@ -88,11 +88,15 @@ Read Replicas还有如下的特点：
   - Read Replicas也可以创建完Multi-AZ
 - Read Replicas可以提升成为独立的数据库
 - 可以创建位于另一个区域（Region）的Read Replicas
-
+- 可以创建Aurora类型的Read Replicas
+  - 不能跨区域，此处与mysql readreplica不同
 ![](https://i.loli.net/2019/07/16/5d2d34d8c949351826.png)
 
 ![](https://i.loli.net/2019/07/16/5d2d3625bbce977633.png)
 ![](https://i.loli.net/2019/07/16/5d2d3625cc9ab70104.png)
+
+![](https://i.loli.net/2019/07/16/5d2d3c660f48342592.png)
+![](https://i.loli.net/2019/07/16/5d2d3c681305620333.png)
 
 
 目前Read Replicas支持以下4个数据库：
