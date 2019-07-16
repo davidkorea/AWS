@@ -1,4 +1,6 @@
 
+**In RDS, changes to the backup window take effect ________. -- immediately** 
+
 **Can I "force" a failover for any RDS instance that has Multi-AZ configured? -- YES**
 
 ![](https://i.loli.net/2019/07/16/5d2d6a615e8ba31558.png)
