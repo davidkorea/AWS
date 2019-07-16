@@ -40,7 +40,7 @@ AWS RDS提供了两种不同的备份方式，分别是自动备份（Automated 
 ### 2. 快照（Snapshots）
 - RDS的快照需要手动进行
 - 在你删除数据库的时候，快照不会被删除，不像自动备份那样
-- 在创建快照的过程中，数据库存储的I/O可能会暂停（通常不到几秒），数据库性能会降低，但部署了Multi-AZ的数据库不受影响
+- **在创建快照的过程中，数据库存储的I/O可能会暂停（通常不到几秒），数据库性能会降低，但部署了Multi-AZ的数据库不受影响**
   - **What happens to the I/O operations of a single-AZ RDS instance during a database snapshot or backup?**
     - I/O may be briefly suspended while the backup process initializes (typically under a few seconds), and you may experience a brief period of elevated latency.
 
