@@ -24,7 +24,6 @@ OLAP常用的流行工具是AWS Redshift, Greenplum, Hive等
 # 1. RDS的备份，Multi-AZ高可用和Read Replicas
 本章节主要讲解RDS数据库的备份，高可用（Multi-AZ）和只读副本（Read Replicas）的特性以及他们的区别。
 
-## RDS备份
 AWS RDS提供了两种不同的备份方式，分别是自动备份（Automated Backups）和快照（Snapshots）。
 
 ### 1. 自动备份（Automated Backups）
@@ -44,7 +43,7 @@ AWS RDS提供了两种不同的备份方式，分别是自动备份（Automated 
 
 - 如果在创建数据库的时候没有加密，我们不能在事后对其进行加密
 - 但我们可以创建这个数据库的快照，复制该快照并且加密这个复制的版本
-## Multi-AZ高可用
+# 2. Multi-AZ高可用
 我们可以把AWS RDS数据库部署在多个可用区（AZ）内，以提供高可用性和故障转移支持。
 
 使用Multi-AZ部署模式，RDS会在不同的可用区内配置和维护**一个主数据库**和**一个备用数据库**，主数据库的数据会自动复制到备用数据库中。
@@ -69,7 +68,7 @@ AWS RDS提供了两种不同的备份方式，分别是自动备份（Automated 
 
 **高可用的设置只是用来解决灾备的问题，并不能解决读取性能的问题；要提升数据库读取性能，我们需要用到Read Replicas**
 
-## 只读副本（Read Replicas）
+# 3. 只读副本（Read Replicas）
 我们可以在源数据库实例的基础上，复制一种新类型的数据库实例，称之为只读副本（Read Replicas）。我们对源数据库的任何更新，都会异步更新到只读副本中。
 
 因此，我们可以将应用程序的数据库读取功能转移到Read Replicas上，来减轻源数据库的负载。
@@ -86,9 +85,11 @@ Read Replicas还有如下的特点：
 - 可以为Read Replicas创建Read Replicas（如下图所示）
 - 每一个Read Replicas都有自己的URL Endpoint
 - 可以为一个启用了Multi-AZ的数据库创建Read Replicas
+  - Read Replicas也可以创建完Multi-AZ
 - Read Replicas可以提升成为独立的数据库
 - 可以创建位于另一个区域（Region）的Read Replicas
 
+![](https://i.loli.net/2019/07/16/5d2d34d8c949351826.png)
 ![](https://cdnstatic.iteablue.com/iteablue-production-data/wp-content/uploads/2018/07/rds_read_replica_offload_1.png)
 
 目前Read Replicas支持以下4个数据库：
