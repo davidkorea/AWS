@@ -90,7 +90,10 @@ Read Replicas还有如下的特点：
 - 可以创建位于另一个区域（Region）的Read Replicas
 
 ![](https://i.loli.net/2019/07/16/5d2d34d8c949351826.png)
-![](https://cdnstatic.iteablue.com/iteablue-production-data/wp-content/uploads/2018/07/rds_read_replica_offload_1.png)
+
+![](https://i.loli.net/2019/07/16/5d2d3625bbce977633.png)
+![](https://i.loli.net/2019/07/16/5d2d3625cc9ab70104.png)
+
 
 目前Read Replicas支持以下4个数据库：
 
