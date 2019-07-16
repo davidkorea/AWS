@@ -39,6 +39,7 @@ Aurora和其他RDS服务类似，AWS会负责各种管理任务，例如硬件�
 ![](https://i.loli.net/2019/07/16/5d2d5d5082bc448453.png)
 ![](https://i.loli.net/2019/07/16/5d2d5d52aedeb68139.png)
 ![](https://i.loli.net/2019/07/16/5d2d5fe3cb4fd40681.png)
+![](https://i.loli.net/2019/07/16/5d2d638b9709968178.png)
 
 ## 1.1 Reader Replica
 **Aurora不能创建mysql只读副本**
