@@ -19,3 +19,5 @@ Elasticache通过在内存中缓存数据来减少对象读取数据库的次数
 当然，我们也可以使用上一章节将的Read Replicas来解决同样的事情。但不同的是**Elasticache是缓存数据库的内容**，**Read Replicas会异步地同步数据库的内容**。另一个不同是，Elasticache是存储在内存中的，因此比起构建在SSD的Read Replicas会快不止一个数量级。
 
 同样的，Elasticache这部分内容在助理级解决方案架构师的考试中只需要稍作了解即可，但是在助理级开发者考试中会需要有更加深入的掌握。
+
+![](https://i.loli.net/2019/07/16/5d2d6743860d058732.png)
