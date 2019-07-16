@@ -22,6 +22,8 @@ Amazon Simple Queue Service (SQS)是一种完全托管的消息队列服务，�
 
 Amazon SQS相当于提供了一个分布式、高可用、高性能的消息队列服务。
 
+![](https://i.loli.net/2019/07/16/5d2d8bacb026386043.png)
+
 ## 1.2 SQS特点
 SQS有两种不同类型的队列，它们分别是：
 
