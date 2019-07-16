@@ -55,7 +55,7 @@ AWS RDS提供了两种不同的备份方式，分别是自动备份（Automated 
 
 ![](https://cdnstatic.iteablue.com/iteablue-production-data/wp-content/uploads/2018/07/con-multi-AZ.png)
 
-目前Multi-AZ支持以下数据库：
+目前Multi-AZ支持以下数据库：**（全部支持多AZ）**
 
 - Oracle
 - PostgreSQL
@@ -91,13 +91,16 @@ Read Replicas还有如下的特点：
 
 ![](https://cdnstatic.iteablue.com/iteablue-production-data/wp-content/uploads/2018/07/rds_read_replica_offload_1.png)
 
-目前Read Replicas支持以下数据库：
+目前Read Replicas支持以下4个数据库：
 
 - Aurora
 - PostgreSQL
 - MySQL
 - MariaDB
 
+**NO**
+- ~~Oracle~~
+- ~~MS SQL Server~~
 
 # 2. 非关系数据库DynamoDB
 DynamoDB是一种非关系数据库（NoSQL），可在任何规模提供可靠的性能。DynamoDB能在任何规模下实现不到10毫秒级的一致相应，并且它的存储空间无限。
