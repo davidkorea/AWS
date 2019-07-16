@@ -1,4 +1,9 @@
 # Aurora简介
+
+
+- **Aurora不能创建mysql只读副本**
+
+
 Amazon Aurora是一种兼容MySQL和PostgreSQL的商用级别关系数据库，它既有商用数据库的性能和可用性（比如Oracle数据库），又具有开源数据库的成本效益（比如MySQL数据库）。
 
 Aurora的速度可以达到MySQL数据库的5倍，同时它的成本只是商用数据库的1/10。
@@ -14,7 +19,7 @@ Aurora和其他RDS服务类似，AWS会负责各种管理任务，例如硬件�
 - 2份及以下的数据备份丢失，不影响Aurora的写入功能
 - 3份及以下的数据备份丢失，不影响Aurora的读取功能
 - Aurora有自动修复的功能，AWS会自动检查磁盘错误和数据块问题并且自动进行修复
-- 有两种数据库只读副本
+- 有两种数据库只读副本。**Aurora不能创建mysql只读副本**
   - Aurora Replicas（最多支持15个）
   - MySQL Replica（最多支持5个）
   - 两者的区别是Aurora主数据库出现故障的时候，Aurora Replicas可以自动变成主数据库，而MySQL Replica不可以
@@ -36,6 +41,7 @@ Aurora和其他RDS服务类似，AWS会负责各种管理任务，例如硬件�
 ![](https://i.loli.net/2019/07/16/5d2d5fe3cb4fd40681.png)
 
 ## 1.1 Reader Replica
+**Aurora不能创建mysql只读副本**
 
 ![](https://i.loli.net/2019/07/16/5d2d5edd7d78d47989.png)
 ![](https://i.loli.net/2019/07/16/5d2d5f7b6143567800.png)
