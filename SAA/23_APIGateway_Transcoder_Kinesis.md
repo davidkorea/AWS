@@ -14,6 +14,19 @@ API Gateway没有最低使用成本，我们用多少服务内容就花费多少
 - 如果没有开启CORS功能，在使用API Gateway做跨域访问的时候，可能会出现错误 “Origin policy cannot be read at the remote resource?”
 - 我们在S3的课程中也介绍过CORS的功能，可以参见S3的课程
 
+
+![](https://i.loli.net/2019/07/17/5d2e7bce35a8881341.png)
+![](https://i.loli.net/2019/07/17/5d2e7bd0d496394561.png)
+![](https://i.loli.net/2019/07/17/5d2e7bd3a4b8783303.png)
+![](https://i.loli.net/2019/07/17/5d2e7bd6bc9dc50067.png)
+![](https://i.loli.net/2019/07/17/5d2e7bd90270786727.png)
+![](https://i.loli.net/2019/07/17/5d2e7bdb098b333474.png)
+![](https://i.loli.net/2019/07/17/5d2e7bdd2747695762.png)
+![](https://i.loli.net/2019/07/17/5d2e7be0157a585846.png)
+
+
+
+
 # 2. Elastic Transcoder简介
 在助理级的AWS考试中，会有少量的问题是关于Elastic Transcoder的，但内容不会很多，也不会很深。因此本章内容只会做一些基本的讲解。
 
