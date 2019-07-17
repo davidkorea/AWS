@@ -1,4 +1,5 @@
-
+- Kinesis streams has shards and your data has persistence by default. It's stored for 24 hours so this has all kinds of streams
+- Kinesis firehose. There's no data persistence you need to do something with that data as soon as it comes in to firehose
 - If you don't care about data persistence you want to analyze it on the fly automatically.Using lambda then you're going to be using Kinesis firehose 
 - if you want to analyze your data inside Kinesis you can use Kinesis analytics and can Kinesis analytics analyzes the data inside both Kinesis streams and Kinesis firehose.
 
