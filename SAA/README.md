@@ -1,7 +1,7 @@
 # AWS
 
 
-New AWS account soft limit of 20 EC2 per region?? per AZ?? -- ** per region**
+New AWS account soft limit of 20 EC2 per region?? per AZ?? -- **per region**
 
 -----
 
