@@ -1,12 +1,11 @@
 # AWS
 
 
+New AWS account soft limit of 20 EC2 per region?? per AZ??
 
-
-
+-----
 
 **Can I "force" a failover for any RDS instance that has Multi-AZ configured? -- YES**
-
 
 -----
 
