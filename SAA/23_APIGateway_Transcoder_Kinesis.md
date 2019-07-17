@@ -84,6 +84,9 @@ Kinesis Data Firehose可以让我们的**实时数据流传输到我们定义的
 
 ![](https://cdnstatic.iteablue.com/iteablue-production-data/wp-content/uploads/2018/08/fh-flow-s3.png)
 
+![](https://i.loli.net/2019/07/17/5d2e809c0b35594076.png)
+
 ### 3.2.4 Kinesis Data Analytics
 使用Kinesis Data Analytics，我们可以使用标准的SQL语句来处理和分析我们的数据流。这个服务可以让我们使用强大的SQL代码来做实时的数据流分析、创建实时的参数。
 
+![](https://i.loli.net/2019/07/17/5d2e809e339b718586.png)
