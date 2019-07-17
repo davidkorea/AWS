@@ -68,6 +68,8 @@ Kinesis目前有不同的功能服务，我们需要了解每一个服务有什�
 
 ![](https://cdnstatic.iteablue.com/iteablue-production-data/wp-content/uploads/2018/08/aws-kinesisdata-streams.png)
 
+> **You might be doing sentiment analysis on Twitter on a particular hashtag. Do people feel good about this particular hashtag or do people feel bad about a particular hashtag.**
+
 ![](https://i.loli.net/2019/07/17/5d2e7f848031534584.png)
 ![](https://i.loli.net/2019/07/17/5d2e7f90a579d82675.png)
 
