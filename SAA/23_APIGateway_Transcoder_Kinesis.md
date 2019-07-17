@@ -1,3 +1,7 @@
+
+- If you don't care about data persistence you want to analyze it on the fly automatically.Using lambda then you're going to be using Kinesis firehose 
+- if you want to analyze your data inside Kinesis you can use Kinesis analytics and can Kinesis analytics analyzes the data inside both Kinesis streams and Kinesis firehose.
+
 # 1. API Gateway简介
 Amazon API Gateway可以让开发人员创建、发布、维护、监控和保护任何规模的API。你可以创建能够访问 AWS、其他 Web 服务以及存储在 AWS 云中的数据的API。
 
@@ -102,5 +106,8 @@ Kinesis Data Firehose可以让我们的**实时数据流传输到我们定义的
 使用Kinesis Data Analytics，我们可以使用标准的SQL语句来处理和分析我们的数据流。这个服务可以让我们使用强大的SQL代码来做实时的数据流分析、创建实时的参数。
 
 - Kinesis analytics works with Kinesis streams and with Kinesis firehose and essentially it can analyze the data on the fly inside either service and then it goes in and stores this data either on S3 redshift or elastic search cluster.
+
+- If you don't care about data persistence you want to analyze it on the fly automatically.Using lambda then you're going to be using Kinesis firehose 
+- if you want to analyze your data inside Kinesis you can use Kinesis analytics and can Kinesis analytics analyzes the data inside both Kinesis streams and Kinesis firehose.
 
 ![](https://i.loli.net/2019/07/17/5d2e809e339b718586.png)
