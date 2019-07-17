@@ -92,6 +92,10 @@ Kinesis Data Firehose可以让我们的**实时数据流传输到我们定义的
   - it can't directly output it to redshift you have to output it to S3 and then go basically import the data into redshift 
 - or it could be going on to elastic search cluster etc.
 
+- the key thing to remember the difference between Kinesis firehose and Kinesis streams 
+  - Kinesis streams has shards and your data has persistence by default. It's stored for 24 hours so this has all kinds of streams    
+  - whereas Kinesis firehose. There's no data persistence you need to do something with that data as soon as it comes in to firehose
+   
 ![](https://i.loli.net/2019/07/17/5d2e809c0b35594076.png)
 
 ### 3.2.4 Kinesis Data Analytics
