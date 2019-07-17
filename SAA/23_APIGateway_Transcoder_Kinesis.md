@@ -86,6 +86,12 @@ Kinesis Data Firehose可以让我们的**实时数据流传输到我们定义的
 
 ![](https://cdnstatic.iteablue.com/iteablue-production-data/wp-content/uploads/2018/08/fh-flow-s3.png)
 
+- There's no persistent storage. The data has to be analysed as it comes in.
+- You have to do something with your data so it's optional to have lambda functions inside your Kinesis firehose.
+- So as soon as the data comes in it triggers a lambda function lambda function runs a particular set of code for that data and then outputs it somewhere safe it could output it to S3 could output it to redshift 
+  - it can't directly output it to redshift you have to output it to S3 and then go basically import the data into redshift 
+- or it could be going on to elastic search cluster etc.
+
 ![](https://i.loli.net/2019/07/17/5d2e809c0b35594076.png)
 
 ### 3.2.4 Kinesis Data Analytics
