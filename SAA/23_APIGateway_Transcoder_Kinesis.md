@@ -68,6 +68,9 @@ Kinesis目前有不同的功能服务，我们需要了解每一个服务有什�
 
 ![](https://cdnstatic.iteablue.com/iteablue-production-data/wp-content/uploads/2018/08/aws-kinesisdata-streams.png)
 
+![](https://i.loli.net/2019/07/17/5d2e7f848031534584.png)
+![](https://i.loli.net/2019/07/17/5d2e7f90a579d82675.png)
+
 ### 3.2.2 Kinesis Video Streams
 - Kinesis Video Streams主要用来进行实时的视频处理，或者批量进行视频分析。
 - Kinesis Video Streams可以捕获来自多种设备类型的视频流数据（比如智能手机、网络摄像头、车载摄像头、无人机等）。
