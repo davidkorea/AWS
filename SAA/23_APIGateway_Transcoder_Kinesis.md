@@ -101,4 +101,6 @@ Kinesis Data Firehose可以让我们的**实时数据流传输到我们定义的
 ### 3.2.4 Kinesis Data Analytics
 使用Kinesis Data Analytics，我们可以使用标准的SQL语句来处理和分析我们的数据流。这个服务可以让我们使用强大的SQL代码来做实时的数据流分析、创建实时的参数。
 
+- Kinesis analytics works with Kinesis streams and with Kinesis firehose and essentially it can analyze the data on the fly inside either service and then it goes in and stores this data either on S3 redshift or elastic search cluster.
+
 ![](https://i.loli.net/2019/07/17/5d2e809e339b718586.png)
