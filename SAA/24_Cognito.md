@@ -1,5 +1,7 @@
 # Web Identity federation
 
+![](https://i.loli.net/2019/07/17/5d2e8ecb416eb74977.png)
+
 broker  v.	安排，协商(协议的细节，尤指在两国间)
 - User pool, user pools are all about usernames passwords that sort of thing.
 - Identity pool, Identity pools is the actual granting of authentication to your AWS resources.
