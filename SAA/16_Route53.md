@@ -12,7 +12,7 @@
 解析： How Health Checks Work in Complex Amazon Route 53 Configurations Checking the health of resources in complex configurations works much the same way as in simple configurations. However, in complex configurations, you use a **combination of alias resource recordsets (including weighted alias, latency alias, and failover alias)** and nonalias resource record sets to build a decision tree that gives you greater control over how Amazon Route 53 responds to requests. For more information, see How Health Checks Work in Simple Amazon Route 53 Configurations.
 
 Answer: [b], [e]
-
+同时使用了Latency-Based Routing，weighted Routing
 
 -----
 
