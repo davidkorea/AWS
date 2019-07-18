@@ -2,6 +2,8 @@
 
 Choosing a Routing Policy: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-latency
 
+Active-Active and Active-Passive Failover: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-types.html
+
 # 10. In AWS, the most common records are:
 - **A: URL to IPv4**
 - **AAAA: URL to IPv6**
