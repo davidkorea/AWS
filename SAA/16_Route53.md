@@ -10,7 +10,9 @@
 - **Alias: URL to AWS resource**
   - Alias可以连接到AWS的资源，以及当前HostZone中的记录
   - app.mydomain.com => abc.elb.**amazonaws.com**
-  - An Alias record can map one DNS name to another Amazon Route 53 DNS name.
+  - An Alias record can map one DNS name to another Amazon Route 53 DNS name
+  - Free of charge
+  - Native health check
     ![](https://i.loli.net/2019/07/18/5d2fe9192afe941584.png)
 
 
