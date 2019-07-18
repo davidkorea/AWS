@@ -1,5 +1,21 @@
 # Route53总结
 
+
+> **You have deployed a web application targeting a global audience across multiple AWS Regions under the domain name.example.com. You decide to use Route53 Latency-Based Routing to serve web requests to users from the region closest to the user. To provide business continuity in the event of server downtime you configure weighted record sets associated with two web servers in separate Availability Zones per region. Dunning a DR test you notice that when you disable all web servers in one of the regions Route53 does not automatically direct all users to the other region. What could be happening? {Choose 2 answers)**
+
+- a. Latency resource record sets cannot be used in combination with weighted resource record sets.
+- b. You did not setup an HTTP health check to one or more of the weighted resource record sets associated with the disabled web servers.
+- c. The value of the weight associated with the latency alias resource record set in the region with the disabled servers is higher than the weight for the other region.
+- d. One of the two working web servers in the other region did not pass its HTTP health check.
+- e. You did not set "Evaluate Target Health" to "Yes" on the latency alias resource record set associated with example com in the region where you disabled the servers.
+
+解析： How Health Checks Work in Complex Amazon Route 53 Configurations Checking the health of resources in complex configurations works much the same way as in simple configurations. However, in complex configurations, you use a **combination of alias resource recordsets (including weighted alias, latency alias, and failover alias)** and nonalias resource record sets to build a decision tree that gives you greater control over how Amazon Route 53 responds to requests. For more information, see How Health Checks Work in Simple Amazon Route 53 Configurations.
+
+Answer: [b], [e]
+
+
+-----
+
 Choosing a Routing Policy: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-latency
 
 Active-Active and Active-Passive Failover: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-types.html
