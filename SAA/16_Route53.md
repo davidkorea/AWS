@@ -6,7 +6,8 @@
 - **AAAA: URL to IPv6**
 - **CNAME: URL to URL**, An Amazon Route 53 CNAME record can point to any DNS record hosted anywhere.
 - **Alias: URL to AWS resource**, An Alias record can map one DNS name to another Amazon Route 53 DNS name.
-  ![](https://i.loli.net/2019/07/18/5d2fe9192afe941584.png)
+  - Alias可以连接到AWS的资源，以及当前HostZone中的记录
+    ![](https://i.loli.net/2019/07/18/5d2fe9192afe941584.png)
 
 
 
