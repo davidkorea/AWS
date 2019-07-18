@@ -3,11 +3,12 @@
 - 一个A记录可以包含多可web server的ip地址
 - 使用简单路由规则，会随机分配给A记录中的某一个ip
   - If multiple values are returned, a random one is chosen by the client(broswer)
-- Sinple Routing Policy
+- **Sinple Routing Policy**
   - You can’t attach health checks to simple routing policy
   
   ![](https://i.loli.net/2019/07/09/5d2405eaaab4789670.png)
-- Multivalue Routing Policy
+- **Multivalue Routing Policy**
+  - Your company hosts 10 web servers all serving the same web content in AWS. They want Route 53 to serve traffic to random web servers. Which routing policy will meet this requirement, and provide the best resiliency? 因为有健康检查
   ![](https://i.loli.net/2019/07/09/5d243abe9ab3871263.png)
 
 ## 1. create 2 EC2 in different Region
