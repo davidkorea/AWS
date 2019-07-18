@@ -1,4 +1,38 @@
 # Route53总结
+
+
+## In AWS, the most common records are:
+- A: URL to IPv4
+- AAAA: URL to IPv6
+- CNAME: URL to URL, An Amazon Route 53 CNAME record can point to any DNS record hosted anywhere.
+- Alias: URL to AWS resource, An Alias record can map one DNS name to another Amazon Route 53 DNS name.
+  ![](https://i.loli.net/2019/07/18/5d2fe9192afe941584.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----
+
+-----
+
 - With Route 53, there is a default limit of 50 domain names. However, this limit can be increased by contacting AWS support.
 - Your company hosts 10 web servers all serving the same web content in AWS. They want Route 53 to serve traffic to random web servers. Which routing policy will meet this requirement, and provide the best resiliency?
   - simple
