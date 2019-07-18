@@ -28,7 +28,7 @@ You can use Route 53 health checking to configure active-active and active-passi
   - 主动-被动模式，就是只是用failover routing policy路由策略
 
 - Use an active-passive failover configuration when you want a primary resource or groupof resources to be availablethe majority of the time and you want a secondary resource or group of resourcesto be on standby in case all theprimary resources become unavailable. When responding to queries, Route 53 includesonly the healthy primary resources.If all the primary resources are unhealthy, Route 53 begins to include only thehealthy secondary resources in response to DNS queries. 
-  - 如果主动的资源中，还有健康的，那么所有流量发送到主动中的EC2
+  - 如果主动的资源中，还有健康的，那么所有流量发送到主动中的健康EC2实例，因为可以设置多个primary，和多个secondary
   - 当所有主动的实例都挂掉了，才会启动被动中的健康实例
 
 
