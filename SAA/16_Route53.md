@@ -2,7 +2,7 @@
 
 Choosing a Routing Policy: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-latency
 
-## In AWS, the most common records are:
+## 10. In AWS, the most common records are:
 - **A: URL to IPv4**
 - **AAAA: URL to IPv6**
 - **CNAME: URL to URL**,
@@ -16,10 +16,14 @@ Choosing a Routing Policy: https://docs.aws.amazon.com/Route53/latest/DeveloperG
   - Native health check
     ![](https://i.loli.net/2019/07/18/5d2fe9192afe941584.png)
 
-## Active-Active and Active-Passive Failover
-You can use Route 53 health checking to configure active-active and active-passivefailover configurations. 
+## 20. Active-Active and Active-Passive Failover
+You can use Route 53 health checking to configure active-active and active-passive failover configurations. 
+### active-active
 - You configure **active-active** failover using any routing policy (or combination of routing policies) **other than failover routing policy**
   - 主动-主动模式，就是使用除了failover routing policy路由策**之外**的其他一个或多个策略
+- Use this failover configuration when you want **all of your resources to be availablethe** majority of the time. When a resourcebecomes unavailable, Route 53 can detect that it's unhealthy and stop includingit when responding to queries. 
+  - 所有web server都有机会被分配到流量来处理，如果健康检查失败，那么不再将流量发送到该实例
+### active-passive
 - and you configure **active-passive** failover using the **failover routing policy**. 
   - 主动-被动模式，就是只是用failover routing policy路由策略
 
