@@ -4,7 +4,7 @@ Choosing a Routing Policy: https://docs.aws.amazon.com/Route53/latest/DeveloperG
 
 Active-Active and Active-Passive Failover: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-types.html
 
-# 10. In AWS, the most common records are:
+# 10. In AWS, the most common records
 - **A: URL to IPv4**
 - **AAAA: URL to IPv6**
 - **CNAME: URL to URL**,
@@ -17,6 +17,9 @@ Active-Active and Active-Passive Failover: https://docs.aws.amazon.com/Route53/l
   - Free of charge
   - Native health check
     ![](https://i.loli.net/2019/07/18/5d2fe9192afe941584.png)
+  - TTL can **NOT** be set for an Alias record in Amazon Route 53.
+    ![](https://i.loli.net/2019/07/18/5d3011936e48412016.png)
+
 
 # 20. Active-Active and Active-Passive Failover
 You can use Route 53 health checking to configure active-active and active-passive failover configurations. 
