@@ -4,8 +4,8 @@
 Different from Latency based!
 - This is routing based on user location
 - Here we specify: traffic from the UK should go to this specific IP
-- Should create a “default” policy (in case there’s no match on location)
-
+- Should create a **“default”** policy (in case there’s no match on location)
+  ![](https://i.loli.net/2019/07/18/5d3001171eaf853684.png)
 
 
 ![](https://i.loli.net/2019/07/09/5d2430a501a3a64747.png)
