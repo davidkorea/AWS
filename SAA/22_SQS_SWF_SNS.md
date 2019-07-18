@@ -54,7 +54,7 @@ SQS有两种不同类型的队列，它们分别是：
   - 如果这个**消息在Visibility Timeout时间结束之后还没有被处理完，则这个消息会设置为可见状态，等待另一个程序来进行处理**
   - 只应于标准队列吧，因为在FIFO队列中，在队列中的消息都只会不多不少地被处理一次
   - 因此同一个消息可能会被处理两次（或以上）
-  - 这个超时时间最大可以设置为12小时
+  - 这个**可见性超时时间最大可以设置为12小时**
   - 标准SQS队列保证了每一个在队列内的消息都至少会被处理一次
 - 长轮询（Long Polling）
   - 默认情况下，Amazon SQS使用短轮训（Short Polling），即应用程序每次去查询SQS队列，SQS都会做回应（哪怕队列一直是空的）
@@ -86,6 +86,9 @@ SNS通知还可以发送推送通知到IOS，安卓，Windows和基于百度的�
 - SQS
 - Application
 - Lambda
+
+> A user has deployed an application on his private cloud. The user is using his own monitoring tool. He wants to configure it so that whenever there is an error, the monitoring tool will notify him via SMS. Which of the below mentioned AWS services will help in this scenario?
+> - Amazon SNS can deliver notifications by SMS text message or email to the Amazon Simple Queue Service (SQS) queues or to any HTTP endpoint. In this case user can use the **SNS apis** to send SMS.
 
 
 # 3. SWF (Simple Workflow Service)简介
