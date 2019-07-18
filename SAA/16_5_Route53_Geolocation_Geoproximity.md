@@ -1,4 +1,4 @@
-# Route53_GeolocationRouting
+# Route53_Geolocation, Geoproximity Routing
 
 
 Different from Latency based!
