@@ -1,5 +1,8 @@
 # Route53_WeightedRouting
 
+- Helpful to test 1% of traffic on new app version for example
+- Helpful to split traffic between two regions
+
 ### 1. Create 2 EC2 in different Region
 
 ### 2. 创建运行状况检查 Health checks
