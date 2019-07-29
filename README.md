@@ -1,6 +1,6 @@
 # AWS
 
-siyin training
+siyin training - finished
 
 ![]()
 -----
