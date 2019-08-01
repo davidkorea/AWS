@@ -13,7 +13,7 @@ Placement Group的特点
     - 内存优化型：cr1.8xlarge、R3、R4、R5、R5a、R5ad、R5d、X1、X1e 和 z1d
     - 存储优化型：D2、H1、hs1.8xlarge、I2、I3 和 I3en
     - 加速计算型：F1、G2、G3、P2 和 P3
-  - 所以在创建t2.micro实例时，无法选择cluster放置组，但是可以选择spread防止组。
+  - **在创建t2.micro实例时，无法选择cluster放置组，但是可以选择spread防止组**
     ![](https://i.loli.net/2019/08/01/5d42872962dd192724.png)
     
 - AWS建议在一个Placement Group内的所有EC2实例是一模一样的，否则会有短板效应
