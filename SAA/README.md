@@ -27,7 +27,7 @@
 ![](https://i.loli.net/2019/08/02/5d43e6f791f2153448.png)
 
 **参考： [Wordpress最佳实践 - Auto Scaling Group](https://github.com/davidkorea/AWS/blob/master/SAA/30_HA_Wordpress.md#34-auto-scaling-group)**
-
+![](https://camo.githubusercontent.com/2e313a08b65db6871cb39b3ae40c1c15a609cb6b/68747470733a2f2f692e6c6f6c692e6e65742f323031392f30372f31312f3564323661663634383434623731393330372e706e67)
 
 -----
 
