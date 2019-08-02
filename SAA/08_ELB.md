@@ -66,11 +66,13 @@ Connection Draining的可设置时间限制范围是1~3600秒（默认为300秒�
 
 ![](https://i.loli.net/2019/08/02/5d43ad2e540c336920.png)
 
-## 1.6 粘性会话/会话关联（Sticky Sessions/Session Affinity）
+### 1.6 粘性会话/会话关联（Sticky Sessions/Session Affinity）
 默认情况下，Classic Load Balancer会将每一个用户请求转发到负载最小的已注册实例上。
 - 但是如果启用Sticky Sessions /Session Affinity，则在**会话期间ELB会将来自某个用户的所有请求都转发到同一个实例上**。
   ![](https://i.loli.net/2019/08/02/5d43b0d40f67419996.png)
+  
 - **Application Load Balancer同样适用**
+  ![](https://i.loli.net/2019/08/02/5d43b1e88d46851422.png)
   ![](https://i.loli.net/2019/06/20/5d0b2c62eaf2584622.png)
   - **can be useful when you are storing infomation locally to that instance**
 
