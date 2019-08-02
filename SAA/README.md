@@ -3,7 +3,7 @@
 
 ![](https://i.loli.net/2019/08/02/5d43e3a39492c15908.jpg)
 
-[向 Auto Scaling 组添加 Elastic Load Balancing 运行状况检查](https://docs.aws.amazon.com/zh_cn/autoscaling/ec2/userguide/as-add-elb-healthcheck.html)
+**[向 Auto Scaling 组添加 Elastic Load Balancing 运行状况检查](https://docs.aws.amazon.com/zh_cn/autoscaling/ec2/userguide/as-add-elb-healthcheck.html)**
 
 - The **default health checks** for an **Auto Scaling group** are **EC2 status checks only**. If an instance fails these status checks, the **Auto Scaling group** considers the instance unhealthy and replaces it. 
   - ASG 默认针对单个EC2进行健康检查，检查失败，则替换该实例，并创建新的
@@ -14,6 +14,10 @@
 
 - However, you can optionally configure the **Auto Scaling grou**p to **use Elastic Load Balancing health checks**.This ensures that the group can determine an instance's health based on additional **tests provided by the load balancer**. The load balancer periodically sends pings,attempts connections, or sends requests to test the EC2 instances. These tests arecalled health checks. 
   - 将默认检查EC2，改为检查ELB的健康。那么ASG可以接受ELB的健康检查结果
+
+![](https://i.loli.net/2019/08/02/5d43e6f5450e127546.png)
+![](https://i.loli.net/2019/08/02/5d43e6f791f2153448.png)
+
 
 -----
 
