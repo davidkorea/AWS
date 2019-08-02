@@ -35,23 +35,24 @@ AWS中ELB的存在，很好地替代了传统数据中心中F5负载均衡器的
 - 基于ELB在所处应用架构中的位置不同，可以分两个类型ELB
   - Internet Load Balancer – 是面向公网的负载均衡器，能接受来自Internet用户的连接请求
   - Internal Load Balancer – 是面向AWS私有网段的负载均衡器，一般仅服务于AWS内部的资源。典型的使用案例是放置在前端服务器和后端服务器之间
-## 1.1 DNS解析
+### 1.1 DNS解析
 - ELB会以DNS (Domain Name System)的形式显示在AWS管理控制台，并且会动态解析不同公网IP地址，我们在使用ELB时要尽量用DNS来对它进行访问，而不是IP地址
 - 在ELB进行弹性扩容的时候，它的DNS记录会被更新，DNS会解析到新的IP地址上（因此这也是上面所说的我们要尽量用DNS名来访问ELB）
 - DNS记录的TTL时间是60秒
 - 建议客户端（程序）每60秒更新DNS查找记录，以获取最新的ELB地址和最好的ELB性能
-## 1.2 健康检查（Health Check)
+### 1.2 健康检查（Health Check)
 ELB在每一个**健康检查间隔（HealthCheck Interval）**都会向所有已注册的实例发送基于**Ping、端口或者（网页）路径**的检查数据包，并且在**响应超时（Response Timeout）** 这个时间内等待实例的回复。如果连续 **没有** 得到回复的次数超过定义的**不健康阈值（Unhealthy Threshold）**，那么这个实例会被标记为**OutofService**。如果在连续得到实例回复的次数超过了**健康阈值（Healthy Threshold）**的话，那么这个实例会被重新标记为**Inservice**状态。
 
-![](https://i.loli.net/2019/08/02/5d43a74d76b4e52833.png)
+[](https://i.loli.net/2019/08/02/5d43a74d76b4e52833.png)
+![](https://i.loli.net/2019/08/02/5d43ac729890a52072.png)
 
 - ELB会对所有注册到这个ELB上的EC2实例进行健康检查，无论目前的健康状态如何
 - ELB的监控状态分别为InService（表示健康）或者OutofService（表示不健康）
-## 1.3 监听器（Listeners）
+### 1.3 监听器（Listeners）
 - Listeners可以用来监听用户对ELB发起的请求，以及ELB和后台EC2实例之间的请求
 - Listeners可以定义监听的协议和端口
 - Listeners支持**HTTP, HTTPS, SSL, TCP协议**
-## 1.4 连接耗尽（Connection Draining）
+### 1.4 连接耗尽（Connection Draining）
 默认情况下，一个已注册在ELB的EC2实例取消了注册或者进入OutofService状态，那么ELB会马上切断这个实例正在进行的连接。
 
 为了保证Classic Load Balancer中当有实例变成不健康的状态（OutofService）或者正在取消注册，而**该实例上已经建立的连接不受影响**， 请启用Connection Draining功能。它能**保证该不健康的实例在处理完所有已有的连接请求之后，才真正地从ELB内去除，接着ELB不会再转发请求给这个实例**。
