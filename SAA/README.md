@@ -1,6 +1,12 @@
 # AWS
 
 
+![](https://i.loli.net/2019/08/02/5d43e3a39492c15908.jpg)
+- [向 Auto Scaling 组添加 Elastic Load Balancing 运行状况检查](https://docs.aws.amazon.com/zh_cn/autoscaling/ec2/userguide/as-add-elb-healthcheck.html)
+
+
+-----
+
 New AWS account soft limit of 20 EC2 per region?? per AZ?? -- **per region**
 
 -----
