@@ -97,6 +97,8 @@ Connection Draining的可设置时间限制范围是1~3600秒（默认为300秒�
   
 - ALB支持通过IP地址进行目标注册，包括位于VPC之外的目标。即可以在一个ALB中定义4个AWS中的EC2实例，同时定义2个来自**公司内的物理服务器**。
   - 负载均衡器背后的服务器不仅可以是AWS中的EC2实例，也可以是其他地方的服务器。让负载均衡器将负载分配给来自不同地方的服务器。
+  ![](https://i.loli.net/2019/08/02/5d43b4353c4b354772.png)
+  
 - 支持容器化的应用程序
 
 扩展阅读：[什么是应用程序负载均衡器？](https://docs.aws.amazon.com/zh_cn/elasticloadbalancing/latest/application/introduction.html)
