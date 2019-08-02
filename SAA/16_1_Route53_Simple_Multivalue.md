@@ -8,6 +8,7 @@
   
   ![](https://i.loli.net/2019/07/09/5d2405eaaab4789670.png)
 - **Multivalue Routing Policy**
+  - 每次只能绑定一个IP，有多少个IP，则创建多少个Multivalue策略的记录
   - Your company hosts 10 web servers all serving the same web content in AWS. They want Route 53 to serve traffic to random web servers. Which routing policy will meet this requirement, and provide the best resiliency? 因为有健康检查
   ![](https://i.loli.net/2019/07/09/5d243abe9ab3871263.png)
 
