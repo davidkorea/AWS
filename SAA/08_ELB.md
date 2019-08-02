@@ -52,7 +52,12 @@ ELB在每一个**健康检查间隔（HealthCheck Interval）**都会向所有�
 - Listeners可以用来监听用户对ELB发起的请求，以及ELB和后台EC2实例之间的请求
 - Listeners可以定义监听的协议和端口
 - Listeners支持**HTTP, HTTPS, SSL, TCP协议**
-### 1.4 连接耗尽（Connection Draining）
+
+### 1.4 Cross Zone Load balancing
+![](https://i.loli.net/2019/08/02/5d43ad921865f12838.png)
+
+![](https://i.loli.net/2019/06/20/5d0b2db99a5b849911.png)
+### 1.5 连接耗尽（Connection Draining）
 默认情况下，一个已注册在ELB的EC2实例取消了注册或者进入OutofService状态，那么ELB会马上切断这个实例正在进行的连接。
 
 为了保证Classic Load Balancer中当有实例变成不健康的状态（OutofService）或者正在取消注册，而**该实例上已经建立的连接不受影响**， 请启用Connection Draining功能。它能**保证该不健康的实例在处理完所有已有的连接请求之后，才真正地从ELB内去除，接着ELB不会再转发请求给这个实例**。
@@ -61,17 +66,16 @@ Connection Draining的可设置时间限制范围是1~3600秒（默认为300秒�
 
 ![](https://i.loli.net/2019/08/02/5d43ad2e540c336920.png)
 
-## 1.5 粘性会话/会话关联（Sticky Sessions/Session Affinity）
-- 默认情况下，Classic Load Balancer会将每一个用户请求转发到负载最小的已注册实例上。
-  - 但是如果启用Sticky Sessions /Session Affinity，则在**会话期间ELB会将来自某个用户的所有请求都转发到同一个实例上**。
-  - **Application Load Balancer同样适用**
-    ![](https://i.loli.net/2019/06/20/5d0b2c62eaf2584622.png)
-    - **can be useful when you are storing infomation locally to that instance**
-    
-    ![](https://i.loli.net/2019/06/20/5d0b2c673ff8116691.png)
+## 1.6 粘性会话/会话关联（Sticky Sessions/Session Affinity）
+默认情况下，Classic Load Balancer会将每一个用户请求转发到负载最小的已注册实例上。
+- 但是如果启用Sticky Sessions /Session Affinity，则在**会话期间ELB会将来自某个用户的所有请求都转发到同一个实例上**。
+- **Application Load Balancer同样适用**
+  ![](https://i.loli.net/2019/06/20/5d0b2c62eaf2584622.png)
+  - **can be useful when you are storing infomation locally to that instance**
 
-## 1.6 Cross Zone Load balancing
-![](https://i.loli.net/2019/06/20/5d0b2db99a5b849911.png)
+  ![](https://i.loli.net/2019/06/20/5d0b2c673ff8116691.png)
+
+
 
 
 # 2. 应用程序负载均衡器（Application Load Balancer）
