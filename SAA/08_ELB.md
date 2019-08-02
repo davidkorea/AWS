@@ -59,6 +59,8 @@ ELB在每一个**健康检查间隔（HealthCheck Interval）**都会向所有�
 
 Connection Draining的可设置时间限制范围是1~3600秒（默认为300秒）。当达到这个最大时限时，不管当前实例是否处理完请求，ELB都会强制关闭与这个实例的连接。
 
+![](https://i.loli.net/2019/08/02/5d43ad2e540c336920.png)
+
 ## 1.5 粘性会话/会话关联（Sticky Sessions/Session Affinity）
 - 默认情况下，Classic Load Balancer会将每一个用户请求转发到负载最小的已注册实例上。
   - 但是如果启用Sticky Sessions /Session Affinity，则在**会话期间ELB会将来自某个用户的所有请求都转发到同一个实例上**。
