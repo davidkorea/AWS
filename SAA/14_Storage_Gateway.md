@@ -17,4 +17,7 @@ AWS Storage Gateway 是一种具有无缝本地集成和优化数据传输的混
 
 备注：参加旧版本考试的朋友，可能会遇到关于 Storage Gateway 的问题，但其中会使用旧的名称。Stored Volumes 旧名称是 Gateway Stored Volumes；Cached Volumes 旧名称是 Gateway Cached Volumes, Tape Gateway 旧名称是 Gateway Virtual Tape Library (VTL)。
 
+
+![](https://i.loli.net/2019/08/02/5d43edc89750a72877.png)
+
 ![](https://i.loli.net/2019/06/16/5d0604fc49f9f96817.png)
