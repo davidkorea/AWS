@@ -1,6 +1,14 @@
 # AWS
 
 
+
+
+
+
+
+
+-----
+
 ![](https://i.loli.net/2019/08/02/5d43e3a39492c15908.jpg)
 
 **参考： [向 Auto Scaling 组添加 Elastic Load Balancing 运行状况检查](https://docs.aws.amazon.com/zh_cn/autoscaling/ec2/userguide/as-add-elb-healthcheck.html)**
@@ -17,6 +25,8 @@
 
 ![](https://i.loli.net/2019/08/02/5d43e6f5450e127546.png)
 ![](https://i.loli.net/2019/08/02/5d43e6f791f2153448.png)
+
+**参考： [Wordpress最佳实践 - Auto Scaling Group](https://github.com/davidkorea/AWS/blob/master/SAA/30_HA_Wordpress.md#34-auto-scaling-group)**
 
 
 -----
