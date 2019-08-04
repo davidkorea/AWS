@@ -114,7 +114,7 @@ VPC Peering可是两个VPC之间的网络连接，通过此连接，你可以使
 
 ## 1.6 NAT Instance & NAT Gateway
 ### NAT实例（NAT Instance）
-- 创建NAT实例之后，一定要关闭源/目标检查（Source/Destination Check）
+- 创建NAT实例之后，一定要 **关闭** 源/目标检查（Source/Destination Check）
 - NAT实例需要创建在公有子网内
 - 私有子网需要创建一条默认路由（0.0.0.0/0），指到NAT实例
 - NAT实例的瓶颈在于实例的大小，如果遇到了网络吞吐瓶颈，你可以加大实例类型
