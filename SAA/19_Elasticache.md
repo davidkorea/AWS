@@ -1,4 +1,23 @@
 # Elasticache简介
+
+ElastiCache is a web service that makes it easy to deploy and run Memcached or Redis protocol-compliant server nodes in the cloud. The in-memory caching provided by ElastiCache can be used to significantly improve latency and throughput for many read-heavy application workloads or compute-intensive workloads
+
+There are two different database engines with different characteristics as per below:
+- Memcached
+  - Not persistent
+  - Cannot be used as a data store
+  - Supports large nodes with multiple cores or threads
+  - Scales out and in, by adding and removing nodes
+  
+- Redis
+  - Data is persistent
+  - Can be used as a datastore
+  - Not multi-threaded
+  - Scales by adding shards, not nodes
+
+
+-----
+
 Elasticache是AWS提供的分布式内存对象缓存系统，可以有效地提升现有应用程序的性能。利用Elasticache，用户可以从高吞吐和低延迟的内存数据存储中检索数据。
 
 Elasticache通过在内存中缓存数据来减少对象读取数据库的次数，减轻了数据库的负载，以及提高了网站的访问速度（内存的访问速度比磁盘的访问速度高很多）。一般来说我们会把相对来说更新频繁的“热数据”放在Elasticache中，把“冷数据”还是放在数据库中，以支持及时的更新。
