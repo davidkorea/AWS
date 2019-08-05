@@ -104,7 +104,10 @@ IETF RFC1918定义了私有网络的地址范围，这些私有网络一般仅�
 ## 1.4 VPC Peering
 VPC Peering可是两个VPC之间的网络连接，通过此连接，你可以使用IPv4地址在两个VPC之间传输流量。这两个VPC内的实例会和如果在同一个网络一样彼此通信。
 
-- 可以通过AWS内网将一个VPC与另一个VPC相连
+- **Peering Connections对等连接**，可以**不同AWS账户**，**不同Region**进行连接
+  - cannot do **transitive peering** so a **hub and spoke architecture** would not allow all VPCs to communicate directly with each other. For this you need to establish a **mesh topology**，即，需要互相设置两两peering连接
+  ![](https://i.loli.net/2019/08/05/IzdMamT7cfCZuAp.png)
+  
 - 同一个AWS账号内的2个VPC可以进行VPC Peering
 - 不同AWS账号内的VPC也可以进行VPC Peering
 - 不支持VPC Transitive Peering
