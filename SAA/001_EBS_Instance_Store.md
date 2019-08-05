@@ -1,5 +1,12 @@
 # 1. EBS 101
 
+
+If you make periodic snapshots of a volume, the snapshots are incremental, which means that only the blocks on the device that have changed after your last snapshot are saved in the new snapshot
+
+Even though snapshots are saved incrementally, the snapshot deletion process is designed so that you need to **retain only the most recent snapshot in order to restore the volume**
+
+-----
+
 - **EBS is a persistent block storage automatically replicated within its AZ to protect from component failure**，同一个AZ内有备份
 - **EBS is virtual disk, and volumes run on it.**，EBS是一个硬盘，里面包含root和其他卷分区volume
 - **snapshot of EBS volume is stored in S3, but not visible in your account S3, in AWS's S3**
