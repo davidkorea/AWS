@@ -37,19 +37,19 @@ Auto Scaling 适用于那些需求稳定的应用程序，同时也适用于在�
 - 始终保持当前实例级别：比如始终保持一个ASG有恒定的3个健康实例
   ![](https://i.loli.net/2019/08/05/Jzdn6vBrfTywmXP.png)
 - 手动扩展：手动更改参数最大容量、最小容量或者所需容量来控制ASG内实例的数量
-
-- 按计划扩展Scheduled scaling：根据定义的具体时间来弹性扩展实例的数量
-
+  ![](https://i.loli.net/2019/08/05/QGaYhdnmqbciUTe.png)
+- 按计划扩展Scheduled scaling：根据定义的具体时间来弹性扩展实例的数量。创建ASG时，无法设定按计划扩展，需要在创建后，在进行设定
+  ![](https://i.loli.net/2019/08/05/Pi54aLmvpTbn2A6.png)
+  
 - 使用**扩展策略**调整此组的容量：结合CloudWatch来基于参数进行扩展（比如说当CPU利用率持续10分钟在70%以上就自动进行向上扩展，即增加EC2实例数量；而当CPU利用率持续10分钟在30%以下就自动进行向下扩展，即减少EC2实例数量）
   - 使用**目标跟踪扩展策略**扩展 Auto Scaling 组
     ![](https://i.loli.net/2019/08/05/X4OTUK9zdHSDYvL.png)
   - 使用**分步扩展策略**或**简单扩展策略**扩展 Auto Scaling 组
     - **分步扩展策略**
       ![](https://i.loli.net/2019/08/05/OEAKI86jCM4LTvn.png)
-    - *简单扩展策略**
+    - **简单扩展策略**
       ![](https://i.loli.net/2019/08/05/waprbBXisq3P4dT.png)
       
-扩展阅读：更多关于扩展选项的内容可以查看扩展 Auto Scaling 组的大小
 
 # 4. 默认的实例终止策略
 如果你的Auto Scaling Group中包含了分布在不同可用区的实例时，当涉及到需要终止实例的情况下，Auto Scaling Group会按照以下顺序的规律终止实例。
