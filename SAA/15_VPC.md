@@ -2,7 +2,7 @@
 
 
 - NAT Gateway 是有EIP的
-  ![](https://sm.ms/image/uJHGWigU2Ob1dae)
+  ![](https://i.loli.net/2019/08/05/uJHGWigU2Ob1dae.png)
 
 - 创建NAT实例之后，一定要 **关闭** 源/目标检查（Source/Destination Check）
 
