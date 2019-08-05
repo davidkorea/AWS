@@ -1,7 +1,8 @@
 
-- **Peering Connections对等连接**，可以不同AWS账户，不同Region进行连接
+- **Peering Connections对等连接**，可以**不同AWS账户**，**不同Region**进行连接
   - cannot do **transitive peering** so a **hub and spoke architecture** would not allow all VPCs to communicate directly with each other. For this you need to establish a **mesh topology**，即，需要互相设置两两peering连接
-
+  ![](https://i.loli.net/2019/08/05/IzdMamT7cfCZuAp.png)
+  
 - NAT Gateway 是有EIP的
   ![](https://i.loli.net/2019/08/05/uJHGWigU2Ob1dae.png)
 
