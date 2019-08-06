@@ -1,7 +1,7 @@
 # AWS
 
 
-
+finer grain 更细的颗粒度，更详细的
 
 
 
