@@ -53,7 +53,13 @@
 - Static parameters are applied after instance reboot
 - You can modify parameter group associated with a DB (must reboot)
 
-
+# 6. RDS API for SysOps
+- `DescribeDBInstances` API –
+  - Helps to get a list of all the DB Instances you have deployed including Read Replicas
+  - Helps to get the DB version
+- `CreateDBSnapshot` API – Make a snapshot of a DB
+- `DescribeEvents` API - Helps to return information about events related to your DB Instance
+- `RebootDBInstance` API - Helps to initiate a ‘forced’ failover by rebooting DB instance
 
 
 
