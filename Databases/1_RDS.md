@@ -12,17 +12,17 @@
   - MariaDB
 
 # 2. RDS Multi AZ
-• SYNC replication
-• One DNS name – automatic app failover to standby
-• Failover in case of loss of AZ, loss of network, instance or storage failure
-• No manual intervention干预，干涉 in apps
+- SYNC replication
+- One DNS name – automatic app failover to standby
+- Failover in case of loss of AZ, loss of network, instance or storage failure
+- No manual intervention干预，干涉 in apps
 
 # 3. RDS Backups
 - Backups are automatically enabled in RDS
 - Automated backups:
-  • Daily full snapshot of the database
-  • Capture transaction logs in real time => ability to restore to any point in time
-  • 7 days retention (can be increased to 35 days)
+  - Daily full snapshot of the database
+  - Capture transaction logs in real time => ability to restore to any point in time
+  - 7 days retention (can be increased to 35 days)
 - DB Snapshots:
-  • Manually triggered by the user
-  • Retention of backup for as long as you want
+  - Manually triggered by the user
+  - Retention of backup for as long as you want
