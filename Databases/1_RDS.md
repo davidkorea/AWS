@@ -41,7 +41,22 @@
 - Encryption at rest capability with AWS KMS - AES-256 encryption
 - SSL certificates to encrypt data to RDS in flight. To enforce SSL:
   - PostgreSQL: `rds.force_ssl=1` in the AWS RDS Console (Parameter Groups)
-  - MySQL: Within the DB: `GRANT USAGE ON *.* TO 'mysqluser'@'%' REQUIRE SSL;`
+  - MySQL/MariaDB: Within the DB: `GRANT USAGE ON *.* TO 'mysqluser'@'%' REQUIRE SSL;`
 - To connect using SSL:
   - Provide the SSL Trust certificate (can be download from AWS)
   - Provide SSL options when connecting to database
+
+
+# 5. DB Parameter Groups
+- You can configure the DB engine using Parameter Groups
+- Dynamic parameters are applied immediately
+- Static parameters are applied after instance reboot
+- You can modify parameter group associated with a DB (must reboot)
+
+
+
+
+
+
+
+
