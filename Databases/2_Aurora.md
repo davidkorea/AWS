@@ -20,4 +20,5 @@
   - If there is contention between 2 or more replicas in the same priority tier, then Amazon RDS will promote the replica that is the same size as the primary instance
   - Priority tier logic: Tier 0 > Tier 1 > … > Tier 15
   ![](https://i.loli.net/2019/08/08/wiyVdMlkCsxXv8S.png)
-- Support for Cross Region Replication
+- Support for Cross Region Read Replication
+  ![](https://i.loli.net/2019/08/08/IFlUBYy61RxWzrA.png)
