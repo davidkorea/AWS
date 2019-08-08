@@ -12,10 +12,17 @@
   - MariaDB
 
 # 2. RDS Multi AZ
-- SYNC replication
+- **SYNC** replication
 - One DNS name – automatic app failover to standby
-- Failover in case of loss of AZ, loss of network, instance or storage failure
-- No manual intervention干预，干涉 in apps
+- The failover happens only in the following conditions:
+  - The primary DB instance fails
+  - An Availability Zone outage
+  - The DB instance server type is changed
+  - The operating system of the DB instance is undergoing software patching
+  - A manual failover of the DB instance was initiated using Reboot with failover
+- No failover for DB operations: long-running queries, deadlocks or database corruption errors.
+- Backups are created from the standby
+- Multi AZ is only within a **single region**, NOT cross region. Region outages impact availability
 
 # 3. RDS Backups
 - Backups are automatically enabled in RDS
