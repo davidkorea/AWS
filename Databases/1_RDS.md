@@ -62,6 +62,48 @@
 - `RebootDBInstance` API - Helps to initiate a ‘forced’ failover by rebooting DB instance
 
 
+# 7. RDS with CloudWatch
+- CloudWatch metrics associated with RDS (gathered from the hypervisor):
+  - Database Connections
+  - SwapUsage
+  - ReadIOPS / WriteIOPS
+  - ReadLatency / WriteLatency
+  - ReadThroughPut / WriteThroughPut
+  - DiskQueueDepth
+  - FreeStorageSpace
+- Enhanced Monitoring (gathered from an agent on the DB instance)
+  - Useful when you need to see how different **processes or threads use the CPU**
+  - Access to over 50 new CPU, memory, file system, and disk I/O metrics
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
