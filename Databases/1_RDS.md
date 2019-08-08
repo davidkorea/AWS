@@ -29,8 +29,8 @@
 # 3. RDS Backups
 - Backups are automatically enabled in RDS
 - Automated backups:
-  - Daily full snapshot of the database
-  - Capture transaction logs in real time => ability to restore to any point in time
+  - Backups happen during maintenance windows, changes to the backup window take effect immediately. Daily full snapshot of the database
+  - Backups are “continuous” and allow **point in time recovery**, Capture transaction logs in real time
   - 7 days retention (can be increased to 35 days)
 - DB Snapshots:
   - Manually triggered by the user
