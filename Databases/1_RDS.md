@@ -23,7 +23,7 @@
   - The operating system of the DB instance is undergoing software patching
   - A manual failover of the DB instance was initiated using Reboot with failover
 - No failover for DB operations: long-running queries, deadlocks or database corruption errors.
-- Backups are created from the standby
+- Backups and snapshot are created from the standby, will not stop the master db
 - Multi AZ is only within a **single region**, **NOT cross region**. Region outages impact availability
 
 # 3. RDS Backups
@@ -31,12 +31,12 @@
 - Automated backups:
   - Backups happen during maintenance windows, changes to the backup window take effect immediately. Daily full snapshot of the database
   - Backups are “continuous” and allow **point in time recovery**, Capture transaction logs in real time
-  - 7 days retention (can be increased to 35 days)
+  - 7 days retention (can be 0 to 35 days)
 - DB Snapshots:
   - Manually triggered by the user
   - Retention of backup for as long as you want
-
-
+  - Snapshots takes IO operations and can **stop database** from seconds to minutes
+    - if Multi-AZ，snapshot created by standby instance, don’t impact the master – just the standby
 # 4. RDS Encryption
 - Encryption at rest capability with AWS KMS - AES-256 encryption
 - SSL certificates to encrypt data to RDS in flight. To enforce SSL:
