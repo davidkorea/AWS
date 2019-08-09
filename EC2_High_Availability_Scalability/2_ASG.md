@@ -33,3 +33,16 @@ We can suspend暂停 these processes!
 - Good to know CLI:
   - set-instance-health
   - terminate-instance-in-auto-scaling-group
+
+
+# 3. Troubleshooting ASG issues
+- <number of instances> instance(s) are already running. Launching EC2 instance failed.
+  - The Auto Scaling group has reached the limit set by the DesiredCapacity parameter. Update your Auto Scaling group by providing a new value for the desired capacity.
+- Launching EC2 instances is failing:
+  - The **security group does not exist**. SG might have been deleted
+  - The **key pair does not exist**. The key pair might have been deleted
+- If the ASG fails to launch an instance for over 24 hours, it will automatically suspend the processes (administration suspension)
+  
+  
+  
+  
