@@ -2,6 +2,8 @@
 
 - **stop， restart EC2 instance will not lose Private IPv4.**
     ![](https://i.loli.net/2019/08/10/fDc3owzHSvWJByP.png)
+- Change EC2 type
+    - Stop instance first and change to another tyoe like t2.large 
     
 # 1. Placement Group
     - Cluster, SAME AZ and SAME Hardware
