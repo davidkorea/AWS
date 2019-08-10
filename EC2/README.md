@@ -94,10 +94,10 @@ To find the exact reason, check out the EC2 console of AWS - instances - Descrip
     - You pay extra money if you go over your credit balance, but you don’t lose in performance
     
 # 7. AMI
-## 7.1 Share an AMI
+### 7.1 Share an AMI
 You can share an AMI with another AWS account.
 - Sharing an AMI does not affect the ownership of the AMI.
-## 7.2 Copy an AMI 
+### 7.2 Copy an AMI 
 - If you copy an AMI that has been shared with your account, you are the owner of the target AMI in your account.
 
 - To copy an AMI that was shared with you from another account, the owner of the source AMI must grant you read permissions for the storage that backs the AMI, either the associated EBS snapshot (for an Amazon EBS-backed AMI) or an associated S3 bucket (for an instance store-backed AMI).
@@ -113,12 +113,66 @@ You can share an AMI with another AWS account.
 
 # 8. CloudWatch Metrics for EC2
 
-# 8.1 EC2 included metrics
+### 8.1 EC2 included metrics
 - CPU: CPU Utilization + Credit Usage / Balance
 - Network: Network In / Out
 - Status Check:
 - Instance status = check the EC2 VM
 - System status = check the underlying hardware
 - Disk: Read / Write for Ops / Bytes ( **Instance Store ONLY**, EBS based EC2 has no Disk metric)
+
+### 8.2 EC2 Custom Metrics
+Sample custom metrics for EC2: 
+- RAM usage
+- Swap usage
+- Any custom metric for your application (requests per seconds, etc.. )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
