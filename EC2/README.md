@@ -42,6 +42,19 @@ To find the exact reason, check out the EC2 console of AWS - instances - Descrip
 
 ![](https://i.loli.net/2019/08/10/xGo7NgARjHSdeab.png)
 
+# 4. EC2 SSH trouble
+- Make sure the private key (pem file) on your linux machine has 400 permissions, else you will get “Unprotected Private Key File error”
+    - if you chown 755, 权限太高，也允许，只能使用400
+- Make sure the username（ec2-user） for the OS is given correctly when logging via SSH, else you will get “Host key not found” error.
+- Possible reasons for ‘connection timeout’ to EC2 instance via SSH : 
+    - SG is not configured correctly.
+    - CPU load of the instance is high
+
+
+
+
+
+
 
 
 
