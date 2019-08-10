@@ -80,8 +80,18 @@ To find the exact reason, check out the EC2 console of AWS - instances - Descrip
     - May share hardware with other instances in same account
     - No control over instance placement (can move hardware after Stop / Start)
 
-
-
-
+# 6. EC2 InstanceTypes – Main ones
+- R: applications that needs a lot of RAM – in-memory caches
+- C: applications that needs good CPU – compute / databases
+- M: applications that are balanced (think “medium”) – general / web app • I: applications that need good local I/O (instance storage) – databases
+- G: applications that need a GPU – video rendering / machine learning
+- T2 / T3: burstable instances (up to a capacity) 
+    - When the machine needs to process something unexpected (a spike in load for example), it can burst, and CPU can be VERY good.
+    - If the machine bursts, it utilizes “burst credits”
+    - If all the credits are gone, the CPU becomes BAD
+    - If the machine stops bursting, credits are accumulated over time
+- T2 / T3 - unlimited: unlimited burst
+    - You pay extra money if you go over your credit balance, but you don’t lose in performance
+    
 
 
