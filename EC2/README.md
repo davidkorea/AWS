@@ -97,11 +97,20 @@ To find the exact reason, check out the EC2 console of AWS - instances - Descrip
 ## 7.1 Share an AMI
 You can share an AMI with another AWS account.
 - Sharing an AMI does not affect the ownership of the AMI.
-- If you copy an AMI that has been shared with your account, you are the owner of the target AMI in your account.
 ## 7.2 Copy an AMI 
+- If you copy an AMI that has been shared with your account, you are the owner of the target AMI in your account.
+
 - To copy an AMI that was shared with you from another account, the owner of the source AMI must grant you read permissions for the storage that backs the AMI, either the associated EBS snapshot (for an Amazon EBS-backed AMI) or an associated S3 bucket (for an instance store-backed AMI).
 - You can't copy an encrypted AMI that was shared with you from another account.
     - Instead,if the underlying snapshot and encryption key were shared with you, you can copy the snapshot while re- encrypting it with a key of your own.You own the copied snapshot, and can register it as a new AMI.
     - 可以先使用比人的AMI创建一个EC2，在将这个EC2创建一个AMI，这个AMI就属于你自己了
 - You can't copy an AMI with an associated **billingProduct** code that was shared with you from another account.This includes Windows AMIs and AMIs from the AWS Marketplace.To copy a shared AMI with a billingProduct code, launch an EC2 instance in your account using the shared AMI and then create an AMI from the instance.
+
+> You have taken a snapshot of an encrypted EBS volume and would like to share the snapshot with another AWS account. Which statements are true about sharing snapshots of encrypted EBS volumes? 
+> - A custom CMK key must be used for encryption if you want to share the snapshot    
+> - You must share the CMK key as well as the snapshot with the other AWS account    
+
+
+
+
 
