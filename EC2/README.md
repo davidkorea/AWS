@@ -117,8 +117,8 @@ You can share an AMI with another AWS account.
 - CPU: CPU Utilization + Credit Usage / Balance
 - Network: Network In / Out
 - Status Check:
-- Instance status = check the EC2 VM
-- System status = check the underlying hardware
+    - Instance status = check the EC2 VM
+    - System status = check the underlying hardware
 - Disk: Read / Write for Ops / Bytes ( **Instance Store ONLY**, EBS based EC2 has no Disk metric)
 
 ### 8.2 EC2 Custom Metrics
