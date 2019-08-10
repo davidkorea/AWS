@@ -111,6 +111,14 @@ You can share an AMI with another AWS account.
 > - You must share the CMK key as well as the snapshot with the other AWS account    
 
 
+# 8. CloudWatch Metrics for EC2
 
+# 8.1 EC2 included metrics
+- CPU: CPU Utilization + Credit Usage / Balance
+- Network: Network In / Out
+- Status Check:
+- Instance status = check the EC2 VM
+- System status = check the underlying hardware
+- Disk: Read / Write for Ops / Bytes ( **Instance Store ONLY**, EBS based EC2 has no Disk metric)
 
 
