@@ -123,7 +123,7 @@ You can share an AMI with another AWS account.
 
 ### 8.2 EC2 Custom Metrics
 Sample custom metrics for EC2: 
-- RAM usage
+- RAM usage [hands on](https://www.udemy.com/ultimate-aws-certified-sysops-administrator-associate/learn/lecture/12706577#overview)
 - Swap usage
 - Any custom metric for your application (requests per seconds, etc.. )
 
