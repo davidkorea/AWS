@@ -50,8 +50,35 @@ To find the exact reason, check out the EC2 console of AWS - instances - Descrip
     - SG is not configured correctly.
     - CPU load of the instance is high
 
+# 5. EC2 Instance LaunchTypes
 
-
+- On Demand Instances: short workload, predictable pricing
+    - Has the highest cost but no upfront payment
+- Reserved Instances: long workloads (>= 1 year)
+    - Up to 75% discount compared to On-demand
+    - Pay upfront for what you use with long term commitment
+    - Reservation period can be 1 or 3 years
+    - Reserve a specific instance type
+- Convertible Reserved Instances: long workloads with flexible instances
+    - can change the EC2 instance type 
+    - Up to 54% discount
+- Scheduled Reserved Instances: launch within time window you reserve
+    - launch within time window you reserve
+    - When you require a fraction of day / week / month
+- Spot Instances: short workloads, for cheap, can lose instances
+    - Can get a discount of up to 90% compared to On-demand
+    - You bid a price and get the instance as long as its under the price
+    - Spot instances are reclaimed with a 2 minute notification warning when the spot price goes above your bid
+- Dedicated Hosts: book an entire physical server, control instance placement
+    - Physical dedicated EC2 server for your use
+    - Full control of EC2 Instance placement
+    - Visibility into the underlying sockets / physical cores of the hardware
+    - Allocated for your account for a 3 year period reservation
+    - Useful for software that have complicated licensing model (BYOL – Bring Your Own License)
+- Dedicated Instances: no other customers will share your hardware
+    - Instances running on hardware that’s dedicated to you
+    - May share hardware with other instances in same account
+    - No control over instance placement (can move hardware after Stop / Start)
 
 
 
