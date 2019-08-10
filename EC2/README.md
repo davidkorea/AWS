@@ -133,7 +133,11 @@ Sample custom metrics for EC2:
 - You need to run a CloudWatch agent on EC2 to push the log files you want
 - Make sure IAM permissions are correct
 - The CloudWatch log agent can be setup on premise too
-![](https://i.loli.net/2019/08/10/KDchymBY2TlEbJg.png)
+
+<p align="center">
+    <img src="https://i.loli.net/2019/08/10/KDchymBY2TlEbJg.png"  width="250" height="250">
+</p>
+
 
 
 
