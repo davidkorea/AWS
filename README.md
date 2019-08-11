@@ -5,7 +5,17 @@
     - 每一个VPC子网都需要设置route table，将对方的CIDR路由到peering connection
 
 - endpoint
+    - 需要指定IAM role和`--region`
+    ```
+    [ec2-user@ip-10-0-12-115 ~]$ aws s3 ls          # NO IAM role
+    Unable to locate credentials. You can configure credentials by running "aws configure".
+    
+    [ec2-user@ip-10-0-12-115 ~]$ aws s3 ls          # default region is us-east-1
+    ^C
 
+    [ec2-user@ip-10-0-12-115 ~]$ aws s3 ls --region ap-northeast-2      # seoul region
+    2019-07-21 03:12:51 www.davidkorea.com
+    ```
 
 
 ![](https://i.loli.net/2019/08/11/aSDYNsk9RM1gWeE.png)
