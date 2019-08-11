@@ -1,8 +1,10 @@
 # AWS
 
+- peering
+    - 可以其他账户，可以其他region
+    - 每一个VPC子网都需要设置route table，将对方的CIDR路由到peering connection
 
-
-
+- endpoint
 
 
 
