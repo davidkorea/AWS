@@ -21,7 +21,7 @@ If you want to setup a Direct Connect to one or more VPC in many different regio
     ![](https://i.loli.net/2019/08/12/6Wp75hQaxz2Eymr.png)  
 
 
-# 3. vpc
+# 3. VPC
 - peering
     - 可以其他账户，可以其他region
     - 每一个VPC子网都需要设置route table，将对方的CIDR路由到peering connection
