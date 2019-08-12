@@ -1,5 +1,13 @@
 # AWS
 
+- Direct Connect Gateway
+    - If you want to setup a Direct Connect to one or more VPC in many different regions (same account), you must use a Direct Connect Gateway
+        - Each VPC has a VPG(VPC menu site-to-site VPN)
+        - Direct Connect Gateway for one AWS account
+
+
+-----
+
 - peering
     - 可以其他账户，可以其他region
     - 每一个VPC子网都需要设置route table，将对方的CIDR路由到peering connection
