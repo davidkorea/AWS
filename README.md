@@ -2,9 +2,13 @@
 
 - Direct Connect Gateway
     - If you want to setup a Direct Connect to one or more VPC in many different regions (same account), you must use a Direct Connect Gateway
-        - Each VPC has a VPG(VPC menu site-to-site VPN)
-        - Direct Connect Gateway for one AWS account
+        - Each VPC has a VPG(VPC menu site-to-site VPN, noe can be created in Direct Connect menu)
+            ![](https://i.loli.net/2019/08/12/6Wp75hQaxz2Eymr.png)
 
+        - Direct Connect Gateway for one AWS account(Direct Connect menu)
+            ![](https://i.loli.net/2019/08/12/6wRdWbHNUYZTLqJ.png)
+
+![](https://i.loli.net/2019/08/12/cgWnVaHTKGJ4x57.png)
 
 -----
 
