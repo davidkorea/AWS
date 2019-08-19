@@ -10,6 +10,7 @@ Make sure the EC2 instances have a proper IAM role to allow SSM actions
     <img src="https://i.loli.net/2019/08/19/vrUC1haXf2ZN6dJ.png"  width="250" height="250">
 </p>
 
+![](https://i.loli.net/2019/08/19/Ec7s5aVmp2DYRLw.png)
 # 1. Resource Groups
 对EC2进行分组
 - Create, view or manage logical group of resources thanks to tags
