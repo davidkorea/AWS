@@ -73,7 +73,8 @@
 ![](https://i.loli.net/2019/08/19/QmVeAFEJMdjgyTU.png)
 
 # 6. AWS Parameter Store
-
+![](https://i.loli.net/2019/08/19/F9BkuzXmxCYHDoL.png)
+![](https://i.loli.net/2019/08/19/EwqMvT4uFaBARCf.png)
 
 # 7. Lost SSH key for EC2?
 - (Traditional method) If the instance is EBS backed:
