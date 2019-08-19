@@ -24,3 +24,14 @@ Make sure the EC2 instances have a proper IAM role to allow SSM actions
   - Applications
   - Different layers of an application stack
   - Production versus development environments
+
+# 2. Documents
+所有功能都是通过执行Documents（文档）来实现
+- Documents can be in JSON or YAML
+- You define parameters
+- You define actions
+- Many documents already exist in AWS
+
+<p align="center">
+    <img src="https://i.loli.net/2019/08/19/hXqB1J4PeMs5DY9.png"  width="250" height="250">
+</p>
