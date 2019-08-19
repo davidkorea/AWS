@@ -57,7 +57,8 @@
 - Session Manager allows you to start a secure shell on your VM
     - **Does not use SSH** access and bastion hosts
     - **Only EC2** for now, but On Premise soon
-- Log actions done through secure shells to S3 and CloudWatch Logs
+    - run with **ssm-user** account instead of ec2-user
+- **Log actions** done through secure shells to **S3** and **CloudWatch Logs**
 - IAM permissions: access SSM + write to S3 + write to CloudWatch
 - CloudTrail can intercept StartSession events
 - AWS Secure Shell versus SSH:
@@ -65,7 +66,6 @@
     - **No need for bastion hosts**
     - **All commands are logged to S3 / CloudWatch (auditing)**
     - **Access to Secure Shell is done through User IAM, not SSH keys**
-
 
 
 ![](https://i.loli.net/2019/08/19/zJum7hCv5c1ATnD.png)
