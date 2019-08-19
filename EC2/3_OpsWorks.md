@@ -1,3 +1,4 @@
+# 1. OpsWorks
 - AWS OpsWorks provides three solutions to configure your infrastructure
   - OpsWorks Stacks
     - Define, group, provision, deploy, and operate your applications in AWS by using Chef in local mode.
@@ -12,7 +13,7 @@
 - AWS Opsworks = Managed Chef & Puppet
 - It’s an alternative to AWS SSM
 
-Quick word on Chef / Puppet
+# 2. Quick word on Chef / Puppet
 
 - They help with managing configuration as code
 - Helps in having consistent deployments
