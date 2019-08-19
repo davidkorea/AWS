@@ -142,10 +142,10 @@ Sample custom metrics for EC2:
 
 
 # 9. CloudWatch Logs for EC2
-- By default, no logs from your EC2 machine will go to CloudWatch
-- You need to run a CloudWatch agent on EC2 to push the log files you want
+- **By default, no logs from your EC2 machine will go to CloudWatch**
+- You need to run a **CloudWatch agent** on EC2 to push the log files you want
 - Make sure IAM permissions are correct
-- The CloudWatch log agent can be setup on premise too
+- The CloudWatch log agent **can be setup on premise** too
 
 <p align="center">
     <img src="https://i.loli.net/2019/08/10/KDchymBY2TlEbJg.png"  width="250" height="250">
