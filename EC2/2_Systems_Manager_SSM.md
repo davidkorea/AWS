@@ -72,8 +72,23 @@
 ![](https://i.loli.net/2019/08/19/95ErlD7ahNxkQPT.png)
 ![](https://i.loli.net/2019/08/19/QmVeAFEJMdjgyTU.png)
 
+# 6. AWS Parameter Store
 
 
+# 7. Lost SSH key for EC2?
+- (Traditional method) If the instance is EBS backed:
+    - Stop the instance, detach the root volume
+    - Attach the root volume to another instance as a data volume
+    - Modify the ~/.ssh/authorized_keys file with your new key
+    - Move the volume back to the stopped instance
+    - Start the instance and you can SSH into it again
+- (New method) If the instance is EBS:
+    - Run the AWSSupport-ResetAccess automation document in SSM
+- Instance Store backed EC2:
+    - You can’t stop the instance (otherwise data is lost) – AWS recommends termination
+    - My tip: Use Session Manager access and edit the ~/.ssh/authorized_keys file directly
+
+![](https://i.loli.net/2019/08/19/KIdbDMRYhrgJWpj.png)
 
 
 
