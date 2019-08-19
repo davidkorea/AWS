@@ -44,7 +44,12 @@ Make sure the EC2 instances have a proper IAM role to allow SSM actions
 - No need for SSH
 - Results in the console
 
-
+# 4. PATCH
+- Inventory => List software on an instance
+- Inventory + Run Command => Patch Software
+- Patch manager + Maintenance Window => Patch OS
+- Patch manager => Gives you compliance
+- State manager => Ensure instances are in a consistent state (compliance)
 
 
 
