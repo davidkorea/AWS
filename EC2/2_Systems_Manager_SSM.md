@@ -37,7 +37,12 @@ Make sure the EC2 instances have a proper IAM role to allow SSM actions
 </p>
 
 
-
+# 3. Run Command
+- Execute a **Document** (= script) or just run a command across multiple instances (using resource groups)
+- Rate Control / Error Control
+- Integrated with IAM & CloudTrail
+- No need for SSH
+- Results in the console
 
 
 
