@@ -24,7 +24,7 @@
 
 # 2. Termination Protection
 - Stop行为=Terminate & 启用终止保护 
-    - 仍然可以通过SSH到该EC2，执行`shutdown now`命令，从而将EC2终止掉
+    - 仍然可以通过SSH到该EC2，shutdown the instance from the OS, 执行`shutdown now`命令，从而将EC2终止掉
     - 通过console到关闭功能无法终止
         ![](https://i.loli.net/2019/08/10/IiGCw4LZm5kOVRS.png)
     - We have an instance where shutdown behavior = terminate and enable terminate protection is ticked• We shutdown the instance from the OS, what will happen ?• The instance will still be terminated!
