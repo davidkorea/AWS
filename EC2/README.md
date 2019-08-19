@@ -7,11 +7,14 @@
     
 # 1. Placement Group
 - Cluster, SAME AZ and SAME Hardware
-    - NOt all types of EC2 can be placed in a Cluster placement group, eg t2.micra cannot
-- Partition, SAME AZ but different Hardware, max 7 Partition(hardware/host)
+    - **Not all types of EC2 can be placed in a Cluster placement group, eg t2.micra cannot**
+    - Great network (10 Gbps bandwidth between instances)
 - Spread, different AZ, and each AZ has max 7 instance 
+    - Reduced risk is simultaneous failure
+    - EC2 Instances are on different physical hardware
+- Partition, SAME AZ but different Hardware, max 7 Partition(hardware/host)
 
-Not applicable to t2 instances
+
 
 
 
