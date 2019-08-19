@@ -6,10 +6,14 @@
     - Stop instance first and change to another tyoe like t2.large 
     
 # 1. Placement Group
-    - Cluster, SAME AZ and SAME Hardware
-        - NOt all types of EC2 can be placed in a Cluster placement group, eg t2.micra cannot
-    - Partition, SAME AZ but different Hardware, max 7 Partition(hardware/host)
-    - Spread, different AZ, and each AZ has max 7 instance 
+- Cluster, SAME AZ and SAME Hardware
+    - NOt all types of EC2 can be placed in a Cluster placement group, eg t2.micra cannot
+- Partition, SAME AZ but different Hardware, max 7 Partition(hardware/host)
+- Spread, different AZ, and each AZ has max 7 instance 
+
+Not applicable to t2 instances
+
+
 
 # 2. Termination Protection
 - Stop行为=Terminate & 启用终止保护 
