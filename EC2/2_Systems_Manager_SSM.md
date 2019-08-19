@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://i.loli.net/2019/08/19/vrUC1haXf2ZN6dJ.png"  width="250" height="250">
+    <img src="https://i.loli.net/2019/08/19/vrUC1haXf2ZN6dJ.png"  width="300" height="250">
 </p>
 
 - We need to install the **SSM agent** onto the systems we control, **can be on-premise servers**
@@ -46,16 +46,25 @@
 - Results in the console
 
 # 4. PATCH
-- Inventory => List software on an instance
-- Inventory + Run Command => Patch Software
-- Patch manager + Maintenance Window => Patch OS
+- Inventory => List software on an instance，已安装软件的清单
+- Inventory + Run Command => Patch Software，对安装的软件进行补丁
+- Patch manager + Maintenance Window => Patch OS，对系统进行补丁
 - Patch manager => Gives you compliance
 - State manager => Ensure instances are in a consistent state (compliance)
 
 
-
-
-
+# 5. Session Manager
+- Session Manager allows you to start a secure shell on your VM
+- Does not use SSH access and bastion hosts
+- Only EC2 for now, but On Premise soon
+- Log actions done through secure shells to S3 and CloudWatch Logs
+- IAM permissions: access SSM + write to S3 + write to CloudWatch
+- CloudTrail can intercept StartSession events
+- AWS Secure Shell versus SSH:
+    - No need to open the port 22 at all anymore (security)
+    - No need for bastion hosts
+    - All commands are logged to S3 / CloudWatch (auditing)
+    - Access to Secure Shell is done through User IAM, not SSH keys
 
 
 
