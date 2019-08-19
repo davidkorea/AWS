@@ -1,6 +1,6 @@
 
 
-We need to install the SSM agent onto the systems we control
+We need to install the SSM agent onto the systems we control, **can be on-premise servers**
   - Installed by default on Amazon Linux AMI & some Ubuntu AMI
   - If an instance can’t be controlled with SSM, it’s probably an issue with the SSM agent!
   
@@ -9,3 +9,18 @@ Make sure the EC2 instances have a proper IAM role to allow SSM actions
 <p align="center">
     <img src="https://i.loli.net/2019/08/19/vrUC1haXf2ZN6dJ.png"  width="250" height="250">
 </p>
+
+# 1. Resource Groups
+对EC2进行分组
+- Create, view or manage logical group of resources thanks to tags
+  - You can add Text Key Value Pairs called Tags to many AWS resources, Commonly used in EC2
+  - Free naming, common tags are: Name, Environment, Team …
+  - They’re used for
+    - Resource grouping
+    - Automation
+    - Cost allocation
+  - Better to have too many tags than too few!
+- Allows creation of logical groups of resources such as
+  - Applications
+  - Different layers of an application stack
+  - Production versus development environments
