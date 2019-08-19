@@ -2,7 +2,8 @@
 
 - **stop， restart EC2 instance will not lose Private IPv4.**
     ![](https://i.loli.net/2019/08/10/fDc3owzHSvWJByP.png)
-- Change EC2 type
+- EC2 Changing Instance Type
+    - Change EC2 type only works for **EBS backed instances**
     - Stop instance first and change to another tyoe like t2.large 
     
 # 1. Placement Group
@@ -13,7 +14,10 @@
     - Reduced risk is simultaneous failure
     - EC2 Instances are on different physical hardware
 - Partition, SAME AZ but different Hardware, max 7 Partition(hardware/host)
-
+    - Up to 100s of EC2 instances
+    - The instances in a partition do not share racks with the instances in the other partitions
+    - A partition failure can affect many EC2 but won’t affect other partitions
+    - Use cases: HDFS, HBase, Cassandra, Kafka
 
 
 
