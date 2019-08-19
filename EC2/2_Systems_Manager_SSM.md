@@ -33,7 +33,7 @@ Make sure the EC2 instances have a proper IAM role to allow SSM actions
 - Many documents already exist in AWS
 
 <p align="center">
-    <img src="https://i.loli.net/2019/08/19/hXqB1J4PeMs5DY9.png"  width="400" height="300">
+    <img src="https://i.loli.net/2019/08/19/hXqB1J4PeMs5DY9.png"  width="600" height="300">
 </p>
 
 
