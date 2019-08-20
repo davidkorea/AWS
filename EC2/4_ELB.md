@@ -1,3 +1,11 @@
+-  All Load Balancers have health check capability
+- Application Load Balancers for HTTP / HTTPs & Websocket
+- Network Load Balancer for TCP
+- **CLB and ALB** support **SSL certificates** and provide SSL termination
+- **Stickiness works for CLB & ALB**
+
+
+
 # 1. ALB
 
 - Stickiness can be enabled at the target group level
@@ -9,3 +17,9 @@
   - We can also get **Port (X-Forwarded-Port)** and **proto (X-Forwarded-Proto)**
   
 ![](https://i.loli.net/2019/08/20/7mPWhvyFa9Srtsb.png)
+
+- ALB can route on based on hostname / path
+- ALB is a great fit with ECS (Docker)
+
+# 2. NLB
+- NLB directly see the client IP
