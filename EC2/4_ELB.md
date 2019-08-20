@@ -94,7 +94,19 @@
   - Expected requests per second
   - Size of request (in KB)
 
-
+## 4.2 SSL for Old Browsers
+- Common question is: how do we **support Legacy Browsers that has an old TLS (such as TLS 1.0)** ?
+- Answer: change the policy to allow for **weaker cipher (e.g. DES-CBC3-SHA for TLS 1.0)**
+- Note: only a very small % of the internet uses TLS 1.0
+- Elastic Load Balancing provides the following security policies for Application Load Balancers:
+  - ELBSecurityPolicy-2016-08
+  - ELBSecurityPolicy-FS-2018-06
+  - ELBSecurityPolicy-TLS-1-2-2017-01
+  - ELBSecurityPolicy-TLS-1-2-Ext-2018-06
+  - ELBSecurityPolicy-TLS-1-1-2017-01
+  - ELBSecurityPolicy-2015-05
+  - **ELBSecurityPolicy-TLS-1-0-2015-04**  <= **allows for the weaker cipher**
+- See here for more information: https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-httpslistener.html#describe-ssl-policies
 
 
 
