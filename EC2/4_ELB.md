@@ -125,10 +125,10 @@
 ![](https://i.loli.net/2019/08/20/AbxPI3JHoiqG7dt.png)
 
 ## 4.4 ALB Request Tracing
-• Request tracing – Each HTTP request has an added custom header **`X-Amzn-Trace-Id`**
-• Example: `X-Amzn-Trace-Id: Root=1-67891233-abcdef012345678912345678`
-• This is useful in logs / distributed tracing platform to track a single request
-• Application Load Balancer is not (yet) integrated with X-Ray
+- Request tracing – Each HTTP request has an added custom header **`X-Amzn-Trace-Id`**
+- Example: `X-Amzn-Trace-Id: Root=1-67891233-abcdef012345678912345678`
+- This is useful in logs / distributed tracing platform to track a single request
+- Application Load Balancer is not (yet) integrated with X-Ray
 
 
 ## 4.5 Monitoring & Troubleshooting
@@ -147,8 +147,8 @@ All Load Balancer metrics are directly pushed to CloudWatch metrics
 - **SpilloverCoun**t: The total number of requests that were rejected because the surge queue is full.
 
 Troubleshooting using metrics
-- **HTTP 400: BAD_REQUEST** => The client sent a malformed request that does not meet HTTP specifications.
-- **HTTP 503: Service Unavailable** => Ensure that you have healthy instances in every Availability Zone that your load balancer is configured to respond in. Look for HealthyHostCount in CloudWatch
+- **HTTP 400: BAD_REQUEST** => The client sent a **malformed畸形的 request** that does **not meet HTTP specifications**.
+- **HTTP 503: Service Unavailable** => Ensure that you have **healthy instances** in every Availability Zone that your load balancer is configured to respond in. Look for HealthyHostCount in CloudWatch
 - **HTTP 504: Gateway Timeout** => Check if keep-alive settings on your EC2 instances are enabled and make sure that the keep-alive timeout is greater than the idle timeout settings of load balancer.
 
 
