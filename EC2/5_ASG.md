@@ -56,12 +56,25 @@ AZRebalance
   - The ASG could remain at the increased capacity as it can’t terminate instances
 
 
-# 4. 
+# 4. Troubleshooting ASG issues
+- xx instance(s) are already running. Launching EC2 instance failed.
+  - The Auto Scaling group has reached the limit set by the DesiredCapacity parameter. Update your Auto Scaling group by providing a new value for the **desired capacity**.
+- Launching EC2 instances is failing:
+  - The security group does not exist. SG might have been deleted
+  - The key pair does not exist. The key pair might have been deleted
+- If the ASG fails to launch an instance for over 24 hours, it will automatically suspend the processes (administration suspension)
 
 
+# 5. ASG Default Termination Policy
+(simplified version):
+1. Find the AZ which has the most number of instances
+2. If there are multiple instances in the AZ to choose from, delete the one with the oldest launch configuration
 
+-  ASG tries the balance the number of instances across AZ by default
 
-
+# 6. Scaling Cooldowns
+- The cooldown period helps to ensure that your Auto Scaling group doesn't launch or terminate additional instances before the previous scaling activity takes effect.
+- If your application is scaling up and down multiple times each hour, modify the Auto Scaling Groups cool-down timers and the CloudWatch Alarm Period that triggers the scale in
 
 
 
