@@ -69,7 +69,19 @@
 
 
 
+# 4. LB for SysOps
 
+- Application Load Balancer:
+  - Layer 7 (HTTP, HTTPS,Websocket)
+  - URL based routing (hostname or path)
+  - **Does not support static IP**, but has a **fixed DNS**
+  - Provide SSL termination
+- Network Load Balancer:
+  - Layer 4 (TCP)
+  - No pre-warming needed
+  - **1 static IP per subnet**
+  - No SSL termination (SSL must be enabled by the application itself)
+- Exam tip: Chain an NLB and a ALB to “give” ALB a fixed IP
 
 
 
