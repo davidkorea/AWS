@@ -14,6 +14,8 @@
     - Mirroring a volume to another
     - Application that need increase volume fault tolerance
     - Application where you need to service disks，提供存储服务的应用，云硬盘等
+- EBS volumes are locked at the AZ level
+- EFS mounting 100s of instances
 
 
 # 1. EBS Volume
@@ -158,14 +160,15 @@ Cons:
   - Insufficient-data - metric data collecetion in progress.
 
 # 9. EFS – Elastic File System
+- **Compatible with Linux based AMI (not Windows)**
 - Managed NFS (network file system) that can be **mounted on many EC2**
+  - EFS mounting 100s of instances
 - EFS works with EC2 instances in **multi-AZ**
 - Highly available, scalable, expensive (3x gp2), pay per use
 
 - Use cases: content management, web serving, data sharing, Wordpress
 - Uses NFSv4.1 protocol
 - Uses security group to control access to EFS
-- **Compatible with Linux based AMI (not Windows)**
 - Performance mode:
   - General purpose (default)
   - Max I/O – used when thousands of EC2 are using the EFS
