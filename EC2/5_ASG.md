@@ -22,7 +22,7 @@
 - Metrics are computed for the overall ASG instances
   - We can create scale-out policies (increase the number of instances)
   - We can create scale-in policies (decrease the number of instances)
--  It is now possible to define ”better” auto scaling rules that are directly managed by EC2, These rules are easier to set up and can make more sense
+- It is now possible to define ”better” auto scaling rules that are directly managed by EC2, These rules are easier to set up and can make more sense
   - Target Average CPU Usage
   - Number of requests on the ELB per instance
   - Average Network In
