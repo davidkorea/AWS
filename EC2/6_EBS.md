@@ -19,3 +19,17 @@ EBS Volumes come in 4 types
 - SC1 (HDD): Lowest cost HDD volume designed for **less frequently** accessed workloads
 
 Only **GP2** and **IO1** can be used as **boot volumes**，仅SSD的2中磁盘类型可以用于根卷
+
+## 2.1 GP2
+
+- 1 GiB - 16 TiB
+- Small gp2 volumes can burst IOPS to 3000
+- Max IOPS is 16,000
+- 3 IOPS per GB, means at 5,334GB we are at the max IOPS
+
+Use cases
+- Recommended for most workloads
+- System boot volumes
+- Virtual desktops
+- Low-latency interactive apps
+- Development and test environments
