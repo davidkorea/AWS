@@ -1,7 +1,5 @@
--  All Load Balancers have health check capability
-- Application Load Balancers for HTTP / HTTPs & Websocket
-- Network Load Balancer for TCP
-- **CLB and ALB** support **SSL certificates** and provide SSL termination
+- All Load Balancers have health check capability
+- ~~**CLB and ALB**~~ **all LB** support **SSL certificates** and provide SSL termination
 - **Stickiness works for CLB & ALB**
 
 
