@@ -1,4 +1,5 @@
 - Scaling policies can be on CPU, Network… and can even be on custom **metrics** or based on a **schedule** (if you know your visitors patterns)
+  ![](https://i.loli.net/2019/08/20/n9WCOvNDbepfikz.png)
 - ASGs use Launch configurations and you update an ASG by providing a new launch configuration
 - IAM roles attached to an ASG will get assigned to EC2 instances，所有ASG下的EC2将继承此IAM Role
 - ASG are free. You pay for the underlying resources being launched
