@@ -33,3 +33,89 @@ Use cases
 - Virtual desktops
 - Low-latency interactive apps
 - Development and test environments
+
+## 2.2 IO1
+- 4 GiB - 16 TiB
+- IOPS is provisioned (PIOPS) – MIN 100 - MAX 64,000 (Nitro instances) else MAX 32,000 (other instances)
+- The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1
+
+Use cases
+- Critical business applications that require sustained IOPS performance, or **more than 16,000 IOPS per volume (gp2 limit)
+- Large **database workloads**, such as: MongoDB, Cassandra, Microsoft SQL Server, MySQL, PostgreSQL, Oracle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
