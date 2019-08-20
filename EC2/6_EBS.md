@@ -88,12 +88,28 @@ This is a similar concept to t2 instances with their CPU
 - The throughput limit of io1 volumes is 256 KiB/s for each IOPS provisioned
 - Limit to a max of 500 MiB/s (at 32,000 IOPS) and 1000 MiB/s (at 64,000 IOPS)
 
+# 5. EBS Snapshots
+- Incremental – only backup changed blocks
+- EBS **backups use IO** and you shouldn’t run them while your application is handling a lot of traffic
+- Snapshots will be stored in S3 (but you won’t directly see them)
+- Not necessary to detach volume to do snapshot, but recommended
+- **Max 100,000 snapshots**
+- Can copy snapshots across AZ or Region, migrate it to a different AZ (or region)
+- Can make Image (AMI) from Snapshot
+- ?? EBS volumes restored by snapshots need to be pre-warmed (using fio or dd command to read the entire volume)
+- ?? Snapshots can be automated using Amazon Data Lifecycle Manager
 
+# 6. EBS Encryption
+- When you create an **encrypted EBS** volume, you get the following:
+  - Data at rest is encrypted inside the volume
+  - All the data in flight moving between the instance and the volume is encrypted
+  - All snapshots are encrypted
+  - All volumes created from the snapshot are encrypted
 
-
-
-
-
+- Encryption and decryption are handled transparently (you have nothing to do)
+- **Encryption has a minimal impact on latency**
+- EBS Encryption leverages keys from **KMS (AES-256)**
+- Copying an unencrypted snapshot allows encryption
 
 
 
