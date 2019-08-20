@@ -1,3 +1,6 @@
+- If you use EBS for high performance, use **EBS-optimized instance types**
+- If an EBS volume is unused, you still pay for it. For cost saving over a long period, it can be cheaper to snapshot a volume and restore it later if unused
+
 # 1. EBS Volume
 It’s a **network drive** (i.e. not a physical drive)
 - It uses the network to communicate the instance, which means there might be a bit of latency
@@ -111,8 +114,19 @@ This is a similar concept to t2 instances with their CPU
 - EBS Encryption leverages keys from **KMS (AES-256)**
 - Copying an unencrypted snapshot allows encryption
 
+# 7. EBS vs Instance Store
+- Some instance do not come with Root EBS volumes, Instead, they come with “Instance Store” (= ephemeral storage)
+- **Instance store is physically attached to the machine** (EBS is a network drive)
 
+Pros:
+- **Better I/O performance**
+- Good for buffer / cache / scratch data / temporary content
+- Data survives reboots
 
+Cons:
+- On stop or termination, the instance store is lost
+- You can’t resize the instance store
+- Backups must be operated by the user
 
 
 
