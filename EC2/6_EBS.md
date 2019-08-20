@@ -17,3 +17,5 @@ EBS Volumes come in 4 types
 - IO1 (SSD): Highest-performance SSD volume for mission-critical **low-latency or highthroughput** workloads
 - ST1 (HDD): Low cost HDD volume designed for **frequently accessed, throughputintensive workloads**
 - SC1 (HDD): Lowest cost HDD volume designed for **less frequently** accessed workloads
+
+Only **GP2** and **IO1** can be used as **boot volumes**，仅SSD的2中磁盘类型可以用于根卷
