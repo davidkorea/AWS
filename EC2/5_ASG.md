@@ -2,7 +2,9 @@
 
 - **Reactive Event-based scale:（被动）事件驱动伸缩，ELB的根据alarm polic的自动伸缩**
 - **Proactive cyclic scale：主动循环伸缩，提前主动计划的伸缩schedule**
-
+- **ASG + ELB**
+  ![](https://i.loli.net/2019/08/20/ChMuXza61seLcGl.png)
+  
 -----
 
 - Scaling policies can be on CPU, Network… and can even be on custom **metrics** or based on a **schedule** (if you know your visitors patterns)
