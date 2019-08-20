@@ -136,7 +136,7 @@ All Load Balancer metrics are directly pushed to CloudWatch metrics
 - Helpful for keeping access data even after ELB or EC2 instances are terminated
 - Access Logs are already encrypted
 
-
+![](https://i.loli.net/2019/08/20/AbxPI3JHoiqG7dt.png)
 
 
 
