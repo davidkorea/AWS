@@ -40,12 +40,29 @@ Use cases
 - The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1
 
 Use cases
-- Critical business applications that require sustained IOPS performance, or **more than 16,000 IOPS per volume (gp2 limit)
+- Critical business applications that require sustained IOPS performance, or **more than 16,000 IOPS per volume (gp2 limit)**
 - Large **database workloads**, such as: MongoDB, Cassandra, Microsoft SQL Server, MySQL, PostgreSQL, Oracle
 
+## 2.3 ST1
+- 500 GiB - 16 TiB
+- Max IOPS is 500
+- Max throughput of 500 MiB/s – can burst
 
+Use cases
+- Streaming workloads requiring consistent, fast throughput at a low price.
+- **Big data, Data warehouses, Log processing**
+- Apache Kafka
+- Cannot be a boot volume
 
+## 2.4 SC1
+- 500 GiB - 16 TiB
+- Max IOPS is 250
+- Max throughput of 250 MiB/s – can burst
 
+Use cases
+- Throughput-oriented storage for large volumes of data that is **infrequently accessed**
+- Scenarios where the lowest storage cost is important
+- Cannot be a boot volume
 
 
 
