@@ -161,7 +161,7 @@ Cons:
 
 # 9. EFS – Elastic File System
 - **Compatible with Linux based AMI (not Windows)**
-- Managed NFS (network file system) that can be **mounted on many EC2**
+- Managed NFS (**network file system**) that can be **mounted on many EC2**
   - EFS mounting 100s of instances
 - EFS works with EC2 instances in **multi-AZ**
 - Highly available, scalable, expensive (3x gp2), pay per use
