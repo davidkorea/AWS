@@ -6,7 +6,7 @@
 - After increasing a volume size, you still need to **repartition** to use the incremental storage (xfs_growfs for example)
 - EBS is **already redundant** storage (replicated within an AZ)
 - But what if you want to increase IOPS to say 100 000 IOPS?
-  - RAID0
+  - RAID 0
     - But one disk fails, all the data is failed
     - An application that needs a lot of IOPS and doesn’t need fault-tolerance
     - A database that has replication already built-in，已创建副本的数据库
