@@ -29,3 +29,27 @@
 
 # 2. NLB
 - NLB directly see the client IP
+
+# 3. ELB for Solutions Architect
+- Classic Load Balancers: questions on security groups, stickiness
+- Application Load Balancer (Layer 7 of OSI):
+  - Support **routing** based on **hostname**
+    - `users.example.com `
+    - `payments.example.com`
+  - Support **routing** based on **path** 
+    - `example.com/users `
+    - `example.com/payments`
+  - Support redirects (from HTTP to HTTPS for example)
+  - Support dynamic host port mapping with ECS
+- NLB (Layer 4 of OSI) gets a static IP per AZ:
+  - Public facing: must attach Elastic IP – can help whitelist by clients
+  - Private facing: will get random private IP based on free ones at time of creation
+  - Has cross zone balancing
+  - Has SSL termination (Jan 2019)
+  
+## 3.1 Security Groups
+- Load Balancer Security Group all 80 and 443 for all
+- Application Security Group: Allow traffic only from Load Balancer's SG
+
+![](https://i.loli.net/2019/08/20/lDrYmJuT4pISALk.png)
+![](https://i.loli.net/2019/08/20/SLTO1qsvBI7DFN4.png)
