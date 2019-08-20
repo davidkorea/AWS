@@ -123,7 +123,18 @@ All Load Balancer metrics are directly pushed to CloudWatch metrics
   - surge 急剧上升; 飞涨; 激增
 - **SpilloverCoun**t: The total number of requests that were rejected because the surge queue is full.
 
-
+## 4.4 Access Logs
+- Access logs from Load Balancers can be stored in S3 and contain:
+  - Time
+  - Client IP address
+  - Latencies
+  - Request paths
+  - Server response
+  - Trace Id
+- Only pay for the S3 storage
+- Helpful for compliance reason
+- Helpful for keeping access data even after ELB or EC2 instances are terminated
+- Access Logs are already encrypted
 
 
 
