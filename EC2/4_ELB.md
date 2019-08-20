@@ -33,7 +33,7 @@
 # 3. ELB for Solutions Architect
 - Classic Load Balancers: questions on security groups, stickiness
 - Application Load Balancer (Layer 7 of OSI):
-  - Support **routing** based on **hostname**
+  - Support **routing** based on **hostname**, CLB should only 1 CLB per app(hostname / path)
     - `users.example.com `
     - `payments.example.com`
   - Support **routing** based on **path** 
