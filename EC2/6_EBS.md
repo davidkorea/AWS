@@ -27,30 +27,12 @@ Only **GP2** and **IO1** can be used as **boot volumes**，仅SSD的2中磁盘�
 - Max IOPS is 16,000
 - 3 IOPS per GB, means at 5,334GB we are at the max IOPS
 
-### 2.1.1 Use cases
+Use cases
 - Recommended for most workloads
 - System boot volumes
 - Virtual desktops
 - Low-latency interactive apps
 - Development and test environments
-
-
-### 2.1.2 GP2 volumes I/O burst
-This is a similar concept to t2 instances with their CPU
-
-- If your gp2 volume is **less than 1000 GiB** (means IOPS less than 3000) it can “burst” to 3000 IOPS performance
-- You accumulate “burst credit over time”, which allows your volume to have good performance when needed
-- The bigger the volume the faster you fill up your “burst credit balance”
-- What happens if I empty my I/O credit balance?
-  - The maximum I/O you get becomes the baseline you paid for
-  - If you see the balance being 0 all the time, increase the gp2 volume or switch to io1
-  - Use CloudWatch to monitoring the I/O credit balance
-
-**Note: burst concept also applies to st1 or sc1 (for increase in throughput)**
-
-
-
-
 
 ## 2.2 IO1
 - 4 GiB - 16 TiB
@@ -82,10 +64,29 @@ Use cases
 - Scenarios where the lowest storage cost is important
 - Cannot be a boot volume
 
+# 3.  gp2, st1 and sc1 volumes I/O burst
+This is a similar concept to t2 instances with their CPU
 
+- If your gp2 volume is **less than 1000 GiB** (means IOPS less than 3000) it can “burst” to 3000 IOPS performance
+- You accumulate “burst credit over time”, which allows your volume to have good performance when needed
+- The bigger the volume the faster you fill up your “burst credit balance”
+- What happens if I empty my I/O credit balance?
+  - The maximum I/O you get becomes the baseline you paid for
+  - If you see the balance being 0 all the time, increase the gp2 volume or switch to io1
+  - Use CloudWatch to monitoring the I/O credit balance
 
+**Note: burst concept also applies to st1 or sc1 (for increase in throughput)**
 
+# 4. Computing MB/s based on IOPS
+## 4.1 gp2:
+- Throughput in MiB/s = (**Volume** size in **GiB**) × (**IOPS** per **GiB**) × (**I/O** size in **KiB**)
+- ex: 300 I/O operations per second * 256 KiB per I/O operation = 75 MiB/s
+- Limit to a max of 250 MiB/s (means volume >= 334 GiB won’t increase throughput)
 
+## 4.2 io1:
+- Throughput in MiB/s = (Provisioned **IOPS**) × (**I/O** size in **KiB**)
+- The throughput limit of io1 volumes is 256 KiB/s for each IOPS provisioned
+- Limit to a max of 500 MiB/s (at 32,000 IOPS) and 1000 MiB/s (at 64,000 IOPS)
 
 
 
