@@ -1,6 +1,21 @@
 - If you use EBS for high performance, use **EBS-optimized instance types**
 - If an EBS volume is unused, you still pay for it. For cost saving over a long period, it can be cheaper to snapshot a volume and restore it later if unused
 
+- High wait time or slow response for SSD => increase IOPS
+- EC2 won’t start with EBS volume as root: make sure volume names are properly mapped (**/dev/xvdb** instead of **/dev/xvda** for example)
+- After increasing a volume size, you still need to **repartition** to use the incremental storage (xfs_growfs for example)
+- EBS is **already redundant** storage (replicated within an AZ)
+- But what if you want to increase IOPS to say 100 000 IOPS?
+  - RAID0
+    - But one disk fails, all the data is failed
+    - An application that needs a lot of IOPS and doesn’t need fault-tolerance
+    - A database that has replication already built-in，已创建副本的数据库
+   - RAID 1
+    - Mirroring a volume to another
+    - Application that need increase volume fault tolerance
+    - Application where you need to service disks，提供存储服务的应用，云硬盘等
+
+
 # 1. EBS Volume
 It’s a **network drive** (i.e. not a physical drive)
 - It uses the network to communicate the instance, which means there might be a bit of latency
@@ -129,7 +144,18 @@ Cons:
 - Backups must be operated by the user
 
 
-
+# 8. CloudWatch and EBS
+- Important EBS Volume CloudWatch metrics:
+  - VolumeIdleTime: number of seconds when no read / write is submitted
+  - VolumeQueueLength: number of operations waiting to be executed. High number means probably an IOPS or application issue
+  - BurstBalance: if it becomes 0, we need a volume with more IOPS
+- gp2 volume types: 5 minutes interval
+- io1 volume types: 1 minute interval
+- EBS volumes have status check:
+  - Ok -The volume is performing good.
+  - Warning - Perfomance below expected.
+  - Impaired受损的 - Stalled熄火抛锚, performance severly degraded.
+  - Insufficient-data - metric data collecetion in progress.
 
 
 
