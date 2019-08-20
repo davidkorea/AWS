@@ -2,9 +2,15 @@
 - ASGs use Launch configurations and you update an ASG by providing a new launch configuration
 - IAM roles attached to an ASG will get assigned to EC2 instances，所有ASG下的EC2将继承此IAM Role
 - ASG are free. You pay for the underlying resources being launched
-- Having instances under an ASG means that if they get terminated for whatever reason, the ASG will restart them. Extra safety!
 - ASG can terminate instances marked as unhealthy by an LB (and hence replace them)
-
+- To make sure you have high availability, means you have least 2 instances running across 2 AZ in your ASG (must configure multi AZ ASG)
+- Health checks available:
+  - EC2 Status Checks
+  - ELB Health Checks
+- Good to know CLI:
+  - set-instance-health
+  - terminate-instance-in-auto-scaling-group
+  
 # 1. ASG attributes
 - launch configuration
   - AMI + Instance Type
@@ -50,6 +56,7 @@ AZRebalance
   - The ASG could remain at the increased capacity as it can’t terminate instances
 
 
+# 4. 
 
 
 
