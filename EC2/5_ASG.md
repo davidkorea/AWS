@@ -64,6 +64,8 @@ AZRebalance
 - If you suspend the Terminate process
   - The ASG can grow up to 10% of this size (it’s allowed during rebalances)
   - The ASG could remain at the increased capacity as it can’t terminate instances
+  
+![](https://i.loli.net/2019/08/09/5K9mUYHiyODQjhS.png)
 
 
 # 4. Troubleshooting ASG issues
