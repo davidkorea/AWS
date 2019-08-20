@@ -27,12 +27,30 @@ Only **GP2** and **IO1** can be used as **boot volumes**，仅SSD的2中磁盘�
 - Max IOPS is 16,000
 - 3 IOPS per GB, means at 5,334GB we are at the max IOPS
 
-Use cases
+### 2.1.1 Use cases
 - Recommended for most workloads
 - System boot volumes
 - Virtual desktops
 - Low-latency interactive apps
 - Development and test environments
+
+
+### 2.1.2 GP2 volumes I/O burst
+This is a similar concept to t2 instances with their CPU
+
+- If your gp2 volume is **less than 1000 GiB** (means IOPS less than 3000) it can “burst” to 3000 IOPS performance
+- You accumulate “burst credit over time”, which allows your volume to have good performance when needed
+- The bigger the volume the faster you fill up your “burst credit balance”
+- What happens if I empty my I/O credit balance?
+  - The maximum I/O you get becomes the baseline you paid for
+  - If you see the balance being 0 all the time, increase the gp2 volume or switch to io1
+  - Use CloudWatch to monitoring the I/O credit balance
+
+**Note: burst concept also applies to st1 or sc1 (for increase in throughput)**
+
+
+
+
 
 ## 2.2 IO1
 - 4 GiB - 16 TiB
