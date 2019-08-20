@@ -45,7 +45,7 @@
   - Public facing: must attach Elastic IP – can help whitelist by clients
   - Private facing: will get random private IP based on free ones at time of creation
   - Has cross zone balancing
-  - Has SSL termination (Jan 2019)
+  - **Has SSL termination (Jan 2019)**
   
 ## 3.1 Security Groups
 - Load Balancer Security Group all 80 and 443 for all
@@ -80,10 +80,19 @@
   - Layer 4 (TCP)
   - No pre-warming needed
   - **1 static IP per subnet**
-  - No SSL termination (SSL must be enabled by the application itself)
+  - ~~No SSL termination (SSL must be enabled by the application itself)~~
+  - **Has SSL termination (Jan 2019)**
+    ![](https://i.loli.net/2019/08/20/hPSgEBq3Mk8Vtu4.png)
+
 - Exam tip: Chain an NLB and a ALB to “give” ALB a fixed IP
 
-
+## 4.1 Pre-warming
+- ELB scale gradually to traffic
+- ELB may fail in case of sudden spike of traffic (10x traffic)
+- If you expect high traffic (Christmas season), open a **support ticket** with AWS to **pre-warm** your ELB
+  - Duration of traffic
+  - Expected requests per second
+  - Size of request (in KB)
 
 
 
