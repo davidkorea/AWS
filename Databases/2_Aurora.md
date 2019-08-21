@@ -1,5 +1,6 @@
 
 - Postgres and MySQL are both supported as Aurora DB
+- **Can use IAM authentication for Aurora MySQL and Aurora Postgres**
 - Aurora storage automatically grows in increments of 10GB, up to 64 TB
 - Failover in Aurora is instantaneous. It’s HA native
 - **Single Aurora** can have **15 read replicas** while **MySQL has 5** read replicas
