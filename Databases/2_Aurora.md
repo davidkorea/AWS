@@ -4,7 +4,9 @@
 - Failover in Aurora is instantaneous. It’s HA native
 - **Single Aurora** can have **15 read replicas** while **MySQL has 5** read replicas
 - For **Aurora Global** You can add up to **16 Aurora Replicas** to the secondary cluster, allowing you to scale reads beyond the capacity of a single Aurora cluster
-# 1. Aurora High Availability and Read Scaling
+
+
+# 1. Single Aurora Cluster
 
 <p align="center">
     <img src="https://i.loli.net/2019/08/08/t4yps2MCrq6Zzli.png"  width="300" height="250">
