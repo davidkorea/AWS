@@ -68,10 +68,30 @@
 - The user hits another instance of our application
 - The instance retrieves the data and the user is already logged in
 
-# 4. Patterns for ElastiCache:
-- Lazy Loading: all the read data is cached, data can become stale in cache
-- Write Through: Adds or update data in the cache when written to a DB (no stale data)
-- Session Store: store temporary session data in a cache (using TTL features)
+# 4. Patterns / Cache Strategies for ElastiCache
+## 4.1 Lazy Loading: Load only when necessary
+all the read data is cached, data can become stale in cache
+  
+- Pros
+  - Only requested data is cached (the cache isn’t filled up with unused data)只缓存被请求的数据
+  - Node failures are not fatal (just increased latency to warm the cache)
+- Cons
+  - Cache miss penalty that results in 3 round trips, noticeable delay for that request
+  - Stale过期 data: data can be updated in the database and outdated in the cache
+
+
+## 4.2 Write Through: Add or Update cache when database is updated
+Adds or update data in the cache when written to a DB (no stale data)
+
+- Pros:
+  - Data in cache is never stale过期
+  - Write penalty vs Read penalty (each write requires 2 calls)
+- Cons:
+  - Missing Data until it is added / updated in the DB. Mitigation减轻 is to implement Lazy Loading strategy as well
+  - Cache churn剧烈搅动 – a lot of the data will never be read
+
+
+## 4.2 Session Store: store temporary session data in a cache (using TTL features)
 
 
 
