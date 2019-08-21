@@ -7,6 +7,8 @@
 - Replicas can be promoted to their own DB，只读副本可以升级为Master读写DB
 - Applications must update the connection string to leverage read replicas，独立于Master之外的单独URL Endpoint
 - Read Replicas **help with Disaster Recovery(DR)** by using a **Cross Region RR**
+  ![](https://i.loli.net/2019/08/21/PRLd5uerVZNxbyj.png)
+  
 - Read Replicas can be used to run **BI / Analytics Reports** for example
 - 目前Read Replicas支持以下4个数据库, NO Oracle!
   - Aurora
