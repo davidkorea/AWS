@@ -49,7 +49,7 @@
   - You can take a “final snapshot” when you delete your DB
   
 # 4. RDS Encryption
--  Encryption at rest:
+- Encryption at rest:
   - Is done only when you **first create the DB** instance
   - Unencrypted DB => snapshot => copy snapshot as encrypted => create DB from snapshot
 - Encryption at rest capability with AWS **KMS - AES-256** encryption
