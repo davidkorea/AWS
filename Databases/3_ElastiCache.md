@@ -64,7 +64,7 @@
 
 
 # 3. ElastiCache - User Session Store
-
+store temporary session data in a cache (using TTL features)
 用户访问任何一个应用服务器，此应用服务器将Session写入ElastiCache，当用户访问其他应用服务器时，可以在ElastiCache获取之前的session
 - User logs into any of the application
 - The application writes the session data into ElastiCache
@@ -73,8 +73,10 @@
 
 # 4. Patterns / Cache Strategies for ElastiCache
 ## 4.1 Lazy Loading: Load only when necessary
-all the read data is cached, data can become stale in cache
-  
+Lazy loading is a common strategy for caching data, as it prevents you from filling the cache with data that may not be applicable. 
+
+You could further optimize by applying a time-to-live (TTL) value to the data. TTL helps prevent retrieving stale data from the cache. Apply a TTL value that corresponds to the update activity associated to the underlying data.
+
 - Pros
   - Only requested data is cached (the cache isn’t filled up with unused data)只缓存被请求的数据
   - Node failures are not fatal (just increased latency to warm the cache)
@@ -82,6 +84,7 @@ all the read data is cached, data can become stale in cache
   - Cache miss penalty that results in 3 round trips, noticeable delay for that request
   - Stale过期 data: data can be updated in the database and outdated in the cache
 
+![](https://d2908q01vomqb2.cloudfront.net/e1822db470e60d090affd0956d743cb0e7cdf113/2019/03/26/S3_Lazy_Load_2-1024x404.png)
 
 ## 4.2 Write Through: Add or Update cache when database is updated
 Adds or update data in the cache when written to a DB (no stale data)
@@ -94,7 +97,6 @@ Adds or update data in the cache when written to a DB (no stale data)
   - Cache churn剧烈搅动 – a lot of the data will never be read
 
 
-## 4.2 Session Store: store temporary session data in a cache (using TTL features)
 
 
 
