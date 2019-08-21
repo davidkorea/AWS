@@ -2,8 +2,8 @@
 - Postgres and MySQL are both supported as Aurora DB
 - Aurora storage automatically grows in increments of 10GB, up to 64 TB
 - Failover in Aurora is instantaneous. It’s HA native
-- Aurora can have 15 read replicas while MySQL has 5
-
+- **Single Aurora** can have **15 read replicas** while **MySQL has 5** read replicas
+- For **Aurora Global** You can add up to **16 Aurora Replicas** to the secondary cluster, allowing you to scale reads beyond the capacity of a single Aurora cluster
 # 1. Aurora High Availability and Read Scaling
 
 <p align="center">
@@ -35,8 +35,17 @@
         - Global全局Aurora依然可以设置Multi-AZ
         - 但是好像无法指定使用哪些Region？？？
 
+# 2. Aurora Global Database
+An Aurora global database consists of **one primary AWS Region** where your data is mastered, and **one read-only, secondary AWS Region**
+- The Aurora cluster in the **primary AWS Region** where your data is mastered performs both read and write operations**. 
+- The cluster in the **secondary region** enables low-latency reads. 
+    - You can scale up the secondary cluster independently by **adding one or more DB instances (Aurora Replicas)** to serve read-only workloads. You can **add up to 16 Aurora Replicas** to the secondary cluster, whereas **Single Aurora** can have **15 read replicas**
+    - The secondary cluster enables **fast failover for disaster recovery**. You can typically **promote a secondary cluster** and make it **available for writes in under a minute**
 
-# 2. Aurora Serverless
+- **Aurora Global Database** is only available for Aurora with **MySQL 5.6 compatibility**
+- You **can't use db.t2 or db.t3** instance classes for an Aurora global database. You have a **choice of db.r4 or db.r5** instance classes.
+
+# 3. Aurora Serverless
 - No need to choose an instance size
 - Only supports MySQL 5.6 (as of Jan 2019) & Postgres (beta)
     - MySQL 5.6-compatible, Aurora Serverless capacity is only available with this edition.
