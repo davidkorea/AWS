@@ -25,3 +25,17 @@
   ![](https://i.loli.net/2019/08/08/wiyVdMlkCsxXv8S.png)
 - Support for Cross Region Read Replication
   ![](https://i.loli.net/2019/08/08/IFlUBYy61RxWzrA.png)
+
+# 2. Aurora Serverless
+- No need to choose an instance size
+- Only supports MySQL 5.6 (as of Jan 2019) & Postgres (beta)
+    - MySQL 5.6-compatible, Aurora Serverless capacity is only available with this edition.
+- Helpful when you can’t predict the workload
+- DB cluster starts, shutdown and scales automatically based on CPU / connections
+- **Can migrate from Aurora Cluster to Aurora Serverless and vice versa**
+- Aurora Serverless usage is measured in ACU (Aurora Capacity Units)
+- Billed in 5 minutes increment of ACU
+- Note: **some features of Aurora aren’t supported in Serverless mode**, be sure to check the documentation if you plan on using it
+
+
+![](https://i.loli.net/2019/08/21/ZxHO2zymAb8dCfN.png)
