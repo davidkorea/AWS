@@ -40,13 +40,28 @@
     - if **Multi-AZ**，**snapshot** created by **standby instance**, don’t impact the master – just the standby
     
 # 4. RDS Encryption
-- Encryption at rest capability with AWS KMS - AES-256 encryption
+- Encryption at rest capability with AWS **KMS - AES-256** encryption
 - SSL certificates to encrypt data to RDS in flight. To enforce SSL:
-  - PostgreSQL: `rds.force_ssl=1` in the AWS RDS Console (Parameter Groups)
-  - MySQL/MariaDB: Within the DB: `GRANT USAGE ON *.* TO 'mysqluser'@'%' REQUIRE SSL;`
+  - PostgreSQL: **`rds.force_ssl=1`** in the AWS RDS Console (Parameter Groups)
+  - MySQL/MariaDB: Within the DB: **`GRANT USAGE ON *.* TO 'mysqluser'@'%' REQUIRE SSL;`**
 - To connect using SSL:
   - Provide the SSL Trust certificate (can be download from AWS)
   - Provide SSL options when connecting to database
+
+# 5. RDS Security Groups
+- RDS databases are usually deployed within a **private subnet**, not in a public one
+- RDS Security works by leveraging security groups (the same concept as for EC2 instances) – it controls who can communicate with RDS
+- **IAM policies** help control **who can manage AWS RDS**
+- **Traditional Username and Password** can be used to **login to the database**
+  - **IAM users** can now be used too (for **MySQL / Aurora** – NEW!)
+
+
+
+
+
+
+
+
 
 
 # 5. DB Parameter Groups
