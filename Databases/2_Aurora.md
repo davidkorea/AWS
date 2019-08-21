@@ -17,14 +17,24 @@
   - 3 copies out of 6 need for reads
   - Self healing with peer-to-peer replication
   - Storage is striped across 100s of volumes
-- **One Aurora Instance takes writes (master, primary) in ONE Aurora Cluster**, the others are Aurora Read Replicas
-- Master + up to 15 Aurora Read Replicas serve reads
+- **One writer and multiple readers**
+    - Supports multiple reader instances connected to the same storage volume as a single writer instance. This is a good general-purpose option for most workloads.  
+    - **One Aurora Instance takes writes (master, primary) in ONE Aurora Cluster**, the others are Aurora Read Replicas
+    - Master + up to 15 Aurora Read Replicas serve reads
+    
 - Automated failover for master in less than 30 seconds, from read replicas through **failover priority**
   - If there is contention争吵 between 2 or more replicas in the **same priority tier**, then Amazon RDS will promote the replica that is the **same size as the primary/master/write instance**
   - Priority tier logic: Tier 0 > Tier 1 > … > Tier 15
   ![](https://i.loli.net/2019/08/08/wiyVdMlkCsxXv8S.png)
 - Support for Cross Region Read Replication
   ![](https://i.loli.net/2019/08/08/IFlUBYy61RxWzrA.png)
+
+- Database Location
+    - **Regional**, You provision your Aurora database in a **single AWS Region**
+    - **Global**, You can provision your Aurora database in **multiple AWS Regions**. **Writes in the primary AWS Region** are replicated with typical latency of less than 1 sec to secondary AWS Regions. 通常以不到 1 秒的延迟将主 AWS 区域中的写入, 复制到辅助 AWS 区域。
+        - Global全局Aurora依然可以设置Multi-AZ
+        - 但是好像无法指定使用哪些Region？？？
+
 
 # 2. Aurora Serverless
 - No need to choose an instance size
