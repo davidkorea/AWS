@@ -72,6 +72,12 @@ store temporary session data in a cache (using TTL features)
 - The instance retrieves the data and the user is already logged in
 
 # 4. Patterns / Cache Strategies for ElastiCache
+
+The combination of lazy loading and write through is ideal.
+- If the data expires and is requested, then store the object back in the cache using lazy loading
+- if new data was wrote to DB or S3, then trigger a lambda function to cache.
+
+
 ## 4.1 Lazy Loading: Load only when necessary
 Lazy loading is a common strategy for caching data, as it prevents you from filling the cache with data that may not be applicable. 
 
