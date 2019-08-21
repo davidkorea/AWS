@@ -17,6 +17,8 @@
   - MariaDB
 
 # 2. RDS Multi AZ (DR) in Single Region
+
+- **Multi AZ** is only within a **single region**, **NOT cross region**. Region outages impact availability
 - **SYNC** replication
 - One DNS name – automatic app failover to standby
 - The failover happens only in the following conditions:
@@ -27,8 +29,7 @@
   - A manual failover of the DB instance was initiated using Reboot with failover
   
 - No failover for DB operations: long-running queries, deadlocks or database corruption errors.
-- **Backups** and **snapsho**t are **created from the standby**, will not stop the master db
-- **Multi AZ** is only within a **single region**, **NOT cross region**. Region outages impact availability
+- **Backups** and **snapshot** are **created from the standby**, will not stop the master db
 
 # 3. RDS Backups
 - Backups are automatically enabled in RDS
@@ -37,12 +38,15 @@
   - Daily full snapshot of the database
   - Backups are “continuous” and allow **point in time recovery**, Capture transaction logs in real time
   - 7 days retention (can be 0 to 35 days)
+  - When you delete a DB instance, you can retain automated backups, 如要伸出数据库时，可以选择保留backup
 - DB Snapshots:
   - Manually triggered by the user
-  - Retention of backup for as long as you want
+  - Retention of backup for as long as you want, manual Snapshots don’t expire
   - Snapshots **takes IO operations** and can **stop database** from **seconds to minutes**
     - if **Multi-AZ**，**snapshot** created by **standby instance**, don’t impact the master – just the standby
-    
+  - Snapshots are incremental after the first snapshot (which is full)
+  - You can take a “final snapshot” when you delete your DB
+  
 # 4. RDS Encryption
 - Encryption at rest capability with AWS **KMS - AES-256** encryption
 - SSL certificates to encrypt data to RDS in flight. To enforce SSL:
@@ -70,8 +74,8 @@
 
 # 5. DB Parameter Groups
 - You can configure the DB engine using Parameter Groups
-- Dynamic parameters are applied immediately
-- Static parameters are applied after instance reboot
+- **Dynamic parameters** are **applied immediately**
+- **Static parameters** are **applied after instance reboot**
 - You can modify parameter group associated with a DB (must reboot)
 
 # 6. RDS API for SysOps
