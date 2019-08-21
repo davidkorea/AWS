@@ -6,8 +6,11 @@
 
 # 1. Aurora High Availability and Read Scaling
 
-![](https://i.loli.net/2019/08/08/t4yps2MCrq6Zzli.png)
-![](https://i.loli.net/2019/08/08/VIHdKQoCRPTaney.png)
+<p align="center">
+    <img src="https://i.loli.net/2019/08/08/VIHdKQoCRPTaney.png"  width="500" height="250">
+    <img src="https://i.loli.net/2019/08/08/t4yps2MCrq6Zzli.png"  width="250" height="250">
+</p>
+
 
 - 6 copies of your data across 3 AZ:
   - 4 copies out of 6 needed for writes
