@@ -7,8 +7,8 @@
 # 1. Aurora High Availability and Read Scaling
 
 <p align="center">
+    <img src="https://i.loli.net/2019/08/08/t4yps2MCrq6Zzli.png"  width="300" height="250">
     <img src="https://i.loli.net/2019/08/08/VIHdKQoCRPTaney.png"  width="500" height="250">
-    <img src="https://i.loli.net/2019/08/08/t4yps2MCrq6Zzli.png"  width="250" height="250">
 </p>
 
 
