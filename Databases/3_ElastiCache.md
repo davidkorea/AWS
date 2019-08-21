@@ -18,6 +18,7 @@
 - Support for **Read Replicas**
 - **Multi AZ** with Failover Capability, ElastiCache Multi-AZ provides enhanced High Availability through automatic **failover to a read replica** in case of a primary node failure，从只读副本进行灾备恢复
 
+![](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/images/ElastiCacheClusters-CSN-RedisShards.png)
 
 ## 1.1 Redis Sharding Cluster
 - **Write** Scaling using **Sharding**
@@ -25,13 +26,11 @@
 - **Read** Scaling using **Read Replicas**
   - **Replicas per Shard**: Input number of replicas per shard between 0 and 5. Zero replicas will not enable an enhanced cluster with primary/replica roles.
 
-![](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/images/ElastiCacheClusters-CSN-RedisShards.png)
 
 ## 1.2 Single Redis Cluster
 - can have read replicas, BUT no Sharding
 - can Multi-AZ
 
-![](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/images/ElastiCacheClusters-CSN-RedisShards.png)
 
 ## 1.3 Security:
 - Redis support **Redis AUTH (username / password)**
