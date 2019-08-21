@@ -19,9 +19,6 @@
 - **Multi AZ** with Failover Capability, ElastiCache Multi-AZ provides enhanced High Availability through automatic **failover to a read replica** in case of a primary node failure，从只读副本进行灾备恢复
 
 
-
-
-
 ## 1.1 Redis Sharding Cluster
 - **Write** Scaling using **Sharding**
   - **Number of Shards**: The number of shards in this cluster. A shard is a partition of your data and is comprised of one primary and up to five read replica
@@ -38,6 +35,7 @@
 - **SSL in-flight encryption** must be enabled and used
   - Memcached support SASL authentication (advanced)
 
+![](https://i.loli.net/2019/08/21/DKhp5xcm6najiZF.png)
 
 ![](https://i.loli.net/2019/08/21/IiNJsvkqc1nyFw3.png)
 
