@@ -44,6 +44,11 @@ An Aurora global database consists of **one primary AWS Region** where your data
 
 - **Aurora Global Database** is only available for Aurora with **MySQL 5.6 compatibility**
 - You **can't use db.t2 or db.t3** instance classes for an Aurora global database. You have a **choice of db.r4 or db.r5** instance classes.
+- ONLY **After** you create an Aurora global database and its **primary cluster**, should you add a new AWS Region, the secondary Aurora cluster. 
+    ![](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/images/aurora-global-databases-cluster-tree-03-global-cluster-actions.png)
+    ![](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/images/aurora-global-databases-add-region-01.png)
+    
+
 
 # 3. Aurora Serverless
 - No need to choose an instance size
