@@ -1,8 +1,9 @@
 - Helps make your application stateless
-- Helps reduce load off of databases for **read intensive workloads**
-
 - AWS takes care of OS maintenance / patching, optimizations, setup, configuration, monitoring, failure recovery and backups
-
+- None of the caches(redis & memcached) support IAM authentication
+- IAM policies on ElastiCache are only used for AWS API-level security
+- ElastiCache is helpful for **read-heavy** application workloads, Helps reduce load off of databases for **read intensive workloads**
+  - social networks, gaming, media sharing, Q&A portals & compute-intensive workloads (recommendation engines)
 
 # 1. Redis
 - Redis is an **in-memory key-value store**
@@ -22,7 +23,7 @@
 
 
 ## 1.1 Redis Sharding Cluster
-- **Write** Scaling using **sharding**
+- **Write** Scaling using **Sharding**
   - **Number of Shards**: The number of shards in this cluster. A shard is a partition of your data and is comprised of one primary and up to five read replica
 - **Read** Scaling using **Read Replicas**
   - **Replicas per Shard**: Input number of replicas per shard between 0 and 5. Zero replicas will not enable an enhanced cluster with primary/replica roles.
@@ -32,7 +33,25 @@
 - can Multi-AZ
 
 
+## 1.3 Security:
+- Redis support **Redis AUTH (username / password)**
+- **SSL in-flight encryption** must be enabled and used
+  - Memcached support SASL authentication (advanced)
+
+
 ![](https://i.loli.net/2019/08/21/IiNJsvkqc1nyFw3.png)
+
+
+# 2. Memcached 
+- Memcached is an **in-memory object store**
+- **Cache doesn’t survive reboots**
+- Memcached support SASL authentication (advanced)
+- Use cases:
+  - Quick retrieval of objects from memory
+  - Cache often accessed objects
+- Overall, Redis has largely grown in popularity and has better feature sets than Memcached.
+- I would personally only use Redis for caching needs. AWS exam wouldn’t ask if Redis or Memcached is better. Just “ElastiCache” in general
+
 
 
 # 2. ElastiCache - DB Cache
@@ -49,8 +68,10 @@
 - The user hits another instance of our application
 - The instance retrieves the data and the user is already logged in
 
-
-
+# 4. Patterns for ElastiCache:
+- Lazy Loading: all the read data is cached, data can become stale in cache
+- Write Through: Adds or update data in the cache when written to a DB (no stale data)
+- Session Store: store temporary session data in a cache (using TTL features)
 
 
 
