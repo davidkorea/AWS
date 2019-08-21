@@ -5,7 +5,7 @@
 - Replication is **ASYNC**, so reads are **eventually consistent**
 - Replicas can be promoted to their own DB，只读副本可以升级为Master读写DB
 - Applications must update the connection string to leverage read replicas，独立于Master之外的单独URL Endpoint
-- Read Replicas help with Disaster Recovery (DR) by using a **cross region RR**
+- Read Replicas **help with Disaster Recovery(DR)** by using a **cross region RR**
 - Read Replicas can be used to run **BI / Analytics Reports** for example
 - 目前Read Replicas支持以下4个数据库：
   - Aurora
@@ -29,14 +29,16 @@
 # 3. RDS Backups
 - Backups are automatically enabled in RDS
 - Automated backups:
-  - Backups happen during maintenance windows, changes to the backup window take effect immediately. Daily full snapshot of the database
+  - Backups happen during **maintenance windows**, **changes to the backup(maintenance) window take effect immediately** 
+  - Daily full snapshot of the database
   - Backups are “continuous” and allow **point in time recovery**, Capture transaction logs in real time
   - 7 days retention (can be 0 to 35 days)
 - DB Snapshots:
   - Manually triggered by the user
   - Retention of backup for as long as you want
-  - Snapshots takes IO operations and can **stop database** from seconds to minutes
-    - if Multi-AZ，snapshot created by standby instance, don’t impact the master – just the standby
+  - Snapshots **takes IO operations** and can **stop database** from **seconds to minutes**
+    - if **Multi-AZ**，**snapshot** created by **standby instance**, don’t impact the master – just the standby
+    
 # 4. RDS Encryption
 - Encryption at rest capability with AWS KMS - AES-256 encryption
 - SSL certificates to encrypt data to RDS in flight. To enforce SSL:
