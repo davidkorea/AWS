@@ -35,9 +35,12 @@
 - **SSL in-flight encryption** must be enabled and used
   - Memcached support SASL authentication (advanced)
 
-![](https://i.loli.net/2019/08/21/DKhp5xcm6najiZF.png)
-
 ![](https://i.loli.net/2019/08/21/IiNJsvkqc1nyFw3.png)
+
+-----
+
+![](https://i.loli.net/2019/08/21/DKhp5xcm6najiZF.png)
+![](https://i.loli.net/2019/08/21/MeBCazhWyx9tP1r.png)
 
 
 # 2. Memcached 
