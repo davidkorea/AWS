@@ -67,22 +67,13 @@
 - **Traditional Username and Password** can be used to **login to the database**
   - **IAM users** can now be used too (for **MySQL / Aurora** – NEW!)
 
-
-
-
-
-
-
-
-
-
-# 5. DB Parameter Groups
+# 6. DB Parameter Groups
 - You can configure the DB engine using Parameter Groups
 - **Dynamic parameters** are **applied immediately**
 - **Static parameters** are **applied after instance reboot**
 - You can modify parameter group associated with a DB (must reboot)
 
-# 6. RDS API for SysOps
+# 7. RDS API for SysOps
 - `DescribeDBInstances` API –
   - Helps to get a list of all the DB Instances you have deployed including **Read Replicas**
   - Helps to get the **DB version**
@@ -91,7 +82,7 @@
 - `RebootDBInstance` API - Helps to initiate a ‘forced’ failover by rebooting DB instance
 
 
-# 7. RDS with CloudWatch
+# 8. RDS with CloudWatch
 - CloudWatch metrics associated with RDS (gathered from the hypervisor):
   - Database Connections
   - SwapUsage
@@ -105,7 +96,7 @@
   - Access to over 50 new CPU, memory, file system, and disk I/O metrics
 
 
-# 8. RDS Performance Insights
+# 9. RDS Performance Insights
 - Visualize your database performance and analyze any issues that affect it
 - With the Performance Insights dashboard, you can visualize the database load and filter the load:
   - By Waits => find the resource that is the bottleneck (CPU, IO, lock, etc…)
@@ -115,7 +106,7 @@
 - DBLoad = the number of active sessions for the DB engine
 - You can view the SQL queries that are putting load on your database
 
-
+![](https://i.loli.net/2019/08/21/MfAPoYk2K135xFb.png)
 
 
 
