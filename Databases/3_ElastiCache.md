@@ -43,7 +43,7 @@
 
 ![](https://i.loli.net/2019/08/21/DKhp5xcm6najiZF.png)
 ![](https://i.loli.net/2019/08/21/MeBCazhWyx9tP1r.png)
-
+![](https://i.loli.net/2019/08/21/gYrXkC953jxs6O8.png)
 
 # 2. Memcached 
 - Memcached is an **in-memory object store**
