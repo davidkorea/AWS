@@ -38,6 +38,9 @@
         - 但是好像无法指定使用哪些Region？？？
 
 # 2. Aurora Global Database
+
+> [Working with Amazon Aurora Global Database](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html)
+
 An Aurora global database consists of **one primary AWS Region** where your data is mastered, and **one read-only, secondary AWS Region**
 - The Aurora cluster in the **primary AWS Region** where your data is mastered performs both read and write operations**. 
 - The cluster in the **secondary region** enables low-latency reads. 
