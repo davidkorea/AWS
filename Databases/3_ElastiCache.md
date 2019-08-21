@@ -19,3 +19,44 @@
 
 
 ![](https://i.loli.net/2019/08/21/IiNJsvkqc1nyFw3.png)
+
+
+# 2. ElastiCache - DB Cache
+- Applications queries ElastiCache, if not available, get from RDS and store in ElastiCache.
+- Helps relieve减轻 load in RDS
+- Cache must have an **invalidation作废 strategy** to make sure only the **most current data** is used in there.
+
+
+# 3. ElastiCache - User Session Store
+
+用户访问任何一个应用服务器，此应用服务器将Session写入ElastiCache，当用户访问其他应用服务器时，可以在ElastiCache获取之前的session
+- User logs into any of the application
+- The application writes the session data into ElastiCache
+- The user hits another instance of our application
+- The instance retrieves the data and the user is already logged in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
