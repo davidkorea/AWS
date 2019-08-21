@@ -5,8 +5,21 @@
 
 
 # 1. Redis
-
+- Redis is an **in-memory key-value store**
+- Super low latency (sub ms)
+- **Cache survive** reboots by default (it’s called **persistence**)
+- Great to host
+  - User sessions
+  - Leaderboard (for gaming)
+  - Distributed states
+  - Relieve pressure on databases (such as RDS)
+  - Pub / Sub capability for messaging
+- Support for **Read Replicas**
 - **Multi AZ** with Failover Capability, ElastiCache Multi-AZ provides enhanced High Availability through automatic **failover to a read replica** in case of a primary node failure，从只读副本进行灾备恢复
+
+
+
+
 
 ## 1.1 Redis Sharding Cluster
 - **Write** Scaling using **sharding**
@@ -16,6 +29,7 @@
 
 ## 1.2 Single Redis Cluster
 - can have read replicas, BUT no Sharding
+- can Multi-AZ
 
 
 ![](https://i.loli.net/2019/08/21/IiNJsvkqc1nyFw3.png)
