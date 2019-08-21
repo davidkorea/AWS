@@ -1,13 +1,14 @@
 
 # 1. RDS Read Replicas
 - Up to 5 Read Replicas
+  - You can have Read Replicas of Read Replicas
 - Within AZ, **Multi-AZ**, Cross AZ or **Cross Region**
 - Replication is **ASYNC**, so reads are **eventually consistent**
 - Replicas can be promoted to their own DB，只读副本可以升级为Master读写DB
 - Applications must update the connection string to leverage read replicas，独立于Master之外的单独URL Endpoint
-- Read Replicas **help with Disaster Recovery(DR)** by using a **cross region RR**
+- Read Replicas **help with Disaster Recovery(DR)** by using a **Cross Region RR**
 - Read Replicas can be used to run **BI / Analytics Reports** for example
-- 目前Read Replicas支持以下4个数据库：
+- 目前Read Replicas支持以下4个数据库, NO Oracle!
   - Aurora
   - PostgreSQL
   - MySQL
