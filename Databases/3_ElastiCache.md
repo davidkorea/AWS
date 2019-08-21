@@ -89,6 +89,8 @@ You could further optimize by applying a time-to-live (TTL) value to the data. T
 ## 4.2 Write Through: Add or Update cache when database is updated
 Adds or update data in the cache when written to a DB (no stale data)
 
+The other common technique includes creating a pipeline to update the cache as new data is written to S3, with an AWS Lambda function trigger. This enables you to keep your cache fresh as data is being written to S3. 当写入S3新数据后，出发lambda，去将新数据缓存到redis
+
 - Pros:
   - Data in cache is never stale过期
   - Write penalty vs Read penalty (each write requires 2 calls)
@@ -96,7 +98,7 @@ Adds or update data in the cache when written to a DB (no stale data)
   - Missing Data until it is added / updated in the DB. Mitigation减轻 is to implement Lazy Loading strategy as well
   - Cache churn剧烈搅动 – a lot of the data will never be read
 
-
+![](https://d2908q01vomqb2.cloudfront.net/e1822db470e60d090affd0956d743cb0e7cdf113/2019/03/22/write-through2.png)
 
 
 
