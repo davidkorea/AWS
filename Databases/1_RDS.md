@@ -10,12 +10,13 @@
   ![](https://i.loli.net/2019/08/21/PRLd5uerVZNxbyj.png)
   
 - Read Replicas can be used to run **BI / Analytics Reports** for example
-- 目前Read Replicas支持以下4个数据库, NO Oracle!
+- 目前Read Replicas支持以下4个数据库, NO Oracle! NO MS SQL
   - Aurora
   - PostgreSQL
   - MySQL
   - MariaDB
-
+    ![](https://i.loli.net/2019/08/21/w2j1uvVGCA537Kt.png)
+    
 # 2. RDS Multi AZ (DR) in Single Region
 
 - **Multi AZ** is only within a **single region**, **NOT cross region**. Region outages impact availability
