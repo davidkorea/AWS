@@ -17,10 +17,10 @@
   - 3 copies out of 6 need for reads
   - Self healing with peer-to-peer replication
   - Storage is striped across 100s of volumes
-- One Aurora Instance takes writes (master, primary)
+- **One Aurora Instance takes writes (master, primary) in ONE Aurora Cluster**, the others are Aurora Read Replicas
 - Master + up to 15 Aurora Read Replicas serve reads
-- Automated failover for master in less than 30 seconds, from read replicas through failover priority
-  - If there is contention between 2 or more replicas in the same priority tier, then Amazon RDS will promote the replica that is the same size as the primary instance
+- Automated failover for master in less than 30 seconds, from read replicas through **failover priority**
+  - If there is contention争吵 between 2 or more replicas in the **same priority tier**, then Amazon RDS will promote the replica that is the **same size as the primary/master/write instance**
   - Priority tier logic: Tier 0 > Tier 1 > … > Tier 15
   ![](https://i.loli.net/2019/08/08/wiyVdMlkCsxXv8S.png)
 - Support for Cross Region Read Replication
