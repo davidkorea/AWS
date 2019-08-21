@@ -21,7 +21,7 @@
 
 ## 1.1 Redis Sharding Cluster
 - **Write** Scaling using **Sharding**
-  - **Number of Shards**: The number of shards in this cluster. A shard is a partition of your data and is comprised of one primary and up to five read replica
+  - **Number of Shards**: The number of shards in this cluster. A shard is a partition of your data and is comprised of **one primary** and up to five **read replica**，每个切片shard有1个primary节点和最多5个只读节点
 - **Read** Scaling using **Read Replicas**
   - **Replicas per Shard**: Input number of replicas per shard between 0 and 5. Zero replicas will not enable an enhanced cluster with primary/replica roles.
 
