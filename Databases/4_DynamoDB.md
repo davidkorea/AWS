@@ -14,11 +14,6 @@
   - Document Types: **List, Map**
   - Set Types: **String Set, Number Set, Binary Set**
 
-- On Demand (new from Nov 2018)
-  - No capacity planning needed (WCU / RCU) – **scales automatically**
-  - **2.5x more expensive than provisioned** capacity (use with care)**
-  - Helpful when spikes are un-predictable or the application is very low throughput
-
 # 2. Primary Keys
 ![](https://i.loli.net/2019/08/22/uQFa8UXRgfbCMjs.png)
 
@@ -129,6 +124,11 @@
 - Throughput can be exceeded temporarily using “**burst credit**”
 - If burst credit are empty, you’ll get a “ProvisionedThroughputException”.
 - It’s then advised to do an exponential back-off retry
+
+- On Demand (new from Nov 2018)
+  - No capacity planning needed (WCU / RCU) – **scales automatically**
+  - **2.5x more expensive than provisioned** capacity (use with care)**
+  - Helpful when spikes are un-predictable or the application is very low throughput
 
 ![](https://i.loli.net/2019/08/22/hA5RZYufWD8V1ry.png)
 ![](https://i.loli.net/2019/08/22/Fgfa3ZqC9Dmzx4t.png)
