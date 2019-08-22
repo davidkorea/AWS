@@ -56,15 +56,17 @@
 ![](https://i.loli.net/2019/08/22/A3pNK8qgShm7kja.png)
 
 ## 3.2 GSI (Global Secondary Index)
-![](https://i.loli.net/2019/08/22/dbEcGj1KqAaJUkn.png)
+![](https://i.loli.net/2019/08/22/NmD3YQyB8IPWLrk.png
+![](https://i.loli.net/2019/08/22/KLXWy6ftY3UBTwJ.png
+
 - GSI Partition Key be ether same as origin or not, can have no Sort Key
+- **MUST define RCU / WCU** for the index
 - To **speed up queries** on **non-key attributes**(除了主键之外的其它列), use a Global Secondary Index
 - ~~GSI = **Partition Key + Optional Sort Key**~~
 - The index is a **new “table”** and we can project attributes on it
 - The partition key and sort key of the original table are always projected (KEYS_ONLY)
 - Can specify extra attributes to project (INCLUDE)
 - Can use all attributes from main table (ALL)
-- **MUST define RCU / WCU** for the index
 - Possibility to add / modify GSI (not LSI)
 
 <p align="center">
