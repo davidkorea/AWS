@@ -195,17 +195,42 @@
 - DynamoDB **Streams can help recover expired items**
 
 # 10. DynamoDB Transactions处理交易
-• New feature from November 2018，同时在多个表中 写入/更新/删除 多条记录row
-• Transaction = Ability to Create / Update / Delete **multiple rows** in **different tables** at the same time
-• It’s an “all or nothing” type of operation.
-• Write Modes: Standard, Transactional
-• Read Modes: Eventual Consistency, Strong Consistency, Transactional
-• Consume 2x of WCU / RCU
+- New feature from November 2018，同时在多个表中 写入/更新/删除 多条记录row
+- Transaction = Ability to Create / Update / Delete **multiple rows** in **different tables** at the same time
+- It’s an “all or nothing” type of operation.
+- Write Modes: Standard, Transactional
+- Read Modes: Eventual Consistency, Strong Consistency, Transactional
+- Consume 2x of WCU / RCU
 
-![](https://i.loli.net/2019/08/22/4dlK6T1WE3qB9RD.png)
+<p align="center">
+    <img src="https://i.loli.net/2019/08/22/4dlK6T1WE3qB9RD.png"  width="700" height="300">
+</p>
 
 
-
+# 11. Security & Other Features
+- Security:
+  - **VPC Endpoints available** to access DynamoDB without internet
+  - Access fully controlled by IAM
+  - Encryption at rest using KMS
+  - Encryption in transit using SSL / TLS
+- Backup and Restore feature available
+  - **Point in time restore like RDS**
+  - No performance impact
+- Global Tables
+  - Multi region, fully replicated, high performance
+  - To create a global table, ensure that this **table is empt**y and that **DynamoDB Streams are enabled**.
+  
+- **Amazon Database Migration Service(DMS)** can be used to migrate **from Mongo, Oracle, MySQL, S3, etc… to DynamoDB**
+- You can **launch a local DynamoDB on your computer** for development purposes
+- DynamoDB CLI – Good to Know
+  - --projection-expression : attributes to retrieve
+  - --filter-expression : filter results
+- General CLI pagination options including DynamoDB / S3:
+  - Optimization:
+    - `--page-size` : full dataset is still received but each API call will request less data (helps avoid timeouts)
+  - Pagination:
+    - `--max-items` : max number of results returned by the CLI. Returns NextToken
+    - `--starting-token`: specify the last received NextToken to keep on reading
 
 
 
