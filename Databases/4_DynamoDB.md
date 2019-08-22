@@ -15,7 +15,7 @@
   - Set Types: **String Set, Number Set, Binary Set**
 
 # 2. Primary Keys
-![](https://i.loli.net/2019/08/22/fY9VwnpCT3O1UQB.png)
+![](https://i.loli.net/2019/08/22/uQFa8UXRgfbCMjs.png)
 
 ## 2.1 Partition Key ONLY (HASH)
 - Partition key must be **unique for each item**，每一行记录的Partition Key需要唯一，和其它行不能重复
