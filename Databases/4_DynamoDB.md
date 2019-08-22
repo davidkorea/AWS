@@ -1,0 +1,4 @@
+- Fully Managed, Highly available with replication across 3 AZ
+- Stored in SSD
+- Integrated with IAM for security, authorization and administration
+- Enables event driven programming with DynamoDB Streams
