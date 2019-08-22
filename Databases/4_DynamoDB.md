@@ -135,12 +135,25 @@
   - Total partitions = CEILING(MAX(Capacity, Size))
 - **WCU and RCU are spread evenly均等地 between partitions**
 
+# 6. DynamoDB Concurrency并发性
+- DynamoDB has a feature called “Conditional Update / Delete”
+- That means that you can ensure an item hasn’t changed before altering it
+- That makes DynamoDB an optimistic locking / concurrency database
 
+当满足某个条件时，才进行更新操作
+![](https://i.loli.net/2019/08/22/hKxowa7EH2kMAjV.png)
 
+# 7. DynamoDB Accelerator - DAX
 
-
-
-
+- DAX = DynamoDB Accelerator
+- Seamless cache for DynamoDB, no application rewrite
+- Writes go through DAX to DynamoDB
+- Micro second latency for cached reads & queries
+- Solves the Hot Key problem (too many reads)
+- 5 minutes TTL for cache by default
+- Up to 10 nodes in the cluster
+- Multi AZ (3 nodes minimum recommended for production)
+- Secure (Encryption at rest with KMS, VPC, IAM, CloudTrail…)
 
 
 
