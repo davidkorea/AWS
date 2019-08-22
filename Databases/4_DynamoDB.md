@@ -180,10 +180,29 @@
 - Stream has 24 hours of data retention
 
 <p align="center">
-    <img src="https://i.loli.net/2019/08/22/5m9LeDIpGUuCfoK.png"  width="320" height="400">
+    <img src="https://i.loli.net/2019/08/22/5m9LeDIpGUuCfoK.png"  width="280" height="400">
 </p>
 
+# 9. DynamoDB -TTL (Time to Live)
+- TTL = automatically delete an item after an expiry date / time
+- TTL is provided at no extra cost, **deletions do not use WCU / RCU**
+- TTL is a background task operated by the DynamoDB service itself
+- Helps reduce storage and manage the table size over time
+- Helps adhere to regulatory norms
+- TTL is enabled per row (you define a TTL column, and add a date there)
+- DynamoDB typically deletes expired items within 48 hours of expiration
+- Deleted items due to TTL are **also deleted in GSI / LSI**
+- DynamoDB **Streams can help recover expired items**
 
+# 10. DynamoDB Transactions处理交易
+• New feature from November 2018，同时在多个表中 写入/更新/删除 多条记录row
+• Transaction = Ability to Create / Update / Delete **multiple rows** in **different tables** at the same time
+• It’s an “all or nothing” type of operation.
+• Write Modes: Standard, Transactional
+• Read Modes: Eventual Consistency, Strong Consistency, Transactional
+• Consume 2x of WCU / RCU
+
+![](https://i.loli.net/2019/08/22/4dlK6T1WE3qB9RD.png)
 
 
 
