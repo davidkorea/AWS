@@ -37,3 +37,104 @@
 <p align="center">
     <img src="https://i.loli.net/2019/08/22/5jnIlO9JCg1pkK4.png"  width="400" height="200">
 </p>
+
+# 3. Provisioned Throughput
+
+![](https://i.loli.net/2019/08/22/XQw4UhGd8ZgjYWo.png)
+![](https://i.loli.net/2019/08/22/hA5RZYufWD8V1ry.png)
+
+- Table **must** have **provisioned read and write capacity units**, by default.
+- Read Capacity Units (RCU): throughput for reads
+- Write Capacity Units (WCU): throughput for writes
+- Option to setup auto-scaling of throughput to meet demand
+- Throughput can be exceeded temporarily using “burst credit”
+- If burst credit are empty, you’ll get a “ProvisionedThroughputException”.
+- It’s then advised to do an exponential back-off retry
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
