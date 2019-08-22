@@ -43,8 +43,12 @@
 ![](https://i.loli.net/2019/08/22/XQw4UhGd8ZgjYWo.png)
 
 - Table **must** have **provisioned read and write capacity units**, by default.
-- **Read Capacity Units (RCU)**: throughput for reads
-- **Write Capacity Units (WCU)**: throughput for writes
+  - **Read Capacity Units (RCU)**: throughput for reads ($0.00013 per RCU)
+    - 1 RCU = **1 strongly** consistent read of **4 KB** per **second**
+    - 1 RCU = **2 eventually** consistent read of **4 K**B per **second**
+  - **Write Capacity Units (WCU)**: throughput for writes ($0.00065 per WCU)
+    - 1 WCU = **1 write** of **1 KB** per **second**
+    
 - **Option to setup auto-scaling** of throughput to meet demand
 - Throughput can be exceeded temporarily using “**burst credit**”
 - If burst credit are empty, you’ll get a “ProvisionedThroughputException”.
