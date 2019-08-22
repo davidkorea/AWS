@@ -23,7 +23,7 @@
 - Example: user_id for a users table
 
 <p align="center">
-    <img src="https://i.loli.net/2019/08/22/EiP8hn7UVqGKZuR.png"  width="400" height="200">
+    <img src="https://i.loli.net/2019/08/22/EiP8hn7UVqGKZuR.png"  width="400" height="160">
 </p>
 
 ## 2.2 Partition Key + Sort Key
@@ -47,7 +47,7 @@
 ## 3.1 LSI (Local Secondary Index)
 
 <p align="center">
-    <img src="https://i.loli.net/2019/08/22/NLDJFm9vlAaWsoK.png"  width="400" height="400">
+    <img src="https://i.loli.net/2019/08/22/NLDJFm9vlAaWsoK.png"  width="400" height="250">
 </p>
 
 - LSI = **Partition Key + Optional Sort Key**
@@ -63,7 +63,7 @@
 ## 3.2 GSI (Global Secondary Index)
 
 <p align="center">
-    <img src="https://i.loli.net/2019/08/22/NmD3YQyB8IPWLrk.png"  width="400" height="400">
+    <img src="https://i.loli.net/2019/08/22/NmD3YQyB8IPWLrk.png"  width="400" height="250">
 </p>
 
 ![](https://i.loli.net/2019/08/22/KLXWy6ftY3UBTwJ.png)
