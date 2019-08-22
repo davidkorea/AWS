@@ -158,27 +158,10 @@
 ![](https://i.loli.net/2019/08/22/TEDByjU1WKGl5fu.png)
 
 
-# 6. Partitions Internal
-- Data is divided in partitions
-  - Partition keys go through a hashing algorithm to know to which partition they go to
-- To compute the number of partitions:
-  - By capacity: (TOTAL RCU / 3000) + (TOTAL WCU / 1000)
-  - By size: Total Size / 10 GB
-  - Total partitions = CEILING(MAX(Capacity, Size))
-- **WCU and RCU are spread evenly均等地 between partitions**
-
-# 7. DynamoDB Concurrency并发性
-- DynamoDB has a feature called “Conditional Update / Delete”
-- That means that you can ensure an item hasn’t changed before altering it
-- That makes DynamoDB an optimistic locking / concurrency database
-
-当满足某个条件时，才进行更新操作
+# 6. DynamoDB Accelerator - DAX
 <p align="center">
-    <img src="https://i.loli.net/2019/08/22/hKxowa7EH2kMAjV.png"  width="700" height="150">
+    <img src="https://i.loli.net/2019/08/22/m5oNl7gPb1uQenG.png"  width="320" height="400">
 </p>
-
-
-# 8. DynamoDB Accelerator - DAX
 
 - DAX = DynamoDB Accelerator
 - Seamless **cache for DynamoDB**, no application rewrite
@@ -190,12 +173,28 @@
 - Multi AZ (3 nodes minimum recommended for production)
 - Secure (Encryption at rest with KMS, VPC, IAM, CloudTrail…)
 
+![](https://i.loli.net/2019/08/22/KF65Bkc1HdeOrxS.png)
+![](https://i.loli.net/2019/08/22/tTZqNadEhpwQlB3.png)
+
+
+# 7. Partitions Internal
+- Data is divided in partitions
+  - Partition keys go through a hashing algorithm to know to which partition they go to
+- To compute the number of partitions:
+  - By capacity: (TOTAL RCU / 3000) + (TOTAL WCU / 1000)
+  - By size: Total Size / 10 GB
+  - Total partitions = CEILING(MAX(Capacity, Size))
+- **WCU and RCU are spread evenly均等地 between partitions**
+
+# 8. DynamoDB Concurrency并发性
+- DynamoDB has a feature called “Conditional Update / Delete”
+- That means that you can ensure an item hasn’t changed before altering it
+- That makes DynamoDB an optimistic locking / concurrency database
+
+当满足某个条件时，才进行更新操作
 <p align="center">
-    <img src="https://i.loli.net/2019/08/22/m5oNl7gPb1uQenG.png"  width="320" height="400">
+    <img src="https://i.loli.net/2019/08/22/hKxowa7EH2kMAjV.png"  width="700" height="150">
 </p>
-
-
-
 
 
 # 9. DynamoDB -TTL (Time to Live)
