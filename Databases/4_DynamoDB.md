@@ -167,6 +167,21 @@
 
 
 
+# 8. DynamoDB Streams
+![](https://i.loli.net/2019/08/22/4WEpTD7Nz1kdtlM.png)
+
+- Changes in DynamoDB (Create, Update, Delete) can end up in a DynamoDB Stream
+- This stream can be read by AWS Lambda, and we can then do:
+  - React to changes in real time (welcome email to new users)
+  - Analytics
+  - Create derivative tables / views
+  - Insert into ElasticSearch
+- Could **implement cross region replication using Streams**
+- Stream has 24 hours of data retention
+
+<p align="center">
+    <img src="https://i.loli.net/2019/08/22/5m9LeDIpGUuCfoK.png"  width="320" height="400">
+</p>
 
 
 
