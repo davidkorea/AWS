@@ -64,13 +64,17 @@
     <img src="https://i.loli.net/2019/08/22/iPLCRoYBrZVk5SH.png"  width="400" height="200">
 </p>
 
+## 3.3 Indexes and Throttling
+- GSI:
+  - If the **writes are throttled on the GSI**, then the **main table will be throttled!** as well Even if the WCU on the main tables are fine
+  - Choose your GSI partition key carefully!
+  - Assign your WCU capacity carefully!
+- LSI:
+  - Uses the WCU and RCU of the main table
+  - No special throttling considerations
 
 
-
-
-
-
-# 3. Provisioned Throughput
+# 4. Provisioned Throughput
 
 ![](https://i.loli.net/2019/08/22/XQw4UhGd8ZgjYWo.png)
 
@@ -103,7 +107,7 @@
 ![](https://i.loli.net/2019/08/22/Fgfa3ZqC9Dmzx4t.png)
 
 
-# 4. Partitions Internal
+# 5. Partitions Internal
 - Data is divided in partitions
   - Partition keys go through a hashing algorithm to know to which partition they go to
 - To compute the number of partitions:
