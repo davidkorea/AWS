@@ -17,11 +17,23 @@
 # 2. Primary Keys
 ![](https://i.loli.net/2019/08/22/fY9VwnpCT3O1UQB.png)
 
-## 2.1 Partition key ONLY (HASH)
+## 2.1 Partition Key ONLY (HASH)
 - Partition key must be **unique for each item**，每一行记录的Partition Key需要唯一，和其它行不能重复
 - Partition key must be “diverse” so that the data is distributed
 - Example: user_id for a users table
 
 <p align="center">
-    <img src="https://i.loli.net/2019/08/22/EiP8hn7UVqGKZuR.png"  width="400" height="250">
+    <img src="https://i.loli.net/2019/08/22/EiP8hn7UVqGKZuR.png"  width="400" height="200">
+</p>
+
+## 2.2 Partition Key + Sort Key
+- The combination must be unique
+- Data is grouped by partition key
+- Sort key == range key
+- Example: users-games table
+  - user_id for the partition key
+  - game_id for the sort key
+  
+<p align="center">
+    <img src="https://i.loli.net/2019/08/22/5jnIlO9JCg1pkK4.png"  width="400" height="200">
 </p>
