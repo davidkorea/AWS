@@ -173,9 +173,12 @@
 
 
 # 8. DynamoDB Streams
-![](https://i.loli.net/2019/08/22/4WEpTD7Nz1kdtlM.png)
+<p align="center">
+    <img src="https://i.loli.net/2019/08/22/5m9LeDIpGUuCfoK.png"  width="280" height="400">
+</p>
 
 - Changes in DynamoDB (Create, Update, Delete) can end up in a DynamoDB Stream
+- **DynamoDB triggers connect DynamoDB streams to Lambda functions**
 - This stream can be read by AWS Lambda, and we can then do:
   - React to changes in real time (welcome email to new users)
   - Analytics
@@ -184,9 +187,10 @@
 - Could **implement cross region replication using Streams**
 - Stream has 24 hours of data retention
 
-<p align="center">
-    <img src="https://i.loli.net/2019/08/22/5m9LeDIpGUuCfoK.png"  width="280" height="400">
-</p>
+![](https://i.loli.net/2019/08/22/4WEpTD7Nz1kdtlM.png)
+![](https://i.loli.net/2019/08/22/7VP6cHxneWisr2d.png)
+
+
 
 # 9. DynamoDB -TTL (Time to Live)
 - TTL = automatically delete an item after an expiry date / time
