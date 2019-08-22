@@ -152,15 +152,18 @@
 # 7. DynamoDB Accelerator - DAX
 
 - DAX = DynamoDB Accelerator
-- Seamless cache for DynamoDB, no application rewrite
-- Writes go through DAX to DynamoDB
+- Seamless **cache for DynamoDB**, no application rewrite
+- **Writes go through DAX** to DynamoDB
 - Micro second latency for cached reads & queries
-- Solves the Hot Key problem (too many reads)
-- 5 minutes TTL for cache by default
+- **Solves the Hot Key problem (too many reads)**
+- **5 minutes TTL for cache by default**
 - Up to 10 nodes in the cluster
 - Multi AZ (3 nodes minimum recommended for production)
 - Secure (Encryption at rest with KMS, VPC, IAM, CloudTrail…)
 
+<p align="center">
+    <img src="https://i.loli.net/2019/08/22/m5oNl7gPb1uQenG.png"  width="320" height="400">
+</p>
 
 
 
