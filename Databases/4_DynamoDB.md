@@ -71,7 +71,14 @@
 ![](https://i.loli.net/2019/08/22/Fgfa3ZqC9Dmzx4t.png)
 
 
-
+# 4. Partitions Internal
+- Data is divided in partitions
+  - Partition keys go through a hashing algorithm to know to which partition they go to
+- To compute the number of partitions:
+  - By capacity: (TOTAL RCU / 3000) + (TOTAL WCU / 1000)
+  - By size: Total Size / 10 GB
+  - Total partitions = CEILING(MAX(Capacity, Size))
+- **WCU and RCU are spread evenly均等地 between partitions**
 
 
 
