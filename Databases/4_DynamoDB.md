@@ -42,9 +42,14 @@
 # 3. Secondary Index
 
 ![](https://i.loli.net/2019/08/22/gXUq532BNY9V8wW.png)
+![](https://i.loli.net/2019/08/22/SP1t5WIhFeL37VG.png)
 
 ## 3.1 LSI (Local Secondary Index)
-![](https://i.loli.net/2019/08/22/NLDJFm9vlAaWsoK.png)
+
+<p align="center">
+    <img src="https://i.loli.net/2019/08/22/NLDJFm9vlAaWsoK.png"  width="400" height="400">
+</p>
+
 - LSI = **Partition Key + Optional Sort Key**
 - The **Partition Key** should be the **same as the origin** Partition Key, also LSI should have a **Sort Key**
 - Alternate range key for your table, **local to the hash key**
@@ -56,8 +61,12 @@
 ![](https://i.loli.net/2019/08/22/A3pNK8qgShm7kja.png)
 
 ## 3.2 GSI (Global Secondary Index)
-![](https://i.loli.net/2019/08/22/NmD3YQyB8IPWLrk.png
-![](https://i.loli.net/2019/08/22/KLXWy6ftY3UBTwJ.png
+
+<p align="center">
+    <img src="https://i.loli.net/2019/08/22/NmD3YQyB8IPWLrk.png"  width="400" height="400">
+</p>
+
+![](https://i.loli.net/2019/08/22/KLXWy6ftY3UBTwJ.png)
 
 - GSI Partition Key be ether same as origin or not, can have no Sort Key
 - **MUST define RCU / WCU** for the index
