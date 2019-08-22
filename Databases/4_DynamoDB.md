@@ -58,7 +58,10 @@
 - The attribute that you choose must be a scalar String, Number, or Binary
 - **LSI must be defined at table creation time**
 
-![](https://i.loli.net/2019/08/22/A3pNK8qgShm7kja.png)
+<p align="center">
+    <img src="https://i.loli.net/2019/08/22/A3pNK8qgShm7kja.png"  width="800" height="250">
+</p>
+
 
 ## 3.2 GSI (Global Secondary Index)
 
@@ -141,7 +144,10 @@
 - That makes DynamoDB an optimistic locking / concurrency database
 
 当满足某个条件时，才进行更新操作
-![](https://i.loli.net/2019/08/22/hKxowa7EH2kMAjV.png)
+<p align="center">
+    <img src="https://i.loli.net/2019/08/22/hKxowa7EH2kMAjV.png"  width="700" height="150">
+</p>
+
 
 # 7. DynamoDB Accelerator - DAX
 
