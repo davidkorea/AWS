@@ -207,7 +207,13 @@
 </p>
 
 
-# 11. Security & Other Features
+# 11. Global Tables
+- Multi region, fully replicated, high performance
+- To create a global table, ensure that this **table is empt**y and that **DynamoDB Streams are enabled**.
+  
+![](https://i.loli.net/2019/08/22/BhKNVAdE8MpjXD5.png)
+
+# 12. Security & Other Features
 - Security:
   - **VPC Endpoints available** to access DynamoDB without internet
   - Access fully controlled by IAM
@@ -216,10 +222,7 @@
 - Backup and Restore feature available
   - **Point in time restore like RDS**
   - No performance impact
-- Global Tables
-  - Multi region, fully replicated, high performance
-  - To create a global table, ensure that this **table is empt**y and that **DynamoDB Streams are enabled**.
-  
+
 - **Amazon Database Migration Service(DMS)** can be used to migrate **from Mongo, Oracle, MySQL, S3, etc… to DynamoDB**
 - You can **launch a local DynamoDB on your computer** for development purposes
 - DynamoDB CLI – Good to Know
