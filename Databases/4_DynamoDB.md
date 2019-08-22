@@ -27,7 +27,7 @@
 </p>
 
 ## 2.2 Partition Key + Sort Key
-- The combination must be unique
+- The **combination(Partition Key + Sort Key) must be unique**
 - Data is grouped by partition key
 - Sort key == range key
 - Example: users-games table
