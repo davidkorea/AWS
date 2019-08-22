@@ -45,6 +45,7 @@
 
 ## 3.1 LSI (Local Secondary Index)
 ![](https://i.loli.net/2019/08/22/NLDJFm9vlAaWsoK.png)
+- LSI = **Partition Key + Optional Sort Key**
 - The **Partition Key** should be the **same as the origin** Partition Key, also LSI should have a **Sort Key**
 - Alternate range key for your table, **local to the hash key**
 - **Up to five** local secondary indexes per table.
@@ -56,7 +57,7 @@
 
 ## 3.2 GSI (Global Secondary Index)
 ![](https://i.loli.net/2019/08/22/dbEcGj1KqAaJUkn.png)
-- GSI Partition Key be ether same as origin or not
+- GSI Partition Key be ether same as origin or not, can have no Sort Key
 - To **speed up queries** on **non-key attributes**(除了主键之外的其它列), use a Global Secondary Index
 - ~~GSI = **Partition Key + Optional Sort Key**~~
 - The index is a **new “table”** and we can project attributes on it
