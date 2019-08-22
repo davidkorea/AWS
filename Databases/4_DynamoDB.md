@@ -133,46 +133,7 @@
 ![](https://i.loli.net/2019/08/22/hA5RZYufWD8V1ry.png)
 ![](https://i.loli.net/2019/08/22/Fgfa3ZqC9Dmzx4t.png)
 
-
-# 5. Partitions Internal
-- Data is divided in partitions
-  - Partition keys go through a hashing algorithm to know to which partition they go to
-- To compute the number of partitions:
-  - By capacity: (TOTAL RCU / 3000) + (TOTAL WCU / 1000)
-  - By size: Total Size / 10 GB
-  - Total partitions = CEILING(MAX(Capacity, Size))
-- **WCU and RCU are spread evenly均等地 between partitions**
-
-# 6. DynamoDB Concurrency并发性
-- DynamoDB has a feature called “Conditional Update / Delete”
-- That means that you can ensure an item hasn’t changed before altering it
-- That makes DynamoDB an optimistic locking / concurrency database
-
-当满足某个条件时，才进行更新操作
-<p align="center">
-    <img src="https://i.loli.net/2019/08/22/hKxowa7EH2kMAjV.png"  width="700" height="150">
-</p>
-
-
-# 7. DynamoDB Accelerator - DAX
-
-- DAX = DynamoDB Accelerator
-- Seamless **cache for DynamoDB**, no application rewrite
-- **Writes go through DAX** to DynamoDB
-- Micro second latency for cached reads & queries
-- **Solves the Hot Key problem (too many reads)**
-- **5 minutes TTL for cache by default**
-- Up to 10 nodes in the cluster
-- Multi AZ (3 nodes minimum recommended for production)
-- Secure (Encryption at rest with KMS, VPC, IAM, CloudTrail…)
-
-<p align="center">
-    <img src="https://i.loli.net/2019/08/22/m5oNl7gPb1uQenG.png"  width="320" height="400">
-</p>
-
-
-
-# 8. DynamoDB Streams
+# 5. DynamoDB Streams
 <p align="center">
     <img src="https://i.loli.net/2019/08/22/5m9LeDIpGUuCfoK.png"  width="280" height="400">
 </p>
@@ -189,6 +150,51 @@
 
 ![](https://i.loli.net/2019/08/22/4WEpTD7Nz1kdtlM.png)
 ![](https://i.loli.net/2019/08/22/7VP6cHxneWisr2d.png)
+![](https://i.loli.net/2019/08/22/NwjWt4VsIabSF35.png)
+![](https://i.loli.net/2019/08/22/eRLhjUXSZkQxuBn.png)
+![](https://i.loli.net/2019/08/22/bjGTREg6CPJpade.png)
+![](https://i.loli.net/2019/08/22/PhyuONnjCgxfJ1S.png)
+![](https://i.loli.net/2019/08/22/CtAb5IBGQzveJ93.png)
+![](https://i.loli.net/2019/08/22/TEDByjU1WKGl5fu.png)
+
+
+# 6. Partitions Internal
+- Data is divided in partitions
+  - Partition keys go through a hashing algorithm to know to which partition they go to
+- To compute the number of partitions:
+  - By capacity: (TOTAL RCU / 3000) + (TOTAL WCU / 1000)
+  - By size: Total Size / 10 GB
+  - Total partitions = CEILING(MAX(Capacity, Size))
+- **WCU and RCU are spread evenly均等地 between partitions**
+
+# 7. DynamoDB Concurrency并发性
+- DynamoDB has a feature called “Conditional Update / Delete”
+- That means that you can ensure an item hasn’t changed before altering it
+- That makes DynamoDB an optimistic locking / concurrency database
+
+当满足某个条件时，才进行更新操作
+<p align="center">
+    <img src="https://i.loli.net/2019/08/22/hKxowa7EH2kMAjV.png"  width="700" height="150">
+</p>
+
+
+# 8. DynamoDB Accelerator - DAX
+
+- DAX = DynamoDB Accelerator
+- Seamless **cache for DynamoDB**, no application rewrite
+- **Writes go through DAX** to DynamoDB
+- Micro second latency for cached reads & queries
+- **Solves the Hot Key problem (too many reads)**
+- **5 minutes TTL for cache by default**
+- Up to 10 nodes in the cluster
+- Multi AZ (3 nodes minimum recommended for production)
+- Secure (Encryption at rest with KMS, VPC, IAM, CloudTrail…)
+
+<p align="center">
+    <img src="https://i.loli.net/2019/08/22/m5oNl7gPb1uQenG.png"  width="320" height="400">
+</p>
+
+
 
 
 
