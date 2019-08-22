@@ -42,12 +42,27 @@
 
 ![](https://i.loli.net/2019/08/22/XQw4UhGd8ZgjYWo.png)
 
-- Table **must** have **provisioned read and write capacity units**, by default.
+- Table **MUST** have **provisioned Read and Write Capacity Units**, by default.
   - **Read Capacity Units (RCU)**: throughput for reads ($0.00013 per RCU)
     - 1 RCU = **1 strongly** consistent read of **4 KB** per **second**
     - 1 RCU = **2 eventually** consistent read of **4 K**B per **second**
+    
+> - Example 1: 10 strongly consistent reads per seconds of 4 KB each
+>   - We need 10 * 4 KB / 4 KB = 10 RCU
+> - Example 2: 16 eventually consistent reads per seconds of 12 KB each
+>   - We need (16 / 2) * ( 12 / 4 ) = 24 RCU
+> - Example 3: 10 strongly consistent reads per seconds of 6 KB each
+>   - We need 10 * 8 KB / 4 = 20 RCU (we have to round up 6 KB to 8 KB)
+
   - **Write Capacity Units (WCU)**: throughput for writes ($0.00065 per WCU)
     - 1 WCU = **1 write** of **1 KB** per **second**
+    
+> - Example 1: we write 10 objects per seconds of 2 KB each.
+>   - We need 2 * 10 = 20 WCU
+> - Example 2: we write 6 objects per second of 4.5 KB each
+>   - We need 6 * 5 = 30 WCU (4.5 gets rounded to the upper KB)
+> - Example 3: we write 120 objects per minute of 2 KB each
+>   - We need 120 / 60 * 2 = 4 WCU
     
 - **Option to setup auto-scaling** of throughput to meet demand
 - Throughput can be exceeded temporarily using “**burst credit**”
