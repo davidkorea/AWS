@@ -14,6 +14,11 @@
   - Document Types: **List, Map**
   - Set Types: **String Set, Number Set, Binary Set**
 
+- On Demand (new from Nov 2018)
+  - No capacity planning needed (WCU / RCU) – **scales automatically**
+  - **2.5x more expensive than provisioned** capacity (use with care)**
+  - Helpful when spikes are un-predictable or the application is very low throughput
+
 # 2. Primary Keys
 ![](https://i.loli.net/2019/08/22/uQFa8UXRgfbCMjs.png)
 
@@ -197,6 +202,7 @@
 # 10. DynamoDB Transactions处理交易
 - New feature from November 2018，同时在多个表中 写入/更新/删除 多条记录row
 - Transaction = Ability to Create / Update / Delete **multiple rows** in **different tables** at the same time
+  - Include **up to 10 unique items** or **up to 4 MB of data**
 - It’s an “all or nothing” type of operation.
 - Write Modes: Standard, Transactional
 - Read Modes: Eventual Consistency, Strong Consistency, Transactional
