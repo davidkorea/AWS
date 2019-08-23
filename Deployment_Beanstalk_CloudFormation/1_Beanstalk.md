@@ -1,3 +1,4 @@
+![](https://i.bmp.ovh/imgs/2019/08/253c67e19ad75502.png)
 ```
 2:57pm
 Environment health has transitioned from Pending to Ok. Initialization completed 24 seconds ago and took 2 minutes.
