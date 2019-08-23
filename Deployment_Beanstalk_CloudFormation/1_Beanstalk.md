@@ -81,9 +81,13 @@ Beanstalk redirect HTTP to HTTPS
 
 ![](https://i.postimg.cc/1t8Rd5pN/QQ-20190823162537.png)
 
+# 8. Web Server vs Worker Environment
+- If your application performs tasks that are **long to complete**, offload these tasks to a dedicated worker environment
+- Decoupling your application into two tiers is common
+- Example: processing a video, generating a zip file, etc
+- You can define periodic tasks in a file cron.yaml
 
-
-
+![](https://i.postimg.cc/D0cNd18Q/image.png)
 
 
 
