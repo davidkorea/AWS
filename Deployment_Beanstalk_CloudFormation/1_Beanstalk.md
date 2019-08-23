@@ -57,12 +57,29 @@
 - Each EC2 machine resolves dependencies (SLOW)
 - Optimization in case of long deployments: Package dependencies with source code to improve deployment performance and speed
 
+# 6. Beanstalk with HTTPS
+- Idea: Load the SSL certificate onto the Load Balancer
+  - Can be done from the Console (EB console, load balancer configuration)
+    ![]()
+  - Can be done from the code: **`.ebextensions/securelistener-alb.config`**
+- SSL Certificate can be provisioned using ACM (AWS Certificate Manager) or CLI
+- Must configure a security group rule to allow incoming port 443 (HTTPS port)
 
+Beanstalk redirect HTTP to HTTPS
+- Configure your instances to redirect HTTP to HTTPS: https://github.com/awsdocs/elastic-beanstalk-samples/tree/master/configuration-files/awsprovided/security-configuration/https-redirect
+- OR configure the Application Load Balancer (ALB only) with a rule
+- Make sure health checks are not redirected (so they keep giving 200 OK)
 
+# 7. Beanstalk Lifecycle Policy
+- Elastic Beanstalk can store at most 1000 application versions
+- If you don’t remove old versions, you won’t be able to deploy anymore
+- To phase out old application versions, use a lifecycle policy
+  - Based on time (old versions are removed)
+  - Based on space (when you have too many versions)
+- Versions that are currently used won’t be deleted
+- Option not to delete the source bundle in S3 to prevent data loss
 
-
-
-
+![](https://i.postimg.cc/1t8Rd5pN/QQ-20190823162537.png)
 
 
 
