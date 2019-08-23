@@ -87,6 +87,7 @@ Beanstalk redirect HTTP to HTTPS
 - Example: processing a video, generating a zip file, etc
 - You can define periodic tasks in a file cron.yaml
 
+![](https://i.postimg.cc/pXh8jR4r/image.png)
 ![](https://i.postimg.cc/D0cNd18Q/image.png)
 
 # 9. RDS with Elastic Beanstalk
