@@ -89,7 +89,17 @@ Beanstalk redirect HTTP to HTTPS
 
 ![](https://i.postimg.cc/D0cNd18Q/image.png)
 
-
+# 9. RDS with Elastic Beanstalk
+- RDS can be provisioned with Beanstalk, which is great for dev / test
+  - This is not great for prod as the database lifecycle is tied to the Beanstalk environment lifecycle
+  - The best for prod is to separately create an RDS database and provide our EB application with the connection string
+- Steps to migrate from RDS coupled in EB to standalone RDS:
+  - Take an RDS DB snapshot
+  - Enable deletion protection in RDS
+  - Create a new environment without an RDS, point to existing old RDS
+  - Perform blue/green deployment and swap new and old environments
+  - Terminate the old environment (RDS won’t get deleted thanks to protection)
+  - Delete CloudFormation stack (will be in DELETE_FAILED state)
 
 
 
