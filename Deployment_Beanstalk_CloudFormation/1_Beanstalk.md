@@ -48,7 +48,14 @@
   - Ability to add resources such as RDS, ElastiCache, DynamoDB, etc…
 - Resources managed by .ebextensions get deleted if the environment goes away
 
-
+# 5. Deployment Mechanism
+- Describe dependencies
+  - **`requirements.txt`** for Python
+  - **`package.json`** for Node.js
+- Package code as zip
+- Zip file is uploaded to each EC2 machine
+- Each EC2 machine resolves dependencies (SLOW)
+- Optimization in case of long deployments: Package dependencies with source code to improve deployment performance and speed
 
 
 
