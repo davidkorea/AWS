@@ -1,3 +1,5 @@
+- **Under the hood**在幕后, Elastic Beanstalk **relies on CloudFormation**
+
 # 1. Beanstalk Basics
 - Elastic Beanstalk has three components
 
