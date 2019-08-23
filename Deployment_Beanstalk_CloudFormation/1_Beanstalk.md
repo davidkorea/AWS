@@ -1,4 +1,5 @@
 - **Under the hood**在幕后, Elastic Beanstalk **relies on CloudFormation**
+- Custom domain: Route 53 ALIAS or CNAME on top of Beanstalk URL
 
 # 1. Beanstalk Basics
 - Elastic Beanstalk has three components
@@ -55,7 +56,15 @@
 - Package code as zip
 - Zip file is uploaded to each EC2 machine
 - Each EC2 machine resolves dependencies (SLOW)
-- Optimization in case of long deployments: Package dependencies with source code to improve deployment performance and speed
+- Optimization in case of long deployments: 
+  - **Package dependencies with source code** to improve deployment performance and speed
+  - If your application has a lot of application or OS dependencies, and you want to deploy as quickly as possible, you should create a Golden AMI:
+    - Golden AMI = standardized company-specific AMI with:
+    - Package OS dependencies
+    - Package App dependencies
+    - Package company-wide software
+  - By using a Golden AMI to deploy to Beanstalk (in combination of blue/green new ASG deployment), our application won’t need to resolve dependencies or a long time to configure!
+
 
 # 6. Beanstalk with HTTPS
 - Idea: Load the SSL certificate onto the Load Balancer
