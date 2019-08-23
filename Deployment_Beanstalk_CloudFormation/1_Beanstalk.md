@@ -32,3 +32,42 @@
 - The new environment (green) can be validated independently and roll back if issues
 - Route 53 can be setup using weighted policies to redirect a little bit of traffic to the stage environment
 - Using Beanstalk, “swap URLs” when done with the environment test
+
+![](https://i.postimg.cc/rp74wby3/QQ-20190823160759.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
