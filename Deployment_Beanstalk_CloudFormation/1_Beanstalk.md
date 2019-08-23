@@ -59,8 +59,8 @@
 
 # 6. Beanstalk with HTTPS
 - Idea: Load the SSL certificate onto the Load Balancer
-  - Can be done from the Console (EB console, load balancer configuration)
-    ![]()
+  - Can be done from the Console (Beanstalk console, load balancer configuration)
+    ![](https://i.postimg.cc/7PBM7BLs/image.png)
   - Can be done from the code: **`.ebextensions/securelistener-alb.config`**
 - SSL Certificate can be provisioned using ACM (AWS Certificate Manager) or CLI
 - Must configure a security group rule to allow incoming port 443 (HTTPS port)
