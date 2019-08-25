@@ -2,7 +2,7 @@
 
 
 
-ms terminal
+ms terminal https://github.com/microsoft/terminal
 
 -----
 
