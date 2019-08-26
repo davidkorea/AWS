@@ -540,7 +540,7 @@ Resources:
 - Resources
 
 |Logical ID|Physical ID|Type|Status|Status reason|
-|-|-|-|-|-|
+|-|-|-|-|---|
 |MyInstance|	i-080bbad062c4ce51d|	AWS::EC2::Instance|	CREATE_COMPLETE|	-|
 |SampleWaitCondition|	mycfstack-SampleWaitCondition-1VLAZXOQ4OBXT|	AWS::CloudFormation::WaitCondition|	CREATE_FAILED|	Failed to receive 1 resource signal(s) within the specified duration|
 
