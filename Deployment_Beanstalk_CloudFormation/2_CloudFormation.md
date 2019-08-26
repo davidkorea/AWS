@@ -539,12 +539,6 @@ Resources:
 
 - Resources
 
-<style>
-table th:first-of-type {
-	width: 100px;
-}
-</style>
-
 |Logical ID|Physical ID|Type|Status|Status reason|
 |-|-|-|-|-|
 |MyInstance|	i-080bbad062c4ce51d|	AWS::EC2::Instance|	CREATE_COMPLETE|	-|
