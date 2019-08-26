@@ -195,7 +195,35 @@ Resources:
   - Fn::Or
 - Conditions can be applied to resources / outputs / etc…
   
-  
+# 3. Intrisic Functions
+- Ref
+  - Parameters => returns the **value of the parameter**
+  - Resources => returns the **physical ID** of the underlying **resource** (ex: EC2 ID)
+- Fn::GetAtt 
+  - the attributes of your resources **`!GetAtt logicalNameOfResource.attributeName`**
+    - `!GetAtt myELB.DNSName`
+    - `SourceSecurityGroupOwnerId: !GetAtt myELB.SourceSecurityGroup.OwnerAlias`
+    - `SourceSecurityGroupName: !GetAtt myELB.SourceSecurityGroup.GroupName`
+- Fn::FindInMap 
+  - **`!FindInMap [ MapName, TopLevelKey, SecondLevelKey ]`**
+- Fn::ImportValue
+  - Import values that are exported in other templates
+- Fn::Join
+  - Join values with a delimiter
+  - `!Join [ ":", [ a, b, c ] ]` => `a:b:c`
+- Fn::Sub
+  - 替换substitute
+    ```yaml
+    !Sub
+      - String
+      - { Var1Name: Var1Value, Var2Name: Var2Value }
+    ```
+    ```yaml
+    Name: !Sub
+      - www.${Domain}
+      - { Domain: !Ref RootDomainName }
+    ```
+- Condition Functions (Fn::If, Fn::Not, Fn::Equals, etc…)
   
   
   
