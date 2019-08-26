@@ -225,13 +225,31 @@ Resources:
     ```
 - Condition Functions (Fn::If, Fn::Not, Fn::Equals, etc…)
   
+# 4. User Data in EC2 for CloudFormation
+- The important thing to pass is the entire script through the function **`Fn::Base64`**
+- user data script log is in `/var/log/cloud-init-output.log` in EC2 instance
   
   
-  
-  
-  
-  
-  
+```yaml
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: us-east-1a
+      ImageId: ami-009d6802948d06e52
+      InstanceType: t2.micro
+      KeyName: !Ref SSHKey
+      SecurityGroups:
+        - !Ref SSHSecurityGroup
+      UserData: 
+        Fn::Base64: |                           # | means long text
+          #!/bin/bash -xe
+          yum update -y
+          yum install -y httpd
+          systemctl start httpd
+          systemctl enable httpd
+          echo "Hello World from user data" > /var/www/html/index.html
+```
   
   
   
