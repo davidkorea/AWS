@@ -47,17 +47,26 @@ Templates helpers:
 2. Functions
   
 ## 2.1 Resources
-  
+```yaml
+---
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: us-east-1a
+      ImageId: ami-009d6802948d06e52
+      InstanceType: t2.micro
+```
 - Resources are the **core** of your CloudFormation template (**MANDATORY**)
-- They represent the different **AWS Components** that will be created and configured
 - Resources are **declared** and can **reference** each other
 - AWS figures out creation, updates and deletes of resources for us
-- There are over 224 types of resources (NOT all AWS services!)
+- There are over 224 types of resources, NOT all AWS services! You can work around that using AWS Lambda Custom Resources
 - Resource types identifiers are of the form: `AWS::aws-product-name::data-type-name`
   
 - All the resources can be found here: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html
   
-  
+- Can I create a dynamic amount of resources?
+  - No, you can’t. Everything in the CloudFormation template has to be declared. You can’t perform code generation there
   
   
   
