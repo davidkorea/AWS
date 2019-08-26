@@ -146,7 +146,7 @@ Resources:
         - HVM64
     ```
   
-## 2.4 Outputs?
+## 2.4 Outputs
 - The Outputs section declares optional **outputs values** that we **can import into other stacks** (if you export them first)!
 - You can also view the outputs in the AWS Console or in using the AWS CLI
 - They’re very **useful** for example if you define a **network CloudFormation**, and output the variables such as **VPC ID** and your **Subnet IDs**
@@ -222,7 +222,7 @@ Resources:
 # 4. User Data in EC2 for CloudFormation
 - The important thing to pass is the entire script through the function **`Fn::Base64`**
 
-## 4.1 
+## 4.1 UserData
 - user data script log is in `/var/log/cloud-init-output.log` in EC2 instance
   
 ```yaml
@@ -247,7 +247,7 @@ Resources:
 ```
   
   
-## 4.2 cfn-init
+## 4.2 cfn-init & AWS::CloudFormation::Init
 ### 4.2.1 cfn-init
 The **`cfn-init` helper script** reads template metadata from the **`AWS::CloudFormation::Init`** key and acts accordingly to:
   - Fetch and parse提取和解析 metadata from AWS CloudFormation
@@ -352,9 +352,25 @@ Resources:
   - Block the template until it receives a signal from cfnsignal
   - We attach a CreationPolicy (also works on EC2, ASG)
   
-  
-  
-  
+## 4.3.1 cfn-signal
+- The **`cfn-signal` helper script** signals AWS CloudFormation to indicate whether Amazon EC2 instances have been **successfully created or updated**.
+- If you **install and configure software** applications **on instances**, you can **signal AWS** CloudFormation when those **software** applications are **ready**.
+- syntax
+```yaml
+cfn-signal --success|-s signal.to.send \
+        --access-key access.key \
+        --credential-file|-f credential.file \
+        --exit-code|-e exit.code \
+        --http-proxy HTTP.proxy \
+        --https-proxy HTTPS.proxy \
+        --id|-i unique.id \
+        --region AWS.region \
+        --resource resource.logical.ID \
+        --role IAM.role.name \
+        --secret-key secret.key \
+        --stack stack.name.or.stack.ID \
+        --url AWS CloudFormation.endpoint
+```
   
   
   
