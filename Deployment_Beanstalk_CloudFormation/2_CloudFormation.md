@@ -48,14 +48,14 @@ Templates helpers:
   
 ## 2.1 Resources
   
-- Resources are the core of your CloudFormation template (MANDATORY)
-- They represent the different AWS Components that will be created and configured
-- Resources are declared and can reference each other
+- Resources are the **core** of your CloudFormation template (**MANDATORY**)
+- They represent the different **AWS Components** that will be created and configured
+- Resources are **declared** and can **reference** each other
 - AWS figures out creation, updates and deletes of resources for us
-- There are over 224 types of resources (!)
-- Resource types identifiers are of the form:
+- There are over 224 types of resources (NOT all AWS services!)
+- Resource types identifiers are of the form: `AWS::aws-product-name::data-type-name`
   
-  
+- All the resources can be found here: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html
   
   
   
