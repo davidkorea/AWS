@@ -75,10 +75,21 @@ Resources:
 - Make it a Parameter.
   - this CloudFormation resource configuration likely to **change in the future**
   - You **won’t have to re-upload a template** to change its content 
+- Reference a Parameter
+  - **Parameters** can be used **anywhere in a template**
+  - The `Fn::Ref` function can be leveraged to reference parameters, The shorthand for this in YAML is **`!Ref`**
+    - can also reference **other elements within the template**
+- AWS offers us pseudo parameters in any CloudFormation template
   
-  
-  
-  
+  |Reference Value| Example Return Value|
+  |-|-|
+  |AWS::AccountId| 1234567890|
+  |AWS::NotificationARNs|[arn:aws:sns:us-east-1:123456789012:MyTopic]|
+  |AWS::NoValue| Does not return a value.|
+  |AWS::Region| us-east-2|
+  |AWS::StackId|arn:aws:cloudformation:us-east-1:123456789012:stack/MyStack/1c2fa620-982a-11e3-aff7-50e2416294e0|
+  |AWS::StackName| MyStack|
+
   
   
   
