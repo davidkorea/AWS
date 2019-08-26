@@ -461,9 +461,19 @@ Resources:
 - Stack Update Fails: (UpdateStack API)
   - The stack automatically **rolls back** to the **previous known working state**
   - Ability to see in the log what happened and error messages
-  
-## 5.1 Issue
-### 5.1.1 CREATE_FAILED
+
+## 5.1 Test failed 
+- Disabled Rollback on Failure
+- 
+
+
+
+
+
+
+
+
+# 6. Issue - EC2 CREATE_FAILED
 
 |Timestamp|Logical ID|Status|Status reason|
 |-|-|-|-|
@@ -475,8 +485,6 @@ Resources:
 
   
 ```diff
-
-
 ---
   Parameters:
     SSHKey:
