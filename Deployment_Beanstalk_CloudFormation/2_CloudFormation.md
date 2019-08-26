@@ -539,10 +539,16 @@ Resources:
 
 - Resources
 
+<style>
+table th:first-of-type {
+	width: 100px;
+}
+</style>
+
 |Logical ID|Physical ID|Type|Status|Status reason|
 |-|-|-|-|-|
 |MyInstance|	i-080bbad062c4ce51d|	AWS::EC2::Instance|	CREATE_COMPLETE|	-|
-|SampleWaitCondition|	mycfstack-SampleWaitCondition-1VLAZXOQ4OBXT|	AWS::CloudFormation:\n:WaitCondition|	CREATE_FAILED|	Failed to receive 1 resource signal(s) within the specified duration|
+|SampleWaitCondition|	mycfstack-SampleWaitCondition-1VLAZXOQ4OBXT|	AWS::CloudFormation::WaitCondition|	CREATE_FAILED|	Failed to receive 1 resource signal(s) within the specified duration|
 
 
 
