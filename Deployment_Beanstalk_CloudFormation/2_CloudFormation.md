@@ -356,22 +356,45 @@ Resources:
 - The **`cfn-signal` helper script** signals AWS CloudFormation to indicate whether Amazon EC2 instances have been **successfully created or updated**.
 - If you **install and configure software** applications **on instances**, you can **signal AWS** CloudFormation when those **software** applications are **ready**.
 - syntax
+  ```cmd
+  cfn-signal --success|-s signal.to.send \
+             --access-key access.key \
+             --credential-file|-f credential.file \
+             --exit-code|-e exit.code \
+             --http-proxy HTTP.proxy \
+             --https-proxy HTTPS.proxy \
+             --id|-i unique.id \
+             --region AWS.region \
+             --resource resource.logical.ID \
+             --role IAM.role.name \
+             --secret-key secret.key \
+             --stack stack.name.or.stack.ID \
+             --url AWS CloudFormation.endpoint
+  ```
+- Exanple
 ```yaml
-cfn-signal --success|-s signal.to.send \
-        --access-key access.key \
-        --credential-file|-f credential.file \
-        --exit-code|-e exit.code \
-        --http-proxy HTTP.proxy \
-        --https-proxy HTTPS.proxy \
-        --id|-i unique.id \
-        --region AWS.region \
-        --resource resource.logical.ID \
-        --role IAM.role.name \
-        --secret-key secret.key \
-        --stack stack.name.or.stack.ID \
-        --url AWS CloudFormation.endpoint
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: us-east-1a
+      ImageId: ami-009d6802948d06e52
+      InstanceType: t2.micro
+      KeyName: !Ref SSHKey
+      SecurityGroups:
+        - !Ref SSHSecurityGroup
+      UserData: 
+        Fn::Base64:
+          !Sub |
+            #!/bin/bash -xe
+            yum update -y aws-cfn-bootstrap
+            /opt/aws/bin/cfn-init -s ${AWS::StackId} -r MyInstance --region ${AWS::Region}
+            /opt/aws/bin/cfn-signal -e $? --stack ${AWS::StackId} --resource SampleWaitCondition --region ${AWS::Region}
+    Metadata:
+      Comment: Install a simple Apache HTTP page
+      AWS::CloudFormation::Init:
+        # Same as above
 ```
-  
   
   
   
