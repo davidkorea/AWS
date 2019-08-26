@@ -34,7 +34,7 @@
   
   
 # 2. CloudFormation Building Blocks
-Templates components (one course section for each):
+Templates components:
 1. Resources: your AWS resources declared in the template (MANDATORY)
 2. Parameters: the dynamic inputs for your template
 3. Mappings: the static variables for your template
