@@ -152,7 +152,7 @@ Resources:
         - HVM64
     ```
   
-## 2.4 outputs?
+## 2.4 Outputs?
 - The Outputs section declares optional **outputs values** that we **can import into other stacks** (if you export them first)!
 - You can also view the outputs in the AWS Console or in using the AWS CLI
 - They’re very **useful** for example if you define a **network CloudFormation**, and output the variables such as **VPC ID** and your **Subnet IDs**
@@ -160,11 +160,34 @@ Resources:
 - You **can’t delete** a CloudFormation Stack if its **outputs are being referenced by another** CloudFormation stack
 - one stack uses **`!ImportValue`** to refer to the values outputed by another stack
 
-  
-  
-  
-  
-  
+## 2.5 Conditions
+```yaml
+UseProdCondition:
+  !Equals [!Ref EnvironmentType, prod]
+```
+```yaml
+Conditions: 
+  CreateNewSecurityGroup: !Equals [!Ref ExistingSecurityGroup, NONE]
+
+Resources: 
+  NewSecurityGroup: 
+    Type: "AWS::EC2::SecurityGroup"
+    Condition: CreateNewSecurityGroup
+```
+- Conditions are used to control the **creation of resources** or **outputs based on a condition**
+- Conditions can be whatever you want them to be, but common ones are:
+  - Environment (dev / test / prod)
+  - AWS Region
+  - Any parameter value
+- Each condition can reference another condition, parameter value or mapping
+- The logical ID is for you to choose. It’s how you name condition
+- The intrinsic function (logical) can be any of the following:
+  - Fn::And
+  - Fn::Equals
+  - Fn::If
+  - Fn::Not
+  - Fn::Or
+- Conditions can be applied to resources / outputs / etc…
   
   
   
