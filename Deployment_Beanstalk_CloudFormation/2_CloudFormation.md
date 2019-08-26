@@ -451,13 +451,50 @@ Resources:
   
 - You can retrieve the logs by logging in to your instance, but you must **disable rollback on failure** or else AWS CloudFormation deletes the instance after your stack fails to create.
   ![](https://i.postimg.cc/B6FV0DQ2/image.png)
-
-  
-  
   ![](https://i.postimg.cc/x1CNqVN1/image.png)
   
+# 5. Rollbacks on failures
+- Stack Creation Fails: (CreateStack API)
+  - Default: **everything rolls back (gets deleted)**. We can look at the log **OnFailure=ROLLBACK**
+  - Troubleshoot: Option to **disable rollback** and manually troubleshoot **OnFailure=DO_NOTHING**
+  - Delete: get rid of the stack entirely, do not keep anything **OnFailure=DELETE**
+- Stack Update Fails: (UpdateStack API)
+  - The stack automatically **rolls back** to the **previous known working state**
+  - Ability to see in the log what happened and error messages
   
+## 5.1 Issue
+### 5.1.1 CREATE_FAILED
+
+|Timestamp|Logical ID|Status|Status reason|
+|-|-|-|-|
+|2019-08-26 18:06:53 UTC+0900|	MyInstance|	CREATE_FAILED|	Value () for parameter groupId is invalid. The value cannot be empty (Service: AmazonEC2; Status Code: 400; Error Code: InvalidParameterValue; Request ID: f2fc48c9-ac02-455a-96a8-4e3cde541d44)|
+
+- https://stackoverflow.com/questions/56676108/cloudformation-throws-value-for-parameter-groupid-is-invalid-the-value-cann
+- https://docs.aws.amazon.com/zh_cn/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-securitygroups
+  > [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC, you must use **security group IDs** instead.
+
   
-  
-  
-  
+```diff
+
+
+---
+  Parameters:
+    SSHKey:
+      Type: AWS::EC2::KeyPair::KeyName
+      Description: Name of an existing EC2 KeyPair to enable SSH access to the instance
+    SSHSecurityGroup:
+      Type: AWS::EC2::SecurityGroup::Id
+      Description: 22 and 80 need to be enabled
+
+  Resources:
+    MyInstance:
+      Type: AWS::EC2::Instance
+      Properties:
+        AvailabilityZone: ap-northeast-2a
+        ImageId: ami-095ca789e0549777d
+        InstanceType: t2.micro
+        KeyName: !Ref SSHKey
+-       SecurityGroups:
++       SecurityGroupIds
+          - !Ref SSHSecurityGroup
+```
