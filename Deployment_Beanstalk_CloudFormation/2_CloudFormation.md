@@ -440,6 +440,7 @@ Resources:
 - Ensure that the AMI you're using has the** AWS CloudFormation helper scripts installed**. If the AMI doesn't include the helper scripts, you can also download them to your instance.
 - Verify that the **cfn-init & cfn-signal command was successfully run** on the instance. You can view logs, such as `/var/log/cloud-init.log` or `/var/log/cfn-init.log`, to help you debug the instance launch.
 - You can retrieve the logs by logging in to your instance, but you must **disable rollback on failure** or else AWS CloudFormation deletes the instance after your stack fails to create.
+  ![](https://i.postimg.cc/B6FV0DQ2/image.png)
 - Verify that the instance has a connection to the Internet. If the instance is in a VPC, the instance should be able to connect to the Internet through a NAT device if it's i in a private subnet or through an Internet gateway if it's in a public subnet.
   
   
