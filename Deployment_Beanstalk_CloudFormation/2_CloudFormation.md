@@ -2,9 +2,15 @@
 - To **update a template**, we **can’t edit** previous ones. We have to **reupload a new version** of the template to AWS
 - Stacks are identified by a name
 - Deleting a stack deletes every single artifact that was created by CloudFormation.
+- templates
+  - Manual way:
+    - Editing templates in the **CloudFormation Designer**
+    - Using the console to input parameters, etc
+  - Automated way:
+    - Editing templates in a **YAML file**
+    - Using the AWS CLI (Command Line Interface) to deploy the templates
 
-
-# Benefits of AWS CloudFormation
+# 1. Benefits of AWS CloudFormation
 - Infrastructure as code
   - **No resources are manually created**, which is excellent for control
   - The **code can be version controlled** for example using **git**
@@ -27,7 +33,18 @@
     - App stacks
   
   
-  
+# 2. CloudFormation Building Blocks
+Templates components (one course section for each):
+1. Resources: your AWS resources declared in the template (MANDATORY)
+2. Parameters: the dynamic inputs for your template
+3. Mappings: the static variables for your template
+4. Outputs: References to what has been created
+5. Conditionals: List of conditions to perform resource creation
+6. Metadata
+
+Templates helpers:
+1. References
+2. Functions
   
   
   
