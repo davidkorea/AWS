@@ -227,8 +227,9 @@ Resources:
   
 # 4. User Data in EC2 for CloudFormation
 - The important thing to pass is the entire script through the function **`Fn::Base64`**
+
+## 4.1 
 - user data script log is in `/var/log/cloud-init-output.log` in EC2 instance
-  
   
 ```yaml
 Resources:
@@ -252,14 +253,85 @@ Resources:
 ```
   
   
+## 4.2 cfn-init
+### 4.2.1 cfn-init
+The **`cfn-init` helper script** reads template metadata from the **`AWS::CloudFormation::Init`** key and acts accordingly to:
+  - Fetch and parse提取和解析 metadata from AWS CloudFormation
+  - Install packages
+  - Write files to disk
+  - Enable/disable and start/stop services
   
+- `AWS::CloudFormation::Init` must be **in the Metadata of a resource**
+- With the cfn-init script, it helps make **complex EC2 configurations readable**
+- The EC2 instance will query the CloudFormation service to get init data
+- Logs go to `/var/log/cfn-init.log`
+### 4.2.2 AWS::CloudFormation::Init
+使用 AWS::CloudFormation::Init 来将 Amazon EC2 实例上的元数据置入 cfn-init 帮助程序脚本。如果您的模板调用 cfn-init 脚本，该脚本会查询来源于AWS::CloudFormation::Init 元数据键内的资源元数据。cfn-init 支持 Linux 系统的所有元数据类型。
+```yaml
+Resources: 
+  MyInstance: 
+    Type: AWS::EC2::Instance
+    Metadata: 
+      AWS::CloudFormation::Init: 
+        config: 
+          packages: 
+            :
+          groups: 
+            :
+          users: 
+            :
+          sources: 
+            :
+          files: 
+            :
+          commands: 
+            :
+          services: 
+            :
+    Properties: 
+      :
+```
   
-  
-  
-  
-  
-  
-  
+## 4.2.3 Example
+```yaml
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: us-east-1a
+      ImageId: ami-009d6802948d06e52
+      InstanceType: t2.micro
+      KeyName: !Ref SSHKey
+      SecurityGroups:
+        - !Ref SSHSecurityGroup
+      UserData: 
+        Fn::Base64:
+          !Sub |
+            #!/bin/bash -xe
+            yum update -y aws-cfn-bootstrap 
+            /opt/aws/bin/cfn-init -s ${AWS::StackId} -r MyInstance --region ${AWS::Region} || error_exit 'Failed to run cfn-init'
+    Metadata:
+      Comment: Install a simple Apache HTTP page
+      AWS::CloudFormation::Init:
+        config:
+          packages:
+            yum:
+              httpd: []
+          files:
+            "/var/www/html/index.html":
+              content: |
+                <h1>Hello World from EC2 instance!</h1>
+                <p>This was created using cfn-init</p>
+              mode: '000644'
+          commands:
+            hello:
+              command: "echo 'hello world'"
+          services:
+            sysvinit:
+              httpd:
+                enabled: 'true'
+                ensureRunning: 'true'
+```
   
   
   
