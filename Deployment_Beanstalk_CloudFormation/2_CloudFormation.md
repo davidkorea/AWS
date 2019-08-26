@@ -529,14 +529,20 @@ Resources:
     Type: AWS::CloudFormation::WaitCondition
 ```
 
+- Error Events Log
 
 |Timestamp|Logical ID|Status|Status reason|
 |-|-|-|-|
 |2019-08-26 18:12:03 UTC+0900|	mycfstack|	CREATE_FAILED|	The following resource(s) failed to create: [SampleWaitCondition].|
-|2019-08-26 18:12:03 UTC+0900|	SampleWaitConditio|n	CREATE_FAILED|	Failed to receive 1 resource signal(s) within the specified duration|
+|2019-08-26 18:12:03 UTC+0900|	SampleWaitCondition|	CREATE_FAILED|	Failed to receive 1 resource signal(s) within the specified duration|
 |2019-08-26 18:11:36 UTC+0900|	MyInstance|	CREATE_COMPLETE|	-|
 
+- Resources
 
+|Logical ID|Physical ID|Type|Status|Status reason|
+|-|-|-|-|-|
+|MyInstance|	i-080bbad062c4ce51d|	AWS::EC2::Instance|	CREATE_COMPLETE|	-|
+|SampleWaitCondition|	mycfstack-SampleWaitCondition-1VLAZXOQ4OBXT|	AWS::CloudFormation::WaitCondition|	CREATE_FAILED|	Failed to receive 1 resource signal(s) within the specified duration|
 
 
 
