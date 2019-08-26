@@ -108,12 +108,49 @@ Parameters:
   |AWS::StackId|arn:aws:cloudformation:us-east-1:123456789012:stack/MyStack/1c2fa620-982a-11e3-aff7-50e2416294e0|
   |AWS::StackName| MyStack|
 
+## 2.3 Mappings
+```yaml
+Mappings: 
+  RegionMap: 
+    us-east-1: 
+      HVM64: "ami-0ff8a91507f77f867"
+      HVMG2: "ami-0a584ac55a7631c0c"
+    us-west-1: 
+      HVM64: "ami-0bdb828fd58c52235"
+      HVMG2: "ami-066ee5fd4a9ef77f1"
+
+Resources: 
+  myEC2Instance: 
+    Type: "AWS::EC2::Instance"
+    Properties: 
+      ImageId: !FindInMap
+        - RegionMap
+        - !Ref 'AWS::Region'    // AWS::Region is AWS offered pseudo parameter
+        - HVM64
+      InstanceType: m1.small
+```
+
+- Mappings are **fixed variables** within your CloudFormation Template, All the values are hardcoded within the template
+- They’re very handy to differentiate between different environments (dev vs prod), regions (AWS regions), AMI types, etc
+- **Mappings VS Parameters ?**
+  - **Mappings** are great when you **know in advance** all the values that can be taken and that they can be deduced from variables such as
+    - Region
+    - Availability Zone
+    - AWS Account
+    - Environment (dev vs prod)
+    - Etc…
+  - They allow safer control over the template.
+  - Use **Parameters** when the values are **really user specific
   
-  
-  
-  
-  
-  
+- **`Fn::FindInMap`** Accessing Mapping Values
+  - We use Fn::FindInMap to return a named value from a specific key
+  - **`!FindInMap [ MapName, TopLevelKey, SecondLevelKey ]`**, yaml list starts with`-`
+    ```yaml
+    ImageId: !FindInMap
+        - RegionMap
+        - !Ref 'AWS::Region'    // AWS::Region is AWS offered pseudo parameter
+        - HVM64
+    ```
   
   
   
