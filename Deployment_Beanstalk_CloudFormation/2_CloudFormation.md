@@ -343,19 +343,20 @@ Resources:
                 ensureRunning: 'true'
 ```
   
-## 4.3 cfn-signal & wait conditions
+## 4.3 cfn-signal & AWS::CloudFormation::WaitCondition
+
 - We still don’t know how to tell CloudFormation that the EC2 instance got **properly configured after a cfn-init**
 - For this, we can use the cfn-signal script!
   - We run **cfn-signal** right **after cfn-init**
   - Tell CloudFormation service to keep on going or fail
-- We need to define WaitCondition:
+- We need to define **WaitCondition**:
   - Block the template until it receives a signal from cfnsignal
-  - We attach a CreationPolicy (also works on EC2, ASG)
+  - We attach a **CreationPolicy** (also works on EC2, ASG)
   
 ## 4.3.1 cfn-signal
 - The **`cfn-signal` helper script** signals AWS CloudFormation to indicate whether Amazon EC2 instances have been **successfully created or updated**.
 - If you **install and configure software** applications **on instances**, you can **signal AWS** CloudFormation when those **software** applications are **ready**.
-- syntax
+- cfn-signal syntax
   ```cmd
   cfn-signal --success|-s signal.to.send \
              --access-key access.key \
@@ -371,7 +372,30 @@ Resources:
              --stack stack.name.or.stack.ID \
              --url AWS CloudFormation.endpoint
   ```
-- Exanple
+
+### 4.3.2 CreationPolicy & WaitCondition
+You use the **cfn-signal** script in conjunction with a **CreationPolicy** or an Auto Scaling group with a WaitOnResourceSignals update policy. When AWS** CloudFormation creates or updates resources with those policies**, it **suspends** work on the stack until the resource **receives the requisite number of signals** or until the **timeout** period is exceeded. 
+- **CreationPolicy** syntax
+  ```yaml
+  CreationPolicy:
+    AutoScalingCreationPolicy:
+      MinSuccessfulInstancesPercent: Integer
+    ResourceSignal:    
+      Count: Integer
+      Timeout: String
+  ```
+  ```yaml
+  WaitCondition:
+    Type: AWS::CloudFormation::WaitCondition
+    CreationPolicy:
+      ResourceSignal:
+        Timeout: PT15M
+        Count: 5
+  ```
+  - Count, The number of success signals AWS CloudFormation must receive before it sets the resource status as CREATE_COMPLETE
+  - Timeout, The length of time that AWS CloudFormation waits for the number of signals that was specified in the Count property
+  
+### 4.3.3 Exanple
 ```yaml
 Resources:
   MyInstance:
@@ -394,6 +418,13 @@ Resources:
       Comment: Install a simple Apache HTTP page
       AWS::CloudFormation::Init:
         # Same as above
+    
+    SampleWaitCondition:
+      CreationPolicy:
+        ResourceSignal:
+          Timeout: PT2M
+          Count: 1
+      Type: AWS::CloudFormation::WaitCondition
 ```
   
   
