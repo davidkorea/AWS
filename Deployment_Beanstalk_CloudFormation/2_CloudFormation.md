@@ -166,6 +166,12 @@ UseProdCondition:
   !Equals [!Ref EnvironmentType, prod]
 ```
 ```yaml
+Parameters: 
+  ExistingSecurityGroup: 
+    Description: An existing security group ID (optional).
+    Default: NONE
+    Type: String
+    
 Conditions: 
   CreateNewSecurityGroup: !Equals [!Ref ExistingSecurityGroup, NONE]
 
