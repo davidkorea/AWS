@@ -1,3 +1,8 @@
+- **Templates** have to be **uploaded in S3** and then referenced in CloudFormation
+- To **update a template**, we **can’t edit** previous ones. We have to **reupload a new version** of the template to AWS
+- Stacks are identified by a name
+- Deleting a stack deletes every single artifact that was created by CloudFormation.
+
 
 # Benefits of AWS CloudFormation
 - Infrastructure as code
