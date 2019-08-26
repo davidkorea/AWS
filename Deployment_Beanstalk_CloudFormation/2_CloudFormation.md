@@ -109,7 +109,15 @@ Parameters:
   |AWS::Region| us-east-2|
   |AWS::StackId|arn:aws:cloudformation:us-east-1:123456789012:stack/MyStack/1c2fa620-982a-11e3-aff7-50e2416294e0|
   |AWS::StackName| MyStack|
-
+- [Using the New CloudFormation Parameter Types](https://aws.amazon.com/cn/blogs/devops/using-the-new-cloudformation-parameter-types/)
+  - `AWS::EC2::KeyPair::KeyName` – An Amazon EC2 key pair name
+  - `AWS::EC2::SecurityGroup::Id` – A security group ID
+  - `AWS::EC2::Subnet::Id` – A subnet ID
+  - `AWS::EC2::VPC::Id` – A VPC ID
+  - `List<AWS::EC2::VPC::Id>` – An array of VPC IDs
+  - `List<AWS::EC2::SecurityGroup::Id>` – An array of security group IDs
+  - `List<AWS::EC2::Subnet::Id>` – An array of subnet IDs
+  
 ## 2.3 Mappings
 ```yaml
 Mappings: 
@@ -439,13 +447,14 @@ Resources:
 
 - Ensure that the AMI you're using has the** AWS CloudFormation helper scripts installed**. If the AMI doesn't include the helper scripts, you can also download them to your instance.
 - Verify that the **cfn-init & cfn-signal command was successfully run** on the instance. You can view logs, such as `/var/log/cloud-init.log` or `/var/log/cfn-init.log`, to help you debug the instance launch.
+- Verify that the instance has a **connection to the Internet**. If the instance is in a VPC, the instance should be able to connect to the Internet through a NAT device if it's i in a private subnet or through an Internet gateway if it's in a public subnet.
+  
 - You can retrieve the logs by logging in to your instance, but you must **disable rollback on failure** or else AWS CloudFormation deletes the instance after your stack fails to create.
   ![](https://i.postimg.cc/B6FV0DQ2/image.png)
-- Verify that the instance has a connection to the Internet. If the instance is in a VPC, the instance should be able to connect to the Internet through a NAT device if it's i in a private subnet or through an Internet gateway if it's in a public subnet.
+
   
   
-  
-  
+  ![](https://i.postimg.cc/x1CNqVN1/image.png)
   
   
   
