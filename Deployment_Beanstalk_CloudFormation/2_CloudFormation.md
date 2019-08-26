@@ -2,13 +2,7 @@
 - To **update a template**, we **can’t edit** previous ones. We have to **reupload a new version** of the template to AWS
 - Stacks are identified by a name
 - Deleting a stack deletes every single artifact that was created by CloudFormation.
-- templates
-  - Manual way:
-    - Editing templates in the **CloudFormation Designer**
-    - Using the console to input parameters, etc
-  - Automated way:
-    - Editing templates in a **YAML file**
-    - Using the AWS CLI (Command Line Interface) to deploy the templates
+
 
 # 1. Benefits of AWS CloudFormation
 - Infrastructure as code
@@ -265,6 +259,22 @@ The **`cfn-init` helper script** reads template metadata from the **`AWS::CloudF
 - With the cfn-init script, it helps make **complex EC2 configurations readable**
 - The EC2 instance will query the CloudFormation service to get init data
 - Logs go to `/var/log/cfn-init.log`
+- syntax
+
+```yaml
+cfn-init --stack|-s stack.name.or.id \
+         --resource|-r logical.resource.id \
+         --region region
+         --access-key access.key \
+         --secret-key secret.key \
+         --role rolename\
+         --credential-file|-f credential.file \
+         --configsets|-c config.sets \
+         --url|-u service.url \
+         --http-proxy HTTP.proxy \
+         --https-proxy HTTPS.proxy \
+         --verbose|-v
+```
 ### 4.2.2 AWS::CloudFormation::Init
 使用 AWS::CloudFormation::Init 来将 Amazon EC2 实例上的元数据置入 cfn-init 帮助程序脚本。如果您的模板调用 cfn-init 脚本，该脚本会查询来源于AWS::CloudFormation::Init 元数据键内的资源元数据。cfn-init 支持 Linux 系统的所有元数据类型。
 ```yaml
@@ -333,7 +343,14 @@ Resources:
                 ensureRunning: 'true'
 ```
   
-  
+## 4.3 cfn-signal & wait conditions
+- We still don’t know how to tell CloudFormation that the EC2 instance got **properly configured after a cfn-init**
+- For this, we can use the cfn-signal script!
+  - We run **cfn-signal** right **after cfn-init**
+  - Tell CloudFormation service to keep on going or fail
+- We need to define WaitCondition:
+  - Block the template until it receives a signal from cfnsignal
+  - We attach a CreationPolicy (also works on EC2, ASG)
   
   
   
