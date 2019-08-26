@@ -465,6 +465,7 @@ Resources:
 ## 5.1 Test failed 
 - Disabled Rollback on Failure
 - Change SecurityGroup to Parameter block to select exsited SG in my AWS account
+- change AZ code and AMI code in ap-northeast 
 - make a `exit 1` error in the `AWS::CloudFormation::Init` command to test a failure
 
 ```yaml
@@ -529,7 +530,11 @@ Resources:
 ```
 
 
-
+|Timestamp|Logical ID|Status|Status reason|
+|-|-|-|-|
+|2019-08-26 18:12:03 UTC+0900|	mycfstack|	CREATE_FAILED|	The following resource(s) failed to create: [SampleWaitCondition].|
+|2019-08-26 18:12:03 UTC+0900|	SampleWaitConditio|n	CREATE_FAILED|	Failed to receive 1 resource signal(s) within the specified duration|
+|2019-08-26 18:11:36 UTC+0900|	MyInstance|	CREATE_COMPLETE|	-|
 
 
 
