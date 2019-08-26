@@ -68,9 +68,13 @@ Resources:
 - Can I create a dynamic amount of resources?
   - No, you can’t. Everything in the CloudFormation template has to be declared. You can’t perform code generation there
   
-  
-  
-  
+## 2.2 Parameters
+- Parameters are a way to **provide inputs ON AWS Web UI** to your AWS CloudFormation template
+- Some inputs **can not be determined ahead of time**, Ex: **`Type: AWS::EC2::KeyPair::KeyName`**, get the ketpair on your aws account in a region
+- Parameters are extremely powerful, controlled, and can prevent errors from happening in your templates thanks to types.
+- Make it a Parameter.
+  - this CloudFormation resource configuration likely to **change in the future**
+  - You **won’t have to re-upload a template** to change its content 
   
   
   
