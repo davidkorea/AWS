@@ -46,12 +46,14 @@ Templates helpers:
 1. References
 2. Functions
   
+## 2.1 Resources
   
-  
-  
-  
-  
-  
+- Resources are the core of your CloudFormation template (MANDATORY)
+- They represent the different AWS Components that will be created and configured
+- Resources are declared and can reference each other
+- AWS figures out creation, updates and deletes of resources for us
+- There are over 224 types of resources (!)
+- Resource types identifiers are of the form:
   
   
   
