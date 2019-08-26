@@ -81,6 +81,14 @@ Parameters:
 ```
 ![](https://i.postimg.cc/DwKcvJmF/image.png)
 
+```yaml
+Parameters:
+  SSHSecurityGroup:
+    Type: AWS::EC2::SecurityGroup::Id
+    Description: 22 and 80 need to be enabled
+```
+![](https://i.postimg.cc/gkTfFYGy/image.png)
+
 - Parameters are a way to **provide inputs ON AWS Web UI** to your AWS CloudFormation template
 - Some inputs **can not be determined ahead of time**, Ex: **`Type: AWS::EC2::KeyPair::KeyName`**, get the ketpair on your aws account in a region
 - Parameters are extremely powerful, controlled, and can prevent errors from happening in your templates thanks to types.
