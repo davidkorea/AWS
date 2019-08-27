@@ -30,6 +30,28 @@
   - Docker: extend any environment you like
 
 # 1. CodeBuild BuildSpec
+```yaml
+version: 0.2
+
+phases: 
+    install:
+        runtime-versions:
+            nodejs: 10
+        commands:
+            - echo "installing something"
+    pre_build:
+        commands: 
+            - echo "we are in the pre build phase"
+    build:
+        commands:
+            - echo "we are in the build block"
+            - echo "we will run some tests"
+            - grep -Fq "Congratulations" index.html
+    post_build:
+        commands:
+            - echo "we are in the post build phase"
+```            
+
 - **`buildspec.yml`** file must be at the **root of your code**
 - Define environment variables:
   - Plaintext variables
