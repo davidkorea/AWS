@@ -58,3 +58,69 @@ hooks:
   - AfterInstall
   - ApplicationStart
   - ValidateService: really important
+
+
+# 4. CodeDeploy Deployment Config
+- Configs:
+  - One a time: one instance at a time, one instance fails => deployment stops
+  - Half at a time: 50%
+  - All at once: quick but no healthy host, downtime. Good for dev
+  - Custom: min healthy host = 75%
+- Failures:
+  - Instances stay in “failed state”
+  - New deployments will first be deployed to “failed state” instances
+  - To rollback: redeploy old deployment or enable automated rollback for failures
+- Deployment Targets:
+- Set of EC2 instances with tags
+- Directly to an ASG
+- Mix of ASG / Tags so you can build deployment segments
+- Customization in scripts with DEPLOYMENT_GROUP_NAME environment variables
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
