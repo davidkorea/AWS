@@ -1,4 +1,10 @@
 # AWS
+VPN:
+- a private subnet
+- Hardware VPN Access
+- VPG
+- on-premise Customer Gateway.
+
 
 **VPC Flow Log** can be created at the following levels:
 - VPC level
