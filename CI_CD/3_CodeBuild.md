@@ -1,0 +1,6 @@
+- Alternative to other build tools such as **Jenkins**
+- Continuous scaling (no servers to manage or provision – no build queue)
+- Pay for usage: **the time it takes** to complete the builds
+- Leverages **Docker under the hood** for reproducible builds
+- Possibility to **extend capabilities** leveraging our **own base Docker images**
+- Secure: Integration with KMS for encryption of build artifacts, IAM for build permissions, and VPC for network security, CloudTrail for API calls logging
