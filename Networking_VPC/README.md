@@ -21,6 +21,9 @@ If you want to setup a Direct Connect to one or more VPC in many different regio
     ![](https://i.loli.net/2019/08/12/6Wp75hQaxz2Eymr.png)  
 
 # 3. VPN
+> You work for a famous bakery that is deploying a hybrid cloud approach. Their legacy IBM AS400 servers will remain on-premise within their own datacenter. However, they will need to be able to communicate to the AWS environment over a site-to-site VPN connection. What do you need to do to establish the VPN connection?
+> - set and **ASN for Vitual Private Gateway**
+
 1. CG
     ![](https://i.postimg.cc/0rgt7cBZ/image.png)
 
