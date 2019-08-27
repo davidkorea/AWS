@@ -28,3 +28,33 @@
 - **Application Revision**: application code + appspec.yml file
 - **Service role**: Role for CodeDeploy to perform what it needs
 - **Target revision**: Target deployment application version
+
+# 3. CodeDeploy AppSpec
+```yaml
+version: 0.0
+os: linux
+files:
+  - source: /index.html
+    destination: /var/www/html/
+hooks:
+  BeforeInstall:
+    - location: scripts/install_dependencies
+      timeout: 300
+      runas: root
+    - location: scripts/start_server
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: scripts/stop_server
+      timeout: 300
+      runas: root
+```
+
+- File section: how to source and copy from S3 / GitHub to filesystem
+- Hooks: set of instructions to do to deploy the new version (hooks can have timeouts). The order is:
+  - ApplicationStop
+  - DownloadBundle
+  - BeforeInstall
+  - AfterInstall
+  - ApplicationStart
+  - ValidateService: really important
