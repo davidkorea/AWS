@@ -1,4 +1,6 @@
 # CodeStar
+![](https://i.postimg.cc/qMN6T01H/image.png)
+
 - CodeStar is an integrated solution that regroups: GitHub, CodeCommit, CodeBuild, CodeDeploy, CloudFormation, CodePipeline, CloudWatch
 - Helps quickly create “CICD-ready” projects for EC2, Lambda, Beanstalk
 - Supported languages: C#, Go, HTML 5, Java, Node.js, PHP, Python, Ruby
