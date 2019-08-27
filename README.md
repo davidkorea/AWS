@@ -1,6 +1,23 @@
 # AWS
 
+**VPC Flow Log** can be created at the following levels:
+- VPC level
+- Subnet level
+- Network Interface level
 
+
+
+
+
+
+
+
+
+
+
+
+
+-----
 
 ms terminal https://github.com/microsoft/terminal
 
