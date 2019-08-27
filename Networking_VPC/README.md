@@ -20,8 +20,17 @@ If you want to setup a Direct Connect to one or more VPC in many different regio
 - Direct Connect Gateway for one AWS account(Direct Connect menu)
     ![](https://i.loli.net/2019/08/12/6Wp75hQaxz2Eymr.png)  
 
+# 3. VPN
+1. CG
+    ![](https://i.postimg.cc/0rgt7cBZ/image.png)
 
-# 3. VPC
+2. VPG
+    ![](https://i.postimg.cc/T3BPgmd1/image.png)
+
+3. Site-to-site VPN
+    ![](https://i.postimg.cc/4dDM1fKz/image.png)
+    
+# 4. VPC
 - peering
     - 可以其他账户，可以其他region
     - 每一个VPC子网都需要设置route table，将对方的CIDR路由到peering connection
