@@ -582,30 +582,30 @@ Resources:
 
 # 6. Nested stacks
 - Nested stacks are stacks as part of other stacks
-- They allow you to isolate repeated patterns / common components in separate stacks and call them from other stacks
+- They allow you to **isolate repeated patterns** / **common components** in separate stacks and call them from other stacks
 - Example:
   - Load Balancer configuration that is re-used
   - Security Group that is re-used
-- Nested stacks are considered best practice
+- **Nested stacks** are considered **best practice**
 - To update a nested stack, always update the parent (root stack)
 
 
 # 7. ChangeSets
-- When you update a stack, you need to know what changes before it happens for greater confidence
-- ChangeSets won’t say if the update will be successful
+- When you **update a stack**, you need to know **what changes** before it happens for greater confidence
+- ChangeSets **won’t say if the update will be successful**
 
 
 # 8. Retaining Data on Deletes
-- You can put a DeletionPolicy on any resource to control what happens when the CloudFormation template is deleted
-- DeletionPolicy=Retain:
+- You can put a **DeletionPolicy** on **any resource** to control what happens when the CloudFormation template is deleted
+- **DeletionPolicy=Retain**:
   - Specify on resources to preserve / backup in case of CloudFormation deletes
   - To keep a resource, specify Retain (works for any resource / nested stack)
-- DeletionPolicy=Snapshot:
+- **DeletionPolicy=Snapshot**:
   - EBS Volume, ElastiCache Cluster, ElastiCache ReplicationGroup
   - RDS DBInstance, RDS DBCluster, Redshift Cluster
-- DeletePolicy=Delete (default behavior):
-  - Note: for AWS::RDS::DBCluster resources, the default policy is Snapshot
-  - Note: to delete an S3 bucket, you need to first empty the bucket of its content
+- **DeletePolicy=Delete** (default behavior):
+  - Note: for **AWS::RDS::DBCluster** resources, the **default** policy is **Snapshot**
+  - Note: to delete an **S3 bucket**, you need to **first empty the bucket** of its content
 
 
 # 9. Termination Protection on Stacks
