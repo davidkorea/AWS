@@ -1,9 +1,9 @@
-CodeCommit, CodePipeline, CodeBuild, CodeDeploy
+![](https://i.postimg.cc/FRQF2X7m/image.png)
 
 - AWS CodeCommit: storing our code
 - AWS CodePipeline: automating our pipeline from code to ElasticBeanstalk
 - AWS CodeBuild: building and testing our code
-- AWS CodeDeploy: deploying the code to EC2 fleets (not Beanstalk)
+- AWS CodeDeploy: deploying the code to EC2 fleets, **NOT Beanstalk**
 
 ## Continuous Integration
 - Developers push the code to a **code repository** often (GitHub / CodeCommit / Bitbucket / etc…)
