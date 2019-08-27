@@ -1,4 +1,16 @@
 # AWS
+
+
+
+-----
+
+### VPC
+
+**Dedicate tenancy** revert to **default tenancy**:
+- Once a VPC is set to Dedicated hosting, it can be changed back to default hosting via the **CLI, SDK or API**
+- Note that this will **NOT change** hosting settings for **existing instances**, **ONLY future ones**
+- **Existing instances** can be **changed** via **CLI, SDK or API** but need to be **in a stopped state** to do so
+
 VPN:
 - a private subnet
 - Hardware VPN Access
