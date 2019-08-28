@@ -4,7 +4,7 @@
 ### Google Chrome Secure Shell Extension SSH with .pem
 1. `ssh-keygen -y -f mykey.pem > mykey.pub`
 2. `mv mykey.pem  mykey`
-3. login
+3. login with the 2 files created above
     ![](https://i.postimg.cc/cC3Xqqb7/image.png)
     
 -----
