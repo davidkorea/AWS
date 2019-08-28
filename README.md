@@ -1,7 +1,12 @@
 # AWS
 
 
-
+### Google Chrome Secure Shell Extension SSH with .pem
+1. `ssh-keygen -y -f mykey.pem > mykey.pub`
+2. `mv mykey.pem  mykey`
+3. login
+    ![](https://i.postimg.cc/cC3Xqqb7/image.png)
+    
 -----
 
 ### VPC
