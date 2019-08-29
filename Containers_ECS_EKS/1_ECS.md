@@ -45,7 +45,7 @@
 ![](http://wx3.sinaimg.cn/large/006gDTsUgy1g6gdehulhcj30zm18341r.jpg)
 
 ### 3.1.1 Get access to httpd 
-- Add 8080 for 0.0.0.0、0 in SG to allow docker httpd access
+- Add 8080 for `0.0.0.0/0` in SG to allow docker httpd access
 
 ```
 [root@ip-172-31-6-149 ~]# docker ps
