@@ -85,18 +85,20 @@ ccfa55fbe8cb        httpd:2.4                        "httpd-foreground"   36 min
 ![image](http://wx2.sinaimg.cn/large/006gDTsUgy1g6gj15gub2j30ve0lcdi6.jpg)
 ![image](http://wx1.sinaimg.cn/large/006gDTsUgy1g6gj24mgmaj311y0hmdhr.jpg)
 
-### 3.2.2 Create Service
+### 3.2.2 Create new Service
 - create new Service for the cluster, select the **new version of Task**
   ![image](http://ws2.sinaimg.cn/large/006gDTsUgy1g6gj3zt2mmj30ne0hmab0.jpg)
   
-- create a BLANK ALB manually
+- Create a BLANK ALB manually
   - **Name**	``my-ecs-cluster-elb``
   - **VPC, Subnets**	
   - **Security groups**	``ecs-alb`` woth 80 port open
   - **Target group name**	``ecs-tg``
   - leave all others default
-
-
+- Add ALB for Service
+  ![image](http://wx3.sinaimg.cn/large/006gDTsUgy1g6gjcgvfsjj30ox0hm75z.jpg)  
+  ![](http://ws3.sinaimg.cn/large/006gDTsUgy1g6gjtq0118j30ry0hmjsr.jpg)
+  
 - Allow all Port for ALB in the EC2 SG
   ![image](http://ws3.sinaimg.cn/large/006gDTsUgy1g6gj9m9iq9j311y0e1di8.jpg)
 
