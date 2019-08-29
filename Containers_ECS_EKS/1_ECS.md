@@ -97,7 +97,8 @@ ccfa55fbe8cb        httpd:2.4                        "httpd-foreground"   36 min
   - leave all others default
 - Add ALB for Service
   ![image](http://wx3.sinaimg.cn/large/006gDTsUgy1g6gjcgvfsjj30ox0hm75z.jpg)  
-  ![](http://ws3.sinaimg.cn/large/006gDTsUgy1g6gjtq0118j30ry0hmjsr.jpg)
+  
+  ![image](http://ws3.sinaimg.cn/large/006gDTsUgy1g6gjtq0118j30ry0hmjsr.jpg)  
   
 - Allow all Port for ALB in the EC2 SG
   ![image](http://ws3.sinaimg.cn/large/006gDTsUgy1g6gj9m9iq9j311y0e1di8.jpg)
