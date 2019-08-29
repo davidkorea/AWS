@@ -44,12 +44,18 @@
 
 ![](http://wx3.sinaimg.cn/large/006gDTsUgy1g6gdehulhcj30zm18341r.jpg)
 
-- Number of tasks: For replica services, set the number of instantiations of the specified task definition to place and keep running on your cluster. For daemon services, this is automatically set to the number of container instances in your cluster.
-- Minimum healthy percent: `0`, Minimum healthy percent provides a lower limit on the number of running tasks during a deployment enabling you to deploy without using additional cluster capacity.
+### 3.1.1 Get access to httpd 
+- Add 8080 for 0.0.0.0、0 in SG to allow docker httpd access
 
+```
+[root@ip-172-31-6-149 ~]# docker ps
+CONTAINER ID        IMAGE                            COMMAND              CREATED             STATUS              PORTS                  NAMES
+ccfa55fbe8cb        httpd:2.4                        "httpd-foreground"   36 minutes ago      Up 36 minutes       0.0.0.0:8080->80/tcp   ecs-httpd-1-httpd-ec96f186accea2cde501
+27369d459888        amazon/amazon-ecs-agent:latest   "/agent"             2 hours ago         Up 2 hours          ecs-agent
 
-
-
+[root@ip-172-31-6-149 ~]# curl localhost:8080
+<html><body><h1>It works!</h1></body></html>
+```
 
 
 
