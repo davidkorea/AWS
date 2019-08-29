@@ -1,7 +1,36 @@
 
 
-# 1. Create Docker Image by Dockerfile
-## 1.1 Dockerfile
+
+
+
+
+
+
+# 1. ECR
+## 1.1 create a repo
+![image](http://ws2.sinaimg.cn/large/006gDTsUgy1g6go5jpwp2j311y0cqjsv.jpg)
+
+## 1.2 Command
+
+- `$(aws ecr get-login --no-include-email --region ap-northeast-2)`
+    ```
+    WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+    WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+    Configure a credential helper to remove this warning. See
+    https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+    Login Succeeded
+    ```
+
+![image](http://ws3.sinaimg.cn/large/006gDTsUgy1g6gocpuqdkj30n10oomzn.jpg)
+
+
+
+
+
+
+# 2. Create Docker Image by Dockerfile
+## 2.1 Dockerfile
 ```
 FROM httpd:2.4
 RUN apt-get update \
@@ -19,13 +48,13 @@ CMD ["/bootstrap.sh"]
   - `cat json.txt | jq '.'`, 最简单的jq程序是表达式`'.'`，它不改变输入，但可以将其优美地输出，便于阅读和理解
   - [给力的linux命令--jq简易教程](https://www.jianshu.com/p/6de3cfdbdb0e)
 
-## 1.2 public-html
+## 2.2 public-html
 ```html
 <h1>Hello world from custom Docker image</h1>
 
 <p>This image is running on ECS, here's some information about this container and task:</p>
 ```
-## 1.3 bootstrap.sh
+## 2.3 bootstrap.sh
 ```sh
 #!/bin/sh
 set -e
@@ -80,3 +109,57 @@ httpd-foreground
       ]
     }
     ```
+
+## 2.4 Build Docker Image
+- `$(aws ecr get-login --no-include-email --region ap-northeast-2)`
+- `docker build -t docker-repo .`
+- `docker tag docker-repo:latest 260099663465.dkr.ecr.ap-northeast-2.amazonaws.com/docker-repo:latest`
+- `docker push 260099663465.dkr.ecr.ap-northeast-2.amazonaws.com/docker-repo:latest`
+    ```
+    The push refers to repository [260099663465.dkr.ecr.ap-northeast-2.amazonaws.com/docker-repo]
+    c767d50684af: Preparing 
+    03f98854df8f: Preparing 
+    3e833f83d3fe: Preparing 
+    e7dadc4bc5a7: Preparing 
+    9e0ab3afff15: Preparing 
+    7a0960d9b679: Waiting 
+    8b16516271d6: Waiting 
+    5bcb93651a74: Waiting 
+    1c95c77433e8: Waiting 
+    denied: User: arn:aws:sts::260099663465:assumed-role/ecsInstanceRole/i-03906de014656333d is not authorized to perform: ecr:InitiateLayerUpload on resource: arn:aws:ecr:ap-northeast-2:260099663465:repository/docker-repo
+    ```
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
