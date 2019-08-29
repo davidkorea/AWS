@@ -77,12 +77,12 @@ ccfa55fbe8cb        httpd:2.4                        "httpd-foreground"   36 min
 
 
 ## 3.2 Service with ALB
-![image](http://wx3.sinaimg.cn/wap360/006gDTsUgy1g6glxhb8p8j30kw0f2jto.jpg)
-
 - Create new revision of **Task Definition** with docker container map **dynamic Host port** to **docker 80 port**
 - create a new **Service**
   - create a new BLANK ALB
-  
+
+![](http://ws1.sinaimg.cn/mw690/006gDTsUgy1g6glxhb8p8j30kw0f2jto.jpg)
+
 ### 3.2.1 Update Task Definition
 ![image](http://wx2.sinaimg.cn/large/006gDTsUgy1g6gj15gub2j30ve0lcdi6.jpg)
 ![image](http://wx1.sinaimg.cn/large/006gDTsUgy1g6gj24mgmaj311y0hmdhr.jpg)
