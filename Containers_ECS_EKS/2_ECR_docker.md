@@ -21,8 +21,7 @@
 
     Login Succeeded
     ```
-
-![image](http://ws3.sinaimg.cn/large/006gDTsUgy1g6gocpuqdkj30n10oomzn.jpg)
+    ![image](http://ws3.sinaimg.cn/large/006gDTsUgy1g6gocpuqdkj30n10oomzn.jpg)
 
 
 
@@ -113,6 +112,10 @@ httpd-foreground
 ## 2.4 Build Docker Image
 - `$(aws ecr get-login --no-include-email --region ap-northeast-2)`
 - `docker build -t docker-repo .`
+    ```
+    Successfully built dabf103d3ea5
+    Successfully tagged docker-repo:latest
+    ```
 - `docker tag docker-repo:latest 260099663465.dkr.ecr.ap-northeast-2.amazonaws.com/docker-repo:latest`
 - `docker push 260099663465.dkr.ecr.ap-northeast-2.amazonaws.com/docker-repo:latest`
     ```
