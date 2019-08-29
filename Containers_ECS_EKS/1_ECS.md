@@ -19,7 +19,7 @@
 
 
 # 2. ECS Task Definitions
-- Task 相当于kubunetes中的Pod，每个Pod中可以运行多个docker。ECS Task中也可以运行多个docker
+- Task 相当于**kubunetes中的Pod**，每个Pod中可以运行多个docker。ECS Task中也可以运行多个docker
 - Tasks definitions are **metadata in JSON** form to tell ECS **how to run a Docker Container**
 - It contains crucial information around:
   - Image Name
@@ -30,9 +30,6 @@
   - IAM Role
   - Logging configuration (ex CloudWatch)
 
-
 ![image](http://ws3.sinaimg.cn/large/006gDTsUgy1g6gbulsr1gj311i0c13zs.jpg)
-
-![image](http://wx4.sinaimg.cn/large/006gDTsUgy1g6gc4dfp2aj311y0lcq50.jpg)
-
 ![](http://ws4.sinaimg.cn/large/006gDTsUgy1g6gccam655j311y1vpgqv.jpg)
+![image](http://wx4.sinaimg.cn/large/006gDTsUgy1g6gc4dfp2aj311y0lcq50.jpg)
