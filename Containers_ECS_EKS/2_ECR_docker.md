@@ -138,9 +138,23 @@ httpd-foreground
 - Add IAM Role to the EC2 that is using to let the EC2 have access to ECR. [Amazon ECR 托管策略](https://docs.aws.amazon.com/zh_cn/AmazonECR/latest/userguide/ecr_managed_policies.html)
     - go to the EC2 console, click the IAM Role `ecsInstanceRole` which is created automatically when ecs cluster is created.
     - attach polices `AmazonEC2ContainerRegistryFullAccess`
+    ![image](http://wx4.sinaimg.cn/large/006gDTsUgy1g6goybagadj30ta0fe0u5.jpg)
     
-
-
+- Push again
+    ```
+    [root@ip-172-31-24-151 ~]# docker push 260099663465.dkr.ecr.ap-northeast-2.amazonaws.com/docker-repo:latest
+    The push refers to repository [260099663465.dkr.ecr.ap-northeast-2.amazonaws.com/docker-repo]
+    c767d50684af: Pushed 
+    03f98854df8f: Pushed 
+    3e833f83d3fe: Pushed 
+    e7dadc4bc5a7: Pushed 
+    9e0ab3afff15: Pushed 
+    7a0960d9b679: Pushed 
+    8b16516271d6: Pushed 
+    5bcb93651a74: Pushed 
+    1c95c77433e8: Pushed 
+    latest: digest: sha256:0489d5626913977a6df7292a2b00081db08373287a7fefeeabb91ce62c9a6875 size: 2198
+    ```
 
 
 
