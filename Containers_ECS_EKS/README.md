@@ -1,4 +1,6 @@
-ECS
+- ECS: Amazon’s own platform
+- Fargate: Amazon’s own Serverless platform
+- EKS: Amazon’s managed Kubernetes (open source)
 
 
 ![](http://ws1.sinaimg.cn/large/006gDTsUgy1g6fh22582lj30ks088mxh.jpg)
