@@ -40,6 +40,91 @@
 - They ensure that the number of tasks desired is running across our fleet of EC2 instances.
 - They can be linked to **ELB / NLB / ALB** if needed
 
+## 3.1 Sample without ELB
+
+![](http://wx3.sinaimg.cn/large/006gDTsUgy1g6gdehulhcj30zm18341r.jpg)
+
+- Number of tasks: For replica services, set the number of instantiations of the specified task definition to place and keep running on your cluster. For daemon services, this is automatically set to the number of container instances in your cluster.
+- Minimum healthy percent: `0`, Minimum healthy percent provides a lower limit on the number of running tasks during a deployment enabling you to deploy without using additional cluster capacity.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
