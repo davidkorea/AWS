@@ -7,6 +7,5 @@
 |Cluster| Logical grouping of EC2 instances|
 |Container instance| EC2 instance running the the ECS agent|
 |Task Definition| Blueprint that describes how a docker container should launch|
-|Task| A running container using settings in a Task Definition|
-|Service| Defines long running tasks – can control task count with Auto|
-|Scaling| and attach an ELB|
+|Task| A running container created by using the settings in a Task Definition|
+|Service| Defines long running tasks – can control task count with Auto Scaling and attach an ELB|
