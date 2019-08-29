@@ -64,10 +64,9 @@ ccfa55fbe8cb        httpd:2.4                        "httpd-foreground"   36 min
   ![image](http://ws4.sinaimg.cn/large/006gDTsUgy1g6gekvytsxj30tz06jaau.jpg)
   ![image](http://wx1.sinaimg.cn/large/006gDTsUgy1g6gelyopqfj30u30bc75l.jpg)
 
-- **add new EC2** instances by **scale ecs cluster**, let each EC2 run a Task with one dokcer httpd
+- **add new EC2** instances by **scale ecs cluster**, let each EC2 run a Task with one dokcer httpd,  New EC2 will be added to ASG
   ![image](http://wx3.sinaimg.cn/large/006gDTsUgy1g6geq7hfzyj311y0jo41g.jpg)
-
-
+  ![image](http://wx4.sinaimg.cn/large/006gDTsUgy1g6geub6rj4j30tz094t9v.jpg)
 
 
 
