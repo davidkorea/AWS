@@ -76,9 +76,15 @@ ccfa55fbe8cb        httpd:2.4                        "httpd-foreground"   36 min
 
 
 
+## 3.2 ALB
 
 
-
+- create a BLANK ALB manually
+  - **Name**	``my-ecs-cluster-elb``
+  - **VPC, Subnets**	
+  - **Security groups**	``ecs-alb`` woth 80 port open
+  - **Target group name**	``ecs-tg``
+  - leave all others default
 
 
 
