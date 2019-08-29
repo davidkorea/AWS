@@ -41,6 +41,7 @@
 - They can be linked to **ELB / NLB / ALB** if needed
 
 ## 3.1 Sample without ELB
+- cannot set ELB after cluster created
 
 ![](http://wx3.sinaimg.cn/large/006gDTsUgy1g6gdehulhcj30zm18341r.jpg)
 
@@ -71,7 +72,6 @@ ccfa55fbe8cb        httpd:2.4                        "httpd-foreground"   36 min
   - **Service** will run on each EC2 in the cluster
   ![image](http://wx3.sinaimg.cn/large/006gDTsUgy1g6geq7hfzyj311y0jo41g.jpg)
   ![image](http://wx4.sinaimg.cn/large/006gDTsUgy1g6geub6rj4j30tz094t9v.jpg)
-
   ![image](http://wx3.sinaimg.cn/large/006gDTsUgy1g6ggk0s394j310h0fgdhh.jpg)
 
 
