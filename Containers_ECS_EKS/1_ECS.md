@@ -14,3 +14,15 @@
 
 - ECS 会同时创建**自动伸缩组ASG**和l**aunch configuration**
   ![image](http://ws4.sinaimg.cn/large/006gDTsUgy1g6gbk6n5v1j311y0dbt9s.jpg)
+  ![image](http://wx4.sinaimg.cn/large/006gDTsUgy1g6gbq5nafcj311y0hkq4t.jpg)
+  
+# 2. ECS Task Definitions
+- Tasks definitions are **metadata in JSON** form to tell ECS **how to run a Docker Container**
+- It contains crucial information around:
+  - Image Name
+  - Port Binding for Container and Host
+  - Memory and CPU required
+  - Environment variables
+  - Networking information
+  - IAM Role
+  - Logging configuration (ex CloudWatch)
