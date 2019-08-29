@@ -1,6 +1,7 @@
 
 ![](http://ws1.sinaimg.cn/large/006gDTsUgy1g6fh22582lj30ks088mxh.jpg)
 
+- ECS 会同时创建自动伸缩组ASG和launch configuration
 
 |Elastic Container Service (ECS)| Description|
 |-|-|
