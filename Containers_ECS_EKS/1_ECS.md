@@ -15,8 +15,11 @@
 - ECS 会同时创建**自动伸缩组ASG**和l**aunch configuration**
   ![image](http://ws4.sinaimg.cn/large/006gDTsUgy1g6gbk6n5v1j311y0dbt9s.jpg)
   ![image](http://wx4.sinaimg.cn/large/006gDTsUgy1g6gbq5nafcj311y0hkq4t.jpg)
-  
+  ![image](http://ws1.sinaimg.cn/large/006gDTsUgy1g6gc0n0wvdj30z108aab3.jpg)
+
+
 # 2. ECS Task Definitions
+- Task 相当于kubunetes中的Pod，每个Pod中可以运行多个docker。ECS Task中也可以运行多个docker
 - Tasks definitions are **metadata in JSON** form to tell ECS **how to run a Docker Container**
 - It contains crucial information around:
   - Image Name
@@ -26,3 +29,10 @@
   - Networking information
   - IAM Role
   - Logging configuration (ex CloudWatch)
+
+
+![image](http://ws3.sinaimg.cn/large/006gDTsUgy1g6gbulsr1gj311i0c13zs.jpg)
+
+![image](http://wx4.sinaimg.cn/large/006gDTsUgy1g6gc4dfp2aj311y0lcq50.jpg)
+
+![](http://ws4.sinaimg.cn/large/006gDTsUgy1g6gccam655j311y1vpgqv.jpg)
