@@ -57,6 +57,10 @@ ccfa55fbe8cb        httpd:2.4                        "httpd-foreground"   36 min
 <html><body><h1>It works!</h1></body></html>
 ```
 
+### 3.1.2 Scale
+
+![image](http://ws4.sinaimg.cn/large/006gDTsUgy1g6gekvytsxj30tz06jaau.jpg)
+![image](http://wx1.sinaimg.cn/large/006gDTsUgy1g6gelyopqfj30u30bc75l.jpg)
 
 
 
