@@ -77,6 +77,8 @@ ccfa55fbe8cb        httpd:2.4                        "httpd-foreground"   36 min
 
 
 ## 3.2 ALB
+![image](http://wx3.sinaimg.cn/wap360/006gDTsUgy1g6glxhb8p8j30kw0f2jto.jpg)
+
 - Create new revision of **Task Definition** with docker container map **dynamic Host port** to **docker 80 port**
 - create a new **Service**
   - create a new BLANK ALB
@@ -97,9 +99,7 @@ ccfa55fbe8cb        httpd:2.4                        "httpd-foreground"   36 min
   - leave all others default
 - Add ALB for Service
   ![image](http://wx3.sinaimg.cn/large/006gDTsUgy1g6gjcgvfsjj30ox0hm75z.jpg)  
-  
-  ![image](http://ws3.sinaimg.cn/large/006gDTsUgy1g6gjtq0118j30ry0hmjsr.jpg)  
-  
+    
   - Desigired 4 but running 2, check Service Events, EC2 has no enough memory to run more dockers
     ![image](http://wx4.sinaimg.cn/large/006gDTsUgy1g6gkvhqjtxj30uk0hm76g.jpg)
     ![image](http://ws2.sinaimg.cn/large/006gDTsUgy1g6gkywigcnj30u1088gml.jpg)
