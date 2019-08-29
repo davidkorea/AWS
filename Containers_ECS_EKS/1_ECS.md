@@ -103,7 +103,8 @@ ccfa55fbe8cb        httpd:2.4                        "httpd-foreground"   36 min
   - Desigired 4 but running 2, check Service Events, EC2 has no enough memory to run more dockers
     ![image](http://wx4.sinaimg.cn/large/006gDTsUgy1g6gkvhqjtxj30uk0hm76g.jpg)
     ![image](http://ws2.sinaimg.cn/large/006gDTsUgy1g6gkywigcnj30u1088gml.jpg)
-    - can scale the cluster by adding more EC2s
+    - can scale the cluster by adding more EC2s, and task will be expanded as desigred number
+      ![image](http://wx4.sinaimg.cn/large/006gDTsUgy1g6glszywt5j30u5078t9i.jpg)
     
 - Allow all Port for ALB in the EC2 SG. because each docker 80 port will map to a random tcp port on the Host EC2
   ![image](http://ws3.sinaimg.cn/large/006gDTsUgy1g6gj9m9iq9j311y0e1di8.jpg)
