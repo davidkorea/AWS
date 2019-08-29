@@ -86,6 +86,9 @@ ccfa55fbe8cb        httpd:2.4                        "httpd-foreground"   36 min
 ![image](http://wx1.sinaimg.cn/large/006gDTsUgy1g6gj24mgmaj311y0hmdhr.jpg)
 
 ### 3.2.2 Create Service
+- create new Service for the cluster, select the **new version of Task**
+  ![image](http://ws2.sinaimg.cn/large/006gDTsUgy1g6gj3zt2mmj30ne0hmab0.jpg)
+  
 - create a BLANK ALB manually
   - **Name**	``my-ecs-cluster-elb``
   - **VPC, Subnets**	
@@ -94,7 +97,8 @@ ccfa55fbe8cb        httpd:2.4                        "httpd-foreground"   36 min
   - leave all others default
 
 
-
+- Allow all Port for ALB in the EC2 SG
+  ![image](http://ws3.sinaimg.cn/large/006gDTsUgy1g6gj9m9iq9j311y0e1di8.jpg)
 
 
 
