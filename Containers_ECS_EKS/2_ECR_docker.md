@@ -23,6 +23,10 @@
     ```
     ![image](http://ws3.sinaimg.cn/large/006gDTsUgy1g6gocpuqdkj30n10oomzn.jpg)
 
+- `aws ecr get-login --no-include-email --region ap-northeast-2`, docker临时登录AWS
+    ```
+    docker login -u AWS -p eyJwYXl......sb2DM0Nn0= https://2600000065.dkr.ecr.ap-northeast-2.amazonaws.com
+    ```
 
 
 
