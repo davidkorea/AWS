@@ -158,8 +158,9 @@ httpd-foreground
     ![image](http://wx3.sinaimg.cn/large/006gDTsUgy1g6gozg31kxj311y0c03zo.jpg)
 
 
-
-
+## 2.5 Pull Images from ECR
+- `$(aws ecr get-login --no-include-email --region ap-northeast-2)`
+- `docker pull 260099663465.dkr.ecr.ap-northeast-2.amazonaws.com/docker-repo:latest`
 
 
 
