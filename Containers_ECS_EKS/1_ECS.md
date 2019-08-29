@@ -100,6 +100,10 @@ ccfa55fbe8cb        httpd:2.4                        "httpd-foreground"   36 min
   
   ![image](http://ws3.sinaimg.cn/large/006gDTsUgy1g6gjtq0118j30ry0hmjsr.jpg)  
   
+  - Desigired 4 but running 2, check Service Events, EC2 has no enough memory to run more dockers
+    ![image](http://wx4.sinaimg.cn/large/006gDTsUgy1g6gkvhqjtxj30uk0hm76g.jpg)
+    - can scale the cluster by adding more EC2s
+    
 - Allow all Port for ALB in the EC2 SG
   ![image](http://ws3.sinaimg.cn/large/006gDTsUgy1g6gj9m9iq9j311y0e1di8.jpg)
 
