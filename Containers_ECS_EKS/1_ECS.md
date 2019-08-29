@@ -77,8 +77,14 @@ ccfa55fbe8cb        httpd:2.4                        "httpd-foreground"   36 min
 
 
 ## 3.2 ALB
+- Create new revision of **Task Definition** with docker container map dynamic port to Host 80 port
+- create a new **Service**
+  - create a new BLANK ALB
+  
+### 3.2.1 Update Task Definition
 
 
+### 3.2.2 Create Service
 - create a BLANK ALB manually
   - **Name**	``my-ecs-cluster-elb``
   - **VPC, Subnets**	
