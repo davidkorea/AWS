@@ -135,8 +135,10 @@ httpd-foreground
     1c95c77433e8: Waiting 
     denied: User: arn:aws:sts::260099663465:assumed-role/ecsInstanceRole/i-03906de014656333d is not authorized to perform: ecr:InitiateLayerUpload on resource: arn:aws:ecr:ap-northeast-2:260099663465:repository/docker-repo
     ```
+- Add IAM Role to the EC2 that is using to let the EC2 have access to ECR. [Amazon ECR 托管策略](https://docs.aws.amazon.com/zh_cn/AmazonECR/latest/userguide/ecr_managed_policies.html)
+    - go to the EC2 console, click the IAM Role `ecsInstanceRole` which is created automatically when ecs cluster is created.
+    - attach polices `AmazonEC2ContainerRegistryFullAccess`
     
-
 
 
 
