@@ -1,9 +1,10 @@
 
 
 
-
-
-
+- Create a ECR repo
+- push docker image to ECR repo
+- Update a new version of Task Definition used the docker image above
+- update service
 
 
 # 1. ECR
@@ -148,13 +149,15 @@ httpd-foreground
 - `docker pull 260099663465.dkr.ecr.ap-northeast-2.amazonaws.com/my-ecs-httpd:latest`
 
 
+# 3. Update Task & Service
+## 3.1 New version Task Definition
+- create a new version and change the docker image by the ECR image
+![image](http://ws4.sinaimg.cn/large/006gDTsUgy1g6hj4cpjeyj30vv0h9jtb.jpg)
 
 
+## 3.2 Update service
 
-
-
-
-
+![image](http://wx4.sinaimg.cn/large/006gDTsUgy1g6hj6edv01j30u706kaas.jpg)
 
 
 
