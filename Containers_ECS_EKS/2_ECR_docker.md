@@ -12,26 +12,6 @@
 
 ![image](http://wx3.sinaimg.cn/large/006gDTsUgy1g6hi26qxqmj30rs06ljs4.jpg)
 
-## 1.2 Command
-
-- `$(aws ecr get-login --no-include-email --region ap-northeast-2)`
-    ```
-    WARNING! Using --password via the CLI is insecure. Use --password-stdin.
-    WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
-    Configure a credential helper to remove this warning. See
-    https://docs.docker.com/engine/reference/commandline/login/#credentials-store
-
-    Login Succeeded
-    ```
-    ![image](http://ws3.sinaimg.cn/large/006gDTsUgy1g6gocpuqdkj30n10oomzn.jpg)
-
-- `aws ecr get-login --no-include-email --region ap-northeast-2`, docker临时登录AWS
-    ```
-    docker login -u AWS -p eyJwYXl......sb2DM0Nn0= https://2600000065.dkr.ecr.ap-northeast-2.amazonaws.com
-    ```
-
-
-
 
 
 # 2. Create Docker Image by Dockerfile
