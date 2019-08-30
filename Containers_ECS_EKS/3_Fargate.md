@@ -1,4 +1,7 @@
-
+- Fargate is Serverless (no EC2 to manage)
+- AWS provisions containers for us and **assigns them ENI**
+- Fargate containers are provisioned by the container spec (CPU / RAM)
+- Fargate tasks can have IAM Roles to execute actions against AWS
 
 # 1. Create Fargate Cluster
 
