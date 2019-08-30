@@ -1,4 +1,16 @@
 
+ECS Classic
+- EC2 instances must be created
+- We must configure the file **/etc/ecs/ecs.config** with the cluster name
+- The EC2 instance must run an **ECS agent**
+- EC2 instances can run multiple containers on the same type:
+  - You need NOT specify a host port (only container port)
+  - You should use an **Application Load Balancer** with the **dynamic port mapping**
+  - The EC2 instance security group must **allow traffic from the ALB on all ports
+- ECS tasks can have IAM Roles to execute actions against AWS
+- **Security group**s operate at the **instance level**, **NOT task level**
+
+
 ![](http://ws1.sinaimg.cn/large/006gDTsUgy1g6fh22582lj30ks088mxh.jpg)
 
 
