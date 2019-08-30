@@ -1,11 +1,5 @@
 
 
-
-
-
-
-
-
 # 1. ECS + Elastic Beanstalk
 - You can run Elastic Beanstalk **in** Single & Multi Docker Container mode
 - Multi Docker helps run multiple containers per EC2 instance in EB
