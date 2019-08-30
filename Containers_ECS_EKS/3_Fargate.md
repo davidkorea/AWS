@@ -17,11 +17,7 @@
 
 
 
-
-
-
-
-
-
-
 # 3. Fargate Service
+
+![FireShot Capture 024 - Amazon ECS - ap-northeast-2.console.aws.amazon.com](http://wx4.sinaimg.cn/large/006gDTsUgy1g6hk1wiru1j311y1580wm.jpg)
+
