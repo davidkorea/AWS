@@ -12,12 +12,19 @@
 
 # 1. Cluster
 
-- ECS 会同时创建**自动伸缩组ASG**和l**aunch configuration**
+- ECS 会同时创建**自动伸缩组ASG**和**Launch Configuration**
   ![image](http://ws4.sinaimg.cn/large/006gDTsUgy1g6gbk6n5v1j311y0dbt9s.jpg)
   ![image](http://wx4.sinaimg.cn/large/006gDTsUgy1g6gbq5nafcj311y0hkq4t.jpg)
   ![image](http://ws1.sinaimg.cn/large/006gDTsUgy1g6gc0n0wvdj30z108aab3.jpg)
 
-
+- User data in **Launch Configuration**
+  ![image](http://wx1.sinaimg.cn/large/006gDTsUgy1g6hp9f6k7ej311y0gljts.jpg)
+  ```
+  [root@ip-172-31-4-201 ~]# cat /etc/ecs/ecs.config 
+  ECS_CLUSTER=my-ecs-cluster
+  ECS_BACKEND_HOST=
+  ```
+  
 # 2. ECS Task Definitions
 - Task 相当于**kubunetes中的Pod**，每个Pod中可以运行多个docker。ECS Task中也可以运行多个docker
 - Tasks definitions are **metadata in JSON** form to tell ECS **how to run a Docker Container**
