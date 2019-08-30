@@ -1,3 +1,8 @@
+- delete a Task Definition, need to **deregister** first
+
+
+-----
+
 - ECS: Amazon’s own platform
 - Fargate: Amazon’s own Serverless platform
 - EKS: Amazon’s managed Kubernetes (open source)
