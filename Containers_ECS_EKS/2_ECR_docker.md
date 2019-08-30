@@ -51,7 +51,7 @@ CMD ["/bootstrap.sh"]
   - `cat json.txt | jq '.'`, 最简单的jq程序是表达式`'.'`，它不改变输入，但可以将其优美地输出，便于阅读和理解
   - [给力的linux命令--jq简易教程](https://www.jianshu.com/p/6de3cfdbdb0e)
 
-## 2.2 public-html
+## 2.2 public-html/index.html
 ```html
 <h1>Hello world from custom Docker image</h1>
 
