@@ -163,6 +163,75 @@ Change the Task Version to the latest which is created above
 ![image](http://wx1.sinaimg.cn/large/006gDTsUgy1g6hj7pibv6j311y0h8q4m.jpg)
 
 
+New Task(conatiner) will be created and registered in ASG
+![image](http://ws2.sinaimg.cn/large/006gDTsUgy1g6hj9y405kj311y0fx0vo.jpg)
+![image](http://wx2.sinaimg.cn/large/006gDTsUgy1g6hjcwdgw7j311y07ewf9.jpg)
+
+![image](http://wx2.sinaimg.cn/large/006gDTsUgy1g6hjbnpis1j311y0hmwh2.jpg)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
