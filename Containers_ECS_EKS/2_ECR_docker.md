@@ -169,7 +169,8 @@ New Task(conatiner) will be created and registered in ASG
 
 ![image](http://wx2.sinaimg.cn/large/006gDTsUgy1g6hjbnpis1j311y0hmwh2.jpg)
 
-
+After finished deployment
+![image](http://wx4.sinaimg.cn/large/006gDTsUgy1g6hjentd4xj30q30jft9u.jpg)
 
 
 
