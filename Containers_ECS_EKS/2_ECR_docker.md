@@ -156,10 +156,11 @@ httpd-foreground
 
 
 ## 3.2 Update service
+Change the Task Version to the latest which is created above
 
 ![image](http://wx4.sinaimg.cn/large/006gDTsUgy1g6hj6edv01j30u706kaas.jpg)
 
-
+![image](http://wx1.sinaimg.cn/large/006gDTsUgy1g6hj7pibv6j311y0h8q4m.jpg)
 
 
 
