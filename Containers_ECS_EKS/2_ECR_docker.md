@@ -8,7 +8,9 @@
 
 # 1. ECR
 ## 1.1 create a repo
-![image](http://ws2.sinaimg.cn/large/006gDTsUgy1g6go5jpwp2j311y0cqjsv.jpg)
+这个repo的名称就是日后使用的docker image的名字，所以需要表示明白这个image运行什么程序
+
+![image](http://wx3.sinaimg.cn/large/006gDTsUgy1g6hi26qxqmj30rs06ljs4.jpg)
 
 ## 1.2 Command
 
@@ -114,16 +116,19 @@ httpd-foreground
     ```
 
 ## 2.4 Build Docker Image
-- `$(aws ecr get-login --no-include-email --region ap-northeast-2)`
-- `docker build -t docker-repo .`
+- `aws ecr get-login --no-include-email --region ap-northeast-2`, docker临时登录AWS
+    ```
+    docker login -u AWS -p eyJwYXl......sb2DM0Nn0= https://2600000065.dkr.ecr.ap-northeast-2.amazonaws.com
+    ```
+- `docker build -t my-ecs-httpd .`
     ```
     Successfully built dabf103d3ea5
-    Successfully tagged docker-repo:latest
+    Successfully tagged my-ecs-httpd:latest
     ```
-- `docker tag docker-repo:latest 260099663465.dkr.ecr.ap-northeast-2.amazonaws.com/docker-repo:latest`
-- `docker push 260099663465.dkr.ecr.ap-northeast-2.amazonaws.com/docker-repo:latest`
+- `docker tag my-ecs-httpd:latest 260099663465.dkr.ecr.ap-northeast-2.amazonaws.com/my-ecs-httpd:latest`
+- `docker push 260099663465.dkr.ecr.ap-northeast-2.amazonaws.com/my-ecs-httpd:latest`
     ```
-    The push refers to repository [260099663465.dkr.ecr.ap-northeast-2.amazonaws.com/docker-repo]
+    The push refers to repository [260099663465.dkr.ecr.ap-northeast-2.amazonaws.com/my-ecs-httpd]
     c767d50684af: Preparing 
     03f98854df8f: Preparing 
     3e833f83d3fe: Preparing 
@@ -133,7 +138,7 @@ httpd-foreground
     8b16516271d6: Waiting 
     5bcb93651a74: Waiting 
     1c95c77433e8: Waiting 
-    denied: User: arn:aws:sts::260099663465:assumed-role/ecsInstanceRole/i-03906de014656333d is not authorized to perform: ecr:InitiateLayerUpload on resource: arn:aws:ecr:ap-northeast-2:260099663465:repository/docker-repo
+    denied: User: arn:aws:sts::260099663465:assumed-role/ecsInstanceRole/i-03906de014656333d is not authorized to perform: ecr:InitiateLayerUpload on resource: arn:aws:ecr:ap-northeast-2:260099663465:repository/my-ecs-httpd
     ```
 - Add IAM Role to the EC2 that is using to let the EC2 have access to ECR. [Amazon ECR 托管策略](https://docs.aws.amazon.com/zh_cn/AmazonECR/latest/userguide/ecr_managed_policies.html)
     - go to the EC2 console, click the IAM Role `ecsInstanceRole` which is created automatically when ecs cluster is created.
@@ -142,25 +147,25 @@ httpd-foreground
     
 - Push again
     ```
-    [root@ip-172-31-24-151 ~]# docker push 260099663465.dkr.ecr.ap-northeast-2.amazonaws.com/docker-repo:latest
-    The push refers to repository [260099663465.dkr.ecr.ap-northeast-2.amazonaws.com/docker-repo]
-    c767d50684af: Pushed 
-    03f98854df8f: Pushed 
-    3e833f83d3fe: Pushed 
-    e7dadc4bc5a7: Pushed 
+    [root@ip-172-31-4-201 ~]# docker push 260099663465.dkr.ecr.ap-northeast-2.amazonaws.com/my-ecs-httpd:latest
+    The push refers to repository [260099663465.dkr.ecr.ap-northeast-2.amazonaws.com/my-ecs-httpd]
+    6e3ebf67f1e5: Pushed 
+    e21e0b7afa92: Pushed 
+    c8c1d7c62713: Pushed 
+    e08ae2f7a19a: Pushed 
     9e0ab3afff15: Pushed 
     7a0960d9b679: Pushed 
     8b16516271d6: Pushed 
     5bcb93651a74: Pushed 
     1c95c77433e8: Pushed 
-    latest: digest: sha256:0489d5626913977a6df7292a2b00081db08373287a7fefeeabb91ce62c9a6875 size: 2198
+    latest: digest: sha256:d19f2302733a9b82ef1a915357db2cc40246cbf5371d3dae2fcfe8cfa7a953a8 size: 2198
     ```
     ![image](http://wx3.sinaimg.cn/large/006gDTsUgy1g6gozg31kxj311y0c03zo.jpg)
 
 
 ## 2.5 Pull Images from ECR
 - `$(aws ecr get-login --no-include-email --region ap-northeast-2)`
-- `docker pull 260099663465.dkr.ecr.ap-northeast-2.amazonaws.com/docker-repo:latest`
+- `docker pull 260099663465.dkr.ecr.ap-northeast-2.amazonaws.com/my-ecs-httpd:latest`
 
 
 
