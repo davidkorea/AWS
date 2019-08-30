@@ -110,7 +110,7 @@ ccfa55fbe8cb        httpd:2.4                        "httpd-foreground"   36 min
 - Allow all Port for ALB in the EC2 SG. because each docker 80 port will map to a random tcp port on the Host EC2
   ![image](http://ws3.sinaimg.cn/large/006gDTsUgy1g6gj9m9iq9j311y0e1di8.jpg)
 
-  - If NOT allowed, errer log
+  - If NOT allowed Host EC2 random port `32772` and `32773`, errer log
   
   ![image](http://ws4.sinaimg.cn/large/006gDTsUgy1g6hh4i4b1dj30u10kln0s.jpg)
 
