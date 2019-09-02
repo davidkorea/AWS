@@ -211,12 +211,12 @@
 
 # 9. DynamoDB – Query
 - Query returns items based on:
-- PartitionKey value (must be = operator)
-- SortKey value (=, <, <=, >, >=, Between, Begin) – optional
-- FilterExpression to further filter (client side filtering)
+  - **PartitionKey** value (must be **=** operator)
+  - **SortKey** value (**=, <, <=, >, >=, Between, Begin**) – optional
+  - FilterExpression to further filter (client side filtering)
 - Returns:
-- Up to 1 MB of data
-- Or number of items specified in Limit
+  - Up to 1 MB of data
+  - Or number of items specified in Limit
 - Able to do pagination on the results
 - Can query table, a local secondary index, or a global secondary index
 
