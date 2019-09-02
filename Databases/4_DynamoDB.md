@@ -222,9 +222,19 @@
 - Able to do pagination on the results
 - Can query table, a local secondary index, or a global secondary index
 
+# 10. DynamoDB - Scan
+- **Scan the entire table** and then filter out data (inefficient)
+  - 每次查看一张表，都是scan操作
+- Returns up to 1 MB of data – use pagination to keep on reading
+- Consumes a lot of RCU
+- Limit impact using Limit or reduce the size of the result and pause
+- For faster performance, use parallel scans:
+  - Multiple instances scan multiple partitions at the same time
+  - Increases the throughput and RCU consumed
+  - Limit the impact of parallel scans just like you would for Scans
+- Can use a ProjectionExpression + FilterExpression (no change to RCU)
 
-
-
+![image](http://wx2.sinaimg.cn/mw690/006gDTsUgy1g6l8lkwrx9j30op0bqgny.jpg)
 
 
 
