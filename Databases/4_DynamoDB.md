@@ -189,6 +189,7 @@
   - By size: Total Size / 10 GB
   - Total partitions = CEILING(MAX(Capacity, Size))
 - **WCU and RCU are spread evenly均等地 between partitions**
+  ![image](http://wx1.sinaimg.cn/large/006gDTsUgy1g6l836fl5sj30hr0eamyi.jpg)
 
 # 8. DynamoDB Concurrency并发性
 - DynamoDB has a feature called “Conditional Update / Delete”
