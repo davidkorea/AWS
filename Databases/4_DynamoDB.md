@@ -246,6 +246,7 @@
 - **TTL is enabled per row **
   - **define a TTL column, and add a date there**
     ![image](http://wx1.sinaimg.cn/mw690/006gDTsUgy1g6l9t68xcpj30vn076jsc.jpg)
+    ![image](http://wx4.sinaimg.cn/mw690/006gDTsUgy1g6l9vcytc3j30ka0dln19.jpg)
 - DynamoDB typically **deletes expired items** within **48 hours of expiration**
 - Deleted items due to TTL are **also deleted in GSI / LSI**
 - DynamoDB **Streams can help recover expired items**
