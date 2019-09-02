@@ -191,6 +191,51 @@
 - **WCU and RCU are spread evenly均等地 between partitions**
   ![image](http://wx1.sinaimg.cn/large/006gDTsUgy1g6l836fl5sj30hr0eamyi.jpg)
 
+
+# 8. DynamoDB – Batching Writes
+- **`BatchWriteItem`**
+  - Up to **25 PutItem** and / or **DeleteItem** in one call
+  - Up to **16 MB** of data written
+  - Up to **400 KB** of data per item, default limit is 400 Kb per item
+- Batching allows you to save in latency by reducing the number of API calls done against DynamoDB
+- Operations are done in parallel for better efficiency
+- It’s possible for part of a batch to fail, in which case we have the try the failed items (using exponential back-off algorithm)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 8. DynamoDB Concurrency并发性
 - DynamoDB has a feature called “Conditional Update / Delete”
 - That means that you can ensure an item hasn’t changed before altering it
