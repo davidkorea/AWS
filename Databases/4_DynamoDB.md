@@ -214,6 +214,8 @@
   - **PartitionKey** value (must be **=** operator)
   - **SortKey** value (**=, <, <=, >, >=, Between, Begin**) – optional
   - FilterExpression to further filter (client side filtering)
+  ![image](http://ws3.sinaimg.cn/mw690/006gDTsUgy1g6l8hhhr5rj30ot0duq5r.jpg)
+  
 - Returns:
   - Up to 1 MB of data
   - Or number of items specified in Limit
