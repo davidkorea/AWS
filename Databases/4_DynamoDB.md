@@ -284,7 +284,9 @@
 - DynamoDB typically deletes expired items within 48 hours of expiration
 - Deleted items due to TTL are **also deleted in GSI / LSI**
 - DynamoDB **Streams can help recover expired items**
-
+- https://www.epochconverter.com/
+  ![image](http://wx3.sinaimg.cn/mw690/006gDTsUgy1g6l9rfifkrj30kw0h13zz.jpg)
+  
 # 10. DynamoDB Transactions处理交易
 - New feature from November 2018，同时在多个表中 写入/更新/删除 多条记录row
 - Transaction = Ability to Create / Update / Delete **multiple rows** in **different tables** at the same time
