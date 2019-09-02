@@ -178,6 +178,10 @@
 
 
 # 7. Partitions Internal
+- You **start** with **one** partition
+- Each partition:
+  - Max of 3000 RCU / 1000 WCU
+  - Max of 10GB
 - Data is divided in partitions
   - Partition keys go through a hashing algorithm to know to which partition they go to
 - To compute the number of partitions:
