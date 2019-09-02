@@ -192,7 +192,8 @@
   ![image](http://wx1.sinaimg.cn/large/006gDTsUgy1g6l836fl5sj30hr0eamyi.jpg)
 
 
-# 8. DynamoDB – Batching Writes
+# 8. DynamoDB – Batching 
+## 8.1 Writes
 - **`BatchWriteItem`**
   - Up to **25 PutItem** and / or **DeleteItem** in one call
   - Up to **16 MB** of data written
@@ -201,10 +202,23 @@
 - Operations are done in parallel for better efficiency
 - It’s possible for part of a batch to fail, in which case we have the try the failed items (using exponential back-off algorithm)
 
+## 8.2 Reads
+- **`BatchGetItem`**
+  - **Up to 100 items**
+  - Up to **16 MB** of data
+  - Items are retrieved in parallel to minimize latency
 
 
-
-
+# 9. DynamoDB – Query
+- Query returns items based on:
+- PartitionKey value (must be = operator)
+- SortKey value (=, <, <=, >, >=, Between, Begin) – optional
+- FilterExpression to further filter (client side filtering)
+- Returns:
+- Up to 1 MB of data
+- Or number of items specified in Limit
+- Able to do pagination on the results
+- Can query table, a local secondary index, or a global secondary index
 
 
 
