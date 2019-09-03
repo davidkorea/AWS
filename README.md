@@ -2,8 +2,14 @@
 
 
 
-kinesis
-EMR
+- sgg集群 - 集群存储，集群监控zabbix
+- hadoop基础电商日志
+- 贪心NLP
+
+-----
+
+- kinesis
+- EMR
 
 -----
 
