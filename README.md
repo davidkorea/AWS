@@ -3,6 +3,7 @@
 
 
 kinesis
+EMR
 
 -----
 
