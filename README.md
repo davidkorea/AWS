@@ -1,7 +1,7 @@
 # AWS
 
 
-theia...
+theia
 
 -----
 
