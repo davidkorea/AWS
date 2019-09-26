@@ -1,5 +1,6 @@
 # AWS
 
+py-hadoop
 
 theia
 
