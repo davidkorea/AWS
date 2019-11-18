@@ -1,9 +1,9 @@
 # 1. EBS 101
 
 
-If you make periodic snapshots of a volume, the snapshots are incremental, which means that only the blocks on the device that have changed after your last snapshot are saved in the new snapshot
+If you make periodic snapshots of a volume, the snapshots are incremental递增的, which means that only the blocks on the device that have changed after your last snapshot are saved in the new snapshot
 
-Even though snapshots are saved incrementally, the snapshot deletion process is designed so that you need to **retain only the most recent snapshot in order to restore the volume**
+Even though snapshots are saved incrementally, the snapshot deletion process is designed so that you need to **retainc持有 only the most recent snapshot in order to restore the volume**
 
 -----
 
