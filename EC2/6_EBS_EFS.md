@@ -10,7 +10,7 @@
     - But one disk fails, all the data is failed
     - An application that needs a lot of IOPS and doesn’t need fault-tolerance
     - A database that has replication already built-in，已创建副本的数据库
-   - RAID 1
+  - RAID 1
     - Mirroring a volume to another
     - Application that need increase volume fault tolerance
     - Application where you need to service disks，提供存储服务的应用，云硬盘等
