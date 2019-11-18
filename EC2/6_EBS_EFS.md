@@ -35,7 +35,7 @@ Have a provisioned capacity (size in GBs, and IOPS)
 EBS Volumes come in 4 types
 - GP2 (SSD): General purpose SSD volume that balances price and performance for a wide variety of workloads
 - IO1 (SSD): Highest-performance SSD volume for mission-critical **low-latency or highthroughput** workloads
-- ST1 (HDD): Low cost HDD volume designed for **frequently accessed, throughputintensive workloads**
+- ST1 (HDD): Low cost HDD volume designed for **frequently accessed, throughput intensive(密集) workloads**
 - SC1 (HDD): Lowest cost HDD volume designed for **less frequently** accessed workloads
 
 Only **GP2** and **IO1** can be used as **boot volumes**，仅SSD的2中磁盘类型可以用于根卷
