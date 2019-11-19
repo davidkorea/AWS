@@ -1,5 +1,17 @@
 # AWS
 
+- CLI for sysops
+    ```
+    aws s3 mb s3://mybucket
+    ```
+- API for developers
+    ```python
+    import
+    ```
+
+
+-----
+
 py-hadoop
 
 theia
