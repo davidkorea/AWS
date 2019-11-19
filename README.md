@@ -2,11 +2,13 @@
 
 - CLI for sysops
     ```
-    aws s3 mb s3://mybucket
+    aws s3 mb s3://my-bucket
     ```
 - API for developers
     ```python
-    import
+    import boto3
+    s3 = boto3.client('s3')
+    s3.create_bucket(Bucket='my-bucket')
     ```
 
 
