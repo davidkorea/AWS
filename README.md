@@ -1,5 +1,13 @@
 # AWS
 
+
+- block store
+- object store
+- file store
+
+
+-----
+
 - CLI for sysops
     ```
     aws s3 mb s3://my-bucket
