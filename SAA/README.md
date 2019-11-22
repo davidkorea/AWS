@@ -1,5 +1,6 @@
 # AWS
 
+allocate 划分，分配
 
 finer grain 更细的颗粒度，更详细的
 
