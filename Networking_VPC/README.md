@@ -1,7 +1,12 @@
 - secondary CIDR
     ![image](http://tva3.sinaimg.cn/large/006gDTsUgy1g9a3k8tu6mj30ud06a0sx.jpg)
 
-
+    ![](https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/images/vpc-multiple-cidrs.png)
+    
+    
+    
+    
+    
 -----
 
 **Dedicate tenancy** revert to **default tenancy**:
