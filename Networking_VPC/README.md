@@ -1,3 +1,9 @@
+- secondary CIDR
+    ![image](http://tva3.sinaimg.cn/large/006gDTsUgy1g9a3k8tu6mj30ud06a0sx.jpg)
+
+
+-----
+
 **Dedicate tenancy** revert to **default tenancy**:
 - Once a VPC is set to Dedicated hosting, it can be changed back to default hosting via the **CLI, SDK or API**
 - Note that this will **NOT change** hosting settings for **existing instances**, **ONLY future ones**
