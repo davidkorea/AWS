@@ -1,6 +1,5 @@
 # AWS
 
-semporna okinawa
 
 -----
 
