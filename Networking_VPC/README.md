@@ -4,7 +4,16 @@
 - subnet3 - VPN-only
 
 ![](http://tva1.sinaimg.cn/large/006gDTsUgy1g9evv9ojxjj30l80pcgpk.jpg)
+-----
 
+## VPN v.s. AWS Direct Connect
+
+AWS would still recommend that you implement a backup VPN connection to provide a backup in the event of a complete location-impacting event when you has established AWS Direct Connect in that location.
+
+- Single Connection
+![](http://tvax1.sinaimg.cn/large/006gDTsUgy1g9ew82anmsj30kj0eejtf.jpg)
+
+- 
 
 
 -----
