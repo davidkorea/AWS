@@ -1,3 +1,4 @@
+## VPC Overview
 - subnet1 - Public
 - subnet2 - Private
 - subnet3 - VPN-only
@@ -7,7 +8,7 @@
 
 
 -----
-
+## VPC Resizing
 - secondary CIDR
     ![image](http://tva3.sinaimg.cn/large/006gDTsUgy1g9a3k8tu6mj30ud06a0sx.jpg)
     ![](https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/images/vpc-multiple-cidrs.png)
