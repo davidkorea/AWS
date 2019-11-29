@@ -1,11 +1,17 @@
+- subnet1 - Public
+- subnet2 - Private
+- subnet3 - VPN-only
+
+![](http://tva1.sinaimg.cn/large/006gDTsUgy1g9evv9ojxjj30l80pcgpk.jpg)
+
+
+
+-----
+
 - secondary CIDR
     ![image](http://tva3.sinaimg.cn/large/006gDTsUgy1g9a3k8tu6mj30ud06a0sx.jpg)
     ![](https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/images/vpc-multiple-cidrs.png)
-    - Usage: [我如何修改 VPC 上的 CIDR 块来容纳更多主机？](https://aws.amazon.com/cn/premiumsupport/knowledge-center/vpc-modify-cidr-more-hosts/)   
-    
-    
-    
-    
+    - Usage: [我如何修改 VPC 上的 CIDR 块来容纳更多主机？](https://aws.amazon.com/cn/premiumsupport/knowledge-center/vpc-modify-cidr-more-hosts/)       
     
 -----
 
