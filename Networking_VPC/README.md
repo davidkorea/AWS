@@ -13,7 +13,10 @@ AWS would still recommend that you implement a backup VPN connection to provide 
 - Single Connection
 ![](http://tvax1.sinaimg.cn/large/006gDTsUgy1g9ew82anmsj30kj0eejtf.jpg)
 
-- 
+- Dual connections
+![](http://tva2.sinaimg.cn/large/006gDTsUgy1g9ewckpkwcj30li0d4gnk.jpg)
+
+![](http://tvax2.sinaimg.cn/large/006gDTsUgy1g9ewd3gdvlj30lk0dnwgz.jpg)
 
 
 -----
