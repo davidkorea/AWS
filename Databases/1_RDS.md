@@ -11,7 +11,7 @@
   
 - Read Replicas can be used to run **BI / Analytics Reports** for example
 - 目前Read Replicas支持以下4个数据库, NO Oracle! NO MS SQL
-  - Aurora
+  - Aurora, Aurora replica
   - PostgreSQL
   - MySQL
   - MariaDB
