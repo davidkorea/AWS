@@ -51,7 +51,7 @@
 </p>
 
 - LSI = **Partition Key + Optional Sort Key**
-- The **Partition Key** should be the **same as the origin** Partition Key, also LSI should have a **Sort Key**
+- The **Partition Key** should be the **same as the origin** Partition Key(base table), also LSI should have a **Sort Key**
 - Alternate range key for your table, **local to the hash key**
 - **Up to five** local secondary indexes per table.
 - The sort key consists of exactly one scalar attribute.
@@ -71,7 +71,7 @@
 
 ![](https://i.loli.net/2019/08/22/KLXWy6ftY3UBTwJ.png)
 
-- GSI Partition Key be ether same as origin or not, can have no Sort Key
+- GSI Partition Key be ????????ether same as origin or not, can have no Sort Key
 - **MUST define RCU / WCU** for the index
 - To **speed up queries** on **non-key attributes**(除了主键之外的其它列), use a Global Secondary Index
 - ~~GSI = **Partition Key + Optional Sort Key**~~
