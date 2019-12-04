@@ -134,6 +134,9 @@
 ![](https://i.loli.net/2019/08/22/Fgfa3ZqC9Dmzx4t.png)
 
 # 5. DynamoDB Streams
+
+类似event log，记录各种数据库各种变动事件
+
 <p align="center">
     <img src="https://i.loli.net/2019/08/22/5m9LeDIpGUuCfoK.png"  width="280" height="400">
 </p>
