@@ -1,0 +1,2 @@
+- Amazon Inspector assessments评估 check for security exposures and vulnerabilities in your EC2 instances.
+- need to install a agent in EC2
