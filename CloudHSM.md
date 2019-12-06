@@ -46,12 +46,11 @@
   - Sign your cluster CSR.
   
 2. 验证群集的 HSM 的身份和真实性 (可选). 集群验证证书 `cluster-6sm3nqh6jlx_HsmCertificate.crt`
-  ![](http://tva4.sinaimg.cn/large/006gDTsUgy1g9n20h3lkjj30d10gaq3e.jpg)
+  ![](http://tva4.sinaimg.cn/large/006gDTsUgy1g9n2dwwmu8j30d50gbwez.jpg)
 
 ## 5. Upload Certs
-![](http://tva4.sinaimg.cn/large/006gDTsUgy1g9n2dwwmu8j30d50gbwez.jpg)
 
-
+![](http://tva4.sinaimg.cn/large/006gDTsUgy1g9n28xam2cj311w0fa0tw.jpg)
 
 
 
