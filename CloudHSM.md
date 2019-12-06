@@ -12,3 +12,7 @@
 
 4. download CSR
 ![](http://tvax1.sinaimg.cn/large/006gDTsUgy1g9n1vtz6suj311x0fo75n.jpg)
+
+- 证书签名请求 `cluster-6sm3nqh6jlx_ClusterCsr.csr`
+
+- 集群验证证书 `cluster-6sm3nqh6jlx_HsmCertificate.crt`
