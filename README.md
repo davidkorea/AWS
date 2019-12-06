@@ -5,6 +5,10 @@
     - hsm
 - authentication，authority，audit
 
+### HSM
+1. create HSM cluster
+![](http://tvax1.sinaimg.cn/large/006gDTsUgy1g9n1kis9fdj311v09iq3o.jpg)
+
 -----
 
 - block store
