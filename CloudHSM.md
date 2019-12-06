@@ -9,3 +9,6 @@
 3. create HSM in cluster
 ![](http://tvax1.sinaimg.cn/large/006gDTsUgy1g9n1n1biv2j311x0cp3zp.jpg)
 ![](http://tva3.sinaimg.cn/large/006gDTsUgy1g9n1o9ubp7j311w0er75v.jpg)
+
+4. download CSR
+![](http://tvax1.sinaimg.cn/large/006gDTsUgy1g9n1vtz6suj311x0fo75n.jpg)
