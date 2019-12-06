@@ -49,7 +49,7 @@
   ![](http://tva4.sinaimg.cn/large/006gDTsUgy1g9n20h3lkjj30d10gaq3e.jpg)
 
 ## 5. Upload Certs
-![](http://tva4.sinaimg.cn/large/006gDTsUgy1g9n28xam2cj311w0fa0tw.jpg)
+![](http://tva4.sinaimg.cn/large/006gDTsUgy1g9n2dwwmu8j30d50gbwez.jpg)
 
 
 
