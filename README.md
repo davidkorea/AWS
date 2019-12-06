@@ -9,6 +9,21 @@
 1. create HSM cluster
 ![](http://tvax1.sinaimg.cn/large/006gDTsUgy1g9n1kis9fdj311v09iq3o.jpg)
 
+2. init
+![](http://tvax4.sinaimg.cn/large/006gDTsUgy1g9n1m18tm9j311x0ee407.jpg)
+
+
+
+
+
+
+
+
+
+
+
+
+
 -----
 
 - block store
