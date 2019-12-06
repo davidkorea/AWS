@@ -1,5 +1,9 @@
 
 # HSM
+
+- Althrough create in a private subnet with a private ip addr in VPC, but cannot see a EC2 instance in VPC
+
+
 ## 1. create HSM cluster
 ![](http://tvax1.sinaimg.cn/large/006gDTsUgy1g9n1kis9fdj311v09iq3o.jpg)
 
