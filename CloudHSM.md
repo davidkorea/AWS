@@ -10,6 +10,8 @@
 ![](http://tvax1.sinaimg.cn/large/006gDTsUgy1g9n1n1biv2j311x0cp3zp.jpg)
 ![](http://tva3.sinaimg.cn/large/006gDTsUgy1g9n1o9ubp7j311w0er75v.jpg)
 
+![](http://tva2.sinaimg.cn/large/006gDTsUgy1g9n2b38gbnj311y0etmyl.jpg)
+
 ## 4. download CSR & HSM
 ![](http://tvax1.sinaimg.cn/large/006gDTsUgy1g9n1vtz6suj311x0fo75n.jpg)
 
