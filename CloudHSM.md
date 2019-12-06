@@ -35,3 +35,4 @@
   -----END CERTIFICATE REQUEST-----
   ```
 - 集群验证证书 `cluster-6sm3nqh6jlx_HsmCertificate.crt`
+  ![](http://tva4.sinaimg.cn/large/006gDTsUgy1g9n20h3lkjj30d10gaq3e.jpg)
