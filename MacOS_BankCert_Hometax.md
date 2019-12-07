@@ -20,10 +20,23 @@
 
 `내 PC > C드라이브 > 사용자 > 사용자이름폴더 > AppData > LocalLow > NPKI` 폴더에 있습니다
 
-## Hometax 연말정산 미리보기
+## 2. Hometax 연말정산 미리보기
 
-1. [열기] 클릭
+### 2.1 [열기] 클릭
 ![](https://tvax3.sinaimg.cn/large/006gDTsUgy1g9nyx3tt4nj31ia10m7j8.jpg)
 
-2. [가쟈오기]
-![]](https://tvax4.sinaimg.cn/large/006gDTsUgy1g9nz1hj4mgj31ge0yc7kq.jpg)
+### 2.2 [가쟈오기] - [열기]
+![](https://tvax4.sinaimg.cn/large/006gDTsUgy1g9nz1hj4mgj31ge0yc7kq.jpg)
+![](https://tvax2.sinaimg.cn/large/006gDTsUgy1g9nz4bhmd2j30m20nu78k.jpg)
+
+근데, [열기] 클릭하면 위에 있는 인증서 저장위치가 안 나외요. 그래서 아래 참조해서 인증서를 desktop르로 복사
+
+### 2.3 인증서 복사 
+1. go to cert path in `Terminal`
+```
+$ cd /Users/yong/Library/Preferences/NPKI/yessign/USER/cn=MY_NAME()001101234567890111001326,ou=NACF,ou=personal4IB,o=yessign,c=kr/
+```
+```
+$ ls
+signCert.der	signPri.key
+```
