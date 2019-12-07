@@ -13,7 +13,8 @@
 
 - 맥OS에서는 
 
-`/Users/홈 폴더/Library/Preferences/NPKI/yessign/USER/ `폴더에 있습니다
+`/Users/홈 폴더/Library/Preferences/NPKI/yessign/USER/cn=MY_NAME()001101234567890111001326,ou=NACF,ou=personal4IB,o=yessign,c=kr/
+ `폴더에 `signCert.der`,	`signPri.key` 있습니다
 
 - 윈도우에서는
 
