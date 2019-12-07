@@ -8,3 +8,13 @@
 1. 은행 공인인증서 
 
 ![](https://tvax3.sinaimg.cn/large/006gDTsUgy1g9nyoplxhlj311u0pq7fj.jpg)
+
+다운 받은 후, 저장위치가 직접 알 수가 없기 때문에, 아래 내용을 참조
+
+- 맥OS에서는 
+
+`/Users/홈 폴더/Library/Preferences/NPKI 폴더에 있습니다`
+
+- 윈도우에서는
+
+`내 PC > C드라이브 > 사용자 > 사용자이름폴더 > AppData > LocalLow > NPKI폴더에 있습니다`
