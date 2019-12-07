@@ -13,8 +13,8 @@
 
 - 맥OS에서는 
 
-`/Users/홈 폴더/Library/Preferences/NPKI 폴더에 있습니다`
+`/Users/홈 폴더/Library/Preferences/NPKI/yessign/USER/ `폴더에 있습니다
 
 - 윈도우에서는
 
-`내 PC > C드라이브 > 사용자 > 사용자이름폴더 > AppData > LocalLow > NPKI폴더에 있습니다`
+`내 PC > C드라이브 > 사용자 > 사용자이름폴더 > AppData > LocalLow > NPKI` 폴더에 있습니다
