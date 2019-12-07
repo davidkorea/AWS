@@ -6,3 +6,5 @@
 자,, 이제 macbook pro 어떤게 진행할지에 대해 간단하게 설명 ㄲ
 
 1. 은행 공인인증서 
+
+![](https://tvax3.sinaimg.cn/large/006gDTsUgy1g9nyoplxhlj311u0pq7fj.jpg)
