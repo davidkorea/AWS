@@ -20,4 +20,7 @@
 
 `내 PC > C드라이브 > 사용자 > 사용자이름폴더 > AppData > LocalLow > NPKI` 폴더에 있습니다
 
-## Hometax
+## Hometax 연말정산 미리보기
+
+1. [열기] 클릭
+![](https://tvax3.sinaimg.cn/large/006gDTsUgy1g9nyx3tt4nj31ia10m7j8.jpg)
