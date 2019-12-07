@@ -26,8 +26,10 @@
 ![](https://tvax3.sinaimg.cn/large/006gDTsUgy1g9nyx3tt4nj31ia10m7j8.jpg)
 
 ### 2.2 [가쟈오기] - [열기]
+
 ![](https://tvax4.sinaimg.cn/large/006gDTsUgy1g9nz1hj4mgj31ge0yc7kq.jpg)
-![](https://tvax2.sinaimg.cn/large/006gDTsUgy1g9nz4bhmd2j30m20nu78k.jpg)
+
+ ![](https://tvax2.sinaimg.cn/large/006gDTsUgy1g9nz4bhmd2j30m20nu78k.jpg)
 
 근데, [열기] 클릭하면 위에 있는 인증서 저장위치가 안 나외요. 그래서 아래 참조해서 인증서를 desktop르로 복사
 
@@ -40,3 +42,8 @@ $ cd /Users/yong/Library/Preferences/NPKI/yessign/USER/cn=MY_NAME()0011012345678
 $ ls
 signCert.der	signPri.key
 ```
+2. copy to desktop
+```
+$ cp signCert.der	signPri.key /Users/yong/Desktop
+```
+
