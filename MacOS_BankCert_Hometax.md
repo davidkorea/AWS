@@ -46,4 +46,7 @@ signCert.der	signPri.key
 ```
 $ cp signCert.der	signPri.key /Users/yong/Desktop
 ```
+![](https://tva4.sinaimg.cn/large/006gDTsUgy1g9nzb5pp9jj30a605aadn.jpg)
 
+4. upload
+![](https://tvax4.sinaimg.cn/large/006gDTsUgy1g9nzd9em6zj30t80vutig.jpg)
