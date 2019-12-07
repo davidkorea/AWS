@@ -5,7 +5,7 @@
 
 자,, 이제 macbook pro 어떤게 진행할지에 대해 간단하게 설명 ㄲ
 
-1. 은행 공인인증서 
+## 1. 은행 공인인증서 
 
 ![](https://tvax3.sinaimg.cn/large/006gDTsUgy1g9nyoplxhlj311u0pq7fj.jpg)
 
@@ -19,3 +19,5 @@
 - 윈도우에서는
 
 `내 PC > C드라이브 > 사용자 > 사용자이름폴더 > AppData > LocalLow > NPKI` 폴더에 있습니다
+
+## Hometax
