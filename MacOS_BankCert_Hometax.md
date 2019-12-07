@@ -24,3 +24,6 @@
 
 1. [열기] 클릭
 ![](https://tvax3.sinaimg.cn/large/006gDTsUgy1g9nyx3tt4nj31ia10m7j8.jpg)
+
+2. [가쟈오기]
+![]](https://tvax4.sinaimg.cn/large/006gDTsUgy1g9nz1hj4mgj31ge0yc7kq.jpg)
