@@ -10,3 +10,8 @@
 - waitong for 5-10mins
 
 ![image](https://user-images.githubusercontent.com/26485327/70409787-5e6c7380-1a90-11ea-9e6e-3a9606cb598f.png)
+
+- Only scan AWS resource in the same Region with Config
+  - One S3 in N.Virginia
+  - Config get only 3 buckets without this one
+  
