@@ -31,7 +31,14 @@
   aws cloudtrail validate-logs --trail-arn arn:aws:cloudtrail:us-east-1:account-id:trail/my-trail --start-time 2018-01-01T00:00:00Z.
   ```
 
-## 4. Trail logs Storage location
+## 4. Insights
+- AWS 账户中的异常写 API 调用量记录
+
+![image](https://user-images.githubusercontent.com/26485327/70405121-738cd680-1a7f-11ea-840f-3753de206c4a.png)
+
+
+
+## 5. Trail logs Storage location
 - create a new S3 bucket
 - Don’t log data events on the bucket which is storing your CloudTrail logs. Doing so would create an **infinite loop**!
 
@@ -39,7 +46,7 @@
 
 
 
-## 5. Event history
+## 6. Event history
 - 90 days, by default
 
 ![image](https://user-images.githubusercontent.com/26485327/70404682-2e1bd980-1a7e-11ea-8aad-8be548efc162.png)
