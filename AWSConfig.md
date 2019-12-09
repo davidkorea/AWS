@@ -5,3 +5,8 @@
 ![](http://tvax3.sinaimg.cn/large/006gDTsUgy1g9n2o76fauj311x0f5wgs.jpg)
 
 ![](http://tva2.sinaimg.cn/large/006gDTsUgy1g9n2oxhbx1j311v0dwjsn.jpg)
+
+
+- waitong for 5-10mins
+
+![image](https://user-images.githubusercontent.com/26485327/70409787-5e6c7380-1a90-11ea-9e6e-3a9606cb598f.png)
