@@ -17,3 +17,8 @@
   
 ![image](https://user-images.githubusercontent.com/26485327/70409977-e3f02380-1a90-11ea-859f-d1a67e47eeaf.png)
 ![image](https://user-images.githubusercontent.com/26485327/70410005-f4080300-1a90-11ea-8b72-d5ba806c8621.png)
+
+
+- 关闭Config功能
+
+![image](https://user-images.githubusercontent.com/26485327/70410075-2ade1900-1a91-11ea-8d7e-b92562e56510.png)
