@@ -15,3 +15,5 @@
   - One S3 in N.Virginia
   - Config get only 3 buckets without this one
   
+![image](https://user-images.githubusercontent.com/26485327/70409977-e3f02380-1a90-11ea-859f-d1a67e47eeaf.png)
+![image](https://user-images.githubusercontent.com/26485327/70410005-f4080300-1a90-11ea-8b72-d5ba806c8621.png)
