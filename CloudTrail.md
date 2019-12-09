@@ -18,7 +18,19 @@
 - Lambda
 ![image](https://user-images.githubusercontent.com/26485327/70404580-ec8b2e80-1a7d-11ea-9dce-bddcd758ef16.png)
 
-## 3. Event history
+
+## 3. Log files Integrity Validation
+
+- CLI only, cannot enable on console
+- `aws cloudtrail validate-logs `
+
+  ```
+  aws cloudtrail validate-logs --trail-arn arn:aws:cloudtrail:us-east-1:account-id:trail/my-trail --start-time 2018-01-01T00:00:00Z.
+  ```
+
+
+
+## 4. Event history
 - 90 days, by default
 
 ![image](https://user-images.githubusercontent.com/26485327/70404682-2e1bd980-1a7e-11ea-8aad-8be548efc162.png)
