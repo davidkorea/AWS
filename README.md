@@ -1,6 +1,5 @@
 # AWS
 
-ipad pro pick up
 
 -----
 
