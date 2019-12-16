@@ -28,4 +28,10 @@ Amazon SQS 接受的最大消息大小（字节）
 ## 2. FIFO queue
 
 
+![IMG_0023](https://user-images.githubusercontent.com/26485327/70876134-cc1e1f80-1ffb-11ea-8684-8a1666f1b4ec.jpeg)
+
+- the detialed settiing are all the same as standard queue
+
+
+
 ## 3. Dead Letter queue
