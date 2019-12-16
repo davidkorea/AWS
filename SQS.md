@@ -51,7 +51,10 @@ console and  use CLI or SDK can send messages to queue
 
 ## 3. Dead Letter queue
 
-
+- origin queue 失败了的消息会被发送到死信duilie
+- 死信队列和原队列在统一region
+- 死信队列的 retention时间要大于原队列，因为发送到死信队列的消息的时间，依然按照原队列的时间
+  - 对过原队列中已经等待了1天未被成功处理，发送到死信队列，那么在死信队列中也相当于保存了1天
 
 ## 4. shared queue
 
