@@ -24,10 +24,12 @@ Amazon SQS 接受的最大消息大小（字节）
 长轮询接收呼叫可以等待消息返回空响应之前可用的最长时间
 值必须在 0 至 20 秒之间。
 
-![IMG_0024](https://user-images.githubusercontent.com/26485327/70876467-0cca6880-1ffd-11ea-9295-e2929b644613.jpeg)
-- use CLI or SDK can send messages to queue
 
-
+console and  use CLI or SDK can send messages to queue
+- 一条消息包涵 正文 + 属性
+- 每条消息必须有正文，可以没有属性
+- 可以设置应用仅处理 属性中的内容，而不处理正文内容
+- 每条消息最多10个属性
 
 ## 2. FIFO queue
 
