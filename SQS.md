@@ -35,3 +35,19 @@ Amazon SQS 接受的最大消息大小（字节）
 
 
 ## 3. Dead Letter queue
+
+
+
+## 4. shared queue
+
+- messages can not be shared between queues in different region
+- queue owner is responisble for the cost
+
+
+
+
+
+
+
+
+
