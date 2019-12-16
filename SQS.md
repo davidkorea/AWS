@@ -27,11 +27,18 @@ Amazon SQS 接受的最大消息大小（字节）
 
 console and  use CLI or SDK can send messages to queue
 - 一条消息包涵 正文 + 属性
-- 每条消息必须有正文，可以没有属性
+- 每条消息必须有正文，可以没有属性，属性不随正文一起发送
 - 可以设置应用仅处理 属性中的内容，而不处理正文内容
 - 每条消息最多10个属性
 
-> Amazon SQS 消息属性：可以 使用消息属性在消息中包括结构化的元数据 (例如时间戳、地理空间数据、签名和标识符)。。每条消息最多可以包含 10 个属性。消息属性是可选的，并独立于消息正文 (不过会随之一起发送)。使用者可以使用消息属性以特定方式处理消息，而无需先处理消息正文。有关使用 AWS 管理控制台或AWS SDK for Java发送带有属性消息的信息，
+> Amazon SQS 消息属性：可以 使用消息属性在消息中包括结构化的元数据 (例如时间戳、地理空间数据、签名和标识符)。。每条消息最多可以包含 10 个属性。消息属性是可选的，并独立于消息正文 (不过会随之一起发送)。使用者可以使用消息属性以特定方式处理消息，而无需先处理消息正文。有关使用 AWS 管理控制台或AWS SDK for Java发送带有属性消息的信息，https://docs.aws.amazon.com/zh_cn/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html
+
+![IMG_0025](https://user-images.githubusercontent.com/26485327/70877427-beb76400-2000-11ea-8a07-9f473e4acaee.jpeg)
+![IMG_0026](https://user-images.githubusercontent.com/26485327/70877428-c1b25480-2000-11ea-8359-7c49e73e2535.jpeg)
+![IMG_0027](https://user-images.githubusercontent.com/26485327/70877433-c4ad4500-2000-11ea-8d27-1319c1d5e0a2.jpeg)
+
+
+
 
 
 ## 2. FIFO queue
