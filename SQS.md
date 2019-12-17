@@ -102,7 +102,15 @@ console and  use CLI or SDK can send messages to queue
 ![IMG_0031](https://user-images.githubusercontent.com/26485327/70959370-6f843880-20bf-11ea-97c9-cb206e8c4b19.jpeg)
 
  
-
+  - push notification services
+    - Amazon Device Messaging (ADM)
+    - Apple Push Notification Service (APNS) for both iOS and macOS 
+    - Baidu Cloud Push (Baidu)
+    - Google Cloud Messaging for Android (GCM)
+    - Microsoft Push Notification Service for Windows Phone (MPNS) 
+    - Windows Push Notification Services (WNS)
+  
+  - mobile endpoint as a subscriber to an Amazon SNS topic. The mobile endpoint communicates with push notification services, whereas the other endpoints do not.
 
 
 
