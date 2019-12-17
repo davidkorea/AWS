@@ -6,6 +6,8 @@
 2. SNS: 同一条信息，可以被同一topik的所有订阅者，同时执行
 
 
+![IMG_0033](https://user-images.githubusercontent.com/26485327/70961584-93e31380-20c5-11ea-8d17-2fdcabc7894e.jpeg)
+
 # SQS
 
 ## 1. standard queue
