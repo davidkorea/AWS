@@ -74,9 +74,41 @@ console and  use CLI or SDK can send messages to queue
 
 - messages can not be shared between queues in different region
 - queue owner is responisble for the cost
-
-
 - CLI and SDk can enbale shared queue
+
+
+
+# SNS
+
+- supported endpoints
+  - AWS Lambda
+  - Amazon SQS
+  - HTTP and HTTPS
+  - Email
+  - SMS
+  - Mobile PushRecords
+
+
+![IMG_0030](https://user-images.githubusercontent.com/26485327/70958696-727e2980-20bd-11ea-8443-bd312890cd36.jpeg)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
