@@ -81,7 +81,7 @@ console and  use CLI or SDK can send messages to queue
 
 
 # SNS
-
+## 1. Typical SNS
 - supported endpoints
   - AWS Lambda
   - Amazon SQS
@@ -98,7 +98,15 @@ console and  use CLI or SDK can send messages to queue
   - Amazon SQS
   - SMS
 
+### Demo SMS
+- Tpoic
 
+
+
+- consumer
+
+
+## 2. Mobile app SNS
 - Mobile Push Notifications 移动设备
   - send notifications to the apps installed on the one device
 ![IMG_0031](https://user-images.githubusercontent.com/26485327/70959370-6f843880-20bf-11ea-97c9-cb206e8c4b19.jpeg)
