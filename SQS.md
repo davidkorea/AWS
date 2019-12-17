@@ -88,11 +88,13 @@ console and  use CLI or SDK can send messages to queue
   - SMS
   - Mobile PushRecords
 
-
 ![IMG_0030](https://user-images.githubusercontent.com/26485327/70958696-727e2980-20bd-11ea-8443-bd312890cd36.jpeg)
 
-
-
+- transport protocols
+  - HTTP， HTTPS
+  - email，email-json
+  - Amazon SQS
+  - SMS
 
 
 
