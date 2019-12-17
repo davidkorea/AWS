@@ -97,7 +97,7 @@ console and  use CLI or SDK can send messages to queue
   - SMS
 
 
-- Mobile Push Notifications
+- Mobile Push Notifications 移动设备
   - send notifications to the apps installed on the one device
 ![IMG_0031](https://user-images.githubusercontent.com/26485327/70959370-6f843880-20bf-11ea-97c9-cb206e8c4b19.jpeg)
 
@@ -111,6 +111,7 @@ console and  use CLI or SDK can send messages to queue
     - Windows Push Notification Services (WNS)
   
   - mobile endpoint as a subscriber to an Amazon SNS topic. The mobile endpoint communicates with push notification services, whereas the other endpoints do not.
+![IMG_0032](https://user-images.githubusercontent.com/26485327/70961438-26cf7e00-20c5-11ea-879d-cf58871cd3be.jpeg)
 
 
 
