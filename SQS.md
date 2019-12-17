@@ -1,3 +1,12 @@
+# SQS VS SNS
+
+
+1. SQS：同一条消息，在一个时间段，只能被一个·consumer（EC2）处理
+
+
+
+
+# SQS
 
 ## 1. standard queue
 
