@@ -49,13 +49,17 @@ console and  use CLI or SDK can send messages to queue
 
 
 
-## 3. Dead Letter queue
+## 3. Dead Letter Queue (DLQ)
 
 - origin queue 失败了的消息会被发送到死信duilie
 - 死信队列和原队列在统一region
 - standard queue的死信必须是standard，FIFO queue的死信必须是FIFO
 - 死信队列的 retention时间要大于原队列，因为发送到死信队列的消息的时间，依然按照原队列的时间
   - 对过原队列中已经等待了1天未被成功处理，发送到死信队列，那么在死信队列中也相当于保存了1天
+
+- `Maximum Receives`, 如果数值太小，而且又在conosle查看了几次，可能还没有被处理，就发送到死信队列
+![IMG_0029](https://user-images.githubusercontent.com/26485327/70958083-7446ed80-20bb-11ea-8eff-edfcec742108.jpeg)
+
 
 ## 4. shared queue
 
