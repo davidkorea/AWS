@@ -1,6 +1,7 @@
 # simple workflow service
 
-- swf 
+- swf 面向任务，最多保存1年，有人参与
+- sqs 面向消息，做多保存14天
 
 
 ![IMG_0050](https://user-images.githubusercontent.com/26485327/71066650-64600400-21b6-11ea-8c2b-3b65b3592c34.jpeg)
