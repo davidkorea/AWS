@@ -15,7 +15,15 @@
   
 ### 1.2 托管一个域名 Hosted Zone托管区域
 1. 一个Hosted Zone就代表着托管了一个域名
-2. Hosted Zone由多条记录集Record set构成
+2. Hosted Zone由多条记录集Record set构成，也可以称作Zone file
+3. 一个Record set（Zone file）代表一种类型的记录，常见类型有
+    - A：ipv4
+    - AAAA： ipv6
+    - CNAME：
+    - NS： Name Server，名称服务器，绑定一个域名和对应IP地址
+    - SOA： Start of authority，定义一个托管区域（域名）的权威元信息authoritative meta information
+    - ...
+
 
 ## 2. Traffic Flow
 - 可视化界面创建复杂路由策略
