@@ -4,6 +4,10 @@
 ## 1. Domain
 ### 1.1 Register a domain or transfer a domain from other registrar
 
+You can transfer registration of an existing domain from your current registrar by unlocking the domain transfer setting in the registrar’s admin interface and then requesting an authorization code. You’ll supply that code to Route 53 when you’re ready to do the transfer.
+If you’d prefer to leave your domain with its current registrar, you can still use Route 53 to manage your DNS configuration. Simply copy the name server addresses included in your Route 53 record set and paste them as the new name server values in your registrar’s admin interface.
+
+
 ## 2. Traffic Flow
 - 可视化界面创建复杂路由策略
 
