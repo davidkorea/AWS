@@ -1,6 +1,12 @@
 
 # Route53
 
+- 每个主机有本地的DNS解析记录，如linux `/etc/hosts`文件
+  ```
+  192.168.0.22 fileserver fileserver.com
+  192.168.0.200 printserver printserver.com
+  ```
+- 如果本地不能解析，则将请求发送到网卡配置的DNS服务器，如`8.8.8.8`
 ## 1. Domain
 ### 1.1 Register a domain or transfer a domain from other registrar
 - Register a domain on Route53
