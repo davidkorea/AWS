@@ -1,5 +1,5 @@
 
-# Route53
+# DNS
 
 - 每个主机有本地的DNS解析记录，如linux `/etc/hosts`文件
   ```
@@ -7,7 +7,7 @@
   192.168.0.200 printserver printserver.com
   ```
 - 如果本地不能解析，则将请求发送到网卡配置的DNS服务器，如`8.8.8.8`
-## 1. Domain
+## 1. Route53 Domain
 ### 1.1 Register a domain or transfer a domain from other registrar
 - Register a domain on Route53
 - Transfer from other registrar
@@ -32,8 +32,9 @@
 
 - 购买一个域名后，会自动生成一个Hosted Zone，比如`example.com.`, 是`.com`下的子域名。该托管区域下面同时会自动生成SOA和NS两条记录集
 - 对于该域名的其他策略需要灵性设置，如latency，failover等路由策略
+- 对于嵌套的复杂路由策略需要使用Route53 Traffic Flow
 
-## 2. Traffic Flow
+## 2. Route53 Traffic Flow
 - 可视化界面创建复杂路由策略
 
 ![IMG_0052](https://user-images.githubusercontent.com/26485327/71156175-cbe38580-2282-11ea-95d3-4420c6b51703.jpeg)
