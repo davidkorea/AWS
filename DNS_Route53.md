@@ -2,7 +2,7 @@
 # Route53
 
 ## 1. Domain
-### 
+### 1.1 Register a domain or transfer a domain from other registrar
 
 ## 2. Traffic Flow
 - 可视化界面创建复杂路由策略
