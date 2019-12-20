@@ -1,8 +1,5 @@
 # AWS
 
-take ipad with me to go to work tommorrow?
-
-lb asg
 -----
 
 - encrypt
