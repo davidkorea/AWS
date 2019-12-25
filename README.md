@@ -1,9 +1,7 @@
 # AWS
 
 
------
-
-ses
+ses, not available in sepul 
 
 -----
 
