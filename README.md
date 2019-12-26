@@ -1,7 +1,7 @@
 # AWS
 
 
-ses, not available in sepul 
+ses, not available in Seoul
 
 -----
 
