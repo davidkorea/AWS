@@ -1,6 +1,6 @@
 # AWS
 
-不是不行
+不是不行 enabled
 
 ses, not available in Seoul
 
