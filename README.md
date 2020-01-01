@@ -1,5 +1,13 @@
 # AWS
 
+- tommorrow is the first blank page of a 365-page-book, write a good one.
+- 365 new days, 365 new excuses.
+
+
+
+
+----=
+
 2019-2020
 
 -----
