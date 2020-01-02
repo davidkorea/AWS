@@ -1,10 +1,12 @@
 # AWS
 
+## 加密
+- 数据加密 - KMS，对内加密
+- 网站加密ssl - Certificate manager，对外加密
 
-数据加密 - KMS，对内加密
-网站加密ssl - Certificate manager，对外加密
-
-
+## 安全监控
+1. cloudwatch，流水账，查看系统发生了什么，记录没意见事情
+2. cloudtrail，更改一级别的记录，不如watch全面，只记录aws账户的操作
 
 
 
