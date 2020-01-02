@@ -1,5 +1,9 @@
 # AWS
 
+## 安全
+1. WAF - sql injection
+2. shield - DDOS
+
 ## 加密
 1. 数据加密 - KMS，对内加密
 2. 网站加密ssl - Certificate manager，对外加密
