@@ -1,5 +1,28 @@
 # AWS
 
+
+数据加密 - KMS，对内加密
+网站加密ssl - Certificate manager，对外加密
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----
+
 - tommorrow is the first blank page of a 365-page-book, write a good one.
 - 365 new days, 365 new excuses.
 
