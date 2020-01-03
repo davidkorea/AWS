@@ -3,6 +3,27 @@
 built on the Nitro system are the C5, C5d, M5, M5d, P3dn, A1, R5, R5a, and other latest-generation EC2 instances.
 
 
+
+
+## Elastic Graphics Acceleratoe
+
+![14610485-60A9-4620-9C66-74FDDD811619](https://user-images.githubusercontent.com/26485327/71712024-df781a00-2e46-11ea-8ffe-93ef8cff9301.jpeg)
+
+- G3 instances 
+  - 1 GPU card with 8G memory
+  - 2
+  - 4 
+  - 8 
+
+-  M, T, C, R, X, Z, H, I, and D, add not a whole GPU card with
+  - 1G memory
+  - 2
+  - 4
+  - 8
+
+
+
+
 ## Elastic Compute Units (ECUs)
 
 compare computing power with different CPU.
