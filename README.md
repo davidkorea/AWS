@@ -1,7 +1,7 @@
 # AWS
 
 
-### CCoE 
+### CCoE - Cloud Center of Excellence
 A CCoE is a cross-functional group or team with executive support that lead other employees (and the organisation as a whole) through cloud adoption, migration and operations – and establish repeatable processes and cloud standards for everyone to follow in a cloud-first approach.
 
 https://www.rackspace.com/aws-future-insight/aws-insights/helping-customers-build-aws-cloud-centre-excellence/
