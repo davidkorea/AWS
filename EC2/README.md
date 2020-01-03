@@ -1,5 +1,8 @@
 # EC2
 
+built on the Nitro system are the C5, C5d, M5, M5d, P3dn, A1, R5, R5a, and other latest-generation EC2 instances.
+
+
 ## Families & types
 
 https://aws.amazon.com/cn/ec2/instance-types/
