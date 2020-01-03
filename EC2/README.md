@@ -15,11 +15,12 @@ built on the Nitro system are the C5, C5d, M5, M5d, P3dn, A1, R5, R5a, and other
   - 4 
   - 8 
 
--  M, T, C, R, X, Z, H, I, and D, add not a whole GPU card with
+- M, T, C, R, X, Z, H, I, and D type instances, when creating, add not a whole GPU card with
   - 1G memory
   - 2
   - 4
   - 8
+  
 
 
 
