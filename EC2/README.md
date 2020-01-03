@@ -3,6 +3,15 @@
 built on the Nitro system are the C5, C5d, M5, M5d, P3dn, A1, R5, R5a, and other latest-generation EC2 instances.
 
 
+## Elastic Compute Units (ECUs)
+
+compare computing power with different CPU.
+
+instances from the C5 type are powered by Intel Skylake processors, while M4 instances are powered by Intel Haswell processors.
+- c5.xlaege - 4 vCPUs, 17 ECUs
+- m4.xlarge - 4 vCPUs, 13 ECUs
+
+
 ## Naming
 
 ![62AEE143-256B-4FD2-A5EE-A6CFCFAAFB60](https://user-images.githubusercontent.com/26485327/71705426-002e7880-2e23-11ea-9abd-9d9e6ef94979.jpeg)
