@@ -44,6 +44,8 @@ built on the Nitro system are the C5, C5d, M5, M5d, P3dn, A1, R5, R5a, and other
 
 ## Elastic Compute Units (ECUs)
 
+**1 ECU is basically 1Ghz of Intel Xeon processing power**
+
 compare computing power with different CPU.
 
 instances from the C5 type are powered by Intel Skylake processors, while M4 instances are powered by Intel Haswell processors.
