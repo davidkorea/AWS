@@ -7,19 +7,19 @@ built on the Nitro system are the C5, C5d, M5, M5d, P3dn, A1, R5, R5a, and other
 
 ![95683B0D-F9E6-441C-BEA5-CF98DB1031DE](https://user-images.githubusercontent.com/26485327/71713144-d50c4f00-2e4b-11ea-8484-076f114b9574.jpeg)
 
-### 1. 专用主机 Bare Metal
-- 唯一AWS account使用物理机
-- 无虚拟化
-- 有些license要求无虚拟化
+### 1. 专用主机 
+- 唯一AWS account使用物理机，可以与同AWS organization的其他AWS Account分享同一个主机
+- 根据专用主机配置，自行划分不同配置虚拟机
+- BYOL 软件
 
 
 ### 2. 专用实例
 
 - 唯一AWS account使用物理机
 - 由虚拟化软件切分出虚拟机实例，即dedicated instance
-- BYOL 软件
 
 
+### 3. Bare Metal
 
 
 ## Elastic Graphics Acceleratoe
