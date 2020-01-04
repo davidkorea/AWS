@@ -31,9 +31,14 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.htm
 - 无虚拟化hypervisor, better performance than the same spec shared instance becuase there is no virtulization layer
 - 一台完整的主机作为一个EC2 instance，不可再切分为小的虚拟机
 
-## Elastic Graphics Acceleratoe
+## GPU
+### 1. Elastic Graphics Accelerator
 
-![14610485-60A9-4620-9C66-74FDDD811619](https://user-images.githubusercontent.com/26485327/71712024-df781a00-2e46-11ea-8ffe-93ef8cff9301.jpeg)
+Seoul Region NOT supported，for Windows EC2 ONLY
+
+
+
+
 
 - G3 instances 
   - 1 GPU card with 8G memory
@@ -47,7 +52,9 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.htm
   - 4
   - 8
   
+### 2. Inference
 
+![14610485-60A9-4620-9C66-74FDDD811619](https://user-images.githubusercontent.com/26485327/71712024-df781a00-2e46-11ea-8ffe-93ef8cff9301.jpeg)
 
 
 
