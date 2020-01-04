@@ -27,9 +27,9 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.htm
 - 由虚拟化软件在物理主机上切分出虚拟机实例，即dedicated instance
 
 
-### 3. Bare Metal
-- 无虚拟化hypervisor
-
+### 3. Bare Metal主机
+- 无虚拟化hypervisor, better performance than the same spec shared instance becuase there is no virtulization layer
+- 一台完整的主机作为一个EC2 instance，不可再切分为小的虚拟机
 
 ## Elastic Graphics Acceleratoe
 
