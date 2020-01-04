@@ -34,7 +34,7 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.htm
 ## GPU
 ### 1. Elastic Graphics Accelerator
 
-Seoul Region NOT supported，for Windows EC2 ONLY, connect to EC2 with network 
+Seoul Region NOT supported，for Windows EC2 ONLY, connect to EC2 with network, install driver on EC2
 
 ![8A98678A-0BDF-4DA6-BAD4-41FFC3645C7A](https://user-images.githubusercontent.com/26485327/71763014-4a465580-2f1a-11ea-9028-b3cca9e41b42.jpeg)
 
@@ -42,20 +42,14 @@ Seoul Region NOT supported，for Windows EC2 ONLY, connect to EC2 with network
 ![A3DF41A3-0DC4-44F3-981C-62DDE7EB5D8B](https://user-images.githubusercontent.com/26485327/71763064-c476da00-2f1a-11ea-8e3f-3502e0721014.jpeg)
 
 
+![72E0CF5C-057F-42E2-861E-8D82297DC52A](https://user-images.githubusercontent.com/26485327/71763134-64346800-2f1b-11ea-9c09-31525a1e8fe0.jpeg)
+
+
 
 **Compare GPU instamce and EG instance**
 
-- G3 instances 
-  - 1 GPU card with 8G memory
-  - 2
-  - 4 
-  - 8 
-
-- M, T, C, R, X, Z, H, I, and D type instances, when creating, add not a whole GPU card with
-  - 1G memory
-  - 2
-  - 4
-  - 8
+- G3 instances 1, 2, 4, 8 GPU cards with 8G memory
+- M, T, C, R, X, Z, H, I, and D type instances, when creating, add not a whole GPU card with 1, 2, 4, 8G memory
   
 ### 2. Inference
 
