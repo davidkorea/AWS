@@ -8,6 +8,8 @@ built on the Nitro system are the C5, C5d, M5, M5d, P3dn, A1, R5, R5a, and other
 ![95683B0D-F9E6-441C-BEA5-CF98DB1031DE](https://user-images.githubusercontent.com/26485327/71713144-d50c4f00-2e4b-11ea-8484-076f114b9574.jpeg)
 
 ### 1. 专用主机 
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html
+
 - 按照专用主机计费
 - 唯一AWS account使用物理机，可以与同AWS organization的其他AWS Account分享同一个主机
 - 根据专用主机配置，自行划分不同配置虚拟机
@@ -15,6 +17,8 @@ built on the Nitro system are the C5, C5d, M5, M5d, P3dn, A1, R5, R5a, and other
   - 已停止的EC2
   - Instance Store EC2
 - BYOL 软件
+- RHEL, SUSE, and Windows AMIs 不可以用作虚拟机操作系统，即专用主机上面不能创建RHEL SUSE Windows虚拟机
+- instances that run on a Dedicated Host can only be launched in a VPC
 
 
 ### 2. 专用实例
