@@ -63,6 +63,8 @@ Seoul Region NOT supported，for Windows EC2 ONLY, connect to EC2 with network, 
 - GPU connect to instance over network by VPC Endpoint
 ![47854826-082E-4E30-9657-9E63843B949B](https://user-images.githubusercontent.com/26485327/71766757-b76fe000-2f46-11ea-84a4-95b5bc351496.png)
 
+![A8C79FDD-3E2A-4BA1-8384-D1E6266601ED](https://user-images.githubusercontent.com/26485327/71766784-39600900-2f47-11ea-9d78-15cc772315cb.jpeg)
+
 
 ![14610485-60A9-4620-9C66-74FDDD811619](https://user-images.githubusercontent.com/26485327/71712024-df781a00-2e46-11ea-8ffe-93ef8cff9301.jpeg)
 
