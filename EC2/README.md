@@ -34,11 +34,16 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.htm
 ## GPU
 ### 1. Elastic Graphics Accelerator
 
-Seoul Region NOT supported，for Windows EC2 ONLY
+Seoul Region NOT supported，for Windows EC2 ONLY, connect to EC2 with network 
+
+![8A98678A-0BDF-4DA6-BAD4-41FFC3645C7A](https://user-images.githubusercontent.com/26485327/71763014-4a465580-2f1a-11ea-9028-b3cca9e41b42.jpeg)
+
+
+![A3DF41A3-0DC4-44F3-981C-62DDE7EB5D8B](https://user-images.githubusercontent.com/26485327/71763064-c476da00-2f1a-11ea-8e3f-3502e0721014.jpeg)
 
 
 
-
+**Compare GPU instamce and EG instance**
 
 - G3 instances 
   - 1 GPU card with 8G memory
