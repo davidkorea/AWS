@@ -56,6 +56,10 @@ Seoul Region NOT supported，for Windows EC2 ONLY, connect to EC2 with network, 
 - P is good for training machine learning models with full GPU power
 - when use a already trained model to make predictions, do not need full GPU power to do the inference process
 - 1 ~ 32 trillion floating point operations per second 万亿每秒浮点运算（TFLOPS），P3 instance start at 125 TFLOPS
+- support TensorFlow and Apache MXNet
+- all size ok, test t2.nano and t2.micro
+- Not for Windows instance, find only Elastic Graphics in t2.medium and above
+- test AWS linux, Ubuntu, and RHEL ok
 
 
 ![14610485-60A9-4620-9C66-74FDDD811619](https://user-images.githubusercontent.com/26485327/71712024-df781a00-2e46-11ea-8ffe-93ef8cff9301.jpeg)
