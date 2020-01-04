@@ -28,6 +28,7 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.htm
 
 
 ### 3. Bare Metal
+- 无虚拟化hypervisor
 
 
 ## Elastic Graphics Acceleratoe
