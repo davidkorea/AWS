@@ -8,15 +8,19 @@ built on the Nitro system are the C5, C5d, M5, M5d, P3dn, A1, R5, R5a, and other
 ![95683B0D-F9E6-441C-BEA5-CF98DB1031DE](https://user-images.githubusercontent.com/26485327/71713144-d50c4f00-2e4b-11ea-8484-076f114b9574.jpeg)
 
 ### 1. 专用主机 
+- 按照专用主机计费
 - 唯一AWS account使用物理机，可以与同AWS organization的其他AWS Account分享同一个主机
 - 根据专用主机配置，自行划分不同配置虚拟机
+- 当一个专用主机出现故障后，会自动将该主机上的虚拟机复制到另外一台专用主机上面，下面2种除外
+  - 已停止的EC2
+  - Instance Store EC2
 - BYOL 软件
 
 
 ### 2. 专用实例
-
+- 按照实例收费
 - 唯一AWS account使用物理机
-- 由虚拟化软件切分出虚拟机实例，即dedicated instance
+- 由虚拟化软件在物理主机上切分出虚拟机实例，即dedicated instance
 
 
 ### 3. Bare Metal
