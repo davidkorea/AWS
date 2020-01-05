@@ -1,6 +1,10 @@
 # AWS
 
 
+
+
+"architect for failure". Rather than architect your applications to run on instances which are supposed to run constantly, you should build an architecture that can mitigate instance failures by running multiple instances for executing your code. Rather than having a robust instance per service, have multiple smaller instances per service with the ability to mitigate the impact of failures.
+
 ### CCoE - Cloud Center of Excellence
 A CCoE is a cross-functional group or team with executive support that lead other employees (and the organisation as a whole) through cloud adoption, migration and operations – and establish repeatable processes and cloud standards for everyone to follow in a cloud-first approach.
 
