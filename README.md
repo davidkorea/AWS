@@ -3,7 +3,8 @@
 - Instance Template + EC2 Fleet(spot + ondemand), Classic LB
     - no ASG, can only use specific capacity in a CLB
 - 1 Target group(spot, ondemand) or Instance Template + 1 ASG. ELB
-    - 1 sopt targetgroup + 1 ondemand targetgroup => same ASG (x)
+    - 1 sopt targetgroup + 1 ondemand targetgroup => same ASG (o)
+        - Instance Template (Combine purchase options and instances) + ASG
 
 
 
