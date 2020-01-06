@@ -2,6 +2,9 @@
 
 - auto scaling中的CLB和target group（ALB，NLB）是分开的，二选一。如果需要可以同时选择
 - 使用auto scaling的话，一个EC2实例可以注册到多个ELB（ALB，CLB）
+- create auto scaling in non-default VPC，自定义VPC创建ASG时，需要开启自动分配公有IP，否则无法在自定义VPC创建
+    - 3Create Launch Configuration - Advanced Details - IP Address Type - Assign a public IP address to every instance.
+
 
 -----
 
