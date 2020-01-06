@@ -1,4 +1,8 @@
 # AWS
+- 使用auto scaling的话，一个EC2实例可以注册到多个ELB（ALB，CLB）
+
+
+-----
 
 - Instance Template + EC2 Fleet(spot + ondemand), Classic LB
     - no ASG, can only use specific capacity in a CLB
