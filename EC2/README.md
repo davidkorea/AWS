@@ -1,6 +1,12 @@
 # EC2
 
 ## load balancer + auto scaling + spot & on-demand
+prerequisites before create ASG
+1. create Launch Template
+    - Enable "auto assign public IP" if use non-default VPC
+2. create ELB
+    - for CLB, no need to create target group
+    - for ALB, NLB, create blank target group
 
 ![D4261581-1988-4940-A1D2-D81E215452E4](https://user-images.githubusercontent.com/26485327/71803879-42ff8300-30a5-11ea-9bf1-6edc7901156c.jpeg)
 ![14935280-4F6F-4CB9-8C82-B1DC99296A43](https://user-images.githubusercontent.com/26485327/71803880-42ff8300-30a5-11ea-9f45-3da06bfb7be2.jpeg)
@@ -9,8 +15,9 @@
 
 
 ![22452B58-5B0B-49B1-A692-6EF63476886D](https://user-images.githubusercontent.com/26485327/71804111-db960300-30a5-11ea-8ffc-d06ef28994b4.jpeg)
-
-
+EC2 instances created by ASG will be registered with LB automatically.
+- for Classic LB, no need target group, EC2 can be registered to CLB directly
+- for ALB,NLB, registered into target group automatically
 
 ----
 
