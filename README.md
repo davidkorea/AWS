@@ -1,7 +1,12 @@
 # AWS
 
+- Instance Template + EC2 Fleet(spot + ondemand), Classic LB
+- Target group(spot, ondemand) + ASG. ELB
 
 
+
+
+-----
 
 "architect for failure". Rather than architect your applications to run on instances which are supposed to run constantly, you should build an architecture that can mitigate instance failures by running multiple instances for executing your code. Rather than having a robust instance per service, have multiple smaller instances per service with the ability to mitigate the impact of failures.
 
