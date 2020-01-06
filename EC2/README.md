@@ -1,5 +1,15 @@
 # EC2
 
+## load balancer + auto scaling + spot & on-demand
+
+
+
+
+![D4261581-1988-4940-A1D2-D81E215452E4](https://user-images.githubusercontent.com/26485327/71803879-42ff8300-30a5-11ea-9bf1-6edc7901156c.jpeg)
+![14935280-4F6F-4CB9-8C82-B1DC99296A43](https://user-images.githubusercontent.com/26485327/71803880-42ff8300-30a5-11ea-9f45-3da06bfb7be2.jpeg)
+
+----
+
 built on the Nitro system are the C5, C5d, M5, M5d, P3dn, A1, R5, R5a, and other latest-generation EC2 instances.
 
 
