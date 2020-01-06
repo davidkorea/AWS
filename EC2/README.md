@@ -2,11 +2,11 @@
 
 ## load balancer + auto scaling + spot & on-demand
 
-
-
-
 ![D4261581-1988-4940-A1D2-D81E215452E4](https://user-images.githubusercontent.com/26485327/71803879-42ff8300-30a5-11ea-9bf1-6edc7901156c.jpeg)
 ![14935280-4F6F-4CB9-8C82-B1DC99296A43](https://user-images.githubusercontent.com/26485327/71803880-42ff8300-30a5-11ea-9f45-3da06bfb7be2.jpeg)
+![image](https://user-images.githubusercontent.com/26485327/71803707-e3a17300-30a4-11ea-8820-ce88735f029d.png)
+
+
 
 ----
 
