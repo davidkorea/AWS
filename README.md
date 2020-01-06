@@ -1,6 +1,7 @@
 # AWS
-- 使用auto scaling的话，一个EC2实例可以注册到多个ELB（ALB，CLB）
 
+- auto scaling中的CLB和target group（ALB，NLB）是分开的，二选一。如果需要可以同时选择
+- 使用auto scaling的话，一个EC2实例可以注册到多个ELB（ALB，CLB）
 
 -----
 
