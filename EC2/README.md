@@ -1,5 +1,11 @@
 # EC2
 
+### billing granularity 收费颗粒度
+- linux instance - charge per second
+- windows & linux distributions - charge per hour
+
+-----
+
 ## load balancer + auto scaling + spot & on-demand
 prerequisites before create ASG
 1. create Launch Template
