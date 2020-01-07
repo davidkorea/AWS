@@ -1,8 +1,8 @@
 # EC2
 
 ### billing granularity 收费颗粒度
-- linux instance - charge per second
-- windows & linux distributions - charge per hour
+- linux instance - charge per second, 1h 5mins = charge 65 second
+- windows & linux distributions - charge per hour, 1h 5mins = charge 2 hour
 
 -----
 
