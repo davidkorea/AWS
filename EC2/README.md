@@ -1,5 +1,19 @@
 # EC2
 
+# Dedicated Host
+- Not all AMIs supported
+- If not multiple type uspported dedicated host, can run same instance type & size as dedicated host when purchase
+- can run multiple VPC on a dedicated host
+
+
+
+
+
+
+
+
+-----
+
 ### billing granularity 收费颗粒度
 - linux instance - charge per second, 1h 5mins = charge 65 second
 - windows & linux distributions - charge per hour, 1h 5mins = charge 2 hour
