@@ -3,6 +3,8 @@
 # Dedicated Host
 - Not all AMIs supported
 - If not multiple type uspported dedicated host, can run same instance type & size as dedicated host when purchase
+    - AWS Nitro hypervisor based instance family support both `one type` and `mulitple type` instance in same family launch on a dedicated host
+    - xen based instance type support only `one type`
 - can run multiple VPC on a dedicated host
 
 
