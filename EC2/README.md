@@ -1,6 +1,10 @@
 # EC2
 
 # Dedicated Host
+
+![4A40A7CF-9EFF-4953-8A42-AFA2EF7D75CF](https://user-images.githubusercontent.com/26485327/72216385-9e2cec00-3563-11ea-806b-e4c86aab8ddf.png)
+
+
 - Not all AMIs supported
 - If not multiple type uspported dedicated host, can run same instance type & size as dedicated host when purchase
     - AWS Nitro hypervisor based instance family support both `one type` and `mulitple type` instance in same family launch on a dedicated host
