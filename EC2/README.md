@@ -45,7 +45,9 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.htm
   - Instance Store EC2
 - BYOL 软件
 - RHEL, SUSE, and Windows AMIs 不可以用作虚拟机操作系统，即专用主机上面不能创建RHEL SUSE Windows虚拟机
-- instances that run on a Dedicated Host can only be launched in a VPC
+![B274F7F2-695A-4339-8567-DA9DC8E8050A](https://user-images.githubusercontent.com/26485327/72216073-8a7f8680-355f-11ea-96be-9a68fa2bc881.jpeg)
+
+- X - instances that run on a Dedicated Host can only be launched in a VPC 
 
 
 ### 2. 专用实例
