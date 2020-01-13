@@ -1,6 +1,8 @@
 # EC2
 
-![1AFD9A86-857C-499C-9C56-53E82094FFF0](https://user-images.githubusercontent.com/26485327/72262443-47560e00-365a-11ea-8f86-a23b6828526c.png)
+![2355C07D-0219-4662-ABD3-72B406A3817A](https://user-images.githubusercontent.com/26485327/72266626-1bd72180-3662-11ea-8c0e-1f410a2fc9bc.png)
+
+
 
 
 
