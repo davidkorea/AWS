@@ -1,5 +1,9 @@
 # EC2
 
+![1AFD9A86-857C-499C-9C56-53E82094FFF0](https://user-images.githubusercontent.com/26485327/72262443-47560e00-365a-11ea-8f86-a23b6828526c.png)
+
+
+
 # Dedicated Host
 
 ![4A40A7CF-9EFF-4953-8A42-AFA2EF7D75CF](https://user-images.githubusercontent.com/26485327/72216385-9e2cec00-3563-11ea-806b-e4c86aab8ddf.png)
