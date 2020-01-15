@@ -1,5 +1,13 @@
 # AWS
 
+- 资本性支出 CapEX, capital expenses
+    - 基础设置，服务器
+- 运营性支出 OpeEX, operational expenses
+
+
+
+-----
+
 - auto scaling中的CLB和target group（ALB，NLB）是分开的，二选一。如果需要可以同时选择
 - 使用auto scaling的话，一个EC2实例可以注册到多个ELB（ALB，CLB）
 - create auto scaling in non-default VPC，自定义VPC创建ASG时，需要开启自动分配公有IP，否则无法在自定义VPC创建 [Tutorial: Set Up a Scaled and Load-Balanced Application](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-register-lbs-with-asg.html)
