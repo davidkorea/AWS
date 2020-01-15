@@ -1,9 +1,9 @@
 # AWS
 
 - 资本性支出 CapEX, capital expenses
-    - 基础设置，服务器
+    - 基础设置服务器，考虑折旧厚，成本分摊到之后的比如说5年
 - 经营性支出 OpEX, operational expenses
-
+    - 云服务费用，基础设施作为一种服务来购买
 
 
 -----
