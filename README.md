@@ -2,7 +2,7 @@
 
 - 资本性支出 CapEX, capital expenses
     - 基础设置，服务器
-- 运营性支出 OpeEX, operational expenses
+- 经营性支出 OpEX, operational expenses
 
 
 
