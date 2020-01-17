@@ -1,5 +1,17 @@
 # AWS
 
+- jupypter notebook
+    - 单机，单用户，安装使用
+- jupyterhub
+    - 单机安装，多用户共同使用同一物理机资源，且用户机无需安装
+- jupyterLab
+    - 下一代jupypter notebook
+- jupyter binder
+    - 输入github仓库名，可直接运行仓库内的notebook
+    
+    
+-----
+
 - 资本性支出 CapEX, capital expenses
     - 基础设置服务器，考虑折旧厚，成本分摊到之后的比如说5年
 - 经营性支出 OpEX, operational expenses
