@@ -5,6 +5,7 @@ https://aws.amazon.com/answers/networking/aws-multiple-vpc-vpn-connection-sharin
 
 ?Shared Services VPC
 
+![DEF96103-1396-422A-9182-2ED31F9ACD04](https://user-images.githubusercontent.com/26485327/74077746-801cb380-4a5d-11ea-8a7a-dcade54f7e40.jpeg)
 
 
 
