@@ -41,6 +41,9 @@ config		credentials
 3. can run `aaws s3 ls` on your EC2
 
 
+可以通过获取EC2 的metedata 来查看当前实例所使用的Role的临时凭证，以及过期时间
 
+
+<img width="1259" src="https://user-images.githubusercontent.com/26485327/77979101-4f0e8000-7336-11ea-8526-03f4ad2abe1f.png">
 
 
