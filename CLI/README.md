@@ -27,6 +27,29 @@ Default region name [None]: ap-northeast-2
 Default output format [None]: JSON
 ```
 
+如果由多个账号，可以使用profile来保存多个账号的凭证
+
+```
+yong@MacBookPro ~ % aws configure --profile my-another-account
+AWS Access Key ID [None]: 111
+AWS Secret Access Key [None]: 222
+Default region name [None]: 
+Default output format [None]: 
+
+yong@MacBookPro ~ % cat .aws/credentials 
+
+[default]
+aws_access_key_id = xxxxxxxxxxxxxxxxxx
+aws_secret_access_key = xxxxxxxxxxxxxxxxxx
+
+[my-another-account]
+aws_access_key_id = 111
+aws_secret_access_key = 222
+```
+
+
+
+
 Configuration files will be stored in `~/.aws`
 ```bash
 yong@MacBookPro ~ % ls ~/.aws
