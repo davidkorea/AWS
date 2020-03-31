@@ -3,6 +3,9 @@
 
 https://docs.aws.amazon.com/cli/latest/reference/sts/decode-authorization-message.html
 
+
+1. 首先要确保当前机器，已有权限使用`aws sts ecode-authorization-message`
+2. 进而执行该命令
  
 ```bash
 aws sts decode-authorization-message --encoded-message <value>
