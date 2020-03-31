@@ -29,7 +29,7 @@ Default output format [None]: JSON
 
 如果由多个账号，可以使用profile来保存多个账号的凭证
 
-```
+```bash
 yong@MacBookPro ~ % aws configure --profile my-another-account
 AWS Access Key ID [None]: 111
 AWS Secret Access Key [None]: 222
@@ -46,7 +46,9 @@ aws_secret_access_key = xxxxxxxxxxxxxxxxxx
 aws_access_key_id = 111
 aws_secret_access_key = 222
 ```
-
+```bash
+aws s3 ls --profile my-another-account   // 使用指定账号运行命令
+```
 
 
 
